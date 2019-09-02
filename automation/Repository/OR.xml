@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ocean>
+	<Cancellation>
+		<keyword id="clickPricingTab">
+			<locator>Name</locator>
+			<value>Pricing</value>
+		</keyword>
+		<keyword id="clickSearchTab">
+			<locator>Name</locator>
+			<value>Search</value>
+		</keyword>
+		<keyword id="clickCancellationTab">
+			<locator>Name</locator>
+			<value>Cancellation</value>
+		</keyword>
+		<keyword id="clickContracts">
+			<locator>Name</locator>
+			<value>Contracts</value>
+		</keyword>
+		<keyword id="clickStausofContracts">
+			<locator>Name</locator>
+			<value>DropDownButton</value>
+		</keyword>
+		<keyword id="selectProcessedContracts">
+			<locator>xpath</locator>
+			<value>//*[@ClassName='Popup']//*[@Name='Processed']</value>
+		</keyword>
+		<keyword id="selectToSaleDate">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='materialTabControl']//*[@AutomationId='PART_TextBox'])[1]</value>
+		</keyword>
+		<keyword id="selectToEndDate">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='materialTabControl']//*[@AutomationId='PART_TextBox'])[2]</value>
+		</keyword>
+		<keyword id="clickSearch">
+			<locator>xpath</locator>
+			<value>//*[@Name='Contract:']/following-sibling::*[@Name='Search']</value>
+		</keyword>
+		<keyword id="typeContractinSearch">
+			<locator>xpath</locator>
+			<value>//*[@Name='Contract:']/following-sibling::*[@ClassName='TextBox']</value>
+		</keyword>
+		<keyword id="getContractStatus">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='ContractsDatagrid']//*[@ClassName='DataRow']//*[@Name='Status']</value>
+		</keyword>
+		<keyword id="clickClear">
+			<locator>xpath</locator>
+			<value>//*[@Name='Contract:']/following-sibling::*[@Name='Clear']</value>
+		</keyword>
+		<keyword id="waitForLoad">
+			<locator>Name</locator>
+			<value>BusyIndicator</value>
+		</keyword>
+		<keyword id="getContractId">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='ContractsDatagrid']//*[@ClassName='DataRow']//*[@Name='Contract']</value>
+		</keyword>
+		<keyword id="typeContractId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Contract Number']/following-sibling::*[@ClassName='TextBox']</value>
+		</keyword>
+		<keyword id="searchContract">
+			<locator>xpath</locator>
+			<value>//*[@Name='MaterialTabControl']//*[@ClassName='ScrollViewer']//*[@Name='Search']</value>
+		</keyword>
+		<keyword id="clickCancelButton">
+			<locator>Name</locator>
+			<value>Cancel</value>
+		</keyword>
+		<keyword id="selectInitiatedBy">
+			<locator>xpath</locator>
+			<value>//*[@Name='Initiated By:']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="selectCancelReason">
+			<locator>xpath</locator>
+			<value>//*[@Name='Cancel Reason:']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="enterCancelMiles">
+			<locator>xpath</locator>
+			<value>//*[@Name='Cancel Miles:']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="enterCancelDate">
+			<locator>xpath</locator>
+			<value>//*[@Name='Cancel Date:']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="enterDateReceived">
+			<locator>xpath</locator>
+			<value>//*[@Name='Date Received:']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="getMiles">
+			<locator>xpath</locator>
+			<value>//*[@ClassName='ScrollViewer']//*[@Name='Sale Mileage']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="clickCalculate">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='BtnCalculate']</value>
+		</keyword>
+		<keyword id="clickOK">
+			<locator>Name</locator>
+			<value>OK</value>
+		</keyword>
+		<keyword id="clickAuthorize">
+			<locator>Name</locator>
+			<value>Authorize</value>
+		</keyword>
+		<keyword id="testRemitance">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='RemittanceDataGrid']//*[@Name='Remittance#']//*[@AutomationId='TextBlockLite']</value>
+		</keyword>
+		<keyword id="notePad">
+			<locator>xpath</locator>
+			<value>/Window/Edit</value>
+		</keyword>
+	</Cancellation>
+</Ocean>

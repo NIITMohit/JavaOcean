@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="1" failed="0" ignored="0" total="2" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Ocean" duration-ms="222441" started-at="2019-08-21T08:23:18Z" finished-at="2019-08-21T08:27:00Z">
+    <groups>
+    </groups>
+    <test name="Cancellation" duration-ms="222441" started-at="2019-08-21T08:23:18Z" finished-at="2019-08-21T08:27:00Z">
+      <class name="ocean.test.condition.Cancellation.OCEAN_Cancel_TC01">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1]" name="setup" is-config="true" duration-ms="7403" started-at="2019-08-21T08:23:10Z" finished-at="2019-08-21T08:23:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@47547132]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1]" name="createParent" is-config="true" duration-ms="3" started-at="2019-08-21T08:23:18Z" finished-at="2019-08-21T08:23:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@47547132]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createParent -->
+        <test-method status="SKIP" signature="cancelContract(java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1]" name="cancelContract" duration-ms="66421" started-at="2019-08-21T08:23:19Z" data-provider="SearchContract" finished-at="2019-08-21T08:24:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[POW100330]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[on hold]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Skipping this exception]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Skipping this exception
+at ocean.test.condition.Cancellation.OCEAN_Cancel_TC01.cancelContract(OCEAN_Cancel_TC01.java:72)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelContract -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1]" name="tearDown" is-config="true" duration-ms="509" started-at="2019-08-21T08:24:25Z" finished-at="2019-08-21T08:24:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cancelContract status=SKIP method=OCEAN_Cancel_TC01.cancelContract(java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@47547132]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="cancelContract(java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1]" name="cancelContract" duration-ms="153544" started-at="2019-08-21T08:24:26Z" data-provider="SearchContract" finished-at="2019-08-21T08:26:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7BA74257A9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[processed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelContract -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1]" name="tearDown" is-config="true" duration-ms="700" started-at="2019-08-21T08:26:59Z" finished-at="2019-08-21T08:27:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cancelContract status=SUCCESS method=OCEAN_Cancel_TC01.cancelContract(java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@47547132]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="updateExcel()[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1]" name="updateExcel" is-config="true" duration-ms="146" started-at="2019-08-21T08:27:00Z" finished-at="2019-08-21T08:27:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateExcel -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@15b204a1]" name="tearDown" is-config="true" duration-ms="26" started-at="2019-08-21T08:27:00Z" finished-at="2019-08-21T08:27:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@47547132]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ocean.test.condition.Cancellation.OCEAN_Cancel_TC01 -->
+    </test> <!-- Cancellation -->
+  </suite> <!-- Ocean -->
+</testng-results>
