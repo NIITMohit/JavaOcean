@@ -3,7 +3,6 @@ package ocean.test.condition.Cancellation;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-import io.qameta.allure.Description;
 import ocean.com.main.Suite;
 import ocean.common.DataProviderClass;
 import ocean.test.condition.Cancellation.interfaces.iOCEAN_Cancel_TC01;
@@ -12,7 +11,6 @@ public class OCEAN_Cancel_TC01 extends Suite implements iOCEAN_Cancel_TC01 {
 
 	@Override
 	@Test(dataProvider = "SearchContract", dataProviderClass = DataProviderClass.class)
-	@Description("Cancel Contract Test Case")
 	public void cancelContract(String contractId, String contractStatus) {
 
 		/*
