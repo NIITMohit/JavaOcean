@@ -43,9 +43,16 @@ public class Suite extends ReadData {
 		try {
 			readXML(currentDir + "\\Repository\\OR.xml");
 			DesiredCapabilities appCapabilities = new DesiredCapabilities();
-			appCapabilities.setCapability("platformName", System.getProperty("os.name"));
-			appCapabilities.setCapability("deviceName", InetAddress.getLocalHost().getHostName());
-			appCapabilities.setCapability("app", System.getenv("LOCALAPPDATA") + "\\OceanDev\\Ocean.exe");
+			String platform = System.getProperty("os.name");
+			System.out.println(platform);
+			appCapabilities.setCapability("platformName", platform);
+			String device  =  InetAddress.getLocalHost().getHostName();
+			System.out.println(device);
+			appCapabilities.setCapability("deviceName", device);
+			//String path = System.getenv("LOCALAPPDATA") + "\\OceanDev\\Ocean.exe";
+			String path = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
+			System.out.println(path);
+			appCapabilities.setCapability("app", path);
 			// appCapabilities.setCapability("app", "C:\\Windows\\System32\\notepad.exe");
 			windriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
 			createReportFolder();
