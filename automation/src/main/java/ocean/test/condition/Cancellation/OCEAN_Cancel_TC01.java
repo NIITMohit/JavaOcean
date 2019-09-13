@@ -58,6 +58,7 @@ public class OCEAN_Cancel_TC01 extends Suite implements iOCEAN_Cancel_TC01 {
 			type("enterCancelDate", "08-08-2019");
 			type("enterDateReceived", "07-07-2019");
 			click("clickCalculate");
+			type("selectPayee","AUL");
 			click("clickOK");
 			click("clickOK");
 			click("clickAuthorize");
