@@ -109,6 +109,10 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='RemittanceDataGrid']//*[@Name='Remittance#']//*[@AutomationId='TextBlockLite']</value>
 		</keyword>
+		<keyword id="selectPayee">
+			<locator>xpath</locator>
+			<value>//*[@Name='Payee:']/following-sibling::*[1]</value>
+		</keyword>
 		<keyword id="notePad">
 			<locator>xpath</locator>
 			<value>/Window/Edit</value>

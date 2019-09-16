@@ -80,7 +80,6 @@ public class Suite extends ReadData {
 		extent = new ExtentReports();
 		extent.config();
 		extent.attachReporter(htmlReporter);
-
 	}
 
 	@BeforeTest
