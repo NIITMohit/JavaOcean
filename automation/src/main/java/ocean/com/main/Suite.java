@@ -48,6 +48,7 @@ public class Suite extends ReadData {
 			appCapabilities.setCapability("platformName", platform);
 			String device  =  InetAddress.getLocalHost().getHostName();
 			System.out.println(device);
+			
 			appCapabilities.setCapability("deviceName", device);
 			//String path = System.getenv("LOCALAPPDATA") + "\\OceanDev\\Ocean.exe";
 			String path = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
