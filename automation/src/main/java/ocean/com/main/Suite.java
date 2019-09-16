@@ -50,8 +50,8 @@ public class Suite extends ReadData {
 			System.out.println(device);
 			
 			appCapabilities.setCapability("deviceName", device);
-			//String path = System.getenv("LOCALAPPDATA") + "\\OceanDev\\Ocean.exe";
-			String path = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
+			String path = System.getenv("LOCALAPPDATA") + "\\OceanDev\\Ocean.exe";
+			//String path = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
 			System.out.println(path);
 			appCapabilities.setCapability("app", path);
 			// appCapabilities.setCapability("app", "C:\\Windows\\System32\\notepad.exe");
@@ -150,7 +150,7 @@ public class Suite extends ReadData {
 	@AfterClass
 	public void updateExcel() {
 		try {
-			String fileaname = "D:\\Office\\Ocean Win App POC\\Ocean Automation\\automation\\Repository\\Cancellation - Copy.xlsx";
+			String fileaname = currentDir + "Repository\\Cancellation - Copy.xlsx";
 			FileInputStream inputStream = new FileInputStream(fileaname);
 			Workbook workbook = WorkbookFactory.create(inputStream);
 
