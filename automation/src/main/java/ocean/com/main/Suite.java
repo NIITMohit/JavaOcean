@@ -150,7 +150,7 @@ public class Suite extends ReadData {
 	@AfterClass
 	public void updateExcel() {
 		try {
-			String fileaname = "D:\\Office\\Ocean Win App POC\\Ocean Automation\\automation\\Repository\\Cancellation - Copy.xlsx";
+			String fileaname = currentDir + "Repository\\Cancellation - Copy.xlsx";
 			FileInputStream inputStream = new FileInputStream(fileaname);
 			Workbook workbook = WorkbookFactory.create(inputStream);
 
