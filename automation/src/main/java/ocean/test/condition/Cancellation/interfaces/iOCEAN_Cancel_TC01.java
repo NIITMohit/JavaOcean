@@ -7,5 +7,5 @@ import ocean.common.DataProviderClass;
 public interface iOCEAN_Cancel_TC01 {
 
 	@Test(dataProvider = "SearchContract", dataProviderClass = DataProviderClass.class)
-	public void cancelContract(String contractId, String status);
+	public void cancelContract(String contractId, String status) throws Exception;
 }

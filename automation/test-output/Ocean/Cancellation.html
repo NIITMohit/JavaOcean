@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cancellation</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/1</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Sep 03 16:21:55 IST 2019</td>
+<td>Started on:</td><td>Tue Sep 24 14:27:34 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>294 seconds (294823 ms)</td>
+<tr><td>Total time:</td><td>457 seconds (457800 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,33 +67,69 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ocean.test.condition.Cancellation.OCEAN_Cancel_TC01.cancelContract()'><b>cancelContract</b><br>Test class: ocean.test.condition.Cancellation.OCEAN_Cancel_TC01<br>Parameters: 7BA74257A9, processed</td>
-<td></td>
-<td>198</td>
-<td>ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@49993335</td></tr>
+<td title='ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.updateExcel()'><b>updateExcel</b><br>Test class: ocean.test.condition.Cancellation.OCEAN_Cancel_TC02</td>
+<td><div><pre>org.testng.TestNGException: 
+Can inject only one of &lt;ITestContext, XmlTest&gt; into a @AfterClass annotated updateExcel.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1089691218", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1089691218'><pre>org.testng.TestNGException: 
+Can inject only one of &lt;ITestContext, XmlTest&gt; into a @AfterClass annotated updateExcel.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:407)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:356)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:635)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:214)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ocean.test.condition.Cancellation.OCEAN_Cancel_TC01.cancelContract()'><b>cancelContract</b><br>Test class: ocean.test.condition.Cancellation.OCEAN_Cancel_TC01<br>Parameters: POW100330, on hold</td>
-<td><div><pre>org.testng.SkipException: Skipping this exception
-	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC01.cancelContract(OCEAN_Cancel_TC01.java:71)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1527254842", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1527254842'><pre>org.testng.SkipException: Skipping this exception
-	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC01.cancelContract(OCEAN_Cancel_TC01.java:71)
+<td title='ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules()'><b>cancelContractOverRideRules</b><br>Test class: ocean.test.condition.Cancellation.OCEAN_Cancel_TC02<br>Parameters: GVEDRVSQ, negative</td>
+<td><div><pre>java.lang.NumberFormatException: For input string: &quot;&quot;
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:103)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace913450862", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace913450862'><pre>java.lang.NumberFormatException: For input string: &quot;&quot;
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:103)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -120,8 +156,49 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>93</td>
-<td>ocean.test.condition.Cancellation.OCEAN_Cancel_TC01@49993335</td></tr>
+<td>208</td>
+<td>ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25</td></tr>
+<tr>
+<td title='ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules()'><b>cancelContractOverRideRules</b><br>Test class: ocean.test.condition.Cancellation.OCEAN_Cancel_TC02<br>Parameters: GVEDRVSQ, positive</td>
+<td><div><pre>java.lang.NumberFormatException: For input string: &quot;88.60&quot;
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:90)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1977776214", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1977776214'><pre>java.lang.NumberFormatException: For input string: &quot;88.60&quot;
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>225</td>
+<td>ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25</td></tr>
 </table><p>
 </body>
 </html>

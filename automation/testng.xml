@@ -3,7 +3,7 @@
 <suite name="Ocean">
 	<test name="Cancellation">
 		<classes>
-			<class name="ocean.test.condition.Cancellation.OCEAN_Cancel_TC01" />
+			<class name="ocean.test.condition.Cancellation.OCEAN_Cancel_TC02" />
 		</classes>
 	</test>
 </suite> 
