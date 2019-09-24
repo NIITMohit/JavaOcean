@@ -17,6 +17,50 @@
 			<locator>Name</locator>
 			<value>Contracts</value>
 		</keyword>
+		<keyword id="typeName">
+			<locator>Name</locator>
+			<value>Contracts</value>
+		</keyword>
+		<keyword id="swiperight">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='PageRight']</value>
+		</keyword>
+			<keyword id="swipeleft">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='PageLeft']</value>
+		</keyword>
+			<keyword id="statusofcontract">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='Status']</value>
+		</keyword>
+		<keyword id="yesBox">
+			<locator>Name</locator>
+			<value>Yes</value>
+		</keyword>
+			<keyword id="textMessage">
+			<locator>Name</locator>
+			<value>Cancelation fee exceeds refund</value>
+		</keyword>
+		<keyword id="overRideRules">
+			<locator>Name</locator>
+			<value>Override Rules</value>
+		</keyword>
+		<keyword id="inValidPayee">
+			<locator>Name</locator>
+			<value>Invalid Payee information</value>
+		</keyword>
+		<keyword id="refundpercent">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Refund%']/following-sibling::*[@ClassName='TextBox'])[2]</value>
+		</keyword>
+		<keyword id="cancelFee">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Cancel Fee:']/following-sibling::*[@ClassName='TextBox'])[2]</value>
+		</keyword>
+			<keyword id="mailservice">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Mail Service']</value>
+		</keyword>
 		<keyword id="clickStausofContracts">
 			<locator>Name</locator>
 			<value>DropDownButton</value>
@@ -45,13 +89,17 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='ContractsDatagrid']//*[@ClassName='DataRow']//*[@Name='Status']</value>
 		</keyword>
-		<keyword id="clickClear">
+		<keyword id="clickClearSearch">
 			<locator>xpath</locator>
 			<value>//*[@Name='Contract:']/following-sibling::*[@Name='Clear']</value>
 		</keyword>
 		<keyword id="waitForLoad">
 			<locator>Name</locator>
 			<value>BusyIndicator</value>
+		</keyword>
+		<keyword id="clearContract">
+			<locator>Name</locator>
+			<value>Clear</value>
 		</keyword>
 		<keyword id="getContractId">
 			<locator>xpath</locator>
@@ -60,6 +108,10 @@
 		<keyword id="typeContractId">
 			<locator>xpath</locator>
 			<value>//*[@Name='Contract Number']/following-sibling::*[@ClassName='TextBox']</value>
+		</keyword>
+		<keyword id="typeCostomerFirstName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer First Name']/following-sibling::*[@ClassName='TextBox']</value>
 		</keyword>
 		<keyword id="searchContract">
 			<locator>xpath</locator>

@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,9 +21,13 @@ public class Keywords extends Variables {
 				List<WebElement> eee = windriver.findElements(ObjectRepo.fetchOR(locator));
 				for (WebElement webElement : eee) {
 					// Thread.sleep(3000);
-					System.out.println("fsdf");
 					String abc = webElement.getText();
 					System.out.println(abc);
+					try {
+						webElement.sendKeys("2121");
+					} catch (Exception e) {
+						////
+					}
 
 				}
 			} catch (Exception e) {
@@ -33,6 +39,41 @@ public class Keywords extends Variables {
 	}
 
 	public void click(String locator) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date));
+		for (int i = 0; i < 3; i++) {
+			try {
+				WebDriverWait wait = new WebDriverWait(windriver, 20);
+				WebElement clickElement = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				clickElement.click();				
+				System.out.println("Click Successful for " + locator);
+				break;
+
+			} catch (Exception e) {
+				try {
+					Thread.sleep(Variables.shortWait * 1000);
+					System.out.println("Click failed for " + locator);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				continue;
+			}
+
+		}
+		Date date1 = new Date();
+		System.out.println(dateFormat.format(date1));
+
+	}
+	
+	
+	
+	
+	
+	
+	public void clickList(String locator) {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
 		Date date = new Date();
 		System.out.println(dateFormat.format(date));
@@ -59,6 +100,38 @@ public class Keywords extends Variables {
 		}
 		Date date1 = new Date();
 		System.out.println(dateFormat.format(date1));
+
+	}
+
+	public void typeSpecial(String locator, String value) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date));
+		for (int i = 0; i < 3; i++) {
+			try {
+				WebDriverWait wait = new WebDriverWait(windriver, 20);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				@SuppressWarnings("unchecked")
+				List<WebElement> eee = windriver.findElements(ObjectRepo.fetchOR(locator));
+				for (WebElement webElement : eee) {
+					// Thread.sleep(3000);
+					String abc = webElement.getText();
+					System.out.println(abc);
+					try {
+						webElement.click();
+						webElement.clear();
+						webElement.sendKeys("value");
+						break;
+					} catch (Exception e) {
+						////
+					}
+				}
+				break;
+			} catch (Exception e) {
+				System.out.println("fsddf");
+				continue;
+			}
+		}
 
 	}
 
@@ -127,6 +200,28 @@ public class Keywords extends Variables {
 				String abc = typeElement.getText();
 				if (abc.toLowerCase().equalsIgnoreCase(value))
 					flag = true;
+				break;
+
+			} catch (Exception e) {
+				System.out.println("get value failed for " + locator);
+				continue;
+			}
+
+		}
+
+		return flag;
+	}
+
+	public String checkEnableDisable(String locator) {
+		String flag = "not able identify";
+		for (int i = 0; i < 3; i++) {
+			try {
+				WebDriverWait wait = new WebDriverWait(windriver, 20);
+				WebElement typeElement = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+
+				Boolean flaf = typeElement.isEnabled();
+				flag = Boolean.toString(flaf);
 				break;
 
 			} catch (Exception e) {
