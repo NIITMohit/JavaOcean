@@ -53,10 +53,11 @@ public class Suite extends ReadData {
 			//// To start application automatic and wait till application is loaded
 			//// To reduce execution time, skipped in video
 			Runtime runtime = Runtime.getRuntime();
+			 Process p=null;
 			try {
 				System.out.println(path);
 				System.out.println("Ocean Application starting");
-				runtime.exec(path);
+			    p=runtime.exec(path);
 				System.out.println(path);
 				System.out.println("Ocean Application Started Waiting to application to boot");
 				Thread.sleep(500000);
