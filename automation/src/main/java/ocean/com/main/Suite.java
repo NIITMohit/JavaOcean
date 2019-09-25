@@ -87,7 +87,7 @@ public class Suite extends ReadData {
 				try {
 					windriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
 				} catch (Exception e) {
-					Thread.sleep(50000);
+					Thread.sleep(500000);
 					continue;
 				}
 			}
