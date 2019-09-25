@@ -96,7 +96,7 @@ public class Suite extends ReadData {
 	@AfterSuite
 	public void tearDown(ITestContext context) {
 		extent.flush();
-		// service.stop();
+		service.stop();
 	}
 
 	public void createReport() {
