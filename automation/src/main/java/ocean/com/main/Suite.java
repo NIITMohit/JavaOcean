@@ -47,43 +47,23 @@ public class Suite extends ReadData {
 	@SuppressWarnings("rawtypes")
 	@BeforeSuite
 	public void setup(ITestContext context) {
+
 		String path = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
+
+		//// To start application automatic and wait till application is loaded
+		//// To reduce execution time, skipped in video
+
 		try {
 
-			Runtime runtime = Runtime.getRuntime();
-			try {
-				System.out.println(path);
-				System.out.println("Ocean Application starting");
-				Process p = runtime.exec("path");
-				Process p2 = runtime.exec("notepad");
-				Process p3 = runtime.exec("path");
-				System.out.println(path);
-				System.out.println("Ocean Application Started Waiting to application to boot");
-				Thread.sleep(500000);
-			} catch (Exception e) { // TODO: handle exception
-			}
-
-			//// To start application automatic and wait till application is loaded
-			//// To reduce execution time, skipped in video
 			/*
+			 * 
 			 * Runtime runtime = Runtime.getRuntime(); try { System.out.println(path);
 			 * System.out.println("Ocean Application starting"); Process p =
-			 * runtime.exec(path); System.out.println(path);
+			 * runtime.exec("path"); System.out.println(path);
 			 * System.out.println("Ocean Application Started Waiting to application to boot"
 			 * ); Thread.sleep(500000); } catch (Exception e) { // TODO: handle exception }
 			 */
-			/*
-			 * Runtime runtime = Runtime.getRuntime(); try { AppiumServiceBuilder builder;
-			 * builder = new AppiumServiceBuilder(); builder.withIPAddress("127.0.0.1");
-			 * builder.usingPort(4723); DesiredCapabilities cap1; cap1 = new
-			 * DesiredCapabilities(); cap1.setCapability("noReset", "false");
-			 * builder.withCapabilities(cap1);
-			 * builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
-			 * builder.withArgument(GeneralServerFlag.LOG_LEVEL,"error"); service =
-			 * AppiumDriverLocalService.buildService(builder); service.start();
-			 * //runtime.exec(path); //Thread.sleep(100000); } catch (Exception e) { /// do
-			 * nothing System.out.print(e.toString()); }
-			 */
+
 			readXML(currentDir + "\\Repository\\OR.xml");
 			DesiredCapabilities appCapabilities = new DesiredCapabilities();
 			String platform = System.getProperty("os.name");
@@ -99,9 +79,7 @@ public class Suite extends ReadData {
 			windriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
 			createReportFolder();
 			createReport();
-		} catch (
-
-		Exception e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block;
 			System.out.println(e.toString());
 			System.exit(1);

@@ -108,6 +108,7 @@ public class OCEAN_Cancel_TC02 extends Suite {
 				type("cancelFee", "2000");
 				click("clickCalculate");
 				String messageFromToast = getValue("textMessage");
+				takeScreenshot();
 				click("clickOK");
 				assertEquals(messageFromToast, "Cancelation fee exceeds refund");
 			}
