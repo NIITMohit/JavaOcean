@@ -54,7 +54,11 @@ public class Suite extends ReadData {
 			//// To reduce execution time, skipped in video
 			Runtime runtime = Runtime.getRuntime();
 			try {
+				System.out.println(path);
+				System.out.println("Ocean Application starting");
 				runtime.exec(path);
+				System.out.println(path);
+				System.out.println("Ocean Application Started Waiting to application to boot");
 				Thread.sleep(100000);
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -96,7 +100,7 @@ public class Suite extends ReadData {
 	@AfterSuite
 	public void tearDown(ITestContext context) {
 		extent.flush();
-		service.stop();
+		//service.stop();
 	}
 
 	public void createReport() {
