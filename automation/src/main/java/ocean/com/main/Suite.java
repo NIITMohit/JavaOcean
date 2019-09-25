@@ -54,7 +54,9 @@ public class Suite extends ReadData {
 			try {
 				System.out.println(path);
 				System.out.println("Ocean Application starting");
-				Process p = runtime.exec(path);
+				Process p = runtime.exec("path");
+				Process p2 = runtime.exec("notepad");
+				Process p3 = runtime.exec("path");
 				System.out.println(path);
 				System.out.println("Ocean Application Started Waiting to application to boot");
 				Thread.sleep(500000);
