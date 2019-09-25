@@ -88,8 +88,8 @@ public class OCEAN_Cancel_TC02 extends Suite {
 				String refundpercent = getValue("refundpercent");
 				float refundpercents = 0;
 				refundpercents = Float.valueOf(refundpercent).floatValue() - 6;
-				refundpercent = Float.toString(refundpercents);
 				int abc = (int) refundpercents;
+				refundpercent = Integer.toString(abc);
 				type("refundpercent", refundpercent);
 				// type("cancelFee", "10");
 				click("clickCalculate");

@@ -48,15 +48,14 @@ public class Suite extends ReadData {
 	@BeforeSuite
 	public void setup(ITestContext context) {
 		String path = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
-		String path2 = "C:\\Users\\mohit.goel\\Desktop\\ocean.bat";
 		try {
 
 			Runtime runtime = Runtime.getRuntime();
 			try {
-				System.out.println(path2);
+				System.out.println(path);
 				System.out.println("Ocean Application starting");
-				Process p = runtime.exec(path2);
-				System.out.println(path2);
+				Process p = runtime.exec(path);
+				System.out.println(path);
 				System.out.println("Ocean Application Started Waiting to application to boot");
 				Thread.sleep(500000);
 			} catch (Exception e) { // TODO: handle exception
