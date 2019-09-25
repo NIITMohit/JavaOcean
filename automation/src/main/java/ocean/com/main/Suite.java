@@ -52,13 +52,17 @@ public class Suite extends ReadData {
 
 			//// To start application automatic and wait till application is loaded
 			//// To reduce execution time, skipped in video
-			/*
-			 * Runtime runtime = Runtime.getRuntime(); try { System.out.println(path);
-			 * System.out.println("Ocean Application starting"); runtime.exec(path);
-			 * System.out.println(path);
-			 * System.out.println("Ocean Application Started Waiting to application to boot"
-			 * ); Thread.sleep(100000); } catch (Exception e) { // TODO: handle exception }
-			 */
+			Runtime runtime = Runtime.getRuntime();
+			try {
+				System.out.println(path);
+				System.out.println("Ocean Application starting");
+				runtime.exec(path);
+				System.out.println(path);
+				System.out.println("Ocean Application Started Waiting to application to boot");
+				Thread.sleep(500000);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			/*
 			 * Runtime runtime = Runtime.getRuntime(); try { AppiumServiceBuilder builder;
 			 * builder = new AppiumServiceBuilder(); builder.withIPAddress("127.0.0.1");
@@ -83,14 +87,7 @@ public class Suite extends ReadData {
 			System.out.println(path);
 			appCapabilities.setCapability("app", path);
 			// appCapabilities.setCapability("app", "C:\\Windows\\System32\\notepad.exe");
-			for (int i = 0; i < 3; i++) {
-				try {
-					windriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
-				} catch (Exception e) {
-					Thread.sleep(500000);
-					continue;
-				}
-			}
+			windriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
 			createReportFolder();
 			createReport();
 		} catch (Exception e) {
@@ -103,7 +100,7 @@ public class Suite extends ReadData {
 	@AfterSuite
 	public void tearDown(ITestContext context) {
 		extent.flush();
-		// service.stop();
+		//service.stop();
 	}
 
 	public void createReport() {
