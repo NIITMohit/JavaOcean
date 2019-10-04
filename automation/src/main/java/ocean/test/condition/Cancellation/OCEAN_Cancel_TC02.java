@@ -4,14 +4,10 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.fail;
 
-import java.util.ArrayList;
-
-import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import ocean.com.main.Suite;
 import ocean.common.DataProviderClass;
-import ocean.test.condition.Cancellation.interfaces.iOCEAN_Cancel_TC01;
 
 public class OCEAN_Cancel_TC02 extends Suite {
 
@@ -25,7 +21,9 @@ public class OCEAN_Cancel_TC02 extends Suite {
 		String stateofbutton = checkEnableDisable("clickCancelButton");
 		click("swiperight");
 		String status = getValue("statusofcontract");
+		takeScreenshot();
 		click("swipeleft");
+		takeScreenshot();
 		if (!status.toLowerCase().equals("processed") && stateofbutton.toLowerCase().equals("false"))
 			assertEquals(stateofbutton, "false");
 		else if (status.toLowerCase().equals("processed") && stateofbutton.toLowerCase().equals("true")) {
@@ -37,25 +35,24 @@ public class OCEAN_Cancel_TC02 extends Suite {
 			milee = Integer.parseInt(miles) + 2214;
 			miles = Integer.toString(milee);
 			type("enterCancelMiles", miles);
-			type("enterCancelDate", "05-08-2019");
-			type("enterDateReceived", "08-08-2019");
+			type("enterCancelDate", "09-09-2019");
+			type("enterDateReceived", "09-09-2019");
 			click("clickCalculate");
 			click("clickOK");
 			type("selectPayee", "AUL");
 			click("clickAuthorize");
-			// click("yesBox");
 			String stateofbutton1 = checkEnableDisable("clickCancelButton");
+			click("checkAuthorize");
 			assertNotEquals(stateofbutton, stateofbutton1);
 		} else {
 			fail();
 		}
-		System.out.println("done");
 	}
 
 	@Test(dataProvider = "SearchContractonOverRide", dataProviderClass = DataProviderClass.class)
 	public void cancelContractOverRideRules(String contractId, String Rules) {
-		String cancelDate = "05-08-2019";
-		String dateReceived = "08-08-2019";
+		String cancelDate = "09-09-2019";
+		String dateReceived = "09-09-2019";
 		click("clickCancellationTab");
 		click("mailservice");
 		click("clearContract");
@@ -83,8 +80,8 @@ public class OCEAN_Cancel_TC02 extends Suite {
 				String info = getValue("inValidPayee");
 				takeScreenshot();
 				click("clickOK");
-				type("selectPayee", "Customer");
 				click("overRideRules");
+				type("selectPayee", "Default");
 				String refundpercent = getValue("refundpercent");
 				float refundpercents = 0;
 				refundpercents = Float.valueOf(refundpercent).floatValue() - 6;
@@ -112,7 +109,6 @@ public class OCEAN_Cancel_TC02 extends Suite {
 				click("clickOK");
 				assertEquals(messageFromToast, "Cancelation fee exceeds refund");
 			}
-
 		} else {
 			fail();
 		}

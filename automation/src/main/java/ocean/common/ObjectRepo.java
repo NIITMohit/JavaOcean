@@ -2,8 +2,18 @@ package ocean.common;
 
 import org.openqa.selenium.By;
 
+/**
+ * Object Repo class, to return By element bases of locator id.
+ *
+ * @author Mohit Goel
+ */
 public class ObjectRepo {
-
+	/**
+	 * Function to return respective locator type bases in input parameter id
+	 *
+	 * @param id the id
+	 * @return the by
+	 */
 	public static By fetchOR(String id) {
 
 		String[] abc = Variables.oR.get(id);

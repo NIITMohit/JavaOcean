@@ -1,3 +1,4 @@
+
 package ocean.com.main;
 
 import java.io.File;
@@ -11,7 +12,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -36,35 +36,54 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
-import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import io.appium.java_client.windows.WindowsDriver;
 import ocean.common.ReadData;
 
+/**
+ * Represents class execution, Main entry class of execution which extends
+ * ReadData Class
+ * 
+ * @author Mohit Goel
+ */
 public class Suite extends ReadData {
 
+	/**
+	 * Executed as just before Test cases suite setup class to open ocean
+	 * application, read OR (Object repository), create reports, attach win APP
+	 * driver session to ocean application.
+	 *
+	 * @param context the new up
+	 */
 	@SuppressWarnings("rawtypes")
 	@BeforeSuite
 	public void setup(ITestContext context) {
 
+		//// Path of ocean application
 		String path = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
 
-		//// To start application automatic and wait till application is loaded
-		//// To reduce execution time, skipped in video
-
+	
+		//// Code to open application and wait till application is stable before
+		//// attaching win app session to ocean
 		try {
-
 			/*
-			 * 
-			 * Runtime runtime = Runtime.getRuntime(); try { System.out.println(path);
-			 * System.out.println("Ocean Application starting"); Process p =
-			 * runtime.exec("path"); System.out.println(path);
-			 * System.out.println("Ocean Application Started Waiting to application to boot"
-			 * ); Thread.sleep(500000); } catch (Exception e) { // TODO: handle exception }
-			 */
+			Runtime runtime = Runtime.getRuntime();
+			try {
+				System.out.println(path);
+				System.out.println("Ocean Application starting");
+				runtime.exec(path);
+				System.out.println(path);
+				System.out.println("Ocean Application Started Waiting to application to boot");
+				Thread.sleep(500000);
+			} catch (Exception e) {
+				// do nothing
+			}
+			*/
 
+			//// Read xal, is uses to read object repository and save in local variable
 			readXML(currentDir + "\\Repository\\OR.xml");
+
+			//// Setting desired capabilities to help appium understand which platform and
+			//// application need to attach session
 			DesiredCapabilities appCapabilities = new DesiredCapabilities();
 			String platform = System.getProperty("os.name");
 			System.out.println(platform);
@@ -72,26 +91,35 @@ public class Suite extends ReadData {
 			String device = InetAddress.getLocalHost().getHostName();
 			System.out.println(device);
 			appCapabilities.setCapability("deviceName", device);
-			// String path = System.getenv("LOCALAPPDATA") + "\\OceanDev\\Ocean.exe";
 			System.out.println(path);
 			appCapabilities.setCapability("app", path);
-			// appCapabilities.setCapability("app", "C:\\Windows\\System32\\notepad.exe");
+
+			//// win app driver sesison attached successfully
 			windriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
+
+			//// create report folder in running directory
 			createReportFolder();
+			//// Create reports
 			createReport();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block;
+			//// Skip execution in case of any error or exceptions
 			System.out.println(e.toString());
 			System.exit(1);
 		}
 	}
 
+	/**
+	 * Executed after whole suite is executed
+	 */
 	@AfterSuite
 	public void tearDown(ITestContext context) {
+		//// Flush extent report
 		extent.flush();
-		// service.stop();
 	}
 
+	/**
+	 * create report and set all parameters like title etc
+	 */
 	public void createReport() {
 		mapTest = new HashMap<String, ExtentTest>();
 		nodeTest = new HashMap<String, ExtentTest>();
@@ -104,6 +132,10 @@ public class Suite extends ReadData {
 		extent.attachReporter(htmlReporter);
 	}
 
+	/**
+	 * create parent of report, in ocean application parent be Cancellation, Search,
+	 * Etc Execute each time before test is executed
+	 */
 	@BeforeTest
 	public void createParent(ITestContext context) {
 		String testName = context.getCurrentXmlTest().getName();
@@ -111,59 +143,50 @@ public class Suite extends ReadData {
 		mapTest.put(testName, test1);
 	}
 
+	/**
+	 * executed each time before method, to declare an array , where all screenshots
+	 * associated with a test case would be saved
+	 */
 	@BeforeMethod
-	public void seee() {
+	public void screenshot() {
 		screenShota = new ArrayList<String>();
 	}
 
+	/**
+	 * Tear Down method used to append test results to parent node
+	 */
 	@AfterMethod
 	public void tearDown(ITestResult result, ITestContext context) throws IOException {
 		try {
 			String Statuss = "";
-			String instac = result.getInstanceName();
 			String abc = this.getClass().getName();
 			abc = abc.substring(this.getClass().getName().lastIndexOf('.') + 1, this.getClass().getName().length());
+			//// Create node with name similar to test case and attached with test parent
 			ExtentTest node1 = mapTest.get(context.getCurrentXmlTest().getName())
 					.createNode(abc + "." + result.getName());
-			// Object[] inputArgs = result.getParameters();
-			// String data = inputArgs.toString();
+			//// in case of failure
 			if (result.getStatus() == ITestResult.FAILURE) {
 				Statuss = "fail";
 				takeScreenshot();
-
 				node1.log(Status.FAIL, "TEST CASE FAILED IS " + result.getName());
-				for (String path : screenShota) {
-					node1.addScreenCaptureFromPath(path);
-				}
 
-				// nodeTest.get(instac).log(Status.FAIL, "TEST CASE FAILED IS " +
-				// result.getName());
-				// nodeTest.get(instac).addScreenCaptureFromPath(reportPath + "\\screen1.png");
+				//// in case of skip
 			} else if (result.getStatus() == ITestResult.SKIP) {
 				Statuss = "skip";
 				takeScreenshot();
-
 				node1.log(Status.SKIP, "TEST CASE FAILED IS " + result.getName());
-				for (String path : screenShota) {
-					node1.addScreenCaptureFromPath(path);
-				}
 
-				// nodeTest.get(instac).addScreenCaptureFromPath(reportPath + "\\screen2.png");
-				// nodeTest.get(instac).log(Status.SKIP, "TEST CASE Skiped IS " +
-				// result.getName());
-
+				//// in case of pass
 			} else {
 				Statuss = "pass";
 				takeScreenshot();
-
 				node1.log(Status.PASS, "TEST CASE FAILED IS " + result.getName());
-				for (String path : screenShota) {
-					node1.addScreenCaptureFromPath(path);
-				}
 
-				// nodeTest.get(instac).addScreenCaptureFromPath(reportPath + "\\screen3.png");
-				// nodeTest.get(instac).log(Status.PASS, "Test Case PASSED IS " +
-				// result.getName());
+			}
+
+			//// Append all screenshot with the node
+			for (String path : screenShota) {
+				node1.addScreenCaptureFromPath(path);
 			}
 			int size = statusSheet.size() + 1;
 			statusSheet.put(size, Statuss);
@@ -173,6 +196,9 @@ public class Suite extends ReadData {
 		}
 	}
 
+	/**
+	 * Common function to take screenshot
+	 */
 	public void takeScreenshot() {
 		try {
 			String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
@@ -185,6 +211,9 @@ public class Suite extends ReadData {
 		}
 	}
 
+	/**
+	 * Update excel post execution of all test data
+	 */
 	@AfterClass
 	public void updateExcel(ITestResult result, ITestContext context) {
 		try {
@@ -194,9 +223,6 @@ public class Suite extends ReadData {
 			Workbook workbook = WorkbookFactory.create(inputStream);
 
 			Sheet sheet = workbook.getSheetAt(0);
-
-			HashMap<Integer, String> abc = statusSheet;
-
 			for (Integer key : statusSheet.keySet()) {
 				String value = statusSheet.get(key);
 				System.out.println("Key = " + key + ", Value = " + value);
@@ -222,6 +248,9 @@ public class Suite extends ReadData {
 		}
 	}
 
+	/**
+	 * Creates child node of parent test
+	 */
 	public void createChild(ITestContext context) {
 		String testName = context.getCurrentXmlTest().getName();
 		String className = this.getClass().getName();
@@ -229,6 +258,9 @@ public class Suite extends ReadData {
 		nodeTest.put(className, node1);
 	}
 
+	/**
+	 * Creates the report folder.
+	 */
 	public void createReportFolder() {
 		String dir = currentDir + "\\Repository\\Reports";
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
@@ -237,11 +269,15 @@ public class Suite extends ReadData {
 		File file = new File(reportPath);
 		if (!file.exists()) {
 			file.mkdir();
-			createReportFolder1();
+			createscreenshotfolder();
 		}
 	}
 
-	public void createReportFolder1() {
+	/**
+	 * Creates the report screenshot folder inside report folder under
+	 * createReportFolder
+	 */
+	public void createscreenshotfolder() {
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		String folder = Long.toString(timestamp.getTime());
 		ssPath = reportPath + "\\" + folder;

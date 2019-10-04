@@ -13,6 +13,10 @@
 			<locator>Name</locator>
 			<value>Cancellation</value>
 		</keyword>
+		<keyword id="checkAuthorize">
+			<locator>xpath</locator>			
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_CertNumber']</value>
+		</keyword>
 		<keyword id="clickContracts">
 			<locator>Name</locator>
 			<value>Contracts</value>
@@ -100,6 +104,10 @@
 		<keyword id="clearContract">
 			<locator>Name</locator>
 			<value>Clear</value>
+		</keyword>
+			<keyword id="clearContract2">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Clear']</value>
 		</keyword>
 		<keyword id="getContractId">
 			<locator>xpath</locator>
