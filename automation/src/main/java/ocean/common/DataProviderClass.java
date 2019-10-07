@@ -57,5 +57,18 @@ public class DataProviderClass {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "OverRide");
 		return arrayObject;
 	}
+	
+	/**
+	 * Data provider
+	 */
+	@DataProvider(name = "cancelContractCalculateVerify")
+	public static Object[][] cancelContractCalculateVerify() {
+		String currentDir = System.getProperty("user.dir");
+		String dir = currentDir + "\\Repository\\";
+		String fileName = "Cancellation.xlsx";
+		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Calculate");
+		return arrayObject;
+	}
+
 
 }

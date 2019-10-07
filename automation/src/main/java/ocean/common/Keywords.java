@@ -131,6 +131,31 @@ public class Keywords extends Variables {
 		return abc;
 	}
 
+	public void minimizeAll(String locator) {
+		for (int i = 0; i < 4; i++) {
+			try {
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windriver, extraLongWait);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				@SuppressWarnings("unchecked")
+				//// Find list of web elements
+				List<WebElement> we = windriver.findElements(ObjectRepo.fetchOR(locator));
+				for (WebElement webElement : we) {
+					//// get value and return the same
+					String abc = webElement.getAttribute("ExpandCollapseState");
+					
+						webElement.click();
+				}
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+	}
+
 	/**
 	 * checkEnableDisable keyword , this function is used to get state of object,
 	 * and identify weather it is enable or disable
