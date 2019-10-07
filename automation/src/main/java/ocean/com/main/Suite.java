@@ -65,7 +65,7 @@ public class Suite extends ReadData {
 		//// Code to open application and wait till application is stable before
 		//// attaching win app session to ocean
 		try {
-			
+			/*
 			Runtime runtime = Runtime.getRuntime();
 			try {
 				System.out.println(path);
@@ -76,7 +76,7 @@ public class Suite extends ReadData {
 				Thread.sleep(500000);
 			} catch (Exception e) {
 				// do nothing
-			}
+			}*/
 			
 
 			//// Read xal, is uses to read object repository and save in local variable
