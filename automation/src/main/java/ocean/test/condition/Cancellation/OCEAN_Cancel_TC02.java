@@ -36,8 +36,8 @@ public class OCEAN_Cancel_TC02 extends Suite {
 			milee = Integer.parseInt(miles) + 2214;
 			miles = Integer.toString(milee);
 			type("enterCancelMiles", miles);
-			type("enterCancelDate", "09-09-2019");
-			type("enterDateReceived", "09-09-2019");
+			type("enterCancelDate", "05-08-2019");
+			type("enterDateReceived", "08-08-2019");
 			click("clickCalculate");
 			click("clickOK");
 			type("selectPayee", "AUL");
@@ -52,8 +52,8 @@ public class OCEAN_Cancel_TC02 extends Suite {
 
 	@Test(dataProvider = "SearchContractonOverRide", dataProviderClass = DataProviderClass.class)
 	public void cancelContractOverRideRules(String contractId, String Rules) {
-		String cancelDate = "09-09-2019";
-		String dateReceived = "09-09-2019";
+		String cancelDate = "05-08-2019";
+		String dateReceived = "08-08-2019";
 		click("clickCancellationTab");
 		click("mailservice");
 		click("clearContract");
@@ -118,8 +118,8 @@ public class OCEAN_Cancel_TC02 extends Suite {
 	@Test(dataProvider = "cancelContractCalculateVerify", dataProviderClass = DataProviderClass.class)
 	public void cancelContractCalculationVerification(String contractId, String cancdd) {
 		Boolean flag1 = true;
-		String cancelDate = "09-09-2019";
-		String dateReceived = "09-09-2019";
+		String cancelDate = "05-08-2019";
+		String dateReceived = "08-08-2019";
 		click("clickCancellationTab");
 		click("mailservice");
 		click("clearContract");
@@ -129,7 +129,7 @@ public class OCEAN_Cancel_TC02 extends Suite {
 		if (stateofbutton.toLowerCase().equals("true")) {
 			click("clickCancelButton");
 			type("selectInitiatedBy", "Dealer");
-			type("selectCancelReason", "Repossession");
+			type("selectCancelReason", "Customer Request");
 			//// Get Cancel Mile
 			String miles = getValue("getMiles");
 			int milee = 0;
