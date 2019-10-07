@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Ocean>
 	<Cancellation>
-		<keyword id="clickPricingTab">
-			<locator>Name</locator>
-			<value>Pricing</value>
-		</keyword>
-		<keyword id="clickSearchTab">
-			<locator>Name</locator>
-			<value>Search</value>
-		</keyword>
 		<keyword id="clickCancellationTab">
 			<locator>Name</locator>
 			<value>Cancellation</value>
 		</keyword>
-		<keyword id="checkAuthorize">
-			<locator>xpath</locator>			
-			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_CertNumber']</value>
+		<keyword id="mailservice">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Mail Service']</value>
 		</keyword>
-		<keyword id="clickContracts">
+		<keyword id="clearContract">
 			<locator>Name</locator>
-			<value>Contracts</value>
+			<value>Clear</value>
 		</keyword>
-		<keyword id="typeName">
+		<keyword id="typeContractId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Contract Number']/following-sibling::*[@ClassName='TextBox']</value>
+		</keyword>
+		<keyword id="searchContract">
+			<locator>xpath</locator>
+			<value>//*[@Name='MaterialTabControl']//*[@ClassName='ScrollViewer']//*[@Name='Search']	</value>
+		</keyword>
+		<keyword id="clickCancelButton">
 			<locator>Name</locator>
-			<value>Contracts</value>
+			<value>Cancel</value>
 		</keyword>
 		<keyword id="swiperight">
 			<locator>xpath</locator>
@@ -33,101 +33,9 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='PageLeft']</value>
 		</keyword>
-			<keyword id="statusofcontract">
+		<keyword id="statusofcontract">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@Name='Status']</value>
-		</keyword>
-		<keyword id="yesBox">
-			<locator>Name</locator>
-			<value>Yes</value>
-		</keyword>
-			<keyword id="textMessage">
-			<locator>Name</locator>
-			<value>Cancelation fee exceeds refund</value>
-		</keyword>
-		<keyword id="overRideRules">
-			<locator>Name</locator>
-			<value>Override Rules</value>
-		</keyword>
-		<keyword id="inValidPayee">
-			<locator>Name</locator>
-			<value>Invalid Payee information</value>
-		</keyword>
-		<keyword id="refundpercent">
-			<locator>xpath</locator>
-			<value>(//*[@Name='Refund%']/following-sibling::*[@ClassName='TextBox'])[2]</value>
-		</keyword>
-		<keyword id="cancelFee">
-			<locator>xpath</locator>
-			<value>(//*[@Name='Cancel Fee:']/following-sibling::*[@ClassName='TextBox'])[2]</value>
-		</keyword>
-			<keyword id="mailservice">
-			<locator>xpath</locator>
-			<value>//*[@AutomationId='Mail Service']</value>
-		</keyword>
-		<keyword id="clickStausofContracts">
-			<locator>Name</locator>
-			<value>DropDownButton</value>
-		</keyword>
-		<keyword id="selectProcessedContracts">
-			<locator>xpath</locator>
-			<value>//*[@ClassName='Popup']//*[@Name='Processed']</value>
-		</keyword>
-		<keyword id="selectToSaleDate">
-			<locator>xpath</locator>
-			<value>(//*[@AutomationId='materialTabControl']//*[@AutomationId='PART_TextBox'])[1]</value>
-		</keyword>
-		<keyword id="selectToEndDate">
-			<locator>xpath</locator>
-			<value>(//*[@AutomationId='materialTabControl']//*[@AutomationId='PART_TextBox'])[2]</value>
-		</keyword>
-		<keyword id="clickSearch">
-			<locator>xpath</locator>
-			<value>//*[@Name='Contract:']/following-sibling::*[@Name='Search']</value>
-		</keyword>
-		<keyword id="typeContractinSearch">
-			<locator>xpath</locator>
-			<value>//*[@Name='Contract:']/following-sibling::*[@ClassName='TextBox']</value>
-		</keyword>
-		<keyword id="getContractStatus">
-			<locator>xpath</locator>
-			<value>//*[@AutomationId='ContractsDatagrid']//*[@ClassName='DataRow']//*[@Name='Status']</value>
-		</keyword>
-		<keyword id="clickClearSearch">
-			<locator>xpath</locator>
-			<value>//*[@Name='Contract:']/following-sibling::*[@Name='Clear']</value>
-		</keyword>
-		<keyword id="waitForLoad">
-			<locator>Name</locator>
-			<value>BusyIndicator</value>
-		</keyword>
-		<keyword id="clearContract">
-			<locator>Name</locator>
-			<value>Clear</value>
-		</keyword>
-			<keyword id="clearContract2">
-			<locator>xpath</locator>
-			<value>//*[@AutomationId='Clear']</value>
-		</keyword>
-		<keyword id="getContractId">
-			<locator>xpath</locator>
-			<value>//*[@AutomationId='ContractsDatagrid']//*[@ClassName='DataRow']//*[@Name='Contract']</value>
-		</keyword>
-		<keyword id="typeContractId">
-			<locator>xpath</locator>
-			<value>//*[@Name='Contract Number']/following-sibling::*[@ClassName='TextBox']</value>
-		</keyword>
-		<keyword id="typeCostomerFirstName">
-			<locator>xpath</locator>
-			<value>//*[@Name='Customer First Name']/following-sibling::*[@ClassName='TextBox']</value>
-		</keyword>
-		<keyword id="searchContract">
-			<locator>xpath</locator>
-			<value>//*[@Name='MaterialTabControl']//*[@ClassName='ScrollViewer']//*[@Name='Search']</value>
-		</keyword>
-		<keyword id="clickCancelButton">
-			<locator>Name</locator>
-			<value>Cancel</value>
 		</keyword>
 		<keyword id="selectInitiatedBy">
 			<locator>xpath</locator>
@@ -136,6 +44,10 @@
 		<keyword id="selectCancelReason">
 			<locator>xpath</locator>
 			<value>//*[@Name='Cancel Reason:']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="getMiles">
+			<locator>xpath</locator>
+			<value>//*[@ClassName='ScrollViewer']//*[@Name='Sale Mileage']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="enterCancelMiles">
 			<locator>xpath</locator>
@@ -149,33 +61,49 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='Date Received:']/following-sibling::*[1]</value>
 		</keyword>
-		<keyword id="getMiles">
-			<locator>xpath</locator>
-			<value>//*[@ClassName='ScrollViewer']//*[@Name='Sale Mileage']/following-sibling::*[1]</value>
-		</keyword>
 		<keyword id="clickCalculate">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='BtnCalculate']</value>
+		</keyword>
+		<keyword id="checkAuthorize">
+			<locator>xpath</locator>			
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_CertNumber']</value>
 		</keyword>
 		<keyword id="clickOK">
 			<locator>Name</locator>
 			<value>OK</value>
 		</keyword>
-		<keyword id="clickAuthorize">
-			<locator>Name</locator>
-			<value>Authorize</value>
-		</keyword>
-		<keyword id="testRemitance">
+		<keyword id="typeCostomerFirstName">
 			<locator>xpath</locator>
-			<value>//*[@AutomationId='RemittanceDataGrid']//*[@Name='Remittance#']//*[@AutomationId='TextBlockLite']</value>
+			<value>//*[@Name='Customer First Name']/following-sibling::*[@ClassName='TextBox']</value>
+		</keyword>
+		<keyword id="inValidPayee">
+			<locator>Name</locator>
+			<value>Invalid Payee information</value>
+		</keyword>
+		<keyword id="overRideRules">
+			<locator>Name</locator>
+			<value>Override Rules</value>
+		</keyword>
+		<keyword id="refundpercent">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Refund%']/following-sibling::*[@ClassName='TextBox'])[2]</value>
+		</keyword>
+		<keyword id="cancelFee">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Cancel Fee:']/following-sibling::*[@ClassName='TextBox'])[2]</value>
 		</keyword>
 		<keyword id="selectPayee">
 			<locator>xpath</locator>
 			<value>//*[@Name='Payee:']/following-sibling::*[1]</value>
 		</keyword>
-		<keyword id="notePad">
+		<keyword id="clickAuthorize">
+			<locator>Name</locator>
+			<value>Authorize</value>
+		</keyword>
+		<keyword id="minimizeAll">
 			<locator>xpath</locator>
-			<value>/Window/Edit</value>
+			<value>//*[@ClassName='Expander']</value>
 		</keyword>
 	</Cancellation>
 </Ocean>

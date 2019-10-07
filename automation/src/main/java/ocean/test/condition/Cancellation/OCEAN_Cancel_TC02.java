@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.fail;
 
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import ocean.com.main.Suite;
@@ -112,8 +113,73 @@ public class OCEAN_Cancel_TC02 extends Suite {
 		} else {
 			fail();
 		}
-		System.out.println("done");
+	}
 
+	@Test(dataProvider = "cancelContractCalculateVerify", dataProviderClass = DataProviderClass.class)
+	public void cancelContractCalculationVerification(String contractId, String cancdd) {
+		Boolean flag1 = true;
+		String cancelDate = "09-09-2019";
+		String dateReceived = "09-09-2019";
+		click("clickCancellationTab");
+		click("mailservice");
+		click("clearContract");
+		type("typeContractId", contractId);
+		click("searchContract");
+		String stateofbutton = checkEnableDisable("clickCancelButton");
+		if (stateofbutton.toLowerCase().equals("true")) {
+			click("clickCancelButton");
+			type("selectInitiatedBy", "Dealer");
+			type("selectCancelReason", "Repossession");
+			//// Get Cancel Mile
+			String miles = getValue("getMiles");
+			int milee = 0;
+			milee = Integer.parseInt(miles) + 2214;
+			miles = Integer.toString(milee);
+			type("enterCancelMiles", miles);
+			type("enterCancelDate", cancelDate);
+			type("enterDateReceived", dateReceived);
+			click("clickCalculate");
+			click("clickOK");
+			if (cancdd.toLowerCase().equalsIgnoreCase("cancel")) {
+				Boolean flag = false;
+				click("overRideRules");
+				String refundpercent = getValue("refundpercent");
+				String cancelFee = getValue("cancelFee");
+				float refundpercents = 0;
+				refundpercents = Float.valueOf(refundpercent).floatValue() - 6;
+				int abc = (int) refundpercents;
+				refundpercent = Integer.toString(abc);
+				type("refundpercent", refundpercent);
+				type("cancelFee", "96");
+				takeScreenshot();
+				click("clickCalculate");
+				click("clickOK");
+				click("clickCalculate");
+				click("clickOK");
+				String refundpercentCompare1 = getValue("refundpercent");
+				String cancelFee1 = getValue("cancelFee");
+				if (refundpercent.toLowerCase().equals(refundpercentCompare1.toLowerCase())
+						&& cancelFee.toLowerCase().equals(cancelFee1.toLowerCase())) {
+					flag = true;
+				}
+				assertEquals(flag, flag1);
+			}
+
+			else {
+				Boolean flag = false;
+				click("overRideRules");
+				type("cancelFee", "85");
+				type("selectPayee", "AUL");
+				takeScreenshot();
+				click("clickCalculate");
+				click("clickOK");
+				assertEquals(flag, flag1);
+			}
+
+		} else {
+			fail();
+		}
+		System.out.println("done");
 	}
 
 }
