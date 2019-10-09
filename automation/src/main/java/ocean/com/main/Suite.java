@@ -59,25 +59,24 @@ public class Suite extends ReadData {
 	public void setup(ITestContext context) {
 
 		//// Path of ocean application
-		String path = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
+		String oceanApplicationPath = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
 
-	
 		//// Code to open application and wait till application is stable before
 		//// attaching win app session to ocean
 		try {
 			/*
 			Runtime runtime = Runtime.getRuntime();
 			try {
-				System.out.println(path);
+				System.out.println(oceanApplicationPath);
 				System.out.println("Ocean Application starting");
-				runtime.exec(path);
-				System.out.println(path);
+				runtime.exec(oceanApplicationPath);
+				System.out.println(oceanApplicationPath);
 				System.out.println("Ocean Application Started Waiting to application to boot");
 				Thread.sleep(500000);
 			} catch (Exception e) {
 				// do nothing
-			}*/
-			
+			}
+			*/
 
 			//// Read xal, is uses to read object repository and save in local variable
 			readXML(currentDir + "\\Repository\\OR.xml");
@@ -91,8 +90,8 @@ public class Suite extends ReadData {
 			String device = InetAddress.getLocalHost().getHostName();
 			System.out.println(device);
 			appCapabilities.setCapability("deviceName", device);
-			System.out.println(path);
-			appCapabilities.setCapability("app", path);
+			System.out.println(oceanApplicationPath);
+			appCapabilities.setCapability("app", oceanApplicationPath);
 
 			//// win app driver sesison attached successfully
 			windriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
