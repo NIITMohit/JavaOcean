@@ -13,6 +13,10 @@
 			<locator>Name</locator>
 			<value>Clear</value>
 		</keyword>
+		<keyword id="textMessage">
+			<locator>Name</locator>
+			<value>Cancelation fee exceeds refund</value>
+		</keyword>
 		<keyword id="typeContractId">
 			<locator>xpath</locator>
 			<value>//*[@Name='Contract Number']/following-sibling::*[@ClassName='TextBox']</value>

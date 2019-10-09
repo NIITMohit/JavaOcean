@@ -12,7 +12,7 @@ import ocean.common.DataProviderClass;
 
 public class OCEAN_Cancel_TC02 extends Suite {
 
-	@Test(priority = 1, dataProvider = "SearchContract", dataProviderClass = DataProviderClass.class)
+	@Test(priority = 2, dataProvider = "SearchContract", dataProviderClass = DataProviderClass.class)
 	public void cancelContract(String contractId, String contractStatus) throws Exception {
 		click("clickCancellationTab");
 		click("mailservice");
@@ -50,7 +50,7 @@ public class OCEAN_Cancel_TC02 extends Suite {
 		}
 	}
 
-	@Test(priority = 2, dataProvider = "SearchContractonOverRide", dataProviderClass = DataProviderClass.class)
+	@Test(priority = 1, dataProvider = "SearchContractonOverRide", dataProviderClass = DataProviderClass.class)
 	public void cancelContractOverRideRules(String contractId, String Rules) throws InterruptedException {
 		String cancelDate = "05-08-2019";
 		String dateReceived = "08-08-2019";
@@ -105,7 +105,6 @@ public class OCEAN_Cancel_TC02 extends Suite {
 				type("refundpercent", refundpercent);
 				type("cancelFee", "2000");
 				click("clickCalculate");
-				Thread.sleep(3000);
 				String messageFromToast = getValue("textMessage");
 				takeScreenshot();
 				click("clickOK");
