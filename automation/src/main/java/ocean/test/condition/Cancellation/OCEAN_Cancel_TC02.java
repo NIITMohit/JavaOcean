@@ -51,7 +51,7 @@ public class OCEAN_Cancel_TC02 extends Suite {
 	}
 
 	@Test(dataProvider = "SearchContractonOverRide", dataProviderClass = DataProviderClass.class)
-	public void cancelContractOverRideRules(String contractId, String Rules) {
+	public void cancelContractOverRideRules(String contractId, String Rules) throws InterruptedException {
 		String cancelDate = "05-08-2019";
 		String dateReceived = "08-08-2019";
 		click("clickCancellationTab");
@@ -82,7 +82,7 @@ public class OCEAN_Cancel_TC02 extends Suite {
 				takeScreenshot();
 				click("clickOK");
 				click("overRideRules");
-				type("selectPayee", "Default");
+				type("selectPayee", "Primary Account");
 				String refundpercent = getValue("refundpercent");
 				float refundpercents = 0;
 				refundpercents = Float.valueOf(refundpercent).floatValue() - 6;
@@ -105,6 +105,7 @@ public class OCEAN_Cancel_TC02 extends Suite {
 				type("refundpercent", refundpercent);
 				type("cancelFee", "2000");
 				click("clickCalculate");
+				Thread.sleep(3000);
 				String messageFromToast = getValue("textMessage");
 				takeScreenshot();
 				click("clickOK");
