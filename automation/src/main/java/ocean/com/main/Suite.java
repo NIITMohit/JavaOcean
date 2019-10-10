@@ -76,9 +76,9 @@ public class Suite extends ReadData {
 				Thread.sleep(500000);
 			} catch (Exception e) {
 				// do nothing
-			}
+			}*/
 			
-*/
+
 			//// Read xal, is uses to read object repository and save in local variable
 			readXML(currentDir + "\\Repository\\OR.xml");
 
