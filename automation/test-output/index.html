@@ -102,12 +102,12 @@
                     <div class="method-list-content failed suite-Ocean">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.Cancellation.OCEAN_Cancel_TC02" hash-for-method="cancelContractOverRideRules(GVEDRVSQ, positive)">cancelContractOverRideRules(GVEDRVSQ, positive)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO" hash-for-method="cancelContractCalculationVerification(DS505472A9, cancel)">cancelContractCalculationVerification(DS505472A9, cancel)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.Cancellation.OCEAN_Cancel_TC02" hash-for-method="cancelContractOverRideRules(GVEDRVSQ, negative)">cancelContractOverRideRules(GVEDRVSQ, negative)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO" hash-for-method="cancelContractCalculationVerification(DS505472A9, customer)">cancelContractCalculationVerification(DS505472A9, customer)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Ocean -->
@@ -125,36 +125,30 @@
           <div class="suite-Ocean-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">ocean.test.condition.Cancellation.OCEAN_Cancel_TC02</span>
+              <span class="class-name">ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="cancelContractOverRideRules(GVEDRVSQ, positive)">
-                  </a> <!-- cancelContractOverRideRules(GVEDRVSQ, positive) -->
-                  <span class="method-name">cancelContractOverRideRules</span>
-                  <span class="parameters">(GVEDRVSQ, positive)</span>
-                  <div class="stack-trace">java.lang.NumberFormatException: For input string: &quot;88.60&quot;
-	at java.lang.NumberFormatException.forInputString(Unknown Source)
-	at java.lang.Integer.parseInt(Unknown Source)
-	at java.lang.Integer.parseInt(Unknown Source)
-	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:90)
-... Removed 25 stack frames
+                  <a name="cancelContractCalculationVerification(DS505472A9, cancel)">
+                  </a> <!-- cancelContractCalculationVerification(DS505472A9, cancel) -->
+                  <span class="method-name">cancelContractCalculationVerification</span>
+                  <span class="parameters">(DS505472A9, cancel)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:165)
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="cancelContractOverRideRules(GVEDRVSQ, negative)">
-                  </a> <!-- cancelContractOverRideRules(GVEDRVSQ, negative) -->
-                  <span class="method-name">cancelContractOverRideRules</span>
-                  <span class="parameters">(GVEDRVSQ, negative)</span>
-                  <div class="stack-trace">java.lang.NumberFormatException: For input string: &quot;&quot;
-	at java.lang.NumberFormatException.forInputString(Unknown Source)
-	at java.lang.Integer.parseInt(Unknown Source)
-	at java.lang.Integer.parseInt(Unknown Source)
-	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:103)
-... Removed 25 stack frames
+                  <a name="cancelContractCalculationVerification(DS505472A9, customer)">
+                  </a> <!-- cancelContractCalculationVerification(DS505472A9, customer) -->
+                  <span class="method-name">cancelContractCalculationVerification</span>
+                  <span class="parameters">(DS505472A9, customer)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:174)
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -172,7 +166,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Ocean&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Cancellation&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ocean.test.condition.Cancellation.OCEAN_Cancel_TC02&quot;/&gt;
+      &lt;class name=&quot;ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Cancellation --&gt;
 &lt;/suite&gt; &lt;!-- Ocean --&gt;
@@ -214,18 +208,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'cancelContractOverRideRules')
-data.setCell(0, 2, 'ocean.test.condition.Cancellation.OCEAN_Cancel_TC02')
-data.setCell(0, 3, 225326);
+data.setCell(0, 1, 'cancelContractCalculationVerification')
+data.setCell(0, 2, 'ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO')
+data.setCell(0, 3, 252771);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'cancelContractOverRideRules')
-data.setCell(1, 2, 'ocean.test.condition.Cancellation.OCEAN_Cancel_TC02')
-data.setCell(1, 3, 208898);
+data.setCell(1, 1, 'cancelContractCalculationVerification')
+data.setCell(1, 2, 'ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO')
+data.setCell(1, 3, 150971);
 window.suiteTableData['Ocean']= { tableData: data, tableDiv: 'times-div-Ocean'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 minutes</span>
+              <span class="suite-total-time">Total running time: 6 minutes</span>
               <div id="times-div-Ocean">
               </div> <!-- times-div-Ocean -->
             </div> <!-- times-div -->
@@ -251,48 +245,46 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ocean.test.condition.Cancellation.OCEAN_Cancel_TC02</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setup(org.testng.TestRunner@25d0cb3a)</span>
+                <span class="method-name">setup(org.testng.TestRunner@76075d65)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">createParent(org.testng.TestRunner@25d0cb3a)</span>
-                <span class="method-start">6595 ms</span>
+                <span class="method-name">createParent(org.testng.TestRunner@76075d65)</span>
+                <span class="method-start">7198 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
-                <span class="method-name">seee</span>
-                <span class="method-start">6975 ms</span>
+                <span class="method-name">screenshot</span>
+                <span class="method-start">7571 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">cancelContractOverRideRules(GVEDRVSQ, negative)</span>
-                <span class="method-start">8531 ms</span>
+                <span class="method-name">cancelContractCalculationVerification(DS505472A9, cancel)</span>
+                <span class="method-start">7571 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=cancelContractOverRideRules status=FAILURE method=OCEAN_Cancel_TC02.cancelContractO...)</span>
-                <span class="method-start">217434 ms</span>
+                <span class="method-name">tearDown([TestResult name=cancelContractCalculationVerification status=FAILURE method=OCEAN_Cancel_TCDEMO.can...)</span>
+                <span class="method-start">260344 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">seee</span>
-                <span class="method-start">220726 ms</span>
+                <span class="method-name">screenshot</span>
+                <span class="method-start">260684 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">cancelContractOverRideRules(GVEDRVSQ, positive)</span>
-                <span class="method-start">222148 ms</span>
+                <span class="method-name">cancelContractCalculationVerification(DS505472A9, customer)</span>
+                <span class="method-start">260684 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=cancelContractOverRideRules status=FAILURE method=OCEAN_Cancel_TC02.cancelContractO...)</span>
-                <span class="method-start">447476 ms</span>
+                <span class="method-name">tearDown([TestResult name=cancelContractCalculationVerification status=FAILURE method=OCEAN_Cancel_TCDEMO.can...)</span>
+                <span class="method-start">411657 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">tearDown(org.testng.TestRunner@25d0cb3a)</span>
-                <span class="method-start">464905 ms</span>
+                <span class="method-name">tearDown(org.testng.TestRunner@76075d65)</span>
+                <span class="method-start">411811 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

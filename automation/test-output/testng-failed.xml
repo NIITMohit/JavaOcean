@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Ocean]">
   <test thread-count="5" name="Cancellation(failed)">
     <classes>
-      <class name="ocean.test.condition.Cancellation.OCEAN_Cancel_TC02">
+      <class name="ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO">
         <methods>
           <include name="createParent"/>
           <include name="setup"/>
+          <include name="screenshot"/>
           <include name="updateExcel"/>
           <include name="tearDown"/>
           <include name="tearDown"/>
-          <include name="cancelContractOverRideRules" invocation-numbers="0 1"/>
-          <include name="seee"/>
+          <include name="cancelContractCalculationVerification" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- ocean.test.condition.Cancellation.OCEAN_Cancel_TC02 -->
+      </class> <!-- ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO -->
     </classes>
   </test> <!-- Cancellation(failed) -->
 </suite> <!-- Failed suite [Ocean] -->

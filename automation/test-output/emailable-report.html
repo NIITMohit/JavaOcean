@@ -9,28 +9,19 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Ocean</th></tr>
-<tr><td><a href="#t0">Cancellation</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">457,800</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Cancellation</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">404,596</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Ocean</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Cancellation &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="2">ocean.test.condition.Cancellation.OCEAN_Cancel_TC02</td><td><a href="#m0">tearDown</a></td><td rowspan="1">1569315913298</td><td rowspan="1">32</td></tr><tr class="failedeven"><td><a href="#m1">updateExcel</a></td><td rowspan="1">1569315912786</td><td rowspan="1">0</td></tr><tr><th colspan="4">Cancellation &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">ocean.test.condition.Cancellation.OCEAN_Cancel_TC02</td><td><a href="#m2">cancelContractOverRideRules</a></td><td rowspan="2">1569315670541</td><td rowspan="2">225326</td></tr><tr class="failedeven"><td><a href="#m3">cancelContractOverRideRules</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Ocean</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Cancellation &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO</td><td><a href="#m0">updateExcel</a></td><td rowspan="1">1570782819318</td><td rowspan="1">0</td></tr><tr><th colspan="4">Cancellation &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO</td><td><a href="#m1">cancelContractCalculationVerification</a></td><td rowspan="2">1570782415098</td><td rowspan="2">252771</td></tr><tr class="failedeven"><td><a href="#m2">cancelContractCalculationVerification</a></td></tr></tbody>
 </table>
-<h2>Cancellation</h2><h3 id="m0">ocean.test.condition.Cancellation.OCEAN_Cancel_TC02#tearDown</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@25d0cb3a</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at ocean.com.main.Suite.tearDown(Suite.java:93)
-... Removed 20 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">ocean.test.condition.Cancellation.OCEAN_Cancel_TC02#updateExcel</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+<h2>Cancellation</h2><h3 id="m0">ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO#updateExcel</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
 Can inject only one of &lt;ITestContext, XmlTest&gt; into a @AfterClass annotated updateExcel.
 For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
 ... Removed 23 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">ocean.test.condition.Cancellation.OCEAN_Cancel_TC02#cancelContractOverRideRules</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>GVEDRVSQ</td><td>positive</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NumberFormatException: For input string: &quot;88.60&quot;
-	at java.lang.NumberFormatException.forInputString(Unknown Source)
-	at java.lang.Integer.parseInt(Unknown Source)
-	at java.lang.Integer.parseInt(Unknown Source)
-	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:90)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">ocean.test.condition.Cancellation.OCEAN_Cancel_TC02#cancelContractOverRideRules</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>GVEDRVSQ</td><td>negative</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NumberFormatException: For input string: &quot;&quot;
-	at java.lang.NumberFormatException.forInputString(Unknown Source)
-	at java.lang.Integer.parseInt(Unknown Source)
-	at java.lang.Integer.parseInt(Unknown Source)
-	at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:103)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO#cancelContractCalculationVerification</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>DS505472A9</td><td>cancel</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:165)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO#cancelContractCalculationVerification</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>DS505472A9</td><td>customer</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:174)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

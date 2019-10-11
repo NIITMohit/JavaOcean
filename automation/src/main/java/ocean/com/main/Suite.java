@@ -65,6 +65,7 @@ public class Suite extends ReadData {
 		//// attaching win app session to ocean
 		try {
 			Runtime runtime = Runtime.getRuntime();
+			/*
 			try {
 				System.out.println(oceanApplicationPath);
 				System.out.println("Ocean Application starting");
@@ -75,7 +76,7 @@ public class Suite extends ReadData {
 			} catch (Exception e) {
 				// do nothing
 			}
-
+*/
 			//// Read xml, is uses to read object repository and save in local variable
 			readXML(currentDir + "\\Repository\\OR.xml");
 

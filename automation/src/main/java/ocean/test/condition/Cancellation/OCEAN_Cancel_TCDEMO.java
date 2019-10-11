@@ -12,14 +12,14 @@ import ocean.common.DataProviderClass;
 
 public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 
-	@Test(priority = 2, dataProvider = "clickSearchContract", dataProviderClass = DataProviderClass.class)
+	@Test(priority = 1, dataProvider = "clickSearchContract", dataProviderClass = DataProviderClass.class)
 	public void cancelContract(String contractId, String contractStatus) throws Exception {
 		click("clickCancellationTab");
 		click("clickMailservice");
 		click("clickClear");
 		type("typeContractId", contractId);
 		click("searchContractButton");
-		String stateofbutton = checkEnableDisable("searchContractButton");
+		String stateofbutton = checkEnableDisable("clickCancelButton");
 		click("swipeRight");
 		String status = getValue("statusOfContract");
 		takeScreenshot();
@@ -28,7 +28,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 		if (!status.toLowerCase().equals("processed") && stateofbutton.toLowerCase().equals("false"))
 			assertEquals(stateofbutton, "false");
 		else if (status.toLowerCase().equals("processed") && stateofbutton.toLowerCase().equals("true")) {
-			click("searchContractButton");
+			click("clickCancelButton");
 			type("selectInitiatedBy", "Dealer");
 			type("selectCancelReason", "Repossession");
 			String miles = getValue("getMiles");
@@ -42,7 +42,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 			click("clickOK");
 			type("selectPayee", "AUL");
 			click("clickAuthorize");
-			String stateofbutton1 = checkEnableDisable("searchContractButton");
+			String stateofbutton1 = checkEnableDisable("clickCancelButton");
 			click("checkAuthorize");
 			assertNotEquals(stateofbutton, stateofbutton1);
 		} else {
@@ -50,7 +50,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 		}
 	}
 
-	@Test(priority = 1, dataProvider = "clickSearchContractonOverRide", dataProviderClass = DataProviderClass.class)
+	@Test(priority = 2, dataProvider = "clickSearchContractonOverRide", dataProviderClass = DataProviderClass.class)
 	public void cancelContractoverRideRulesCheckBox(String contractId, String Rules) throws InterruptedException {
 		String cancelDate = "05-08-2019";
 		String dateReceived = "08-08-2019";
@@ -58,10 +58,10 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 		click("clickMailservice");
 		click("clickClear");
 		type("typeCustomerFirstName", contractId);
-		click("clickSearchContract");
-		String stateofbutton = checkEnableDisable("searchContractButton");
+		click("searchContractButton");
+		String stateofbutton = checkEnableDisable("clickCancelButton");
 		if (stateofbutton.toLowerCase().equals("true")) {
-			click("searchContractButton");
+			click("clickCancelButton");
 			type("selectInitiatedBy", "Dealer");
 			type("selectCancelReason", "Repossession");
 			//// Get Cancel Mile
@@ -83,12 +83,12 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 				click("clickOK");
 				click("overRideRulesCheckBox");
 				type("selectPayee", "Primary Account");
-				String refundpercent = getValue("refundPercent");
-				float refundpercents = 0;
-				refundpercents = Float.valueOf(refundpercent).floatValue() - 6;
-				int abc = (int) refundpercents;
-				refundpercent = Integer.toString(abc);
-				type("refundPercent", refundpercent);
+				String refundPercent = getValue("refundPercent");
+				float refundPercents = 0;
+				refundPercents = Float.valueOf(refundPercent).floatValue() - 6;
+				int abc = (int) refundPercents;
+				refundPercent = Integer.toString(abc);
+				type("refundPercent", refundPercent);
 				// type("cancelFee", "10");
 				click("clickCalculate");
 				click("clickOK");
@@ -124,10 +124,10 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 		click("clickMailservice");
 		click("clickClear");
 		type("typeContractId", contractId);
-		click("clickSearchContract");
-		String stateofbutton = checkEnableDisable("searchContractButton");
+		click("searchContractButton");
+		String stateofbutton = checkEnableDisable("clickCancelButton");
 		if (stateofbutton.toLowerCase().equals("true")) {
-			click("searchContractButton");
+			click("clickCancelButton");
 			type("selectInitiatedBy", "Dealer");
 			type("selectCancelReason", "Customer Request");
 			//// Get Cancel Mile

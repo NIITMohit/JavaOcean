@@ -2,60 +2,58 @@
 <testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="457800" started-at="2019-09-24T08:57:34Z" finished-at="2019-09-24T09:05:12Z">
+  <suite name="Ocean" duration-ms="404596" started-at="2019-10-11T08:26:54Z" finished-at="2019-10-11T08:33:39Z">
     <groups>
     </groups>
-    <test name="Cancellation" duration-ms="457800" started-at="2019-09-24T08:57:34Z" finished-at="2019-09-24T09:05:12Z">
-      <class name="ocean.test.condition.Cancellation.OCEAN_Cancel_TC02">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="setup" is-config="true" duration-ms="6594" started-at="2019-09-24T08:57:28Z" finished-at="2019-09-24T08:57:34Z">
+    <test name="Cancellation" duration-ms="404596" started-at="2019-10-11T08:26:54Z" finished-at="2019-10-11T08:33:39Z">
+      <class name="ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="setup" is-config="true" duration-ms="7197" started-at="2019-10-11T08:26:47Z" finished-at="2019-10-11T08:26:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25d0cb3a]]>
+                <![CDATA[org.testng.TestRunner@76075d65]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="createParent" is-config="true" duration-ms="3" started-at="2019-09-24T08:57:34Z" finished-at="2019-09-24T08:57:34Z">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="createParent" is-config="true" duration-ms="3" started-at="2019-10-11T08:26:54Z" finished-at="2019-10-11T08:26:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25d0cb3a]]>
+                <![CDATA[org.testng.TestRunner@76075d65]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="seee()[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="seee" is-config="true" duration-ms="1556" started-at="2019-09-24T08:57:35Z" finished-at="2019-09-24T08:57:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- seee -->
-        <test-method status="FAIL" signature="cancelContractOverRideRules(java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="cancelContractOverRideRules" duration-ms="208898" started-at="2019-09-24T08:57:36Z" data-provider="SearchContractonOverRide" finished-at="2019-09-24T09:01:05Z">
+        <test-method status="FAIL" signature="cancelContractCalculationVerification(java.lang.String, java.lang.String)[pri:3, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="cancelContractCalculationVerification" duration-ms="252771" started-at="2019-10-11T08:26:55Z" data-provider="cancelContractCalculateVerify" finished-at="2019-10-11T08:31:07Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GVEDRVSQ]]>
+                <![CDATA[DS505472A9]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[negative]]>
+                <![CDATA[cancel]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NumberFormatException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[For input string: ""]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NumberFormatException: For input string: ""
-at java.lang.NumberFormatException.forInputString(Unknown Source)
-at java.lang.Integer.parseInt(Unknown Source)
-at java.lang.Integer.parseInt(Unknown Source)
-at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:103)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:442)
+at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:165)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -83,53 +81,59 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NumberFormatException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cancelContractOverRideRules -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="tearDown" is-config="true" duration-ms="3292" started-at="2019-09-24T09:01:05Z" finished-at="2019-09-24T09:01:09Z">
+        </test-method> <!-- cancelContractCalculationVerification -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-10-11T08:26:55Z" finished-at="2019-10-11T08:26:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="tearDown" is-config="true" duration-ms="339" started-at="2019-10-11T08:31:07Z" finished-at="2019-10-11T08:31:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=cancelContractOverRideRules status=FAILURE method=OCEAN_Cancel_TC02.cancelContractOverRideRules(java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25] output={null}]]]>
+                <![CDATA[[TestResult name=cancelContractCalculationVerification status=FAILURE method=OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(java.lang.String, java.lang.String)[pri:3, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@25d0cb3a]]>
+                <![CDATA[org.testng.TestRunner@76075d65]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="seee()[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="seee" is-config="true" duration-ms="1422" started-at="2019-09-24T09:01:09Z" finished-at="2019-09-24T09:01:10Z">
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-10-11T08:31:08Z" finished-at="2019-10-11T08:31:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- seee -->
-        <test-method status="FAIL" signature="cancelContractOverRideRules(java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="cancelContractOverRideRules" duration-ms="225326" started-at="2019-09-24T09:01:10Z" data-provider="SearchContractonOverRide" finished-at="2019-09-24T09:04:55Z">
+        </test-method> <!-- screenshot -->
+        <test-method status="FAIL" signature="cancelContractCalculationVerification(java.lang.String, java.lang.String)[pri:3, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="cancelContractCalculationVerification" duration-ms="150971" started-at="2019-10-11T08:31:08Z" data-provider="cancelContractCalculateVerify" finished-at="2019-10-11T08:33:39Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GVEDRVSQ]]>
+                <![CDATA[DS505472A9]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[positive]]>
+                <![CDATA[customer]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NumberFormatException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[For input string: "88.60"]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NumberFormatException: For input string: "88.60"
-at java.lang.NumberFormatException.forInputString(Unknown Source)
-at java.lang.Integer.parseInt(Unknown Source)
-at java.lang.Integer.parseInt(Unknown Source)
-at ocean.test.condition.Cancellation.OCEAN_Cancel_TC02.cancelContractOverRideRules(OCEAN_Cancel_TC02.java:90)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:442)
+at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:174)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -157,27 +161,27 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NumberFormatException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cancelContractOverRideRules -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="tearDown" is-config="true" duration-ms="16916" started-at="2019-09-24T09:04:55Z" finished-at="2019-09-24T09:05:12Z">
+        </test-method> <!-- cancelContractCalculationVerification -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="tearDown" is-config="true" duration-ms="134" started-at="2019-10-11T08:33:39Z" finished-at="2019-10-11T08:33:39Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=cancelContractOverRideRules status=FAILURE method=OCEAN_Cancel_TC02.cancelContractOverRideRules(java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25] output={null}]]]>
+                <![CDATA[[TestResult name=cancelContractCalculationVerification status=FAILURE method=OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(java.lang.String, java.lang.String)[pri:3, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@25d0cb3a]]>
+                <![CDATA[org.testng.TestRunner@76075d65]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="updateExcel(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="updateExcel" is-config="true" duration-ms="0" started-at="2019-09-24T09:05:12Z" finished-at="2019-09-24T09:05:12Z">
+        <test-method status="FAIL" signature="updateExcel(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="updateExcel" is-config="true" duration-ms="0" started-at="2019-10-11T08:33:39Z" finished-at="2019-10-11T08:33:39Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
@@ -217,45 +221,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateExcel -->
-        <test-method status="FAIL" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TC02@6c64cb25]" name="tearDown" is-config="true" duration-ms="32" started-at="2019-09-24T09:05:13Z" finished-at="2019-09-24T09:05:13Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="tearDown" is-config="true" duration-ms="38" started-at="2019-10-11T08:33:39Z" finished-at="2019-10-11T08:33:39Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@25d0cb3a]]>
+                <![CDATA[org.testng.TestRunner@76075d65]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at ocean.com.main.Suite.tearDown(Suite.java:93)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:425)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ocean.test.condition.Cancellation.OCEAN_Cancel_TC02 -->
+      </class> <!-- ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO -->
     </test> <!-- Cancellation -->
   </suite> <!-- Ocean -->
 </testng-results>
