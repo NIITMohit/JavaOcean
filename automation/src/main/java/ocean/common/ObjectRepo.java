@@ -16,35 +16,35 @@ public class ObjectRepo {
 	 */
 	public static By fetchOR(String id) {
 
-		String[] abc = Variables.oR.get(id);
+		String[] object = Variables.oR.get(id);
 
-		switch (abc[0].toLowerCase()) {
+		switch (object[0].toLowerCase()) {
 		case "id":
-			return By.id(abc[1]);
+			return By.id(object[1]);
 
 		case "name":
-			return By.name(abc[1]);
+			return By.name(object[1]);
 
 		case "classname":
-			return By.className(abc[1]);
+			return By.className(object[1]);
 
 		case "tagname":
-			return By.tagName(abc[1]);
+			return By.tagName(object[1]);
 
 		case "cssselector":
-			return By.cssSelector(abc[1]);
+			return By.cssSelector(object[1]);
 
 		case "linktext":
-			return By.linkText(abc[1]);
+			return By.linkText(object[1]);
 
 		case "partiallinktext":
-			return By.partialLinkText(abc[1]);
+			return By.partialLinkText(object[1]);
 
 		case "xpath":
-			return By.xpath(abc[1]);
+			return By.xpath(object[1]);
 
 		default:
-			return By.xpath(abc[1]);
+			return By.xpath(object[1]);
 
 		}
 

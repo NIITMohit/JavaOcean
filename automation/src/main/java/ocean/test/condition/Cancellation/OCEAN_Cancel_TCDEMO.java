@@ -4,31 +4,31 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.fail;
 
-import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import ocean.com.main.Suite;
+import ocean.common.CommonFunctions;
 import ocean.common.DataProviderClass;
 
-public class OCEAN_Cancel_TC02 extends Suite {
+public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 
-	@Test(priority = 2, dataProvider = "SearchContract", dataProviderClass = DataProviderClass.class)
+	@Test(priority = 2, dataProvider = "clickSearchContract", dataProviderClass = DataProviderClass.class)
 	public void cancelContract(String contractId, String contractStatus) throws Exception {
 		click("clickCancellationTab");
-		click("mailservice");
-		click("clearContract");
+		click("clickMailservice");
+		click("clickClear");
 		type("typeContractId", contractId);
-		click("searchContract");
-		String stateofbutton = checkEnableDisable("clickCancelButton");
-		click("swiperight");
-		String status = getValue("statusofcontract");
+		click("searchContractButton");
+		String stateofbutton = checkEnableDisable("searchContractButton");
+		click("swipeRight");
+		String status = getValue("statusOfContract");
 		takeScreenshot();
-		click("swipeleft");
+		click("swipeLeft");
 		takeScreenshot();
 		if (!status.toLowerCase().equals("processed") && stateofbutton.toLowerCase().equals("false"))
 			assertEquals(stateofbutton, "false");
 		else if (status.toLowerCase().equals("processed") && stateofbutton.toLowerCase().equals("true")) {
-			click("clickCancelButton");
+			click("searchContractButton");
 			type("selectInitiatedBy", "Dealer");
 			type("selectCancelReason", "Repossession");
 			String miles = getValue("getMiles");
@@ -42,7 +42,7 @@ public class OCEAN_Cancel_TC02 extends Suite {
 			click("clickOK");
 			type("selectPayee", "AUL");
 			click("clickAuthorize");
-			String stateofbutton1 = checkEnableDisable("clickCancelButton");
+			String stateofbutton1 = checkEnableDisable("searchContractButton");
 			click("checkAuthorize");
 			assertNotEquals(stateofbutton, stateofbutton1);
 		} else {
@@ -50,18 +50,18 @@ public class OCEAN_Cancel_TC02 extends Suite {
 		}
 	}
 
-	@Test(priority = 1, dataProvider = "SearchContractonOverRide", dataProviderClass = DataProviderClass.class)
-	public void cancelContractOverRideRules(String contractId, String Rules) throws InterruptedException {
+	@Test(priority = 1, dataProvider = "clickSearchContractonOverRide", dataProviderClass = DataProviderClass.class)
+	public void cancelContractoverRideRulesCheckBox(String contractId, String Rules) throws InterruptedException {
 		String cancelDate = "05-08-2019";
 		String dateReceived = "08-08-2019";
 		click("clickCancellationTab");
-		click("mailservice");
-		click("clearContract");
-		type("typeCostomerFirstName", contractId);
-		click("searchContract");
-		String stateofbutton = checkEnableDisable("clickCancelButton");
+		click("clickMailservice");
+		click("clickClear");
+		type("typeCustomerFirstName", contractId);
+		click("clickSearchContract");
+		String stateofbutton = checkEnableDisable("searchContractButton");
 		if (stateofbutton.toLowerCase().equals("true")) {
-			click("clickCancelButton");
+			click("searchContractButton");
 			type("selectInitiatedBy", "Dealer");
 			type("selectCancelReason", "Repossession");
 			//// Get Cancel Mile
@@ -78,34 +78,34 @@ public class OCEAN_Cancel_TC02 extends Suite {
 				type("selectPayee", "BLANK");
 				click("clickAuthorize");
 				// click("yesBox");
-				String info = getValue("inValidPayee");
+				String info = getValue("inValidPayeeErrorMessage");
 				takeScreenshot();
 				click("clickOK");
-				click("overRideRules");
+				click("overRideRulesCheckBox");
 				type("selectPayee", "Primary Account");
-				String refundpercent = getValue("refundpercent");
+				String refundpercent = getValue("refundPercent");
 				float refundpercents = 0;
 				refundpercents = Float.valueOf(refundpercent).floatValue() - 6;
 				int abc = (int) refundpercents;
 				refundpercent = Integer.toString(abc);
-				type("refundpercent", refundpercent);
+				type("refundPercent", refundpercent);
 				// type("cancelFee", "10");
 				click("clickCalculate");
 				click("clickOK");
 				click("clickAuthorize");
-				String stateofbutton1 = checkEnableDisable("clickCancelButton");
+				String stateofbutton1 = checkEnableDisable("searchContractButton");
 				assertNotEquals(stateofbutton, stateofbutton1);
 			} else {
-				click("overRideRules");
-				String refundpercent = getValue("refundpercent");
-				float refundpercents = 0;
-				refundpercents = Float.valueOf(refundpercent).floatValue() - 6;
-				int abc = (int) refundpercents;
-				refundpercent = Integer.toString(abc);
-				type("refundpercent", refundpercent);
+				click("overRideRulesCheckBox");
+				String refundPercent = getValue("refundPercent");
+				float refundPercents = 0;
+				refundPercents = Float.valueOf(refundPercent).floatValue() - 6;
+				int abc = (int) refundPercents;
+				refundPercent = Integer.toString(abc);
+				type("refundPercent", refundPercent);
 				type("cancelFee", "2000");
 				click("clickCalculate");
-				String messageFromToast = getValue("textMessage");
+				String messageFromToast = getValue("textMessageForFeeExceeds");
 				takeScreenshot();
 				click("clickOK");
 				assertEquals(messageFromToast, "Cancelation fee exceeds refund");
@@ -121,13 +121,13 @@ public class OCEAN_Cancel_TC02 extends Suite {
 		String cancelDate = "05-08-2019";
 		String dateReceived = "08-08-2019";
 		click("clickCancellationTab");
-		click("mailservice");
-		click("clearContract");
+		click("clickMailservice");
+		click("clickClear");
 		type("typeContractId", contractId);
-		click("searchContract");
-		String stateofbutton = checkEnableDisable("clickCancelButton");
+		click("clickSearchContract");
+		String stateofbutton = checkEnableDisable("searchContractButton");
 		if (stateofbutton.toLowerCase().equals("true")) {
-			click("clickCancelButton");
+			click("searchContractButton");
 			type("selectInitiatedBy", "Dealer");
 			type("selectCancelReason", "Customer Request");
 			//// Get Cancel Mile
@@ -142,23 +142,23 @@ public class OCEAN_Cancel_TC02 extends Suite {
 			click("clickOK");
 			if (cancdd.toLowerCase().equalsIgnoreCase("cancel")) {
 				Boolean flag = false;
-				click("overRideRules");
-				String refundpercent = getValue("refundpercent");
+				click("overRideRulesCheckBox");
+				String refundPercent = getValue("refundPercent");
 				String cancelFee = getValue("cancelFee");
-				float refundpercents = 0;
-				refundpercents = Float.valueOf(refundpercent).floatValue() - 6;
-				int abc = (int) refundpercents;
-				refundpercent = Integer.toString(abc);
-				type("refundpercent", refundpercent);
+				float refundPercents = 0;
+				refundPercents = Float.valueOf(refundPercent).floatValue() - 6;
+				int abc = (int) refundPercents;
+				refundPercent = Integer.toString(abc);
+				type("refundPercent", refundPercent);
 				type("cancelFee", "96");
 				takeScreenshot();
 				click("clickCalculate");
 				click("clickOK");
 				click("clickCalculate");
 				click("clickOK");
-				String refundpercentCompare1 = getValue("refundpercent");
+				String refundpercentCompare1 = getValue("refundPercent");
 				String cancelFee1 = getValue("cancelFee");
-				if (refundpercent.toLowerCase().equals(refundpercentCompare1.toLowerCase())
+				if (refundPercent.toLowerCase().equals(refundpercentCompare1.toLowerCase())
 						&& cancelFee.toLowerCase().equals(cancelFee1.toLowerCase())) {
 					flag = true;
 				}
@@ -167,8 +167,6 @@ public class OCEAN_Cancel_TC02 extends Suite {
 
 			else {
 				Boolean flag = false;
-				click("overRideRules");
-				type("cancelFee", "85");
 				type("selectPayee", "AUL");
 				takeScreenshot();
 				click("clickCalculate");

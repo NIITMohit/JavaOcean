@@ -23,17 +23,17 @@ public class Variables {
 	public static ExtentHtmlReporter htmlReporter;
 
 	/** Static variable extent - which helps in generating reports */
-	public static ExtentReports extent;
+	public static ExtentReports extentReport;
 
 	/** Static variable windriver - contains driver instance */
 	@SuppressWarnings("rawtypes")
-	public static WindowsDriver windriver;
+	public static WindowsDriver windowsDriver;
 
 	/**
 	 * Static variable screenShota - list of all screenshots associated with single
 	 * test
 	 */
-	public static List<String> screenShota;
+	public static List<String> screenShots;
 
 	/** Static variable mapTest - list of all test parent node */
 	public static HashMap<String, ExtentTest> mapTest;
@@ -48,7 +48,7 @@ public class Variables {
 	public static String reportPath = "";
 
 	/** Static variable ssPath - screenshot folder location */
-	public static String ssPath = "";
+	public static String screenshotPath = "";
 
 	/** Static variable ssPath - 5 sec delay */
 	public static Integer shortWait = 5;

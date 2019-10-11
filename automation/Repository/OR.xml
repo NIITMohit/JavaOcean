@@ -5,15 +5,15 @@
 			<locator>Name</locator>
 			<value>Cancellation</value>
 		</keyword>
-		<keyword id="mailservice">
+		<keyword id="clickMailservice">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Mail Service']</value>
 		</keyword>
-		<keyword id="clearContract">
+		<keyword id="clickClear">
 			<locator>Name</locator>
 			<value>Clear</value>
 		</keyword>
-		<keyword id="textMessage">
+		<keyword id="textMessageForFeeExceeds">
 			<locator>Name</locator>
 			<value>Cancelation fee exceeds refund</value>
 		</keyword>
@@ -21,7 +21,7 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='Contract Number']/following-sibling::*[@ClassName='TextBox']</value>
 		</keyword>
-		<keyword id="searchContract">
+		<keyword id="searchContractButton">
 			<locator>xpath</locator>
 			<value>//*[@Name='MaterialTabControl']//*[@ClassName='ScrollViewer']//*[@Name='Search']	</value>
 		</keyword>
@@ -29,15 +29,15 @@
 			<locator>Name</locator>
 			<value>Cancel</value>
 		</keyword>
-		<keyword id="swiperight">
+		<keyword id="swipeRight">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='PageRight']</value>
 		</keyword>
-			<keyword id="swipeleft">
+			<keyword id="swipeLeft">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='PageLeft']</value>
 		</keyword>
-		<keyword id="statusofcontract">
+		<keyword id="statusOfContract">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@Name='Status']</value>
 		</keyword>
@@ -77,19 +77,19 @@
 			<locator>Name</locator>
 			<value>OK</value>
 		</keyword>
-		<keyword id="typeCostomerFirstName">
+		<keyword id="typeCustomerFirstName">
 			<locator>xpath</locator>
 			<value>//*[@Name='Customer First Name']/following-sibling::*[@ClassName='TextBox']</value>
 		</keyword>
-		<keyword id="inValidPayee">
+		<keyword id="inValidPayeeErrorMessage">
 			<locator>Name</locator>
 			<value>Invalid Payee information</value>
 		</keyword>
-		<keyword id="overRideRules">
+		<keyword id="overRideRulesCheckBox">
 			<locator>Name</locator>
 			<value>Override Rules</value>
 		</keyword>
-		<keyword id="refundpercent">
+		<keyword id="refundPercent">
 			<locator>xpath</locator>
 			<value>(//*[@Name='Refund%']/following-sibling::*[@ClassName='TextBox'])[2]</value>
 		</keyword>
@@ -104,10 +104,6 @@
 		<keyword id="clickAuthorize">
 			<locator>Name</locator>
 			<value>Authorize</value>
-		</keyword>
-		<keyword id="minimizeAll">
-			<locator>xpath</locator>
-			<value>//*[@ClassName='Expander']</value>
 		</keyword>
 	</Cancellation>
 </Ocean>

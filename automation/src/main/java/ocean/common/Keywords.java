@@ -20,9 +20,9 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				@SuppressWarnings("unused")
-				WebDriverWait wait = new WebDriverWait(windriver, 20);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, 20);
 				@SuppressWarnings("unchecked")
-				List<WebElement> eee = windriver.findElements(ObjectRepo.fetchOR(locator));
+				List<WebElement> eee = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
 				for (WebElement webElement : eee) {
 					// Thread.sleep(3000);
 					String abc = webElement.getText();
@@ -54,7 +54,7 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windriver, extraLongWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, extraLongWait);
 				WebElement clickElement = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 				//// Click the web element
@@ -80,7 +80,7 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windriver, extraLongWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, extraLongWait);
 				WebElement typeElement = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 				//// Click the web element
@@ -110,12 +110,12 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windriver, extraLongWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, extraLongWait);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 				@SuppressWarnings("unchecked")
 				//// Find list of web elements
-				List<WebElement> we = windriver.findElements(ObjectRepo.fetchOR(locator));
-				for (WebElement webElement : we) {
+				List<WebElement> listWebElement = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
+				for (WebElement webElement : listWebElement) {
 					//// get value and return the same
 					abc = webElement.getText();
 					break;
@@ -131,31 +131,6 @@ public class Keywords extends Variables {
 		return abc;
 	}
 
-	public void minimizeAll(String locator) {
-		for (int i = 0; i < 4; i++) {
-			try {
-				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windriver, extraLongWait);
-				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
-				@SuppressWarnings("unchecked")
-				//// Find list of web elements
-				List<WebElement> we = windriver.findElements(ObjectRepo.fetchOR(locator));
-				for (WebElement webElement : we) {
-					//// get value and return the same
-					String abc = webElement.getAttribute("ExpandCollapseState");
-					
-						webElement.click();
-				}
-				break;
-			} catch (Exception e) {
-				if (i < 3)
-					continue;
-				else
-					throw e;
-			}
-		}
-	}
-
 	/**
 	 * checkEnableDisable keyword , this function is used to get state of object,
 	 * and identify weather it is enable or disable
@@ -168,7 +143,7 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windriver, extraLongWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, extraLongWait);
 				WebElement typeElement = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 

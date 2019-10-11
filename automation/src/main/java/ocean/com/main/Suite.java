@@ -64,8 +64,6 @@ public class Suite extends ReadData {
 		//// Code to open application and wait till application is stable before
 		//// attaching win app session to ocean
 		try {
-		
-			/*
 			Runtime runtime = Runtime.getRuntime();
 			try {
 				System.out.println(oceanApplicationPath);
@@ -76,10 +74,9 @@ public class Suite extends ReadData {
 				Thread.sleep(500000);
 			} catch (Exception e) {
 				// do nothing
-			}*/
-			
+			}
 
-			//// Read xal, is uses to read object repository and save in local variable
+			//// Read xml, is uses to read object repository and save in local variable
 			readXML(currentDir + "\\Repository\\OR.xml");
 
 			//// Setting desired capabilities to help appium understand which platform and
@@ -95,7 +92,7 @@ public class Suite extends ReadData {
 			appCapabilities.setCapability("app", oceanApplicationPath);
 
 			//// win app driver sesison attached successfully
-			windriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
+			windowsDriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
 
 			//// create report folder in running directory
 			createReportFolder();
@@ -114,7 +111,7 @@ public class Suite extends ReadData {
 	@AfterSuite
 	public void tearDown(ITestContext context) {
 		//// Flush extent report
-		extent.flush();
+		extentReport.flush();
 	}
 
 	/**
@@ -127,9 +124,9 @@ public class Suite extends ReadData {
 		htmlReporter = new ExtentHtmlReporter(reportPath + "\\" + "Report" + ".html");
 		htmlReporter.config().setDocumentTitle("Ocean Automation Report");
 		htmlReporter.config().setTheme(Theme.DARK);
-		extent = new ExtentReports();
-		extent.config();
-		extent.attachReporter(htmlReporter);
+		extentReport = new ExtentReports();
+		extentReport.config();
+		extentReport.attachReporter(htmlReporter);
 	}
 
 	/**
@@ -139,8 +136,8 @@ public class Suite extends ReadData {
 	@BeforeTest
 	public void createParent(ITestContext context) {
 		String testName = context.getCurrentXmlTest().getName();
-		ExtentTest test1 = extent.createTest(testName);
-		mapTest.put(testName, test1);
+		ExtentTest parentTest = extentReport.createTest(testName);
+		mapTest.put(testName, parentTest);
 	}
 
 	/**
@@ -149,7 +146,7 @@ public class Suite extends ReadData {
 	 */
 	@BeforeMethod
 	public void screenshot() {
-		screenShota = new ArrayList<String>();
+		screenShots = new ArrayList<String>();
 	}
 
 	/**
@@ -159,11 +156,11 @@ public class Suite extends ReadData {
 	public void tearDown(ITestResult result, ITestContext context) throws IOException {
 		try {
 			String Statuss = "";
-			String abc = this.getClass().getName();
-			abc = abc.substring(this.getClass().getName().lastIndexOf('.') + 1, this.getClass().getName().length());
+			String className = this.getClass().getName();
+			className = className.substring(this.getClass().getName().lastIndexOf('.') + 1, this.getClass().getName().length());
 			//// Create node with name similar to test case and attached with test parent
 			ExtentTest node1 = mapTest.get(context.getCurrentXmlTest().getName())
-					.createNode(abc + "." + result.getName());
+					.createNode(className + "." + result.getName());
 			//// in case of failure
 			if (result.getStatus() == ITestResult.FAILURE) {
 				Statuss = "fail";
@@ -185,12 +182,12 @@ public class Suite extends ReadData {
 			}
 
 			//// Append all screenshot with the node
-			for (String path : screenShota) {
+			for (String path : screenShots) {
 				node1.addScreenCaptureFromPath(path);
 			}
 			int size = statusSheet.size() + 1;
 			statusSheet.put(size, Statuss);
-			extent.flush();
+			extentReport.flush();
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
@@ -202,10 +199,10 @@ public class Suite extends ReadData {
 	public void takeScreenshot() {
 		try {
 			String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-			File scrFile = ((TakesScreenshot) windriver).getScreenshotAs(OutputType.FILE);
-			String abc = ssPath + "\\" + timeStamp + ".png";
+			File scrFile = ((TakesScreenshot) windowsDriver).getScreenshotAs(OutputType.FILE);
+			String abc = screenshotPath + "\\" + timeStamp + ".png";
 			FileUtils.copyFile(scrFile, new File(abc));
-			screenShota.add(abc);
+			screenShots.add(abc);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -217,9 +214,8 @@ public class Suite extends ReadData {
 	@AfterClass
 	public void updateExcel(ITestResult result, ITestContext context) {
 		try {
-
-			String fileaname = currentDir + "Repository\\Cancellation - Copy.xlsx";
-			FileInputStream inputStream = new FileInputStream(fileaname);
+			String filename = currentDir + "Repository\\Cancellation - Copy.xlsx";
+			FileInputStream inputStream = new FileInputStream(filename);
 			Workbook workbook = WorkbookFactory.create(inputStream);
 
 			Sheet sheet = workbook.getSheetAt(0);
@@ -238,7 +234,7 @@ public class Suite extends ReadData {
 			}
 
 			inputStream.close();
-			FileOutputStream outputStream = new FileOutputStream(fileaname);
+			FileOutputStream outputStream = new FileOutputStream(filename);
 			workbook.write(outputStream);
 			workbook.close();
 			outputStream.close();
@@ -262,10 +258,10 @@ public class Suite extends ReadData {
 	 * Creates the report folder.
 	 */
 	public void createReportFolder() {
-		String dir = currentDir + "\\Repository\\Reports";
+		String reportFolder = currentDir + "\\Repository\\Reports";
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		String folder = Long.toString(timestamp.getTime());
-		reportPath = dir + "\\" + folder;
+		reportPath = reportFolder + "\\" + folder;
 		File file = new File(reportPath);
 		if (!file.exists()) {
 			file.mkdir();
@@ -279,9 +275,9 @@ public class Suite extends ReadData {
 	 */
 	public void createscreenshotfolder() {
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		String folder = Long.toString(timestamp.getTime());
-		ssPath = reportPath + "\\" + folder;
-		File file = new File(ssPath);
+		String screenshotFolder = Long.toString(timestamp.getTime());
+		screenshotPath = reportPath + "\\" + screenshotFolder;
+		File file = new File(screenshotPath);
 		if (!file.exists()) {
 			file.mkdir();
 		}

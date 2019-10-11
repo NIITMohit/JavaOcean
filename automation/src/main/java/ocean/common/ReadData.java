@@ -29,10 +29,10 @@ public class ReadData extends Keywords {
 	 */
 	public void readXML(String filePath) throws Exception {
 		try {
-			File fXmlFile = new File(filePath);
+			File ORXmlFile = new File(filePath);
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(fXmlFile);
+			Document doc = dBuilder.parse(ORXmlFile);
 			NodeList nList = doc.getElementsByTagName("keyword");
 			for (int temp = 0; temp < nList.getLength(); temp++) {
 				Node nNode = nList.item(temp);
@@ -59,7 +59,7 @@ public class ReadData extends Keywords {
 	 */
 	@SuppressWarnings({ "resource" })
 	public static String[][] getExcelData(String fileName, String sheetName) {
-		String[][] arrayExcelData = null;
+		String[][] excelData = null;
 		try {
 			FileInputStream fs = new FileInputStream(fileName);
 			XSSFWorkbook wb = new XSSFWorkbook(fs);
@@ -67,19 +67,19 @@ public class ReadData extends Keywords {
 
 			int totalNoOfRows = sh.getLastRowNum() - sh.getFirstRowNum();
 			int totalNoOfColumn = sh.getRow(0).getLastCellNum();
-			arrayExcelData = new String[totalNoOfRows][totalNoOfColumn];
+			excelData = new String[totalNoOfRows][totalNoOfColumn];
 			for (int i = 1; i <= totalNoOfRows; i++) {
 				Row row = sh.getRow(i);
 				for (int j = 0; j < row.getLastCellNum(); j++) {
 					String abc = row.getCell(j).getStringCellValue();
-					arrayExcelData[i - 1][j] = abc;
+					excelData[i - 1][j] = abc;
 				}
 			}
 		} catch (Exception e) {
 			//// Do nothing
 
 		}
-		return arrayExcelData;
+		return excelData;
 	}
 
 }
