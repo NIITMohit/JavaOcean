@@ -76,7 +76,8 @@ public class Suite extends ReadData {
 			} catch (Exception e) {
 				// do nothing
 			}
-*/
+			*/
+			
 			//// Read xml, is uses to read object repository and save in local variable
 			readXML(currentDir + "\\Repository\\OR.xml");
 

@@ -177,7 +177,6 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 		} else {
 			fail();
 		}
-		System.out.println("done");
 	}
 
 }
