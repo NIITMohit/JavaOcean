@@ -37,6 +37,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import io.appium.java_client.windows.WindowsDriver;
+import ocean.common.Database_Connectivity;
 import ocean.common.ReadData;
 
 /**
@@ -58,26 +59,22 @@ public class Suite extends ReadData {
 	@BeforeSuite
 	public void setup(ITestContext context) {
 
+		// Database_Connectivity.aulDBConnect();
 		//// Path of ocean application
-		String oceanApplicationPath = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanDev\\Ocean.exe";
+		String oceanApplicationPath = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanQa\\Ocean.exe";
 
 		//// Code to open application and wait till application is stable before
 		//// attaching win app session to ocean
 		try {
 			Runtime runtime = Runtime.getRuntime();
 			/*
-			try {
-				System.out.println(oceanApplicationPath);
-				System.out.println("Ocean Application starting");
-				runtime.exec(oceanApplicationPath);
-				System.out.println(oceanApplicationPath);
-				System.out.println("Ocean Application Started Waiting to application to boot");
-				Thread.sleep(500000);
-			} catch (Exception e) {
-				// do nothing
-			}
-			*/
-			
+			 * try { System.out.println(oceanApplicationPath);
+			 * System.out.println("Ocean Application starting");
+			 * runtime.exec(oceanApplicationPath); System.out.println(oceanApplicationPath);
+			 * System.out.println("Ocean Application Started Waiting to application to boot"
+			 * ); Thread.sleep(500000); } catch (Exception e) { // do nothing }
+			 */
+
 			//// Read xml, is uses to read object repository and save in local variable
 			readXML(currentDir + "\\Repository\\OR.xml");
 
@@ -159,7 +156,8 @@ public class Suite extends ReadData {
 		try {
 			String Statuss = "";
 			String className = this.getClass().getName();
-			className = className.substring(this.getClass().getName().lastIndexOf('.') + 1, this.getClass().getName().length());
+			className = className.substring(this.getClass().getName().lastIndexOf('.') + 1,
+					this.getClass().getName().length());
 			//// Create node with name similar to test case and attached with test parent
 			ExtentTest node1 = mapTest.get(context.getCurrentXmlTest().getName())
 					.createNode(className + "." + result.getName());

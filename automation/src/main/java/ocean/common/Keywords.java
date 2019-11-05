@@ -2,7 +2,9 @@ package ocean.common;
 
 import java.util.List;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -54,11 +56,32 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windowsDriver, extraLongWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
 				WebElement clickElement = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 				//// Click the web element
 				clickElement.click();
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+
+	}
+
+	public void rightClick(String locator) {
+		for (int i = 0; i < 4; i++) {
+			try {
+				//// Wait till web element is located
+				Actions actions = new Actions(windowsDriver);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebElement clickElement = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				//// Click the web element
+				actions.contextClick(clickElement).perform();
 				break;
 			} catch (Exception e) {
 				if (i < 3)
@@ -80,7 +103,7 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windowsDriver, extraLongWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
 				WebElement typeElement = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 				//// Click the web element
@@ -89,6 +112,30 @@ public class Keywords extends Variables {
 				typeElement.clear();
 				//// type value in web element
 				typeElement.sendKeys(value);
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+	}
+
+	public void typeKeys(String locator, String value) {
+		for (int i = 0; i < 4; i++) {
+			try {
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebElement typeElement = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				//// Click the web element
+				typeElement.click();
+				//// Clear the web element in case any this is already types
+				typeElement.clear();
+				//// type value in web element
+				typeElement.sendKeys(value);
+				typeElement.sendKeys(Keys.ENTER);
 				break;
 			} catch (Exception e) {
 				if (i < 3)
@@ -110,7 +157,7 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windowsDriver, extraLongWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 				@SuppressWarnings("unchecked")
 				//// Find list of web elements
@@ -143,7 +190,7 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windowsDriver, extraLongWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
 				WebElement typeElement = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 
