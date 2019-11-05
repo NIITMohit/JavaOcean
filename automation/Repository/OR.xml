@@ -106,4 +106,94 @@
 			<value>Authorize</value>
 		</keyword>
 	</Cancellation>
+	<Pricing>
+	<keyword id="clickPricingTab">
+			<locator>Name</locator>
+			<value>Pricing</value>
+	</keyword>
+	<keyword id="clickPricingSheetListTab">
+			<locator>Name</locator>
+			<value>Price Sheet List</value>
+	</keyword>
+	<keyword id="typeProgramCode">
+			<locator>xpath</locator>
+			<value>//*[@Name='Code']//*[@AutomationId='FilterCriterionTextBoxEditor']</value>
+	</keyword>
+	<keyword id="getPriceSheetCode">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='Code']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="clickDeleteToDeletePS">
+			<locator>xpath</locator>
+			<value>//*[@Name='Delete' and @ClassName = 'TextBlock']</value>
+	</keyword>
+	<keyword id="clickCloneToClonePS">
+			<locator>xpath</locator>
+			<value>//*[@Name='Clone as a Sub Master' and @ClassName = 'TextBlock']</value>
+	</keyword>
+	<keyword id="typeNewPSName">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='SubMaster']</value>
+	</keyword>
+	<keyword id="typeNewPSCode">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Code']</value>
+	</keyword>
+	<keyword id="clickSave">
+			<locator>NAME</locator>
+			<value>Save</value>
+	</keyword>
+	<keyword id="clickEditAndDeletePriceSheet">
+			<locator>NAME</locator>
+			<value>Display/Edit Price Sheet</value>
+	</keyword>
+	<keyword id="selectCoverage">
+			<locator>xpath</locator>
+			<value>//*[@Name='COVERAGE']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectClass">
+			<locator>xpath</locator>
+			<value>//*[@Name='CLASS']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectTerm">
+			<locator>xpath</locator>
+			<value>//*[@Name='TERM']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectMilage_Band">
+			<locator>xpath</locator>
+			<value>//*[@Name='MILEAGE_BAND']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="getPremium">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='COST']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="selectEdit">
+			<locator>Name</locator>
+			<value>Edit Selected Rows</value>
+	</keyword>
+	<keyword id="selectReplace">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BASE']//*[@Name='Operator']</value>
+	</keyword>
+	<keyword id="selectOperator">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BASE']//*[@Name='Operator']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BASE']//*[@Name='Cost']</value>
+	</keyword>
+	<keyword id="typeCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BASE']//*[@Name='Cost']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="clickSaveEditPSROw">
+			<locator>xpath</locator>
+			<value>//*[@Name='Edit selected products']//*[@ClassName='ToolBar']//*[@ClassName='Button']//*[@ClassName='Image']</value>
+	</keyword>
+	<keyword id="clickImportButton">
+			<locator>Name</locator>
+			<value>Import</value>
+	</keyword>
+	</Pricing>
 </Ocean>

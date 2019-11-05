@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Ocean">
-	<test name="Cancellation">
+	<test name="Pricing">
 		<classes>
-			<class name="ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO" />
+			<class name="ocean.test.condition.Pricing.OCEAN_Pricing_TCDEMO" />
 		</classes>
 	</test>
 </suite> 

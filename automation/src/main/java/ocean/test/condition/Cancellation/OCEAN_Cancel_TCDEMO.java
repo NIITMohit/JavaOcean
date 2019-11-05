@@ -6,7 +6,6 @@ import static org.testng.Assert.fail;
 
 import org.testng.annotations.Test;
 
-import ocean.com.main.Suite;
 import ocean.common.CommonFunctions;
 import ocean.common.DataProviderClass;
 

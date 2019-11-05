@@ -70,5 +70,4 @@ public class DataProviderClass {
 		return arrayObject;
 	}
 
-
 }
