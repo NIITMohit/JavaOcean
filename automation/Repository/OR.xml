@@ -195,5 +195,33 @@
 			<locator>Name</locator>
 			<value>Import</value>
 	</keyword>
+	<keyword id="typeNameOfNewPS">
+			<locator>xpath</locator>
+			<value>//*[@Name='Import price sheet']//*[@Name='Name:']/following-sibling::*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="clickBrowse">
+			<locator>Name</locator>
+			<value>Browse</value>
+	</keyword>
+	<keyword id="typeCodeOfNewPS">
+			<locator>xpath</locator>
+			<value>//*[@Name='Import price sheet']//*[@Name='Code:']/following-sibling::*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="validationOfDuplicatePriceSheet">
+			<locator>Name</locator>
+			<value>Price sheet with same Program name or code already exists. </value>
+	</keyword>
+	<keyword id="priceSheetUploadPath">
+			<locator>xpath</locator>
+			<value>//*[@Name='File name:' and @ClassName = 'Edit']</value>
+	</keyword>
+	<keyword id="clickOpenbutton">
+			<locator>xpath</locator>
+			<value>//*[@Name='Open' and @ClassName = 'Button']</value>
+	</keyword>
+	<keyword id="priceSheetOK">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='browsePricesheet']//*[@Name='Import price sheet']//*[@Name='OK']</value>
+	</keyword>
 	</Pricing>
 </Ocean>

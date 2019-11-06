@@ -1,187 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="404596" started-at="2019-10-11T08:26:54Z" finished-at="2019-10-11T08:33:39Z">
+  <suite name="Ocean" duration-ms="45114" started-at="2019-11-06T10:10:53 IST" finished-at="2019-11-06T10:11:38 IST">
     <groups>
+      <group name="sanity">
+        <method signature="OCEAN_Pricing_TC02.uniquePriceSheetName()[pri:1, instance:ocean.test.condition.Pricing.OCEAN_Pricing_TC02@5b94b04d]" name="uniquePriceSheetName" class="ocean.test.condition.Pricing.OCEAN_Pricing_TC02"/>
+      </group> <!-- sanity -->
     </groups>
-    <test name="Cancellation" duration-ms="404596" started-at="2019-10-11T08:26:54Z" finished-at="2019-10-11T08:33:39Z">
-      <class name="ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="setup" is-config="true" duration-ms="7197" started-at="2019-10-11T08:26:47Z" finished-at="2019-10-11T08:26:54Z">
+    <test name="Pricing" duration-ms="45114" started-at="2019-11-06T10:10:53 IST" finished-at="2019-11-06T10:11:38 IST">
+      <class name="ocean.test.condition.Pricing.OCEAN_Pricing_TC02">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Pricing.OCEAN_Pricing_TC02@5b94b04d]" name="setup" is-config="true" duration-ms="18859" started-at="2019-11-06T10:10:34 IST" finished-at="2019-11-06T10:10:53 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@76075d65]]>
+                <![CDATA[org.testng.TestRunner@62b969c4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="createParent" is-config="true" duration-ms="3" started-at="2019-10-11T08:26:54Z" finished-at="2019-10-11T08:26:54Z">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Pricing.OCEAN_Pricing_TC02@5b94b04d]" name="createParent" is-config="true" duration-ms="4" started-at="2019-11-06T10:10:53 IST" finished-at="2019-11-06T10:10:53 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@76075d65]]>
+                <![CDATA[org.testng.TestRunner@62b969c4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="FAIL" signature="cancelContractCalculationVerification(java.lang.String, java.lang.String)[pri:3, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="cancelContractCalculationVerification" duration-ms="252771" started-at="2019-10-11T08:26:55Z" data-provider="cancelContractCalculateVerify" finished-at="2019-10-11T08:31:07Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DS505472A9]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[cancel]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:442)
-at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:165)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cancelContractCalculationVerification -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-10-11T08:26:55Z" finished-at="2019-10-11T08:26:55Z">
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.Pricing.OCEAN_Pricing_TC02@5b94b04d]" name="screenshot" is-config="true" duration-ms="1" started-at="2019-11-06T10:10:53 IST" finished-at="2019-11-06T10:10:53 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="tearDown" is-config="true" duration-ms="339" started-at="2019-10-11T08:31:07Z" finished-at="2019-10-11T08:31:08Z">
+        <test-method status="PASS" signature="uniquePriceSheetName()[pri:1, instance:ocean.test.condition.Pricing.OCEAN_Pricing_TC02@5b94b04d]" name="uniquePriceSheetName" duration-ms="42118" started-at="2019-11-06T10:10:53 IST" finished-at="2019-11-06T10:11:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uniquePriceSheetName -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Pricing.OCEAN_Pricing_TC02@5b94b04d]" name="tearDown" is-config="true" duration-ms="2957" started-at="2019-11-06T10:11:35 IST" finished-at="2019-11-06T10:11:38 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=cancelContractCalculationVerification status=FAILURE method=OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(java.lang.String, java.lang.String)[pri:3, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335] output={null}]]]>
+                <![CDATA[[TestResult name=uniquePriceSheetName status=SUCCESS method=OCEAN_Pricing_TC02.uniquePriceSheetName()[pri:1, instance:ocean.test.condition.Pricing.OCEAN_Pricing_TC02@5b94b04d] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@76075d65]]>
+                <![CDATA[org.testng.TestRunner@62b969c4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-10-11T08:31:08Z" finished-at="2019-10-11T08:31:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="FAIL" signature="cancelContractCalculationVerification(java.lang.String, java.lang.String)[pri:3, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="cancelContractCalculationVerification" duration-ms="150971" started-at="2019-10-11T08:31:08Z" data-provider="cancelContractCalculateVerify" finished-at="2019-10-11T08:33:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DS505472A9]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[customer]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:442)
-at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:174)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cancelContractCalculationVerification -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="tearDown" is-config="true" duration-ms="134" started-at="2019-10-11T08:33:39Z" finished-at="2019-10-11T08:33:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=cancelContractCalculationVerification status=FAILURE method=OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(java.lang.String, java.lang.String)[pri:3, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@76075d65]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="updateExcel(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="updateExcel" is-config="true" duration-ms="0" started-at="2019-10-11T08:33:39Z" finished-at="2019-10-11T08:33:39Z">
+        <test-method status="FAIL" signature="updateExcel(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Pricing.OCEAN_Pricing_TC02@5b94b04d]" name="updateExcel" is-config="true" duration-ms="-1573015298437" started-at="2019-11-06T10:11:38 IST" finished-at="1970-01-01T05:30:00 IST">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
@@ -192,26 +67,26 @@ For more information on native dependency injection please refer to http://testn
               <![CDATA[org.testng.TestNGException: 
 Can inject only one of <ITestContext, XmlTest> into a @AfterClass annotated updateExcel.
 For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
-at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:407)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:356)
-at org.testng.internal.Parameters.createParameters(Parameters.java:635)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:214)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:458)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:372)
+at org.testng.internal.Parameters.createParameters(Parameters.java:729)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:164)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:275)
+at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
@@ -221,18 +96,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateExcel -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO@49993335]" name="tearDown" is-config="true" duration-ms="38" started-at="2019-10-11T08:33:39Z" finished-at="2019-10-11T08:33:39Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.Pricing.OCEAN_Pricing_TC02@5b94b04d]" name="tearDown" is-config="true" duration-ms="41" started-at="2019-11-06T10:11:38 IST" finished-at="2019-11-06T10:11:38 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@76075d65]]>
+                <![CDATA[org.testng.TestRunner@62b969c4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO -->
-    </test> <!-- Cancellation -->
+      </class> <!-- ocean.test.condition.Pricing.OCEAN_Pricing_TC02 -->
+    </test> <!-- Pricing -->
   </suite> <!-- Ocean -->
 </testng-results>

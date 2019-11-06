@@ -5,13 +5,14 @@ import org.testng.annotations.Test;
 import ocean.common.CommonFunctions;
 
 /**
- * OCEAN_Pricing_TC01 class automates Ocean Pricing module Test Condition 01,
- * which holds 1 Test Case;  Test Condition Description : Validate price sheet
- * content after their import into OCEAN
+ * OCEAN_Pricing_TC03 class automates Ocean Pricing module Test Condition 03,
+ * which holds 4 Test Case; Test Condition Description : Validate various status
+ * of price sheet (Master and sub master both) with issuance of contract for
+ * them.
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Pricing_TC01 extends CommonFunctions {
+public class OCEAN_Pricing_TC03 extends CommonFunctions {
 
 	/**
 	 * This function automates test case 01 for test condition 01; Test Case
