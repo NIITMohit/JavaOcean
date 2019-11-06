@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Ocean">
-              <span class="suite-name border-failed">Ocean</span>
+              <span class="suite-name border-passed">Ocean</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Ocean">
-                    <span>D:\Git\Automation\automation\testng.xml</span>
+                    <span>D:\Git\Automation\Automation\automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -59,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Ocean">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,26 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 2 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Ocean" class="hide-methods failed suite-Ocean"> (hide)</a> <!-- hide-methods failed suite-Ocean -->
-                      <a href="#" panel-name="suite-Ocean" class="show-methods failed suite-Ocean"> (show)</a> <!-- show-methods failed suite-Ocean -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Ocean" class="hide-methods passed suite-Ocean"> (hide)</a> <!-- hide-methods passed suite-Ocean -->
+                      <a href="#" panel-name="suite-Ocean" class="show-methods passed suite-Ocean"> (show)</a> <!-- show-methods passed suite-Ocean -->
                     </span>
-                    <div class="method-list-content failed suite-Ocean">
+                    <div class="method-list-content passed suite-Ocean">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO" hash-for-method="cancelContractCalculationVerification(DS505472A9, cancel)">cancelContractCalculationVerification(DS505472A9, cancel)</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.Pricing.OCEAN_Pricing_TC02" hash-for-method="uniquePriceSheetName">uniquePriceSheetName</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO" hash-for-method="cancelContractCalculationVerification(DS505472A9, customer)">cancelContractCalculationVerification(DS505472A9, customer)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Ocean -->
+                    </div> <!-- method-list-content passed suite-Ocean -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,53 +117,36 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Ocean" class="panel Ocean">
-          <div class="suite-Ocean-class-failed">
+          <div class="suite-Ocean-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO</span>
+              <img src="passed.png"/>
+              <span class="class-name">ocean.test.condition.Pricing.OCEAN_Pricing_TC02</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="cancelContractCalculationVerification(DS505472A9, cancel)">
-                  </a> <!-- cancelContractCalculationVerification(DS505472A9, cancel) -->
-                  <span class="method-name">cancelContractCalculationVerification</span>
-                  <span class="parameters">(DS505472A9, cancel)</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:165)
-... Removed 30 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="cancelContractCalculationVerification(DS505472A9, customer)">
-                  </a> <!-- cancelContractCalculationVerification(DS505472A9, customer) -->
-                  <span class="method-name">cancelContractCalculationVerification</span>
-                  <span class="parameters">(DS505472A9, customer)</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO.cancelContractCalculationVerification(OCEAN_Cancel_TCDEMO.java:174)
-... Removed 30 stack frames
-</div> <!-- stack-trace -->
+                  <a name="uniquePriceSheetName">
+                  </a> <!-- uniquePriceSheetName -->
+                  <span class="method-name">uniquePriceSheetName</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Ocean-class-failed -->
+          </div> <!-- suite-Ocean-class-passed -->
         </div> <!-- panel Ocean -->
         <div panel-name="test-xml-Ocean" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\Git\Automation\automation\testng.xml</span>
+            <span class="header-content">D:\Git\Automation\Automation\automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Ocean&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Cancellation&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Pricing&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO&quot;/&gt;
+      &lt;class name=&quot;ocean.test.condition.Pricing.OCEAN_Pricing_TC02&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Cancellation --&gt;
+  &lt;/test&gt; &lt;!-- Pricing --&gt;
 &lt;/suite&gt; &lt;!-- Ocean --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -180,7 +158,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Cancellation (1 class)</span>
+                <span class="test-name">Pricing (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -190,6 +168,14 @@
             <span class="header-content">Groups for Ocean</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">sanity</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">uniquePriceSheetName</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Ocean" class="panel">
@@ -206,20 +192,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'cancelContractCalculationVerification')
-data.setCell(0, 2, 'ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO')
-data.setCell(0, 3, 252771);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'cancelContractCalculationVerification')
-data.setCell(1, 2, 'ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO')
-data.setCell(1, 3, 150971);
+data.setCell(0, 1, 'uniquePriceSheetName')
+data.setCell(0, 2, 'ocean.test.condition.Pricing.OCEAN_Pricing_TC02')
+data.setCell(0, 3, 42118);
 window.suiteTableData['Ocean']= { tableData: data, tableDiv: 'times-div-Ocean'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 minutes</span>
+              <span class="suite-total-time">Total running time: 42 seconds</span>
               <div id="times-div-Ocean">
               </div> <!-- times-div-Ocean -->
             </div> <!-- times-div -->
@@ -245,46 +227,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ocean.test.condition.Cancellation.OCEAN_Cancel_TCDEMO</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ocean.test.condition.Pricing.OCEAN_Pricing_TC02</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setup(org.testng.TestRunner@76075d65)</span>
+                <span class="method-name">setup(org.testng.TestRunner@62b969c4)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">createParent(org.testng.TestRunner@76075d65)</span>
-                <span class="method-start">7198 ms</span>
+                <span class="method-name">createParent(org.testng.TestRunner@62b969c4)</span>
+                <span class="method-start">18861 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">screenshot</span>
-                <span class="method-start">7571 ms</span>
+                <span class="method-start">18887 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">cancelContractCalculationVerification(DS505472A9, cancel)</span>
-                <span class="method-start">7571 ms</span>
+                <span class="method-name">uniquePriceSheetName</span>
+                <span class="method-start">18888 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=cancelContractCalculationVerification status=FAILURE method=OCEAN_Cancel_TCDEMO.can...)</span>
-                <span class="method-start">260344 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">screenshot</span>
-                <span class="method-start">260684 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">cancelContractCalculationVerification(DS505472A9, customer)</span>
-                <span class="method-start">260684 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=cancelContractCalculationVerification status=FAILURE method=OCEAN_Cancel_TCDEMO.can...)</span>
-                <span class="method-start">411657 ms</span>
+                <span class="method-name">tearDown([TestResult name=uniquePriceSheetName status=SUCCESS method=OCEAN_Pricing_TC02.uniquePriceSheetName(...)</span>
+                <span class="method-start">61008 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
-                <span class="method-name">tearDown(org.testng.TestRunner@76075d65)</span>
-                <span class="method-start">411811 ms</span>
+                <span class="method-name">tearDown(org.testng.TestRunner@62b969c4)</span>
+                <span class="method-start">63998 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

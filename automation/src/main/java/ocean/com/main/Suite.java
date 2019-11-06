@@ -58,8 +58,14 @@ public class Suite extends ReadData {
 	@SuppressWarnings("rawtypes")
 	@BeforeSuite
 	public void setup(ITestContext context) {
-
-		// Database_Connectivity.aulDBConnect();
+		Database_Connectivity cc = new Database_Connectivity();
+		
+		try {
+			cc.aulDBConnect();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		//// Path of ocean application
 		String oceanApplicationPath = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanQa\\Ocean.exe";
 

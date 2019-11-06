@@ -3,7 +3,7 @@
 <suite name="Ocean">
 	<test name="Pricing">
 		<classes>
-			<class name="ocean.test.condition.Pricing.OCEAN_Pricing_TCDEMO" />
+			<class name="ocean.test.condition.Pricing.OCEAN_Pricing_TC02" />
 		</classes>
 	</test>
 </suite> 
