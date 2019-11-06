@@ -8,8 +8,8 @@ import ocean.common.CommonFunctions;
 
 /**
  * OCEAN_Pricing_TC02 class automates Ocean Pricing module Test Condition 02,
- * which holds 1 Test Case ; Test Condition Description : Validate uploaded price
- * sheet for their unique program code.
+ * which holds 1 Test Case ; Test Condition Description : Validate uploaded
+ * price sheet for their unique program code.
  * 
  * @author Mohit Goel
  */
@@ -30,20 +30,30 @@ public class OCEAN_Pricing_TC02 extends CommonFunctions {
 		click("clickPricingSheetListTab");
 		// Click Import
 		click("clickImportButton");
+		// Type price sheet name
 		type("typeNameOfNewPS", "Automation Price Sheet");
+		// click browse to upload pricesheet
 		click("clickBrowse");
-		//// Call send keys func
+		//// price sheet path, taken at run time, price sheet exist in Repository common
+		//// folder
 		String priceSheetPath = currentDir + "\\Repository\\PriceSheetAutomation.xlsx";
-		//D:\Git\Automation\Automation\automation\Repository
-		//D:\Git\Automation\Automation\automationRepository\PriceSheetAutomation.xlsx
+		// price sheet path
 		type("priceSheetUploadPath", priceSheetPath);
+		// click open
 		click("clickOpenbutton");
+		// type price sheet code
 		type("typeCodeOfNewPS", "SNE");
+		// CLick ok
 		click("clickOK");
+		// check for validation message
 		String validationMessage = getValue("validationOfDuplicatePriceSheet");
+		// take screenshot of validation message
 		takeScreenshot();
+		// click ok to close validation
 		click("priceSheetOK");
+		// click cancel button to close dialogue box
 		click("clickCancelButton");
+		// verifying message actual, expected
 		assertEquals(validationMessage, "Price sheet with same Program name or code already exists. ");
 
 	}
