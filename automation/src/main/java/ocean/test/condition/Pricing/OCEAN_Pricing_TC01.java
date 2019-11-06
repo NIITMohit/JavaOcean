@@ -1,12 +1,14 @@
 package ocean.test.condition.Pricing;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
 import ocean.common.CommonFunctions;
 
 /**
  * OCEAN_Pricing_TC01 class automates Ocean Pricing module Test Condition 01,
- * which holds 1 Test Case;  Test Condition Description : Validate price sheet
+ * which holds 1 Test Case; Test Condition Description : Validate price sheet
  * content after their import into OCEAN
  * 
  * @author Mohit Goel
@@ -22,12 +24,39 @@ public class OCEAN_Pricing_TC01 extends CommonFunctions {
 	@Test(priority = 1, groups = "sanity")
 	public void ImportPriceSheet() throws Exception {
 		//// Upload a price sheet
+		String newProgramCode = "SNZ";
 		// Click Pricing Tab
 		click("clickPricingTab");
 		// Click Price Sheet List Tab
 		click("clickPricingSheetListTab");
-		// Click Import
+		//// Check if price Sheet Exist, delete the same
+		deletePriceSheet(newProgramCode);
+		// Click Pricing Tab
+		click("clickPricingTab");
+		// Click Price Sheet List Tab
+		click("clickPricingSheetListTab");
 		click("clickImportButton");
-
+		// Type price sheet name
+		type("typeNameOfNewPS", "Automation Price Sheet");
+		// click browse to upload pricesheet
+		click("clickBrowse");
+		//// price sheet path, taken at run time, price sheet exist in Repository common
+		//// folder
+		String priceSheetPath = currentDir + "\\Repository\\PriceSheetAutomation.xlsx";
+		// price sheet path
+		type("priceSheetUploadPath", priceSheetPath);
+		// click open
+		click("clickOpenbutton");
+		// type price sheet code
+		type("typeCodeOfNewPS", "SNE");
+		// CLick ok
+		click("clickOK");
+		//// Post successful upload verify newprice sheet is uploaded
+		type("typeProgramCode", newProgramCode);
+		// Verify Program code = newProgramCode exists in search results, if exists
+		// delete the same
+		String priceSheet = getValue("getPriceSheetCode");
+		//// Verify pricesheet excel with database
+		assertEquals(priceSheet, newProgramCode);
 	}
 }
