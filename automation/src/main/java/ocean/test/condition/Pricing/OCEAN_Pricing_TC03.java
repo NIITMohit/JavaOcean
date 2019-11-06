@@ -15,7 +15,7 @@ import ocean.common.CommonFunctions;
 public class OCEAN_Pricing_TC03 extends CommonFunctions {
 
 	/**
-	 * This function automates test case 01 for test condition 01; Test Case
+	 * This function automates test case 01 for test condition 03; Test Case
 	 * description : Post import of Price sheet, Content should be matched from the
 	 * given price sheet under Display Price sheet tab inside Price section.
 	 * 
@@ -27,8 +27,7 @@ public class OCEAN_Pricing_TC03 extends CommonFunctions {
 		click("clickPricingTab");
 		// Click Price Sheet List Tab
 		click("clickPricingSheetListTab");
-		// Click Import
-		click("clickImportButton");
+		
 
 	}
 }

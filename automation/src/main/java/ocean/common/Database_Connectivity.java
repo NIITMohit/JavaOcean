@@ -53,7 +53,7 @@ public class Database_Connectivity {
 			throw e;
 		}
 	}
-	
+
 	/**
 	 * Convert db data to hashmap and return a hashmap
 	 * 
@@ -73,6 +73,9 @@ public class Database_Connectivity {
 					switch (columnReturnType) {
 					case "int":
 						dbMap.put(col_name, Integer.toString(rs.getInt(i)));
+						break;
+					case "nvarchar":
+						dbMap.put(col_name, (rs.getString(i)));
 						break;
 					case "string":
 						dbMap.put(col_name, (rs.getString(i)));
@@ -96,8 +99,7 @@ public class Database_Connectivity {
 		return dbMap;
 
 	}
-	
-	
+
 	/**
 	 * Database function to getpricesheet data based on price sheet code
 	 * 

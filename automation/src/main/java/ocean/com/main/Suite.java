@@ -58,17 +58,9 @@ public class Suite extends ReadData {
 	@SuppressWarnings("rawtypes")
 	@BeforeSuite
 	public void setup(ITestContext context) {
-		Database_Connectivity cc = new Database_Connectivity();
-		
-		try {
-			cc.aulDBConnect();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		String userDirPath = System.getProperty("user.home");
 		//// Path of ocean application
-		String oceanApplicationPath = "C:\\Users\\mohit.goel\\AppData\\Local\\OceanQa\\Ocean.exe";
-
+		String oceanApplicationPath = userDirPath + "\\AppData\\Local\\OceanQa\\Ocean.exe";
 		//// Code to open application and wait till application is stable before
 		//// attaching win app session to ocean
 		try {
@@ -95,10 +87,8 @@ public class Suite extends ReadData {
 			appCapabilities.setCapability("deviceName", device);
 			System.out.println(oceanApplicationPath);
 			appCapabilities.setCapability("app", oceanApplicationPath);
-
 			//// win app driver sesison attached successfully
 			windowsDriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
-
 			//// create report folder in running directory
 			createReportFolder();
 			//// Create reports
