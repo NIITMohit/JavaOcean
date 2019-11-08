@@ -15,9 +15,13 @@ public class DataProviderClass {
 	 */
 	@DataProvider(name = "SearchContract")
 	public static Object[][] SearchContractDataprovider() {
+		//// current runnig directory
 		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
 		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
 		String fileName = "Cancellation.xlsx";
+		//// Excel sheet, sheet name
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Contract");
 		return arrayObject;
 	}
@@ -27,9 +31,13 @@ public class DataProviderClass {
 	 */
 	@DataProvider(name = "PremiumReCalculate")
 	public static Object[][] PremiumReCalculate() {
+		//// current runnig directory
 		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
 		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
 		String fileName = "UnderWriting.xlsx";
+		//// Excel sheet, sheet name
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Premium");
 		return arrayObject;
 	}
@@ -39,9 +47,13 @@ public class DataProviderClass {
 	 */
 	@DataProvider(name = "SearchContractonBR")
 	public static Object[][] SearchContractonBRDatProvider() {
+		//// current runnig directory
 		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
 		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
 		String fileName = "Cancellation.xlsx";
+		//// Excel sheet, sheet name
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Error");
 		return arrayObject;
 	}
@@ -51,21 +63,29 @@ public class DataProviderClass {
 	 */
 	@DataProvider(name = "SearchContractonOverRide")
 	public static Object[][] SearchContractonOverRideDatProvider() {
+		//// current runnig directory
 		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
 		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
 		String fileName = "Cancellation.xlsx";
+		//// Excel sheet, sheet name
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "OverRide");
 		return arrayObject;
 	}
-	
+
 	/**
 	 * Data provider
 	 */
 	@DataProvider(name = "cancelContractCalculateVerify")
 	public static Object[][] cancelContractCalculateVerify() {
+		//// current runnig directory
 		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
 		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
 		String fileName = "Cancellation.xlsx";
+		//// Excel sheet, sheet name
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Calculate");
 		return arrayObject;
 	}
