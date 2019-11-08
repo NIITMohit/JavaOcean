@@ -29,15 +29,19 @@ public class ReadData extends Keywords {
 	 */
 	public void readXML(String filePath) throws Exception {
 		try {
+			//// read or
 			File ORXmlFile = new File(filePath);
+			//// parse xml
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(ORXmlFile);
 			NodeList nList = doc.getElementsByTagName("keyword");
+			//// parse xml file to extract, and save in hash map based on keyword node
 			for (int temp = 0; temp < nList.getLength(); temp++) {
 				Node nNode = nList.item(temp);
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element eElement = (Element) nNode;
+					//// get data from xml and appened in hashmap
 					Variables.oR.put(eElement.getAttribute("id"),
 							new String[] { eElement.getElementsByTagName("locator").item(0).getTextContent(),
 									eElement.getElementsByTagName("value").item(0).getTextContent() });
@@ -59,19 +63,26 @@ public class ReadData extends Keywords {
 	 */
 	@SuppressWarnings({ "resource" })
 	public static String[][] getExcelData(String fileName, String sheetName) {
+		//// read data from data provider excel and appened in string array
 		String[][] excelData = null;
 		try {
+			//// read file
 			FileInputStream fs = new FileInputStream(fileName);
+			//// get workbook based on sheeta
 			XSSFWorkbook wb = new XSSFWorkbook(fs);
+			//// get excel sheet
 			Sheet sh = wb.getSheet(sheetName);
-
+			//// no of rows
 			int totalNoOfRows = sh.getLastRowNum() - sh.getFirstRowNum();
+			//// no of columns
 			int totalNoOfColumn = sh.getRow(0).getLastCellNum();
+			//// iterate through rows and columns
 			excelData = new String[totalNoOfRows][totalNoOfColumn];
 			for (int i = 1; i <= totalNoOfRows; i++) {
 				Row row = sh.getRow(i);
 				for (int j = 0; j < row.getLastCellNum(); j++) {
 					String abc = row.getCell(j).getStringCellValue();
+					//// appened data in string array
 					excelData[i - 1][j] = abc;
 				}
 			}
