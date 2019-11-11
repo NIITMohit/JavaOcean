@@ -1,4 +1,4 @@
-package ocean.test.condition.Pricing;
+package ocean.object.condition.Pricing;
 
 import org.testng.annotations.Test;
 

@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 
-import com.aventstack.extentreports.ExtentTest;
-
 /**
  * This class is used to achieve database connectivity and stores all db queries
  * and functions this is only single class to have all db related queries
@@ -83,22 +81,8 @@ public class Database_Connectivity {
 					//// get column type, like int, string etc
 					String columnReturnType = metaData.getColumnTypeName(i);
 					//// convert all column type to string and apened to hashmap
-					switch (columnReturnType) {
-					case "int":
-						dbMap.put(col_name, Integer.toString(rs.getInt(i)));
-						break;
-					case "nvarchar":
-						dbMap.put(col_name, (rs.getString(i)));
-						break;
-					case "string":
-						dbMap.put(col_name, (rs.getString(i)));
-						break;
-					case "float":
-						dbMap.put(col_name, Float.toString(rs.getFloat(i)));
-						break;
-					default:
-						dbMap.put(col_name, (rs.getString(i)));
-					}
+					String data = convertData(columnReturnType, rs, i);
+					dbMap.put(col_name, data);
 				}
 				break;
 			}
@@ -112,6 +96,58 @@ public class Database_Connectivity {
 		/// return map
 		return dbMap;
 
+	}
+
+	public HashMap<Integer, HashMap<String, String>> returnAllData(ResultSet rs1) throws Exception {
+		//// Hash map to store columns and value
+		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+		HashMap<String, String> mapp = new HashMap<String, String>();
+		try {
+			int counter = 1;
+			///// rssult set
+			ResultSet rs = rs1;
+			ResultSetMetaData metaData = rs.getMetaData();
+			//// column count
+			int count = metaData.getColumnCount();
+			/// iterate all rows
+			while (rs.next()) {
+				for (int i = 1; i <= count; i++) {
+					//// get column mane
+					String col_name = metaData.getColumnName(i);
+					//// get column type, like int, string etc
+					String columnReturnType = metaData.getColumnTypeName(i);
+					//// convert all column type to string and apened to hashmap
+					String data = convertData(columnReturnType, rs, i);
+					mapp.put(col_name, data);
+				}
+				dbMap.put(counter, mapp);
+				counter++;
+			}
+
+		} catch (Exception e) {
+			//// exception
+			throw e;
+		} finally {
+			closeConnection();
+		}
+		/// return map
+		return dbMap;
+
+	}
+
+	public String convertData(String columnReturnType, ResultSet rs, int i) throws SQLException {
+		switch (columnReturnType) {
+		case "int":
+			return Integer.toString(rs.getInt(i));
+		case "nvarchar":
+			return rs.getString(i);
+		case "string":
+			return rs.getString(i);
+		case "float":
+			return Float.toString(rs.getFloat(i));
+		default:
+			return rs.getString(i);
+		}
 	}
 
 	/**
@@ -129,6 +165,32 @@ public class Database_Connectivity {
 			ResultSet rs = stmt.executeQuery("select * from [dbo].[ACCOUNT_TYPE]");
 			//// save data in map
 			dbMap = returnData(rs);
+
+			String annbc = dbMap.get("ID");
+			System.out.println(annbc);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return dbMap;
+
+	}
+
+	public HashMap<Integer, HashMap<String, String>> getPendingContractwithRemittance() throws Exception {
+		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+		try {
+			//// connect to aul db
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(
+					"select top 2 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
+							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r.IsDeleted = 0 order by d.CreateByDate desc;");
+			//// save data in map
+			dbMap = returnAllData(rs);
 
 		} catch (Exception e) {
 			throw e;

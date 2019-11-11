@@ -224,4 +224,42 @@
 			<value>//*[@AutomationId='browsePricesheet']//*[@Name='Import price sheet']//*[@Name='OK']</value>
 	</keyword>
 	</Pricing>
+	<UnderWriting>
+	<keyword id="clickUnderWritingTab">
+			<locator>Name</locator>
+			<value>Underwriting</value>
+	</keyword>
+	<keyword id="clickonHoldContractsTab">
+			<locator>Name</locator>
+			<value>OnHold Contracts</value>
+	</keyword>
+	<keyword id="viewCheckFromOhHoldContracts">
+			<locator>xpath</locator>
+			<value>//*[@Name='Code']</value>
+	</keyword>
+	<keyword id="typeToSearchRemittance">
+			<locator>xpath</locator>
+			<value>//*[@Name='Remittance#' and @AutomationId='Cell_RemittanceName' and @ClassName='FilterCell']</value>
+	</keyword>
+	<keyword id="expandRemittance">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='detailsToggle']</value>
+	</keyword>
+	<keyword id="typeContract">
+			<locator>xpath</locator>
+			<value>//*[@Name='File Name' and @AutomationId='Cell_FILE_NAME' and @ClassName='FilterCell']</value>
+	</keyword>
+	<keyword id="viewContract">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='ContractButton']</value>
+	</keyword>
+	<keyword id="lockContractYesButton">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='PART_YesButton' and @Name='Yes']</value>
+	</keyword>
+		<keyword id="contractExpander">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='ExpanderHandle' and @ClassName='Button']</value>
+	</keyword>		
+	</UnderWriting>
 </Ocean>
