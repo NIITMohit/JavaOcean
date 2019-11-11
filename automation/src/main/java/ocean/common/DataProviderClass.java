@@ -90,4 +90,20 @@ public class DataProviderClass {
 		return arrayObject;
 	}
 
+	/**
+	 * Data provider
+	 */
+	@DataProvider(name = "fetchContractDetailsForPremiumCalculation")
+	public static Object[][] fetchContractDetailsForPremiumCalculation() {
+		//// current runnig directory
+		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
+		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
+		String fileName = "Pricing.xlsx";
+		//// Excel sheet, sheet name
+		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "PremiumCalculation");
+		return arrayObject;
+	}
+
 }
