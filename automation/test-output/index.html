@@ -59,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Ocean">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Ocean">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.Pricing.OCEAN_Pricing_TC02" hash-for-method="uniquePriceSheetName">uniquePriceSheetName</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="test.class1" hash-for-method="tett">tett</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Ocean -->
@@ -120,14 +120,14 @@
           <div class="suite-Ocean-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">ocean.test.condition.Pricing.OCEAN_Pricing_TC02</span>
+              <span class="class-name">test.class1</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="uniquePriceSheetName">
-                  </a> <!-- uniquePriceSheetName -->
-                  <span class="method-name">uniquePriceSheetName</span>
+                  <a name="tett">
+                  </a> <!-- tett -->
+                  <span class="method-name">tett</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,7 +144,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Ocean&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Pricing&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ocean.test.condition.Pricing.OCEAN_Pricing_TC02&quot;/&gt;
+      &lt;class name=&quot;test.class1&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Pricing --&gt;
 &lt;/suite&gt; &lt;!-- Ocean --&gt;
@@ -168,14 +168,6 @@
             <span class="header-content">Groups for Ocean</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">sanity</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">uniquePriceSheetName</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Ocean" class="panel">
@@ -194,14 +186,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'uniquePriceSheetName')
-data.setCell(0, 2, 'ocean.test.condition.Pricing.OCEAN_Pricing_TC02')
-data.setCell(0, 3, 42118);
+data.setCell(0, 1, 'tett')
+data.setCell(0, 2, 'test.class1')
+data.setCell(0, 3, 495);
 window.suiteTableData['Ocean']= { tableData: data, tableDiv: 'times-div-Ocean'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 42 seconds</span>
+              <span class="suite-total-time">Total running time: 495 ms</span>
               <div id="times-div-Ocean">
               </div> <!-- times-div-Ocean -->
             </div> <!-- times-div -->
@@ -227,31 +219,43 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ocean.test.condition.Pricing.OCEAN_Pricing_TC02</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
-                <span class="method-name">setup(org.testng.TestRunner@62b969c4)</span>
+              <div class="chronological-class-name">test.class1</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">BeforeClass</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-suite before -->
-              <div class="configuration-test before">
-                <span class="method-name">createParent(org.testng.TestRunner@62b969c4)</span>
-                <span class="method-start">18861 ms</span>
-              </div> <!-- configuration-test before -->
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">BeforeClass1</span>
+                <span class="method-start">4494 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">screenshot</span>
-                <span class="method-start">18887 ms</span>
+                <span class="method-name">BeforeMethod</span>
+                <span class="method-start">5785 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">BeforeMethod1</span>
+                <span class="method-start">7398 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">uniquePriceSheetName</span>
-                <span class="method-start">18888 ms</span>
+                <span class="method-name">tett</span>
+                <span class="method-start">8104 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=uniquePriceSheetName status=SUCCESS method=OCEAN_Pricing_TC02.uniquePriceSheetName(...)</span>
-                <span class="method-start">61008 ms</span>
+                <span class="method-name">AfterMethod1</span>
+                <span class="method-start">8602 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-suite after">
-                <span class="method-name">tearDown(org.testng.TestRunner@62b969c4)</span>
-                <span class="method-start">63998 ms</span>
-              </div> <!-- configuration-suite after -->
+              <div class="configuration-method after">
+                <span class="method-name">AfterMethod</span>
+                <span class="method-start">9516 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">AfterClass1</span>
+                <span class="method-start">10442 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">AfterClass</span>
+                <span class="method-start">11227 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

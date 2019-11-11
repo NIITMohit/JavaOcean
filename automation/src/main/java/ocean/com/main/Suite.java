@@ -1,8 +1,6 @@
 package ocean.com.main;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;
@@ -13,17 +11,11 @@ import java.util.Date;
 import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -46,7 +38,6 @@ import ocean.common.ReadData;
  * @author Mohit Goel
  */
 public class Suite extends ReadData {
-
 	/**
 	 * Executed as just before Test cases suite setup class to open ocean
 	 * application, read OR (Object repository), create reports, attach win APP

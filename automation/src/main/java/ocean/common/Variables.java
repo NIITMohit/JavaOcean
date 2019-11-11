@@ -14,7 +14,7 @@ import io.appium.java_client.windows.WindowsDriver;
  * 
  * @author Mohit Goel
  */
-public class Variables {
+public class Variables  extends Database_Connectivity{
 
 	/** Static variable OR - which holds object repo xml data */
 	public static HashMap<String, String[]> oR = new HashMap<String, String[]>();
