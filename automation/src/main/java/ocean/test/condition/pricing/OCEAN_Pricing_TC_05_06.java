@@ -1,14 +1,11 @@
-package ocean.object.condition.Pricing;
+package ocean.test.condition.pricing;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.collections.map.HashedMap;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import ocean.common.CommonFunctions;
-import ocean.common.DataProviderClass;
+import ocean.object.condition.underwriting.underwritingObjectMainScreen;
 
 /**
  * OCEAN_Pricing_TC05_06 class automates Ocean Pricing module Test Condition 05
@@ -19,7 +16,7 @@ import ocean.common.DataProviderClass;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Pricing_TC05_06 extends CommonFunctions {
+public class OCEAN_Pricing_TC_05_06 extends underwritingObjectMainScreen {
 
 	/**
 	 * This function automates test case 01 and 02 for test condition 05 and 06
@@ -28,35 +25,19 @@ public class OCEAN_Pricing_TC05_06 extends CommonFunctions {
 	 * 
 	 */
 	@Test(priority = 1, groups = "regression")
-	public void premiumCalculation() throws Exception {
-		//// get remittance from database
+	public void validatePremiumCalculation() throws Exception {
 		HashMap<Integer, HashMap<String, String>> contractFromRemittance = getPendingContractwithRemittance();
 		//// get remittance name and file name
 		/// iterate to multiple contracts with same price sheet
 		for (Map.Entry<Integer, HashMap<String, String>> maps : contractFromRemittance.entrySet()) {
 			String remittName = maps.getValue().get("RemittanceNumber");
 			String fileName = maps.getValue().get("FILE_NAME");
-			//// click underwriting tab
-			click("clickUnderWritingTab");
-			//// Type RemittanceName
-			type("typeToSearchRemittance", remittName);
-			//// expand remittance to get contracts
-			click("expandRemittance");
-			//// type filename
-			type("typeContract", fileName);
-			//// click view contract
-			click("viewContract");
-			try {
-				//// click yes to lock remittance
-				click("lockContractYesButton");
-			} catch (Exception e) {
-				// do nothing
-			}
-			//// click contract expander
-			click("contractExpander");
-			//// type unique contract id
-
+			goToUnderWritingTab();
+			searchContractwithPendingState(remittName, fileName);
+			lockAndViewContract();
+			enterMandatoryValuesOnContract();
+		
 		}
-
 	}
+
 }
