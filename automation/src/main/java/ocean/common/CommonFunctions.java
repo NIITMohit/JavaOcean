@@ -1,6 +1,7 @@
 package ocean.common;
 
 import ocean.com.main.Suite;
+import ocean.object.condition.underwriting.underwritingObjectMainScreen;
 
 /**
  * This class contains common functions, which is used all over scripts, to save
@@ -45,6 +46,59 @@ public class CommonFunctions extends Suite {
 		} catch (Exception e) {
 			//// DO nothing
 		}
+
+	}
+
+	/**
+	 * This common function is used to go to underwriting tab
+	 * 
+	 * @return
+	 * 
+	 */
+	public underwritingObjectMainScreen goToUnderWritingTab() {
+		try {
+			click("clickUnderWritingTab");
+		} catch (Exception e) {
+			//// DO nothing
+		}
+		return new underwritingObjectMainScreen();
+	}
+
+	/**
+	 * This common function is used to go to pricing tab
+	 * 
+	 */
+	public void goToPricingTab() {
+		try {
+			click("clickPricingTab");
+		} catch (Exception e) {
+			//// DO nothing
+		}
+
+	}
+
+	/**
+	 * This common function is used to generate random string of length n
+	 * 
+	 */
+	public String randomString(int n) {
+		// chose a Character random from this String
+		String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
+
+		// create StringBuffer size of AlphaNumericString
+		StringBuilder sb = new StringBuilder(n);
+
+		for (int i = 0; i < n; i++) {
+
+			// generate a random number between
+			// 0 to AlphaNumericString variable length
+			int index = (int) (AlphaNumericString.length() * Math.random());
+
+			// add Character one by one in end of sb
+			sb.append(AlphaNumericString.charAt(index));
+		}
+
+		return sb.toString();
 
 	}
 }

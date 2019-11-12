@@ -1,4 +1,4 @@
-package ocean.object.condition.Pricing;
+package ocean.test.condition.pricing;
 
 import static org.testng.Assert.assertEquals;
 

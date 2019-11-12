@@ -239,7 +239,7 @@
 	</keyword>
 	<keyword id="typeToSearchRemittance">
 			<locator>xpath</locator>
-			<value>//*[@Name='Remittance#' and @AutomationId='Cell_RemittanceName' and @ClassName='FilterCell']</value>
+			<value>//*[@Name='Remittance#' and @AutomationId='Cell_RemittanceName' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
 	</keyword>
 	<keyword id="expandRemittance">
 			<locator>xpath</locator>
@@ -247,7 +247,7 @@
 	</keyword>
 	<keyword id="typeContract">
 			<locator>xpath</locator>
-			<value>//*[@Name='File Name' and @AutomationId='Cell_FILE_NAME' and @ClassName='FilterCell']</value>
+			<value>//*[@Name='File Name' and @AutomationId='Cell_FILE_NAME' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
 	</keyword>
 	<keyword id="viewContract">
 			<locator>xpath</locator>
@@ -257,9 +257,21 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='PART_YesButton' and @Name='Yes']</value>
 	</keyword>
-		<keyword id="contractExpander">
+	<keyword id="contractExpander">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='ExpanderHandle' and @ClassName='Button']</value>
+	</keyword>	
+	<keyword id="typeContractNumber">
+			<locator>xpath</locator>
+			<value>//*[@Name='Contract Number:']/following-sibling::*[@ClassName='TextBox']</value>
+	</keyword>	
+	<keyword id="clickSearchButtonToSearchContract">
+			<locator>xpath</locator>
+			<value>//*[@Name='Contract Number:']/following-sibling::*[@ClassName='Button']</value>
+	</keyword>	
+	<keyword id="purchaseDateForNewContract">
+			<locator>xpath</locator>
+			<value>//*[@Name='DateTimePicker']//*[@Name='ButtonSpinner']//*[@ClassName='WatermarkTextBox']</value>
 	</keyword>		
 	</UnderWriting>
 </Ocean>
