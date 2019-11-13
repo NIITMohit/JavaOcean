@@ -24,8 +24,8 @@ public class OCEAN_Pricing_TC_05_06 extends underwritingModulePages {
 	 * multiple contracts from same master and sub-master price sheet.
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression")
-	public void validatePremiumCalculation() throws Exception {
+	@Test(priority = 1, groups = "regression", description = "Validate premium calculation for multiple contracts from same master and sub-master price sheet")
+	public void validatePremiumCalculationForMasterAndSubMasterPriceSheet() throws Exception {
 		HashMap<Integer, HashMap<String, String>> contractFromRemittance = getPendingContractwithRemittance();
 		//// get remittance name and file name
 		/// iterate to multiple contracts with same price sheet
@@ -34,7 +34,8 @@ public class OCEAN_Pricing_TC_05_06 extends underwritingModulePages {
 			String fileName = maps.getValue().get("FILE_NAME");
 			//// visit underwriting tab
 			goToUnderWritingTab();
-			//// Search a contract with pending state, remittance name and contract name is fetched from database
+			//// Search a contract with pending state, remittance name and contract name is
+			//// fetched from database
 			searchContractwithPendingState(remittName, fileName);
 			//// lock contract on user name and open enter values in contract window
 			lockAndViewContract();
