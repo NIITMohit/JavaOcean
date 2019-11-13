@@ -6,6 +6,8 @@ import java.io.FileInputStream;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -80,14 +82,35 @@ public class ReadData extends Keywords {
 			excelData = new String[totalNoOfRows][totalNoOfColumn];
 			for (int i = 1; i <= totalNoOfRows; i++) {
 				Row row = sh.getRow(i);
-				for (int j = 0; j < row.getLastCellNum(); j++) {
-					String abc = row.getCell(j).getStringCellValue();
+				for (int j = 0; j < totalNoOfColumn; j++) {
+					System.out.println(i + "," + j);
+					String abc = "";
+					try {
+						CellType cellType = row.getCell(j).getCellType();
+						//// Switch case to convert excel data to excel
+						switch (cellType.toString().toLowerCase()) {
+						case "string":
+							abc = row.getCell(j).getStringCellValue();
+							break;
+						case "blank":
+							abc = row.getCell(j).getStringCellValue();
+							break;
+						case "numeric":
+							abc = Double.toString(row.getCell(j).getNumericCellValue());
+							break;
+						default:
+							abc = row.getCell(j).getStringCellValue();
+						}
+					} catch (Exception e) {
+						abc = "";
+					}
 					//// appened data in string array
-					excelData[i - 1][j] = abc;
+					excelData[i - 1][j] = abc.trim();
 				}
+
 			}
 		} catch (Exception e) {
-			//// Do nothing
+			//// do nothing
 
 		}
 		return excelData;

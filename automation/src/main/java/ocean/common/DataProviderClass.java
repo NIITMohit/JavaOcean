@@ -105,5 +105,22 @@ public class DataProviderClass {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "PremiumCalculation");
 		return arrayObject;
 	}
+	
+	/**
+	 * Data provider
+	 */
+	@DataProvider(name = "searchContract")
+	public static Object[][] searchContract() {
+		//// current runnig directory
+		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
+		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
+		String fileName = "Search.xlsx";
+		//// Excel sheet, sheet name
+		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Search");
+		return arrayObject;
+	}
+
 
 }
