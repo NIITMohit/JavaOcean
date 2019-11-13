@@ -13,7 +13,7 @@ import ocean.modules.pages.pricingModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Pricing_TC03 extends pricingModulePages {
+public class OCEAN_Pricing_TC_03 extends pricingModulePages {
 
 	/**
 	 * This function automates test case 01 for test condition 03; Test Case
@@ -21,14 +21,13 @@ public class OCEAN_Pricing_TC03 extends pricingModulePages {
 	 * given price sheet under Display Price sheet tab inside Price section.
 	 * 
 	 */
-	@Test(priority = 1, groups = "sanity")
+	@Test(priority = 1, groups = "sanity", description = "Post import of Price sheet, Content should be matched from the given price sheet under Display Price sheet tab inside Price section.")
 	public void ImportPriceSheet() throws Exception {
 		//// Upload a price sheet
 		// Click Pricing Tab
 		goToPricingTab();
 		// Click Price Sheet List Tab
 		visitPriceSheetListTab();
-		
 
 	}
 }
