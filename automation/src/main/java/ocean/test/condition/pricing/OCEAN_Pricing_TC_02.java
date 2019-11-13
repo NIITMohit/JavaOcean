@@ -14,7 +14,7 @@ import ocean.modules.pages.pricingModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Pricing_TC02 extends pricingModulePages {
+public class OCEAN_Pricing_TC_02 extends pricingModulePages {
 
 	/**
 	 * This function automates test case 01 for test condition 02; Test Case
@@ -22,8 +22,8 @@ public class OCEAN_Pricing_TC02 extends pricingModulePages {
 	 * program code by Ocean.
 	 * 
 	 */
-	@Test(priority = 1, groups = "sanity")
-	public void uniquePriceSheetName() throws Exception {
+	@Test(priority = 1, groups = "sanity", description = "Validate that uploaded price sheet should have their unique program code by Ocean.")
+	public void validateOnlyUniquePriceSheetToBeUploaded() throws Exception {
 		//// Upload a price sheet
 		// Click Pricing Tab
 		goToPricingTab();

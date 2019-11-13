@@ -14,7 +14,7 @@ import ocean.modules.pages.pricingModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Pricing_TC01 extends pricingModulePages {
+public class OCEAN_Pricing_TC_01 extends pricingModulePages {
 
 	/**
 	 * This function automates test case 01 for test condition 01; Test Case
@@ -23,7 +23,7 @@ public class OCEAN_Pricing_TC01 extends pricingModulePages {
 	 * 
 	 */
 	@Test(priority = 1, groups = "sanity", description = "Post import of Price sheet, Content should be matched from the given price sheet under Display Price sheet tab inside Price section.")
-	public void ImportPriceSheetAndVerify() throws Exception {
+	public void ImportPriceSheetAndVerifyForSuccessfulImport() throws Exception {
 		//// Upload a price sheet
 		String newProgramCode = "SNZ";
 		// Click Pricing Tab
