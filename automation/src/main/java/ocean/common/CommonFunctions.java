@@ -1,7 +1,7 @@
 package ocean.common;
 
 import ocean.com.main.Suite;
-import ocean.object.condition.underwriting.underwritingObjectMainScreen;
+import ocean.modules.pages.underwritingModulePages;
 
 /**
  * This class contains common functions, which is used all over scripts, to save
@@ -55,13 +55,13 @@ public class CommonFunctions extends Suite {
 	 * @return
 	 * 
 	 */
-	public underwritingObjectMainScreen goToUnderWritingTab() {
+	public underwritingModulePages goToUnderWritingTab() {
 		try {
 			click("clickUnderWritingTab");
 		} catch (Exception e) {
 			//// DO nothing
 		}
-		return new underwritingObjectMainScreen();
+		return new underwritingModulePages();
 	}
 
 	/**

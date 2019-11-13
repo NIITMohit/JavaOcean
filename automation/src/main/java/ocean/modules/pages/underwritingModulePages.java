@@ -1,4 +1,4 @@
-package ocean.object.condition.underwriting;
+package ocean.modules.pages;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -13,11 +13,11 @@ import ocean.common.CommonFunctions;
 import ocean.common.DataProviderClass;
 
 /**
- * This is object class for underwriting Module for main screen
+ * This is object class which contains all pages of underwriting modules
  * 
  * @author Mohit Goel
  */
-public class underwritingObjectMainScreen extends CommonFunctions {
+public class underwritingModulePages extends CommonFunctions {
 
 	/**
 	 * This function is used to land to search contract with pending state
@@ -25,8 +25,7 @@ public class underwritingObjectMainScreen extends CommonFunctions {
 	 * @return
 	 * 
 	 */
-	public underwritingObjectContractScreen searchContractwithPendingState(String remittName, String fileName)
-			throws Exception {
+	public void searchContractwithPendingState(String remittName, String fileName) throws Exception {
 		//// Type RemittanceName
 		type("typeToSearchRemittance", remittName);
 		//// expand remittance to get contracts
@@ -34,8 +33,6 @@ public class underwritingObjectMainScreen extends CommonFunctions {
 		//// type filename
 		type("typeContract", fileName);
 		//// click view contract
-
-		return new underwritingObjectContractScreen();
 	}
 
 	/**

@@ -239,7 +239,7 @@
 	</keyword>
 	<keyword id="typeToSearchRemittance">
 			<locator>xpath</locator>
-			<value>//*[@Name='Remittance#' and @AutomationId='Cell_RemittanceName' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+			<value>//*[@Name='Remittance Name' and @AutomationId='Cell_RemittanceName' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
 	</keyword>
 	<keyword id="expandRemittance">
 			<locator>xpath</locator>
