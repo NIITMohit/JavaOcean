@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.testng.annotations.Test;
 
+import ocean.common.DataProviderClass;
 import ocean.modules.pages.underwritingModulePages;
 
 /**
@@ -24,7 +25,7 @@ public class OCEAN_Pricing_TC_05_06 extends underwritingModulePages {
 	 * multiple contracts from same master and sub-master price sheet.
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", description = "Validate premium calculation for multiple contracts from same master and sub-master price sheet")
+	@Test(priority = 1, groups = "regression", description = "Validate premium calculation for multiple contracts from same	master and sub-master price sheet")
 	public void validatePremiumCalculationForMasterAndSubMasterPriceSheet() throws Exception {
 		HashMap<Integer, HashMap<String, String>> contractFromRemittance = getPendingContractwithRemittance();
 		//// get remittance name and file name
