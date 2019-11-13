@@ -23,7 +23,7 @@ public class OCEAN_Pricing_TC01 extends pricingModulePages {
 	 * 
 	 */
 	@Test(priority = 1, groups = "sanity", description = "Post import of Price sheet, Content should be matched from the given price sheet under Display Price sheet tab inside Price section.")
-	public void ImportPriceSheet() throws Exception {
+	public void ImportPriceSheetAndVerify() throws Exception {
 		//// Upload a price sheet
 		String newProgramCode = "SNZ";
 		// Click Pricing Tab
@@ -33,31 +33,15 @@ public class OCEAN_Pricing_TC01 extends pricingModulePages {
 		//// Check if price Sheet Exist, delete the same
 		deletePriceSheet(newProgramCode);
 		// Click Pricing Tab
-		click("clickPricingTab");
+		// Click Pricing Tab
+		goToPricingTab();
 		// Click Price Sheet List Tab
-		click("clickPricingSheetListTab");
-		click("clickImportButton");
-		// Type price sheet name
-		type("typeNameOfNewPS", "Automation Price Sheet");
-		// click browse to upload pricesheet
-		click("clickBrowse");
-		//// price sheet path, taken at run time, price sheet exist in Repository common
-		//// folder
-		String priceSheetPath = currentDir + "\\Repository\\PriceSheetAutomation.xlsx";
-		// price sheet path
-		type("priceSheetUploadPath", priceSheetPath);
-		// click open
-		click("clickOpenbutton");
-		// type price sheet code
-		type("typeCodeOfNewPS", "SNE");
-		// CLick ok
-		click("clickOK");
-		//// Post successful upload verify newprice sheet is uploaded
-		type("typeProgramCode", newProgramCode);
-		// Verify Program code = newProgramCode exists in search results, if exists
-		// delete the same
-		String priceSheet = getValue("getPriceSheetCode");
-		//// Verify pricesheet excel with database
+		visitPriceSheetListTab();
+		//// Import A price  sheet
+	    importPriceSheet(newProgramCode);
+	    //// validate price sheet is successfully imported
+	    String priceSheet = searchPriceSheet(newProgramCode);
 		assertEquals(priceSheet, newProgramCode);
+		//// DB validation go be added
 	}
 }
