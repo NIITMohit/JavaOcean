@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.testng.annotations.Test;
 
-import ocean.object.condition.underwriting.underwritingObjectMainScreen;
+import ocean.modules.pages.underwritingModulePages;
 
 /**
  * OCEAN_Pricing_TC05_06 class automates Ocean Pricing module Test Condition 05
@@ -16,7 +16,7 @@ import ocean.object.condition.underwriting.underwritingObjectMainScreen;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Pricing_TC_05_06 extends underwritingObjectMainScreen {
+public class OCEAN_Pricing_TC_05_06 extends underwritingModulePages {
 
 	/**
 	 * This function automates test case 01 and 02 for test condition 05 and 06
@@ -30,13 +30,17 @@ public class OCEAN_Pricing_TC_05_06 extends underwritingObjectMainScreen {
 		//// get remittance name and file name
 		/// iterate to multiple contracts with same price sheet
 		for (Map.Entry<Integer, HashMap<String, String>> maps : contractFromRemittance.entrySet()) {
-			String remittName = maps.getValue().get("RemittanceNumber");
+			String remittName = maps.getValue().get("RemittanceName");
 			String fileName = maps.getValue().get("FILE_NAME");
+			//// visit underwriting tab
 			goToUnderWritingTab();
+			//// Search a contract with pending state, remittance name and contract name is fetched from database
 			searchContractwithPendingState(remittName, fileName);
+			//// lock contract on user name and open enter values in contract window
 			lockAndViewContract();
+			//// enter all mandatory values only on new business form screen
 			enterMandatoryValuesOnContract();
-		
+
 		}
 	}
 
