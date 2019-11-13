@@ -24,21 +24,18 @@ public class CommonFunctions extends Suite {
 		click("searchContractButton");
 	}
 
-	
-
 	/**
 	 * This common function is used to go to underwriting tab
 	 * 
 	 * @return
 	 * 
 	 */
-	public underwritingModulePages goToUnderWritingTab() {
+	public void goToUnderWritingTab() {
 		try {
 			click("clickUnderWritingTab");
 		} catch (Exception e) {
-			//// DO nothing
+			throw e;
 		}
-		return new underwritingModulePages();
 	}
 
 	/**
@@ -49,7 +46,7 @@ public class CommonFunctions extends Suite {
 		try {
 			click("clickPricingTab");
 		} catch (Exception e) {
-			//// DO nothing
+			throw e;
 		}
 
 	}
