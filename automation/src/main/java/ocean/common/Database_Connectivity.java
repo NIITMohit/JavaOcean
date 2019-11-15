@@ -188,7 +188,30 @@ public class Database_Connectivity {
 			///// execute query
 			ResultSet rs = stmt.executeQuery(
 					"select top 2 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
-							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r.IsDeleted = 0 order by d.CreateByDate desc;");
+							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r .IsDeleted = 0 order by d.CreateByDate desc;");
+			//// save data in map
+			dbMap = returnAllData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return dbMap;
+
+	}
+
+	public HashMap<Integer, HashMap<String, String>> getDataSetforSearch(HashMap<String, String> searchParamater) throws Exception {
+		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+		try {
+			//// connect to aul db
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(
+					"select top 2 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
+							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r .IsDeleted = 0 order by d.CreateByDate desc;");
 			//// save data in map
 			dbMap = returnAllData(rs);
 

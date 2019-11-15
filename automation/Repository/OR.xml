@@ -189,7 +189,7 @@
 	</keyword>
 	<keyword id="clickSaveEditPSROw">
 			<locator>xpath</locator>
-			<value>//*[@Name='Edit selected products']//*[@ClassName='ToolBar']//*[@ClassName='Button']//*[@ClassName='Image']</value>
+			<value>//*[@Name='Edit selected products']//*[@ClassName='ToolBar']//*[@ClassName='Button']//*[@ClassName='']</value>
 	</keyword>
 	<keyword id="clickImportButton">
 			<locator>Name</locator>
@@ -251,7 +251,7 @@
 	</keyword>
 	<keyword id="viewContract">
 			<locator>xpath</locator>
-			<value>//*[@AutomationId='ContractButton']</value>
+			<value>//*[@AutomationId='ContractButton']//*[@ClassName='Image']</value>
 	</keyword>
 	<keyword id="lockContractYesButton">
 			<locator>xpath</locator>

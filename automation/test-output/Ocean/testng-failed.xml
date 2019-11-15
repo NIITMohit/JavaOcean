@@ -3,16 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Ocean]">
   <test thread-count="5" name="Pricing(failed)">
     <classes>
-      <class name="ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06">
+      <class name="ocean.test.condition.search.OCEAN_Search_TC_01">
         <methods>
           <include name="createParent"/>
           <include name="setup"/>
           <include name="screenshot"/>
           <include name="tearDown"/>
           <include name="tearDown"/>
-          <include name="validatePremiumCalculationForMasterAndSubMasterPriceSheet"/>
+          <include name="searchContractWithAnyInputFielsd"/>
         </methods>
-      </class> <!-- ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06 -->
+      </class> <!-- ocean.test.condition.search.OCEAN_Search_TC_01 -->
     </classes>
   </test> <!-- Pricing(failed) -->
 </suite> <!-- Failed suite [Ocean] -->

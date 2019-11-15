@@ -4,7 +4,7 @@
 	<test name="Pricing">
 		<classes>
 			<class
-				name="ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06" />
+				name="ocean.test.condition.search.OCEAN_Search_TC_01" />
 		</classes>
 	</test>
 </suite> 

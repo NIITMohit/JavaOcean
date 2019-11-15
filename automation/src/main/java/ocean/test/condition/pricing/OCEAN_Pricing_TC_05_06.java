@@ -25,7 +25,7 @@ public class OCEAN_Pricing_TC_05_06 extends underwritingModulePages {
 	 * multiple contracts from same master and sub-master price sheet.
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", description = "Validate premium calculation for multiple contracts from same	master and sub-master price sheet")
+	@Test(priority = 1, groups = "regression", description = "Validate premium calculation for multiple contracts from same master and sub-master price sheet")
 	public void validatePremiumCalculationForMasterAndSubMasterPriceSheet() throws Exception {
 		HashMap<Integer, HashMap<String, String>> contractFromRemittance = getPendingContractwithRemittance();
 		//// get remittance name and file name
@@ -42,7 +42,6 @@ public class OCEAN_Pricing_TC_05_06 extends underwritingModulePages {
 			lockAndViewContract();
 			//// enter all mandatory values only on new business form screen
 			enterMandatoryValuesOnContract();
-
 		}
 	}
 

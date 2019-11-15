@@ -4,8 +4,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.collections.map.HashedMap;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
@@ -44,12 +46,14 @@ public class underwritingModulePages extends CommonFunctions {
 		try {
 			//// click yes to lock remittance
 			click("lockContractYesButton");
+
 		} catch (Exception e) {
 			// do nothing
 		}
 		//// click contract expander
 		click("contractExpander");
-
+		waitForSomeTime(2);
+		click("contractExpander");
 	}
 
 	/**

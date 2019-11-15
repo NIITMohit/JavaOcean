@@ -21,43 +21,124 @@ public class searchModulePages extends CommonFunctions {
 	 * 
 	 */
 	public void searchContractGivenInputParamaters(HashMap<String, String> searchParamaters) throws Exception {
-		for (Map.Entry mapElement : searchParamaters.entrySet()) {
+		for (@SuppressWarnings("rawtypes")
+		Map.Entry mapElement : searchParamaters.entrySet()) {
 			String searchParamater = (String) mapElement.getKey();
 			String valueToInput = (String) mapElement.getValue();
-
 			switch (searchParamater) {
+			case "iteration":
+				//// do nothing
 			case "Contract":
-				type("", valueToInput);
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
 				break;
-			case "Last Name":
-				type("", valueToInput);
+			case "First_Name":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
 				break;
-			case "First Name":
-				type("", valueToInput);
+			case "Last_Name":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
 				break;
 			case "VIN":
-				type("", valueToInput);
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
 				break;
 			case "Status":
-				type("", valueToInput);
-				break;
-			case "Post Period":
-				type("", valueToInput);
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
 				break;
 			case "State":
-				type("", valueToInput);
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
 				break;
 			case "City":
-				type("", valueToInput);
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
 				break;
-
+			case "Phone":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "Program_Code":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "Primary_Payee_ID":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "Primary_Seller_Name":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "Primary_Seller_ID":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "Primary_Seller_Type":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "From_Sale_Date":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "To_Sale_Date":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "Secondary_Seller_Name":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "Secondary_Seller_ID":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "Secondary_Seller_Type":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "From_Trans_Date":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "To_Trans_Date":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
+			case "Post_Period":
+				if (valueToInput.length() > 0) {
+					type("", valueToInput);
+				}
+				break;
 			default:
-				//// type contract id
-				type("", valueToInput);
+				//// do nothing
 			}
 		}
-
 		///// click search button
+		click("seatcrbtn");
 	}
 
 }
