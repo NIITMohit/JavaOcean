@@ -206,12 +206,11 @@ public class Database_Connectivity {
 
 	}
 
-	public HashMap<Integer, HashMap<String, String>> getDataSetforSearch(String iteration,
-			HashMap<String, String> searchParamater) throws Exception {
-		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+	public HashMap<String, String> getDataSetforSearch(HashMap<String, String> searchParamater) throws Exception {
+		HashMap<String, String> dbMap = new HashMap<String, String>();
 		try {
 			String query = "";
-			String query1 = "select top " + iteration + " ";
+			String query1 = "select top " + "1" + " ";
 			String query2 = " from All_Sales_Details where ";
 			String myKey = "";
 			String myvalue = "";
@@ -238,7 +237,7 @@ public class Database_Connectivity {
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);
 			//// save data in map
-			dbMap = returnAllData(rs);
+			dbMap = returnData(rs);
 
 		} catch (Exception e) {
 			throw e;

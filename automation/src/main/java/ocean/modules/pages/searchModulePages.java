@@ -15,81 +15,167 @@ import ocean.common.CommonFunctions;
  * @author Mohit Goel
  */
 public class searchModulePages extends CommonFunctions {
-
+	/**
+	 * This function is used to receive string array which is data from test
+	 * provider and append data in hashmap with mapping with column and its value
+	 * 
+	 */
 	public HashMap<String, String> appendSearchData(String[] inputArray) {
 		HashMap<String, String> searchData = new HashMap<String, String>();
-		for (int i = 1; i < inputArray.length; i++) {
+		for (int i = 0; i < inputArray.length - 1; i++) {
 			//// Switch Case to Transform Data
 			switch (i) {
 			case 0:
-				searchData.put("iteration", inputArray[i]);
-				break;
-			case 1:
 				searchData.put("Contract", inputArray[i]);
 				break;
-			case 2:
+			case 1:
 				searchData.put("First_Name", inputArray[i]);
 				break;
-			case 3:
+			case 2:
 				searchData.put("Last_Name", inputArray[i]);
 				break;
-			case 4:
+			case 3:
 				searchData.put("VIN", inputArray[i]);
 				break;
-			case 5:
+			case 4:
 				searchData.put("Status", inputArray[i]);
 				break;
-			case 6:
+			case 5:
 				searchData.put("State", inputArray[i]);
 				break;
-			case 7:
+			case 6:
 				searchData.put("City", inputArray[i]);
 				break;
-			case 8:
+			case 7:
 				searchData.put("Phone", inputArray[i]);
 				break;
-			case 9:
+			case 8:
 				searchData.put("Program_Code", inputArray[i]);
 				break;
-			case 10:
+			case 9:
 				searchData.put("Primary_Payee_ID", inputArray[i]);
 				break;
-			case 11:
+			case 10:
 				searchData.put("Primary_Seller_Name", inputArray[i]);
 				break;
-			case 12:
+			case 11:
 				searchData.put("Primary_Seller_ID", inputArray[i]);
 				break;
-			case 13:
+			case 12:
 				searchData.put("Primary_Seller_Type", inputArray[i]);
 				break;
-			case 14:
+			case 13:
 				searchData.put("From_Sale_Date", inputArray[i]);
 				break;
-			case 15:
+			case 14:
 				searchData.put("To_Sale_Date", inputArray[i]);
 				break;
-			case 16:
+			case 15:
 				searchData.put("Secondary_Seller_Name", inputArray[i]);
 				break;
-			case 17:
+			case 16:
 				searchData.put("Secondary_Seller_ID", inputArray[i]);
 				break;
-			case 18:
+			case 17:
 				searchData.put("Secondary_Seller_Type", inputArray[i]);
 				break;
-			case 19:
+			case 18:
 				searchData.put("From_Trans_Date", inputArray[i]);
 				break;
-			case 20:
+			case 19:
 				searchData.put("To_Trans_Date", inputArray[i]);
 				break;
-			case 21:
+			case 20:
 				searchData.put("Post_Period", inputArray[i]);
 				break;
 			default:
 				searchData.put("NoData", inputArray[i]);
 				break;
+			}
+		}
+		return searchData;
+	}
+
+	/**
+	 * This function is used to receive hashmap which have column and data mapping
+	 * and return data and column mapping which have only valid data, will remove *
+	 * and Blanks columns and values
+	 * 
+	 */
+	public HashMap<String, String> convertDataRemoveStar(String[] inputArray) {
+		HashMap<String, String> searchData = new HashMap<String, String>();
+		for (int i = 0; i < inputArray.length - 1; i++) {
+			//// Switch Case to Transform Data
+			if (!inputArray[i].equals("*") && inputArray[i].length() > 0) {
+				switch (i) {
+				case 0:
+					searchData.put("Contract", inputArray[i]);
+					break;
+				case 1:
+					searchData.put("First_Name", inputArray[i]);
+					break;
+				case 2:
+					searchData.put("Last_Name", inputArray[i]);
+					break;
+				case 3:
+					searchData.put("VIN", inputArray[i]);
+					break;
+				case 4:
+					searchData.put("Status", inputArray[i]);
+					break;
+				case 5:
+					searchData.put("State", inputArray[i]);
+					break;
+				case 6:
+					searchData.put("City", inputArray[i]);
+					break;
+				case 7:
+					searchData.put("Phone", inputArray[i]);
+					break;
+				case 8:
+					searchData.put("Program_Code", inputArray[i]);
+					break;
+				case 9:
+					searchData.put("Primary_Payee_ID", inputArray[i]);
+					break;
+				case 10:
+					searchData.put("Primary_Seller_Name", inputArray[i]);
+					break;
+				case 11:
+					searchData.put("Primary_Seller_ID", inputArray[i]);
+					break;
+				case 12:
+					searchData.put("Primary_Seller_Type", inputArray[i]);
+					break;
+				case 13:
+					searchData.put("From_Sale_Date", inputArray[i]);
+					break;
+				case 14:
+					searchData.put("To_Sale_Date", inputArray[i]);
+					break;
+				case 15:
+					searchData.put("Secondary_Seller_Name", inputArray[i]);
+					break;
+				case 16:
+					searchData.put("Secondary_Seller_ID", inputArray[i]);
+					break;
+				case 17:
+					searchData.put("Secondary_Seller_Type", inputArray[i]);
+					break;
+				case 18:
+					searchData.put("From_Trans_Date", inputArray[i]);
+					break;
+				case 19:
+					searchData.put("To_Trans_Date", inputArray[i]);
+					break;
+				case 20:
+					searchData.put("Post_Period", inputArray[i]);
+					break;
+				default:
+					searchData.put("NoData", inputArray[i]);
+					break;
+				}
+
 			}
 		}
 		return searchData;
