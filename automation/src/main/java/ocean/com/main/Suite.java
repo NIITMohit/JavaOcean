@@ -75,7 +75,7 @@ public class Suite extends ReadData {
 			// Ocean Application Path
 			appCapabilities.setCapability("app", oceanApplicationPath);
 			//// win app driver sesison attached successfully
-			windowsDriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
+			//windowsDriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
 			//// create report folder in running directory
 			createReportFolder();
 			//// Create reports
