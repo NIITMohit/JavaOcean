@@ -38,86 +38,14 @@ public class OCEAN_Search_TC_01 extends searchModulePages {
 
 	@Test(priority = 1, groups = "regression", dataProvider = "searchContract", dataProviderClass = DataProviderClass.class)
 	public void searchContractWithAnyInputFielsd(String[] inputArray) throws Exception {
-		HashMap<String, String> searchData = new HashMap<String, String>();
 		String iterations = inputArray[0];
-		for (int i = 1; i < inputArray.length; i++) {
-			//// Switch Case to Transform Data
-			switch (i) {
-			case 0:
-				searchData.put("iteration", inputArray[i]);
-				break;
-			case 1:
-				searchData.put("Contract", inputArray[i]);
-				break;
-			case 2:
-				searchData.put("First_Name", inputArray[i]);
-				break;
-			case 3:
-				searchData.put("Last_Name", inputArray[i]);
-				break;
-			case 4:
-				searchData.put("VIN", inputArray[i]);
-				break;
-			case 5:
-				searchData.put("Status", inputArray[i]);
-				break;
-			case 6:
-				searchData.put("State", inputArray[i]);
-				break;
-			case 7:
-				searchData.put("City", inputArray[i]);
-				break;
-			case 8:
-				searchData.put("Phone", inputArray[i]);
-				break;
-			case 9:
-				searchData.put("Program_Code", inputArray[i]);
-				break;
-			case 10:
-				searchData.put("Primary_Payee_ID", inputArray[i]);
-				break;
-			case 11:
-				searchData.put("Primary_Seller_Name", inputArray[i]);
-				break;
-			case 12:
-				searchData.put("Primary_Seller_ID", inputArray[i]);
-				break;
-			case 13:
-				searchData.put("Primary_Seller_Type", inputArray[i]);
-				break;
-			case 14:
-				searchData.put("From_Sale_Date", inputArray[i]);
-				break;
-			case 15:
-				searchData.put("To_Sale_Date", inputArray[i]);
-				break;
-			case 16:
-				searchData.put("Secondary_Seller_Name", inputArray[i]);
-				break;
-			case 17:
-				searchData.put("Secondary_Seller_ID", inputArray[i]);
-				break;
-			case 18:
-				searchData.put("Secondary_Seller_Type", inputArray[i]);
-				break;
-			case 19:
-				searchData.put("From_Trans_Date", inputArray[i]);
-				break;
-			case 20:
-				searchData.put("To_Trans_Date", inputArray[i]);
-				break;
-			case 21:
-				searchData.put("Post_Period", inputArray[i]);
-				break;
-			default:
-				searchData.put("NoData", inputArray[i]);
-				break;
-			}
-		}
-		//// run query and perform search
-		HashMap<Integer, HashMap<String, String>> dbData = getDataSetforSearch(searchData);
+		//// get search data value in a hashmap
+		HashMap<String, String> searchData = appendSearchData(inputArray);
+		HashMap<Integer, HashMap<String, String>> dbData = getDataSetforSearch(iterations, searchData);
 		if (dbData.size() != Integer.parseInt(iterations)) {
-
+			///// append result with message : that iteration count is different with
+			///// records searched from db, however running the same for all records
+			///// searched in db
 		}
 
 		///// run code for search
