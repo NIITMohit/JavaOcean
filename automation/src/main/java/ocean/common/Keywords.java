@@ -72,6 +72,16 @@ public class Keywords extends Variables {
 
 	}
 
+	public void waitForSomeTime(int time) {
+		try {
+			Thread.sleep(time * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			//// do nothing
+		}
+
+	}
+
 	public void rightClick(String locator) {
 		for (int i = 0; i < 4; i++) {
 			try {

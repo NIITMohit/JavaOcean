@@ -83,7 +83,6 @@ public class ReadData extends Keywords {
 			for (int i = 1; i <= totalNoOfRows; i++) {
 				Row row = sh.getRow(i);
 				for (int j = 0; j < totalNoOfColumn; j++) {
-					System.out.println(i + "," + j);
 					String abc = "";
 					try {
 						CellType cellType = row.getCell(j).getCellType();
