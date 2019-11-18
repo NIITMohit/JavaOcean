@@ -2,6 +2,7 @@ package ocean.test.condition.search;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,35 +22,22 @@ import ocean.modules.pages.searchModulePages;
  * @author Mohit Goel
  */
 public class OCEAN_Search_TC_01 extends searchModulePages {
-
-	// @Test(priority = 1, groups = "regression", dataProvider = "searchContract",
-	// dataProviderClass = DataProviderClass.class)
-	public void searchContractWithAnyInputField(String iteration, String Contract, String First_Name, String VIN,
-			String Status, String State, String City, String Phone, String Program_Code, String Primary_Payee_ID,
-			String Primary_Seller_Name, String Primary_Seller_ID, String Primary_Seller_Type, String From_Sale_Date,
-			String To_Sale_Date, String Secondary_Seller_Name, String Secondary_Seller_ID, String Secondary_Seller_Type,
-			String From_Trans_Date, String To_Trans_Date, String Post_Period) throws Exception {
-		System.out.println(iteration + Contract + First_Name + VIN + Status + State + City + Phone + Program_Code
-				+ Primary_Payee_ID + Primary_Seller_Name + Primary_Seller_ID + Primary_Seller_Type + From_Sale_Date
-				+ To_Sale_Date + Secondary_Seller_Name + Secondary_Seller_ID + Secondary_Seller_Type + From_Trans_Date
-				+ To_Trans_Date + Post_Period);
-
-	}
-
 	@Test(priority = 1, groups = "regression", dataProvider = "searchContract", dataProviderClass = DataProviderClass.class)
 	public void searchContractWithAnyInputFielsd(String[] inputArray) throws Exception {
-		String iterations = inputArray[0];
-		//// get search data value in a hashmap
-		HashMap<String, String> searchData = appendSearchData(inputArray);
-		HashMap<Integer, HashMap<String, String>> dbData = getDataSetforSearch(iterations, searchData);
-		if (dbData.size() != Integer.parseInt(iterations)) {
-			///// append result with message : that iteration count is different with
-			///// records searched from db, however running the same for all records
-			///// searched in db
+		//// create data to fill required values in search window
+		HashMap<String, String> uiSearchData = null;
+		if (Arrays.stream(inputArray).anyMatch("*"::equals)) {
+			//// run db query to get unique value, else no need
+			//// get search data value in a hashmap from data provider, all values would be
+			//// appendSearchData saved in searchData hash map same as in excel, all values
+			//// including *, Blanks
+			uiSearchData = getDataSetforSearch(appendSearchData(inputArray));
+		} else {
+			uiSearchData = convertDataRemoveStar(inputArray);
 		}
 
-		///// run code for search
-		searchContractGivenInputParamaters(searchData);
+		//// run code for search
+		searchContractGivenInputParamaters(uiSearchData);
 
 	}
 }
