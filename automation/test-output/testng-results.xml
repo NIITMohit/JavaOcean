@@ -1,228 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="23975" started-at="2019-11-13T15:32:11 IST" finished-at="2019-11-13T15:32:35 IST">
+  <suite name="Ocean" duration-ms="5874" started-at="2019-11-15T15:59:34 IST" finished-at="2019-11-15T15:59:40 IST">
     <groups>
+      <group name="regression">
+        <method signature="OCEAN_Search_TC_01.searchContractWithAnyInputFielsd([[Ljava.lang.String;)[pri:1, instance:ocean.test.condition.search.OCEAN_Search_TC_01@131ef10]" name="searchContractWithAnyInputFielsd" class="ocean.test.condition.search.OCEAN_Search_TC_01"/>
+      </group> <!-- regression -->
     </groups>
-    <test name="Pricing" duration-ms="23975" started-at="2019-11-13T15:32:11 IST" finished-at="2019-11-13T15:32:35 IST">
-      <class name="ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="setup" is-config="true" duration-ms="156" started-at="2019-11-13T15:32:11 IST" finished-at="2019-11-13T15:32:11 IST">
+    <test name="Pricing" duration-ms="5874" started-at="2019-11-15T15:59:34 IST" finished-at="2019-11-15T15:59:40 IST">
+      <class name="ocean.test.condition.search.OCEAN_Search_TC_01">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.search.OCEAN_Search_TC_01@131ef10]" name="setup" is-config="true" duration-ms="125" started-at="2019-11-15T15:59:34 IST" finished-at="2019-11-15T15:59:34 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@26a94fa5]]>
+                <![CDATA[org.testng.TestRunner@6f63c44f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="createParent" is-config="true" duration-ms="0" started-at="2019-11-13T15:32:11 IST" finished-at="2019-11-13T15:32:11 IST">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.search.OCEAN_Search_TC_01@131ef10]" name="createParent" is-config="true" duration-ms="0" started-at="2019-11-15T15:59:34 IST" finished-at="2019-11-15T15:59:34 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@26a94fa5]]>
+                <![CDATA[org.testng.TestRunner@6f63c44f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-13T15:32:15 IST" finished-at="2019-11-13T15:32:15 IST">
+        <test-method status="FAIL" signature="searchContractWithAnyInputFielsd([[Ljava.lang.String;)[pri:1, instance:ocean.test.condition.search.OCEAN_Search_TC_01@131ef10]" name="searchContractWithAnyInputFielsd" duration-ms="5842" started-at="2019-11-15T15:59:34 IST" data-provider="searchContract" finished-at="2019-11-15T15:59:40 IST">
+          <exception class="org.testng.internal.reflect.MethodMatcherException">
+            <message>
+              <![CDATA[
+[public void ocean.test.condition.search.OCEAN_Search_TC_01.searchContractWithAnyInputFielsd(java.lang.String[][]) throws java.lang.Exception] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: searchContractWithAnyInputFielsd([Parameter{index=0, type=[[Ljava.lang.String;, declaredAnnotations=[]}])
+Arguments: [(java.lang.String) 1,(java.lang.String) *,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) NY,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
+[public void ocean.test.condition.search.OCEAN_Search_TC_01.searchContractWithAnyInputFielsd(java.lang.String[][]) throws java.lang.Exception] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: searchContractWithAnyInputFielsd([Parameter{index=0, type=[[Ljava.lang.String;, declaredAnnotations=[]}])
+Arguments: [(java.lang.String) 1,(java.lang.String) *,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) NY,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ,(java.lang.String) ]
+at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:43)
+at org.testng.internal.Parameters.injectParameters(Parameters.java:925)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:34)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="sea(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="sea" duration-ms="3599" started-at="2019-11-13T15:32:15 IST" data-provider="Search" finished-at="2019-11-13T15:32:19 IST">
+        </test-method> <!-- searchContractWithAnyInputFielsd -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.search.OCEAN_Search_TC_01@131ef10]" name="tearDown" is-config="true" duration-ms="266" started-at="2019-11-15T15:59:40 IST" finished-at="2019-11-15T15:59:40 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ABCED]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sea -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="tearDown" is-config="true" duration-ms="1921" started-at="2019-11-13T15:32:19 IST" finished-at="2019-11-13T15:32:21 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=sea status=SUCCESS method=OCEAN_Pricing_TC_05_06.sea(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@26a94fa5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-13T15:32:21 IST" finished-at="2019-11-13T15:32:21 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="sea(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="sea" duration-ms="9854" started-at="2019-11-13T15:32:21 IST" data-provider="Search" finished-at="2019-11-13T15:32:30 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Goel]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Mohit]]>
-              </value>
-            </param>
-            <param index="3">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sea -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="tearDown" is-config="true" duration-ms="1281" started-at="2019-11-13T15:32:30 IST" finished-at="2019-11-13T15:32:32 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=sea status=SUCCESS method=OCEAN_Pricing_TC_05_06.sea(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@26a94fa5]]>
+                <![CDATA[org.testng.TestRunner@6f63c44f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-13T15:32:32 IST" finished-at="2019-11-13T15:32:32 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="sea(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="sea" duration-ms="1031" started-at="2019-11-13T15:32:32 IST" data-provider="Search" finished-at="2019-11-13T15:32:33 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Mohit]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sea -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="tearDown" is-config="true" duration-ms="517" started-at="2019-11-13T15:32:33 IST" finished-at="2019-11-13T15:32:33 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=sea status=SUCCESS method=OCEAN_Pricing_TC_05_06.sea(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@26a94fa5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-13T15:32:33 IST" finished-at="2019-11-13T15:32:33 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="sea(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="sea" duration-ms="1267" started-at="2019-11-13T15:32:33 IST" data-provider="Search" finished-at="2019-11-13T15:32:35 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1A235544]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sea -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="tearDown" is-config="true" duration-ms="892" started-at="2019-11-13T15:32:35 IST" finished-at="2019-11-13T15:32:35 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=sea status=SUCCESS method=OCEAN_Pricing_TC_05_06.sea(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@26a94fa5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06@131ef10]" name="tearDown" is-config="true" duration-ms="31" started-at="2019-11-13T15:32:35 IST" finished-at="2019-11-13T15:32:35 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@26a94fa5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- ocean.test.condition.pricing.OCEAN_Pricing_TC_05_06 -->
+      </class> <!-- ocean.test.condition.search.OCEAN_Search_TC_01 -->
     </test> <!-- Pricing -->
   </suite> <!-- Ocean -->
 </testng-results>

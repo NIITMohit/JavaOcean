@@ -7,6 +7,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
+import java.util.Map;
+
+import com.sun.mail.util.QEncoderStream;
 
 /**
  * This class is used to achieve database connectivity and stores all db queries
@@ -188,7 +191,52 @@ public class Database_Connectivity {
 			///// execute query
 			ResultSet rs = stmt.executeQuery(
 					"select top 2 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
-							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r.IsDeleted = 0 order by d.CreateByDate desc;");
+							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r .IsDeleted = 0 order by d.CreateByDate desc;");
+			//// save data in map
+			dbMap = returnAllData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return dbMap;
+
+	}
+
+	public HashMap<Integer, HashMap<String, String>> getDataSetforSearch(String iteration,
+			HashMap<String, String> searchParamater) throws Exception {
+		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+		try {
+			String query = "";
+			String query1 = "select top " + iteration + " ";
+			String query2 = " from All_Sales_Details where ";
+			String myKey = "";
+			String myvalue = "";
+			for (@SuppressWarnings("rawtypes")
+			Map.Entry mapElement : searchParamater.entrySet()) {
+				String key = (String) mapElement.getKey();
+				String value = (String) mapElement.getValue();
+				if (value.equals("*")) {
+					myKey = myKey + key + ",";
+					myvalue = myvalue + key + " is not null and ";
+				} else if (value.length() < 1) {
+					//// do nothing
+				} else {
+					myKey = myKey + key + ",";
+					myvalue = myvalue + key + " = " + value + " and ";
+				}
+
+			}
+			query = query1 + myKey + query2 + myvalue;
+			query = query.substring(0, query.lastIndexOf("and")) + ";";
+			query = query.substring(0, query.lastIndexOf(","))
+					+ query.substring(query.lastIndexOf(",") + 1, query.length());
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
 			//// save data in map
 			dbMap = returnAllData(rs);
 

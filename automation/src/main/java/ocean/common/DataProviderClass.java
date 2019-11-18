@@ -105,7 +105,7 @@ public class DataProviderClass {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "PremiumCalculation");
 		return arrayObject;
 	}
-	
+
 	/**
 	 * Data provider
 	 */
@@ -121,6 +121,5 @@ public class DataProviderClass {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Search");
 		return arrayObject;
 	}
-
 
 }
