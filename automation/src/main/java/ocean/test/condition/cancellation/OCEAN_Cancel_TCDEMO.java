@@ -1,4 +1,4 @@
-package ocean.test.condition.Cancellation;
+package ocean.test.condition.cancellation;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
