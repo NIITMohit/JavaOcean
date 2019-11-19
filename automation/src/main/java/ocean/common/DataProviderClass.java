@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
 public class DataProviderClass {
 
 	/**
-	 * Data provider
+	 * Data provider for search contract used in cancellation module
 	 */
 	@DataProvider(name = "SearchContract")
 	public static Object[][] SearchContractDataprovider() {
@@ -27,7 +27,7 @@ public class DataProviderClass {
 	}
 
 	/**
-	 * Data provider
+	 * Data provider for premium calculation used in underwriting module
 	 */
 	@DataProvider(name = "PremiumReCalculate")
 	public static Object[][] PremiumReCalculate() {
@@ -43,7 +43,7 @@ public class DataProviderClass {
 	}
 
 	/**
-	 * Data provider
+	 * Data provider for business rules used in cancellation module
 	 */
 	@DataProvider(name = "SearchContractonBR")
 	public static Object[][] SearchContractonBRDatProvider() {
@@ -59,7 +59,7 @@ public class DataProviderClass {
 	}
 
 	/**
-	 * Data provider
+	 * Data provider for override rules used in cancellation module
 	 */
 	@DataProvider(name = "SearchContractonOverRide")
 	public static Object[][] SearchContractonOverRideDatProvider() {
@@ -75,7 +75,7 @@ public class DataProviderClass {
 	}
 
 	/**
-	 * Data provider
+	 * Data provider for cancel contract used in cancellation module
 	 */
 	@DataProvider(name = "cancelContractCalculateVerify")
 	public static Object[][] cancelContractCalculateVerify() {
@@ -91,7 +91,8 @@ public class DataProviderClass {
 	}
 
 	/**
-	 * Data provider
+	 * Data provider for fetchContractDetailsForPremiumCalculation used in pricing
+	 * module
 	 */
 	@DataProvider(name = "fetchContractDetailsForPremiumCalculation")
 	public static Object[][] fetchContractDetailsForPremiumCalculation() {
@@ -107,16 +108,32 @@ public class DataProviderClass {
 	}
 
 	/**
-	 * Data provider
+	 * Data provider for fetchSearchData used in search module
 	 */
-	@DataProvider(name = "searchContract")
-	public static Object[][] searchContract() {
+	@DataProvider(name = "fetchSearchData")
+	public static Object[][] fetchSearchData() {
 		//// current runnig directory
 		String currentDir = System.getProperty("user.dir");
 		//// pat of test ng test data
 		String dir = currentDir + "\\Repository\\";
 		//// Excel sheet file name
 		String fileName = "Search.xlsx";
+		//// Excel sheet, sheet name
+		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Search");
+		return arrayObject;
+	}
+
+	/**
+	 * Data provider for fetchSearchData used in search module
+	 */
+	@DataProvider(name = "fetchCancelSearchData")
+	public static Object[][] fetchCancelSearchData() {
+		//// current running directory
+		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
+		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
+		String fileName = "Cancellation.xlsx";
 		//// Excel sheet, sheet name
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Search");
 		return arrayObject;
