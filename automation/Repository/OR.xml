@@ -77,6 +77,14 @@
 			<locator>Name</locator>
 			<value>OK</value>
 		</keyword>
+		<keyword id="typeCustomerLastName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Last Name']/following-sibling::*[@ClassName='TextBox']</value>
+		</keyword>
+		<keyword id="typeVIN">
+			<locator>xpath</locator>
+			<value>//*[@Name='VIN']/following-sibling::*[@ClassName='TextBox']</value>
+		</keyword>
 		<keyword id="typeCustomerFirstName">
 			<locator>xpath</locator>
 			<value>//*[@Name='Customer First Name']/following-sibling::*[@ClassName='TextBox']</value>

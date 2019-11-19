@@ -21,7 +21,7 @@ public class OCEAN_Search_TC_01_10 extends searchModulePages {
 	 * excel
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", dataProvider = "searchContract", dataProviderClass = DataProviderClass.class, description = "Search test case,Contract should be Search from the given search sheet under Search Section.")
+	@Test(priority = 1, groups = "regression", dataProvider = "fetchSearchData", dataProviderClass = DataProviderClass.class, description = "Search test case,Contract should be Search from the given search sheet under Search Section.")
 	public void searchContractWithAnyInputField(String[] inputArray) throws Exception {
 		//// create data to fill required values in search window
 		HashMap<String, String> uiSearchData = null;
