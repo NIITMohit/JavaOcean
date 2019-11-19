@@ -274,4 +274,134 @@
 			<value>//*[@Name='DateTimePicker']//*[@Name='ButtonSpinner']//*[@ClassName='WatermarkTextBox']</value>
 	</keyword>		
 	</UnderWriting>
+	<Search>
+	<keyword id="searchTypeContract">
+			<locator>xpath</locator>
+			<value>//*[@Name='Contract:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="searchTypeLastName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Last Name:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="searchTypeFirstName">
+			<locator>xpath</locator>
+			<value>//*[@Name='First Name:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="searchTypeVIN">
+			<locator>xpath</locator>
+			<value>//*[@Name='VIN:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="clickStatus">
+			<locator>xpath</locator>
+			<value>//*[@Name='Status:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="clickUnderW">
+			<locator>name</locator>
+			<value>UnderW</value>
+	</keyword>
+	<keyword id="clickOnHold">
+			<locator>name</locator>
+			<value>OnHold</value>
+	</keyword>
+	<keyword id="clickReturn">
+			<locator>name</locator>
+			<value>Return</value>
+	</keyword>
+	<keyword id="clickPending">
+			<locator>name</locator>
+			<value>Pending</value>
+	</keyword>
+	<keyword id="clickProcessed">
+			<locator>name</locator>
+			<value>Processed</value>
+	</keyword>
+	<keyword id="clickCancelled">
+			<locator>name</locator>
+			<value>Cancelled</value>
+	</keyword>
+	<keyword id="clickPurged">
+			<locator>name</locator>
+			<value>Purged</value>
+	</keyword>
+	<keyword id="clickReference">
+			<locator>name</locator>
+			<value>Reference</value>
+	</keyword>
+	<keyword id="clickNIS">
+			<locator>name</locator>
+			<value>NIS</value>
+	</keyword>
+	<keyword id="selectPostPeriod">
+			<locator>xpath</locator>
+			<value>//*[@Name='Post Period:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typePhone">
+			<locator>xpath</locator>
+			<value>//*[@Name='Phone:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typePrimarySellerName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary Seller Name:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typePrimarySellerId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary Seller ID:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typeSecondarySellerName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Secondary Seller Name:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typeSecondarySellerId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Secondary Seller ID:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="clickSearch">
+			<locator>xpath</locator>
+			<value>//*[@Name='Search']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="fromSaleDate">
+			<locator>xpath</locator>
+			<value>//*[@Name='From Sale Date:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="toSaleDate">
+			<locator>xpath</locator>
+			<value>//*[@Name='To Sale Date:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="fromTransDate">
+			<locator>xpath</locator>
+			<value>//*[@Name='From Trans Date:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="toTransDate">
+			<locator>xpath</locator>
+			<value>//*[@Name='To Trans Date:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="clickClear">
+			<locator>xpath</locator>
+			<value>//*[@Name='Clear']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectState">
+			<locator>xpath</locator>
+			<value>//*[@Name='State:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectCity">
+			<locator>xpath</locator>
+			<value>//*[@Name='City:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectProgramCode">
+			<locator>xpath</locator>
+			<value>//*[@Name='Program Code:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typePrimarySellerName">
+             <locator>xpath</locator>
+             <value>//*[@Name='Primary Seller Name:']/following-sibling::*[1]</value>
+    </keyword>
+       <keyword id="clickPrimarySellertype">
+              <locator>xpath</locator>
+              <value>//*[@Name='Primary Seller Type:']/following-sibling::*[1]</value>
+    </keyword>
+       <keyword id="clickSecondarySellertype">
+               <locator>xpath</locator>
+               <value>//*[@Name='Secondary Seller Type:']/following-sibling::*[1]</value>
+    </keyword>
+	</Search>
 </Ocean>
