@@ -205,7 +205,11 @@ public class searchModulePages extends CommonFunctions {
 				type("", valueToInput);
 				break;
 			case "Status":
-				type("", valueToInput);
+				String[] values = valueToInput.split(",");
+				for (String value : values) {
+					//// click status checkbox
+					//// click desired status
+				}
 				break;
 			case "State":
 				type("", valueToInput);

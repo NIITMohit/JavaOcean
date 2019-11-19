@@ -2,17 +2,8 @@ package ocean.modules.pages;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.collections.map.HashedMap;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 import ocean.common.CommonFunctions;
-import ocean.common.DataProviderClass;
 
 /**
  * This is object class which contains all pages of underwriting modules
