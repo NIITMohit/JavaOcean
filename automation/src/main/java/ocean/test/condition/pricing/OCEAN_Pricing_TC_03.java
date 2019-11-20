@@ -2,7 +2,6 @@ package ocean.test.condition.pricing;
 
 import org.testng.annotations.Test;
 
-import ocean.common.CommonFunctions;
 import ocean.modules.pages.pricingModulePages;
 
 /**
@@ -25,8 +24,8 @@ public class OCEAN_Pricing_TC_03 extends pricingModulePages {
 	public void ImportPriceSheet() throws Exception {
 		//// Upload a price sheet
 		// Click Pricing Tab
+		// Click Pricing Tab and navigate to pricing tab
 		goToPricingTab();
-		// Click Price Sheet List Tab
 		visitPriceSheetListTab();
 
 	}

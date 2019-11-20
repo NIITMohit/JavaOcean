@@ -4,7 +4,6 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
 
-import ocean.common.CommonFunctions;
 import ocean.modules.pages.pricingModulePages;
 
 /**
@@ -25,9 +24,8 @@ public class OCEAN_Pricing_TC_02 extends pricingModulePages {
 	@Test(priority = 1, groups = "sanity", description = "Validate that uploaded price sheet should have their unique program code by Ocean.")
 	public void validateOnlyUniquePriceSheetToBeUploaded() throws Exception {
 		//// Upload a price sheet
-		// Click Pricing Tab
+		// Click Pricing Tab and navigate to pricing tab
 		goToPricingTab();
-		// Click Price Sheet List Tab
 		visitPriceSheetListTab();
 		// Click Import
 		//// Import A price sheet

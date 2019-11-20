@@ -53,7 +53,7 @@ public class Suite extends ReadData {
 		//// Code to open application and wait till application is stable before
 		//// attaching win app session to ocean
 		try {
-			Runtime runtime = Runtime.getRuntime();
+			// Runtime runtime = Runtime.getRuntime();
 			/*
 			 * try { System.out.println(oceanApplicationPath);
 			 * System.out.println("Ocean Application starting");
@@ -74,7 +74,7 @@ public class Suite extends ReadData {
 			appCapabilities.setCapability("deviceName", InetAddress.getLocalHost().getHostName());
 			// Ocean Application Path
 			appCapabilities.setCapability("app", oceanApplicationPath);
-			//// win app driver sesison attached successfully
+			//// win app driver session attached successfully
 			windowsDriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
 			//// create report folder in running directory
 			createReportFolder();

@@ -9,8 +9,6 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.sun.mail.util.QEncoderStream;
-
 /**
  * This class is used to achieve database connectivity and stores all db queries
  * and functions this is only single class to have all db related queries
@@ -62,7 +60,8 @@ public class Database_Connectivity {
 	}
 
 	/**
-	 * Convert db data to hashmap and return a hashmap
+	 * Convert db data to hashmap and return a hashmap This function will only top
+	 * row of db data
 	 * 
 	 * @throws Exception
 	 * 
@@ -101,6 +100,13 @@ public class Database_Connectivity {
 
 	}
 
+	/**
+	 * Convert db data to hashmap and return a hashmap This function will convert
+	 * all db data
+	 * 
+	 * @throws Exception
+	 * 
+	 */
 	public HashMap<Integer, HashMap<String, String>> returnAllData(ResultSet rs1) throws Exception {
 		//// Hash map to store columns and value
 		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
@@ -138,6 +144,10 @@ public class Database_Connectivity {
 
 	}
 
+	/**
+	 * This function is used to convert db data like int, date etc to string
+	 * 
+	 */
 	public String convertData(String columnReturnType, ResultSet rs, int i) throws SQLException {
 		switch (columnReturnType) {
 		case "int":
@@ -183,6 +193,10 @@ public class Database_Connectivity {
 
 	}
 
+	/**
+	 * This gets PendingContractwithRemittance
+	 * 
+	 */
 	public HashMap<Integer, HashMap<String, String>> getPendingContractwithRemittance() throws Exception {
 		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
 		try {
@@ -206,12 +220,16 @@ public class Database_Connectivity {
 
 	}
 
+	/**
+	 * This gets DataSetforSearch
+	 * 
+	 */
 	public HashMap<String, String> getDataSetforSearch(HashMap<String, String> searchParamater) throws Exception {
 		HashMap<String, String> dbMap = new HashMap<String, String>();
 		try {
 			String query = "";
 			String query1 = "select top " + "1" + " ";
-			String query2 = " from All_Sales_Details where ";
+			String query2 = " from [dbo].[ALLSALES_DETAILS] where ";
 			String myKey = "";
 			String myvalue = "";
 			for (@SuppressWarnings("rawtypes")
@@ -225,7 +243,7 @@ public class Database_Connectivity {
 					//// do nothing
 				} else {
 					myKey = myKey + key + ",";
-					myvalue = myvalue + key + " = " + value + " and ";
+					myvalue = myvalue + key + " = '" + value + "' and ";
 				}
 
 			}
@@ -233,6 +251,51 @@ public class Database_Connectivity {
 			query = query.substring(0, query.lastIndexOf("and")) + ";";
 			query = query.substring(0, query.lastIndexOf(","))
 					+ query.substring(query.lastIndexOf(",") + 1, query.length());
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			dbMap = returnData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return dbMap;
+
+	}
+
+	/**
+	 * This gets SearchDataCountOnCancellationScreen
+	 * 
+	 */
+	public HashMap<String, String> getSearchDataCountOnCancellationScreen(HashMap<String, String> searchParamater)
+			throws Exception {
+		HashMap<String, String> dbMap = new HashMap<String, String>();
+		try {
+			String query = "";
+			String query1 = "select count(1) as count";
+			String query2 = " from [dbo].[ALLSALES_DETAILS] where ";
+			String myvalue = "";
+			for (@SuppressWarnings("rawtypes")
+			Map.Entry mapElement : searchParamater.entrySet()) {
+				String key = (String) mapElement.getKey();
+				String value = (String) mapElement.getValue();
+				if (value.equals("*")) {
+					//// do noting
+				} else if (value.length() < 1) {
+					//// do nothing
+				} else {
+
+					myvalue = myvalue + key + " = '" + value + "' and ";
+				}
+
+			}
+			query = query1 + query2 + myvalue;
+			query = query.substring(0, query.lastIndexOf("and")) + ";";
 			aulDBConnect();
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);

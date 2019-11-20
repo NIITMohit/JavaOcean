@@ -1,6 +1,8 @@
 package ocean.common;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -189,6 +191,37 @@ public class Keywords extends Variables {
 	}
 
 	/**
+	 * getValue keyword , this function is used to get text/value of locator
+	 *
+	 * @param unique identifier to locate object
+	 * @return the text/value of locator
+	 */
+	public Set<String> getAllValuesSaveInSet(String locator) {
+		HashSet<String> abc = new HashSet<String>();
+		for (int i = 0; i < 4; i++) {
+			try {
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				@SuppressWarnings("unchecked")
+				//// Find list of web elements
+				List<WebElement> listWebElement = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
+				for (WebElement webElement : listWebElement) {
+					//// get value and return the same
+					abc.add(webElement.getAttribute("Name"));
+				}
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+		return abc;
+	}
+
+	/**
 	 * checkEnableDisable keyword , this function is used to get state of object,
 	 * and identify weather it is enable or disable
 	 *
@@ -202,10 +235,42 @@ public class Keywords extends Variables {
 				//// Wait till web element is located
 				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
 				WebElement typeElement = wait
-						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
-
+						.until(ExpectedConditions.presenceOfElementLocated(ObjectRepo.fetchOR(locator)));
 				//// Check Enable of button
 				Boolean flaf = typeElement.isEnabled();
+				flag = Boolean.toString(flaf);
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+		return flag;
+	}
+
+	/**
+	 * checkEnableDisable keyword , this function is used to get state of object,
+	 * and identify weather it is enable or disable
+	 *
+	 * @param unique identifier to locate object
+	 * @return true or false based on locator state
+	 */
+	public String checkEnableDisableBasedOnBoundingRectangle(String locator) {
+		String flag = "not able identify";
+		boolean flaf = true;
+		for (int i = 0; i < 4; i++) {
+			try {
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebElement typeElement = wait
+						.until(ExpectedConditions.presenceOfElementLocated(ObjectRepo.fetchOR(locator)));
+				//// Check Enable of button
+				String boundingRectangle = typeElement.getAttribute("BoundingRectangle");
+				if (boundingRectangle.equals("Left:0 Top:0 Width:0 Height:0")) {
+					flaf = false;
+				}
 				flag = Boolean.toString(flaf);
 				break;
 			} catch (Exception e) {
