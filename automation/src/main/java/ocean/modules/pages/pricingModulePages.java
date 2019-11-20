@@ -1,8 +1,5 @@
 package ocean.modules.pages;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import ocean.common.CommonFunctions;
 
 /**
@@ -11,17 +8,6 @@ import ocean.common.CommonFunctions;
  * @author Mohit Goel
  */
 public class pricingModulePages extends CommonFunctions {
-	/**
-	 * This function is used to navigate to PricingSheetListTab
-	 * 
-	 * 
-	 */
-	public void visitPriceSheetListTab() throws Exception {
-		click("clickPricingSheetListTab");
-	}
-	
-	
-
 	/**
 	 * This function is used delete a price sheet based on search paramater
 	 * 

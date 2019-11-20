@@ -3,8 +3,6 @@ package ocean.test.condition.pricing;
 import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
-
-import ocean.common.CommonFunctions;
 import ocean.modules.pages.pricingModulePages;
 
 /**
@@ -26,21 +24,20 @@ public class OCEAN_Pricing_TC_01 extends pricingModulePages {
 	public void ImportPriceSheetAndVerifyForSuccessfulImport() throws Exception {
 		//// Upload a price sheet
 		String newProgramCode = "SNZ";
-		// Click Pricing Tab
+		// Click Pricing Tab and navigate to pricing tab
 		goToPricingTab();
-		// Click Price Sheet List Tab
 		visitPriceSheetListTab();
 		//// Check if price Sheet Exist, delete the same
 		deletePriceSheet(newProgramCode);
 		// Click Pricing Tab
 		// Click Pricing Tab
+		// Click Pricing Tab and navigate to pricing tab
 		goToPricingTab();
-		// Click Price Sheet List Tab
 		visitPriceSheetListTab();
-		//// Import A price  sheet
-	    importPriceSheet(newProgramCode);
-	    //// validate price sheet is successfully imported
-	    String priceSheet = searchPriceSheet(newProgramCode);
+		//// Import A price sheet
+		importPriceSheet(newProgramCode);
+		//// validate price sheet is successfully imported
+		String priceSheet = searchPriceSheet(newProgramCode);
 		assertEquals(priceSheet, newProgramCode);
 		//// DB validation go be added
 	}

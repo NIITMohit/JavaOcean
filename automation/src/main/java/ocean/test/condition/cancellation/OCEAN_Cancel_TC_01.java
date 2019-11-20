@@ -1,5 +1,7 @@
 package ocean.test.condition.cancellation;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -26,9 +28,12 @@ public class OCEAN_Cancel_TC_01 extends cancellationModulePages {
 	public void searchForContractOnCancelScreen(String[] inputArray) throws Exception {
 		//// create data to fill required values in search window
 		HashMap<String, String> uiSearchData = null;
+		//// Navigate to mail service tab
+		goToCancellationTab();
+		goToMailServiceTab();
 		if (Arrays.stream(inputArray).anyMatch("*"::equals)) {
 			//// run db query to get unique value, else no need
-			//// get search data value in a hashmap from data provider, all values would be
+			//// get search data value in a hash map from data provider, all values would be
 			//// appendSearchData saved in searchData hash map same as in excel, all values
 			//// including *, Blanks
 			uiSearchData = getDataSetforSearch(appendSearchData(inputArray));
@@ -38,6 +43,13 @@ public class OCEAN_Cancel_TC_01 extends cancellationModulePages {
 
 		//// run code for search
 		searchContractGivenInputParamaters(uiSearchData);
-
+		//// get number of search result from ocean, actual search result from input
+		//// parameters
+		int oceanCount = getSearchResultCount();
+		//// get number of search result from database, actual result from input
+		//// parameters
+		int dbCount = Integer.parseInt(getSearchDataCountOnCancellationScreen(uiSearchData).get("count"));
+		//// get data count and verify
+		assertEquals(oceanCount, dbCount);
 	}
 }
