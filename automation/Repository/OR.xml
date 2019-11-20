@@ -113,6 +113,14 @@
 			<locator>Name</locator>
 			<value>Authorize</value>
 		</keyword>
+		<keyword id="listOfContractNumbers">
+			<locator>xpath</locator>
+			<value>//*[@Name='Contract number' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+		</keyword>
+		<keyword id="scrollContractsListDown">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='PageUp' and @ClassName='RepeatButton']</value>
+		</keyword>
 	</Cancellation>
 	<Pricing>
 	<keyword id="clickPricingTab">
@@ -383,7 +391,7 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='To Trans Date:']/following-sibling::*[1]</value>
 	</keyword>
-	<keyword id="clickClear">
+	<keyword id="clickClearOnSearch">
 			<locator>xpath</locator>
 			<value>//*[@Name='Clear']/following-sibling::*[1]</value>
 	</keyword>

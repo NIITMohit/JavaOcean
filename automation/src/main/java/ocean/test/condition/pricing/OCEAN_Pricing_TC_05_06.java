@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.testng.annotations.Test;
-
-import ocean.common.DataProviderClass;
 import ocean.modules.pages.underwritingModulePages;
 
 /**

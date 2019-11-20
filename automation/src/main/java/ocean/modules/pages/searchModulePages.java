@@ -3,10 +3,6 @@ package ocean.modules.pages;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.openqa.selenium.By;
-
-import com.nimbusds.openid.connect.sdk.ClaimsRequest.Entry;
-
 import ocean.common.CommonFunctions;
 
 /**
@@ -27,71 +23,92 @@ public class searchModulePages extends CommonFunctions {
 			String valueToInput = (String) mapElement.getValue();
 			switch (searchParamater) {
 			case "Contract":
-				type("", valueToInput);
+				type("searchTypeContract", valueToInput);
 				break;
 			case "First_Name":
-				type("", valueToInput);
+				type("searchTypeFirstName", valueToInput);
 				break;
 			case "Last_Name":
-				type("", valueToInput);
+				type("searchTypeLastName", valueToInput);
 				break;
 			case "VIN":
-				type("", valueToInput);
+				type("searchTypeVIN", valueToInput);
 				break;
 			case "Status":
 				String[] values = valueToInput.split(",");
 				for (String value : values) {
-					//// click status checkbox
-					//// click desired status
+					click("clickStatus");
+					switch (value.toLowerCase()) {
+					case "underw":
+						click("clickUnderW");
+					case "onhold":
+						click("clickOnHold");
+					case "return":
+						click("clickReturn");
+					case "pending":
+						click("clickPending");
+					case "processed":
+						click("clickProcessed");
+					case "purged":
+						click("clickPurged");
+					case "reference":
+						click("clickReference");
+					case "cancelled":
+						click("clickCancelled");
+					case "nis":
+						click("clickNIS");
+					default:
+						click("clickProcessed");
+					}
 				}
 				break;
 			case "State":
-				type("", valueToInput);
+				type("selectState", valueToInput);
 				break;
 			case "City":
-				type("", valueToInput);
+				type("selectCity", valueToInput);
 				break;
 			case "Phone":
-				type("", valueToInput);
+				type("typePhone", valueToInput);
 				break;
 			case "Program_Code":
-				type("", valueToInput);
+				type("selectProgramCode", valueToInput);
 				break;
 			case "Primary_Payee_ID":
-				type("", valueToInput);
+				type("typePrimaryPayeeID", valueToInput);
 				break;
 			case "Primary_Seller_Name":
-				type("", valueToInput);
+				type("typePrimarySellerName", valueToInput);
 				break;
 			case "Primary_Seller_ID":
-				type("", valueToInput);
+				type("typePrimarySellerId", valueToInput);
 				break;
 			case "Primary_Seller_Type":
-				type("", valueToInput);
+				type("clickPrimarySellertype", valueToInput);
 				break;
 			case "From_Sale_Date":
-				type("", valueToInput);
+				type("fromSaleDate", valueToInput);
 				break;
 			case "To_Sale_Date":
-				type("", valueToInput);
+				type("toSaleDate", valueToInput);
 				break;
 			case "Secondary_Seller_Name":
-				type("", valueToInput);
+				type("typeSecondarySellerName", valueToInput);
 				break;
 			case "Secondary_Seller_ID":
-				type("", valueToInput);
+				type("typeSecondarySellerId", valueToInput);
 				break;
 			case "Secondary_Seller_Type":
-				type("", valueToInput);
+				type("clickSecondarySellertype", valueToInput);
 				break;
 			case "From_Trans_Date":
-				type("", valueToInput);
+				type("fromTransDate", valueToInput);
 				break;
 			case "To_Trans_Date":
-				type("", valueToInput);
+				type("toTransDate", valueToInput);
 				break;
 			case "Post_Period":
-				type("", valueToInput);
+				type("selectPostPeriod", valueToInput);
 				break;
 			default:
 				//// do nothing

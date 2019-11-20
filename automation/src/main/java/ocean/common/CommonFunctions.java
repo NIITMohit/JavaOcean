@@ -1,10 +1,8 @@
 package ocean.common;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import ocean.com.main.Suite;
-import ocean.modules.pages.underwritingModulePages;
 
 /**
  * This class contains common functions, which is used all over scripts, to save
@@ -21,7 +19,7 @@ public class CommonFunctions extends Suite {
 	 */
 	public HashMap<String, String> appendSearchData(String[] inputArray) {
 		HashMap<String, String> searchData = new HashMap<String, String>();
-		for (int i = 0; i < inputArray.length - 1; i++) {
+		for (int i = 0; i < inputArray.length; i++) {
 			//// Switch Case to Transform Data
 			switch (i) {
 			case 0:
@@ -103,7 +101,7 @@ public class CommonFunctions extends Suite {
 	 */
 	public HashMap<String, String> convertDataRemoveStar(String[] inputArray) {
 		HashMap<String, String> searchData = new HashMap<String, String>();
-		for (int i = 0; i < inputArray.length - 1; i++) {
+		for (int i = 0; i < inputArray.length; i++) {
 			//// Switch Case to Transform Data
 			if (!inputArray[i].equals("*") && inputArray[i].length() > 0) {
 				switch (i) {
@@ -180,8 +178,6 @@ public class CommonFunctions extends Suite {
 		return searchData;
 	}
 
-	
-
 	/**
 	 * This common function is used to search a contract
 	 * 
@@ -210,6 +206,29 @@ public class CommonFunctions extends Suite {
 	}
 
 	/**
+	 * This common function is used to go to cancellation tab
+	 * 
+	 * @return
+	 * 
+	 */
+	public void goToCancellationTab() {
+		try {
+			click("clickCancellationTab");
+		} catch (Exception e) {
+			// throw e;
+		}
+	}
+
+	/**
+	 * This function is used to navigate to PricingSheetListTab
+	 * 
+	 * 
+	 */
+	public void visitPriceSheetListTab() throws Exception {
+		click("clickPricingSheetListTab");
+	}
+
+	/**
 	 * This common function is used to go to pricing tab
 	 * 
 	 */
@@ -219,7 +238,20 @@ public class CommonFunctions extends Suite {
 		} catch (Exception e) {
 			throw e;
 		}
+	}
 
+	/**
+	 * This common function is used to go to mail service tab
+	 * 
+	 * @return
+	 * 
+	 */
+	public void goToMailServiceTab() {
+		try {
+			click("clickMailservice");
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 	/**
