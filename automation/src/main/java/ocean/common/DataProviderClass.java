@@ -139,4 +139,13 @@ public class DataProviderClass {
 		return arrayObject;
 	}
 
+	/**
+	 * Data provider for fetchSearchData used in search module
+	 */
+	@DataProvider(name = "fetchCancelStatusData")
+	public static Object[][] getAllStatusOfContract() {
+		return new String[][] { { "UnderW" }, { "OnHold" }, { "Return" }, { "Pending" }, { "Processed" },
+				{ "Cancelled" }, { "Purged" }, { "Reference" }, { "NIS" } };
+	}
+
 }

@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 2 failed,   </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content failed suite-Ocean">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01" hash-for-method="searchForContractOnCancelScreen([20191411001, , , ])">searchForContractOnCancelScreen([20191411001, , , ])</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01" hash-for-method="searchForContractOnCancelScreen([, Vivek, , ])">searchForContractOnCancelScreen([, Vivek, , ])</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02" hash-for-method="searchForContractOnCancelScreen">searchForContractOnCancelScreen</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Ocean -->
@@ -125,45 +120,21 @@
           <div class="suite-Ocean-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_01</span>
+              <span class="class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="searchForContractOnCancelScreen([20191411001, , , ])">
-                  </a> <!-- searchForContractOnCancelScreen([20191411001, , , ]) -->
+                  <a name="searchForContractOnCancelScreen">
+                  </a> <!-- searchForContractOnCancelScreen -->
                   <span class="method-name">searchForContractOnCancelScreen</span>
-                  <span class="parameters">([20191411001, , , ])</span>
-                  <div class="stack-trace">java.lang.Error: Unresolved compilation problem: 
-	Syntax error, insert &quot;)&quot; to complete Expression
-
-	at ocean.common.Keywords.getAllValuesSaveInSet(Keywords.java:210)
-	at ocean.modules.pages.cancellationModulePages.getSearchResultCount(cancellationModulePages.java:66)
-	at ocean.test.condition.cancellation.OCEAN_Cancel_TC_01.searchForContractOnCancelScreen(OCEAN_Cancel_TC_01.java:45)
+                  <div class="stack-trace">org.testng.TestNGException: 
+Found two providers called &apos;fetchCancelSearchData&apos; on class ocean.common.DataProviderClass
 	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 27 stack frames
+... Removed 25 stack frames
 </div> <!-- stack-trace -->
                   <em>
-(Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="searchForContractOnCancelScreen([, Vivek, , ])">
-                  </a> <!-- searchForContractOnCancelScreen([, Vivek, , ]) -->
-                  <span class="method-name">searchForContractOnCancelScreen</span>
-                  <span class="parameters">([, Vivek, , ])</span>
-                  <div class="stack-trace">java.lang.Error: Unresolved compilation problem: 
-	Syntax error, insert &quot;)&quot; to complete Expression
-
-	at ocean.common.Keywords.getAllValuesSaveInSet(Unknown Source)
-	at ocean.modules.pages.cancellationModulePages.getSearchResultCount(cancellationModulePages.java:66)
-	at ocean.test.condition.cancellation.OCEAN_Cancel_TC_01.searchForContractOnCancelScreen(OCEAN_Cancel_TC_01.java:45)
-	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name)                  </em>
+(Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -180,7 +151,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Ocean&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Pricing&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ocean.test.condition.cancellation.OCEAN_Cancel_TC_01&quot;/&gt;
+      &lt;class name=&quot;ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Pricing --&gt;
 &lt;/suite&gt; &lt;!-- Ocean --&gt;
@@ -228,20 +199,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'searchForContractOnCancelScreen')
-data.setCell(0, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_01')
-data.setCell(0, 3, 125421);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'searchForContractOnCancelScreen')
-data.setCell(1, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_01')
-data.setCell(1, 3, 42635);
+data.setCell(0, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02')
+data.setCell(0, 3, 0);
 window.suiteTableData['Ocean']= { tableData: data, tableDiv: 'times-div-Ocean'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-Ocean">
               </div> <!-- times-div-Ocean -->
             </div> <!-- times-div -->
@@ -267,46 +234,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_01</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setup(org.testng.TestRunner@625dfff3)</span>
+                <span class="method-name">setup(org.testng.TestRunner@4cbd03e7)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">createParent(org.testng.TestRunner@625dfff3)</span>
-                <span class="method-start">8045 ms</span>
+                <span class="method-name">createParent(org.testng.TestRunner@4cbd03e7)</span>
+                <span class="method-start">7171 ms</span>
               </div> <!-- configuration-test before -->
-              <div class="configuration-method before">
-                <span class="method-name">screenshot</span>
-                <span class="method-start">8530 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">searchForContractOnCancelScreen([20191411001, , , ])</span>
-                <span class="method-start">8531 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=searchForContractOnCancelScreen status=FAILURE method=OCEAN_Cancel_TC_01.searchForC...)</span>
-                <span class="method-start">133959 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">screenshot</span>
-                <span class="method-start">135925 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">searchForContractOnCancelScreen([, Vivek, , ])</span>
-                <span class="method-start">135925 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=searchForContractOnCancelScreen status=FAILURE method=OCEAN_Cancel_TC_01.searchForC...)</span>
-                <span class="method-start">199024 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
-                <span class="method-name">tearDown(org.testng.TestRunner@625dfff3)</span>
-                <span class="method-start">201201 ms</span>
+                <span class="method-name">tearDown(org.testng.TestRunner@4cbd03e7)</span>
+                <span class="method-start">7234 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
