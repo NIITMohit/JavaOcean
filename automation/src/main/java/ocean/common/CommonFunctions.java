@@ -1,5 +1,9 @@
 package ocean.common;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 import ocean.com.main.Suite;
@@ -276,6 +280,34 @@ public class CommonFunctions extends Suite {
 		}
 
 		return sb.toString();
+
+	}
+
+	/**
+	 * This common accepts Date and convert the same in mm/dd/yyyy format after
+	 * adding input days
+	 * 
+	 */
+	public String convertDate(String date, int noOfDays) {
+		String newDate = "";
+		try {
+			date = date.substring(0, date.indexOf(" "));
+			Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+			String abc = new SimpleDateFormat("MM/dd/yyyy").format(date1);
+			Calendar c = Calendar.getInstance();
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			// Setting the date to the given date
+			c.setTime(sdf.parse(abc));
+			// Add 7 days to current date
+			c.add(Calendar.DAY_OF_MONTH, noOfDays);
+			// Date after adding the days to the current date
+			newDate = sdf.format(c.getTime());
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		return newDate;
 
 	}
 }

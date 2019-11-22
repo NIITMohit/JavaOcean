@@ -1,5 +1,9 @@
 package ocean.modules.pages;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -19,6 +23,61 @@ public class cancellationModulePages extends CommonFunctions {
 	 */
 	public void visitPriceSheetListTab() throws Exception {
 		click("clickPricingSheetListTab");
+	}
+
+	/**
+	 * This function is used to navigate to NewCancellationTab
+	 * 
+	 * 
+	 */
+	public void clickCancelButtonAndNavigateToNewCancellationTab() throws Exception {
+		click("clickCancelButton");
+	}
+
+	/**
+	 * This function is used to navigate to fill details on new cancellation tab and
+	 * click calculate, if cancelMiles, cancelDate, dateReceived are blank random
+	 * values will be saved
+	 * 
+	 * @param string5
+	 * @param string4
+	 * @param string3
+	 * @param string2
+	 * @param string
+	 * 
+	 * 
+	 */
+	public void enterValuesOnNewCancellationTabAndClickCalculate(String initiatedBy, String cancelReason,
+			String cancelMiles, String cancelDate, String dateReceived) throws Exception {
+		type("selectInitiatedBy", initiatedBy);
+		type("selectCancelReason", cancelReason);
+		if (cancelMiles.length() < 1) {
+			String miles = getValue("getMiles");
+			int milee = 0;
+			milee = Integer.parseInt(miles) + 2214;
+			cancelMiles = Integer.toString(milee);
+		}
+		type("enterCancelMiles", cancelMiles);
+		if (cancelDate.length() < 1) {
+			Format sdf = new SimpleDateFormat("MM/dd/yy");
+			Calendar cal = Calendar.getInstance();
+			// Add 7 days to current date
+			cal.add(Calendar.DAY_OF_MONTH, 7);
+			// Date after adding the days to the current date
+			cancelDate = sdf.format(cal.getTime());
+		}
+		type("enterCancelDate", cancelDate);
+		if (dateReceived.length() < 1) {
+			Format sdf = new SimpleDateFormat("MM/dd/yy");
+			Calendar cal = Calendar.getInstance();
+			// Add 7 days to current date
+			cal.add(Calendar.DAY_OF_MONTH, 7);
+			// Date after adding the days to the current date
+			dateReceived = sdf.format(cal.getTime());
+		}
+		type("enterDateReceived", dateReceived);
+		click("clickCalculate");
+		click("clickOK");
 	}
 
 	/**
@@ -114,13 +173,19 @@ public class cancellationModulePages extends CommonFunctions {
 		click("swipeRight");
 		String myStatus = getValue("statusOfContract");
 		click("swipeLeft");
-		if (stateofbutton.toLowerCase().equals("true") && newcontractId.toLowerCase().equals(contractId)
-				&& myStatus.toLowerCase().equals(status)) {
+		if (status.toLowerCase().equalsIgnoreCase("processed")) {
+			if (stateofbutton.toLowerCase().equals("true")
+					&& newcontractId.toLowerCase().equals(contractId.toLowerCase())
+					&& myStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
 
+		} else {
+			if (stateofbutton.toLowerCase().equals("false")
+					&& newcontractId.toLowerCase().equals(contractId.toLowerCase())
+					&& myStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
 		}
-
 		return flag;
-
 	}
 
 	/**

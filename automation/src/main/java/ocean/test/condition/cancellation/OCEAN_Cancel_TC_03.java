@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import ocean.common.DataProviderClass;
@@ -28,17 +29,21 @@ public class OCEAN_Cancel_TC_03 extends cancellationModulePages {
 	public void verifyCancelButtonStatusBasesOnCancellationStatus(String status) throws Exception {
 		///// get contract id from db bases on status of contract
 		String contractId = getContractIdBasedOnStatus(status);
-		HashMap<String, String> uiSearchData = new HashMap<String, String>();
-		uiSearchData.put("CERT", contractId);
-		//// Navigate to mail service tab
-		goToCancellationTab();
-		goToMailServiceTab();
-		//// Search Data based on contract Id
-		searchContractGivenInputParamaters(uiSearchData);
-		//// verify status and contractId
-		boolean myStatus = verifyContractAndStatus(contractId, status);
-		//// verify search result data
-		assertEquals(myStatus, true);
+		if (contractId.length() > 0) {
+			HashMap<String, String> uiSearchData = new HashMap<String, String>();
+			uiSearchData.put("CERT", contractId);
+			//// Navigate to mail service tab
+			goToCancellationTab();
+			goToMailServiceTab();
+			//// Search Data based on contract Id
+			searchContractGivenInputParamaters(uiSearchData);
+			//// verify status and contractId
+			boolean myStatus = verifyContractAndStatus(contractId, status);
+			//// verify search result data
+			assertEquals(myStatus, true);
+		} else {
+			new SkipException("no value exist in db for status = " + status);
+		}
 	}
 
 }
