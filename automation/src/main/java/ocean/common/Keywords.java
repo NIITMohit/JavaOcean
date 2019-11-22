@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -196,6 +197,40 @@ public class Keywords extends Variables {
 	 * @param unique identifier to locate object
 	 * @return the text/value of locator
 	 */
+	public String getValue(String locator, int position) {
+		String abc = "";
+		String[] object = Variables.oR.get(locator);
+		String xpath = "(" + object[1] + ")[" + ++position + "]";
+		for (int i = 0; i < 4; i++) {
+			try {
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+				@SuppressWarnings("unchecked")
+				//// Find list of web elements
+				List<WebElement> listWebElement = windowsDriver.findElements(By.xpath(xpath));
+				for (WebElement webElement : listWebElement) {
+					//// get value and return the same
+					abc = webElement.getText();
+					break;
+				}
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+		return abc;
+	}
+
+	/**
+	 * getValue keyword , this function is used to get text/value of locator
+	 *
+	 * @param unique identifier to locate object
+	 * @return the text/value of locator
+	 */
 	public Set<String> getAllValuesSaveInSet(String locator) {
 		HashSet<String> abc = new HashSet<String>();
 		for (int i = 0; i < 4; i++) {
@@ -276,8 +311,6 @@ public class Keywords extends Variables {
 			} catch (Exception e) {
 				if (i < 3)
 					continue;
-				else
-					throw e;
 			}
 		}
 		return flag;

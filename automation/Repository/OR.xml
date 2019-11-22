@@ -121,6 +121,38 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='PageUp' and @ClassName='RepeatButton']</value>
 		</keyword>
+		<keyword id="scrollContractsListUp">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='PageDown' and @ClassName='RepeatButton']</value>
+		</keyword>
+		<keyword id="getPriceSheetNameFromSearchData">
+			<locator>xpath</locator>
+			<value>//*[@Name='Pricesheet Name' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+		</keyword>
+		<keyword id="getProgramCodeFromSearchData">
+			<locator>xpath</locator>
+			<value>//*[@Name='Program Code' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+		</keyword>
+		<keyword id="getPrimaryAccountFromSearchData">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary account' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+		</keyword>
+		<keyword id="getPrimaryAccountIdFromSearchData">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary account id' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+		</keyword>
+		<keyword id="getCustomerNameFromSearchData">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer name' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+		</keyword>
+		<keyword id="getStatusFromSearchData">
+			<locator>xpath</locator>
+			<value>//*[@Name='Status' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+		</keyword>
+		<keyword id="getCommentsFromSearchData">
+			<locator>xpath</locator>
+			<value>//*[@Name='Comments' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+		</keyword>
 	</Cancellation>
 	<Pricing>
 	<keyword id="clickPricingTab">
