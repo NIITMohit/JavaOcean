@@ -1,71 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="193133" started-at="2019-11-20T14:10:39 IST" finished-at="2019-11-20T14:13:52 IST">
+  <suite name="Ocean" duration-ms="32" started-at="2019-11-22T10:51:25 IST" finished-at="2019-11-22T10:51:25 IST">
     <groups>
       <group name="regression">
-        <method signature="OCEAN_Cancel_TC_01.searchForContractOnCancelScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="searchForContractOnCancelScreen" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01"/>
+        <method signature="OCEAN_Cancel_TC_01_02.searchForContractOnCancelScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="searchForContractOnCancelScreen" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Pricing" duration-ms="193133" started-at="2019-11-20T14:10:39 IST" finished-at="2019-11-20T14:13:52 IST">
-      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="setup" is-config="true" duration-ms="8043" started-at="2019-11-20T14:10:31 IST" finished-at="2019-11-20T14:10:39 IST">
+    <test name="Pricing" duration-ms="32" started-at="2019-11-22T10:51:25 IST" finished-at="2019-11-22T10:51:25 IST">
+      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="setup" is-config="true" duration-ms="7169" started-at="2019-11-22T10:51:18 IST" finished-at="2019-11-22T10:51:25 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@625dfff3]]>
+                <![CDATA[org.testng.TestRunner@4cbd03e7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="createParent" is-config="true" duration-ms="3" started-at="2019-11-20T14:10:39 IST" finished-at="2019-11-20T14:10:39 IST">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="createParent" is-config="true" duration-ms="4" started-at="2019-11-22T10:51:25 IST" finished-at="2019-11-22T10:51:25 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@625dfff3]]>
+                <![CDATA[org.testng.TestRunner@4cbd03e7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-20T14:10:39 IST" finished-at="2019-11-20T14:10:39 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="FAIL" signature="searchForContractOnCancelScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="searchForContractOnCancelScreen" duration-ms="125421" started-at="2019-11-20T14:10:39 IST" description="Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name" data-provider="fetchCancelSearchData" finished-at="2019-11-20T14:12:45 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.String;@7bebcd65]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.Error">
+        <test-method status="FAIL" signature="searchForContractOnCancelScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="searchForContractOnCancelScreen" duration-ms="0" started-at="2019-11-22T10:51:25 IST" description="Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result" data-provider="fetchCancelSearchData" finished-at="2019-11-22T10:51:25 IST">
+          <exception class="org.testng.TestNGException">
             <message>
-              <![CDATA[Unresolved compilation problem: 
-Syntax error, insert ")" to complete Expression
-]]>
+              <![CDATA[
+Found two providers called 'fetchCancelSearchData' on class ocean.common.DataProviderClass]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Error: Unresolved compilation problem: 
-Syntax error, insert ")" to complete Expression
-
-at ocean.common.Keywords.getAllValuesSaveInSet(Keywords.java:210)
-at ocean.modules.pages.cancellationModulePages.getSearchResultCount(cancellationModulePages.java:66)
-at ocean.test.condition.cancellation.OCEAN_Cancel_TC_01.searchForContractOnCancelScreen(OCEAN_Cancel_TC_01.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+              <![CDATA[org.testng.TestNGException: 
+Found two providers called 'fetchCancelSearchData' on class ocean.common.DataProviderClass
+at org.testng.internal.Parameters.findDataProvider(Parameters.java:682)
+at org.testng.internal.Parameters.findDataProvider(Parameters.java:572)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:795)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:762)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:60)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:39)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:771)
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -87,113 +69,22 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.Error -->
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchForContractOnCancelScreen -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="tearDown" is-config="true" duration-ms="1965" started-at="2019-11-20T14:12:45 IST" finished-at="2019-11-20T14:12:47 IST">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="tearDown" is-config="true" duration-ms="307" started-at="2019-11-22T10:51:25 IST" finished-at="2019-11-22T10:51:25 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=searchForContractOnCancelScreen status=FAILURE method=OCEAN_Cancel_TC_01.searchForContractOnCancelScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@625dfff3]]>
+                <![CDATA[org.testng.TestRunner@4cbd03e7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-20T14:12:47 IST" finished-at="2019-11-20T14:12:47 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="FAIL" signature="searchForContractOnCancelScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="searchForContractOnCancelScreen" duration-ms="42635" started-at="2019-11-20T14:12:47 IST" description="Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name" data-provider="fetchCancelSearchData" finished-at="2019-11-20T14:13:30 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Ljava.lang.String;@7cbeac65]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.Error">
-            <message>
-              <![CDATA[Unresolved compilation problem: 
-Syntax error, insert ")" to complete Expression
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Error: Unresolved compilation problem: 
-Syntax error, insert ")" to complete Expression
-
-at ocean.common.Keywords.getAllValuesSaveInSet(Unknown Source)
-at ocean.modules.pages.cancellationModulePages.getSearchResultCount(cancellationModulePages.java:66)
-at ocean.test.condition.cancellation.OCEAN_Cancel_TC_01.searchForContractOnCancelScreen(OCEAN_Cancel_TC_01.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Error -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchForContractOnCancelScreen -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="tearDown" is-config="true" duration-ms="2149" started-at="2019-11-20T14:13:50 IST" finished-at="2019-11-20T14:13:52 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=searchForContractOnCancelScreen status=FAILURE method=OCEAN_Cancel_TC_01.searchForContractOnCancelScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@625dfff3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01@8297b3a]" name="tearDown" is-config="true" duration-ms="47" started-at="2019-11-20T14:13:52 IST" finished-at="2019-11-20T14:13:52 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@625dfff3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_01 -->
+      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02 -->
     </test> <!-- Pricing -->
   </suite> <!-- Ocean -->
 </testng-results>

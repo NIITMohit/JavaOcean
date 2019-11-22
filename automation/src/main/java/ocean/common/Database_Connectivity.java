@@ -313,4 +313,60 @@ public class Database_Connectivity {
 
 	}
 
+	/**
+	 * This gets search all sales details and return us latest contract id based on status
+	 * 
+	 */
+	public String getContractIdBasedOnStatus(String status) throws Exception {
+		String contract_id = "";
+		try {
+			aulDBConnect();
+			String query = "select top 1 CERT from [dbo].[ALLSALES_DETAILS] sale join [dbo].[UW_CONTRACT_STATUS] sta "
+					+ "on sale.CONTRACT_STATUS_ID = sta.ID where sta.NAME = '" + status + "';";
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			HashMap<String, String> dbMap = returnData(rs);
+			contract_id = dbMap.get("CERT");
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return contract_id;
+	}
+
+	/**
+	 * This gets search all sales details and return us latest contract id
+	 * 
+	 */
+	public HashMap<String, String> getCancellationMouduleSearchData(String contractId) throws Exception {
+		HashMap<String, String> dbMap = new HashMap<String, String>();
+		try {
+			String query = "select sales.CERT as Contract_Number,price.INTERNAL_NAME as PriceSheet_Name,sales.PROGRAM_CODE, "
+					+ " account.NAME as Primary_Account,account.ROLE_IDENTIFIER, "
+					+ "CONCAT(sales.CUSTOMER_FIRST, ' ', sales.CUSTOMER_LAST) AS customer_name,statuss.Name as contractStatus ,summary.COMMENTS "
+					+ "from [dbo].[ALLSALES_DETAILS] sales join [dbo].[ACCOUNT] account on account.id =  "
+					+ "sales.PRIMARY_ACCOUNT_ID join [dbo].[UW_CONTRACT_STATUS] statuss on statuss.id = sales.CONTRACT_STATUS_ID "
+					+ "left join [dbo].[PRICING_PRICESHEET] price on price.id = sales.PRICESHEET_ID "
+					+ " left join [dbo].[ALLSALES_DETAILS_LOG] summary on sales.id = "
+					+ "summary.ALLSALES_DETAILS_ID where sales.CERT = '" + contractId
+					+ "' order by summary.LOG_SEQ desc;";
+
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			dbMap = returnData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return dbMap;
+	}
 }

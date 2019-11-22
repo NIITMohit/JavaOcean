@@ -11,21 +11,24 @@ import ocean.common.DataProviderClass;
 import ocean.modules.pages.cancellationModulePages;
 
 /**
- * OCEAN_Cancel_TC_01 class automates Ocean Cancel module Test Condition 01,
- * which holds 5 Test Case; Test Condition Description : Validate contract
- * search for cancellation on the basis of search parameter given.
+ * OCEAN_Cancel_TC_01_02 class automates Ocean Cancel module Test Condition 01
+ * and 02, which holds 6 Test Case; Test Condition Description : Validate
+ * contract search for cancellation on the basis of search parameter given and
+ * Validate searched data from DB.
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Cancel_TC_01 extends cancellationModulePages {
+public class OCEAN_Cancel_TC_01_02 extends cancellationModulePages {
 	/**
 	 * This function automates all test cases for test condition 01; Test Case
 	 * description : Validate contract search for cancellation on the basis of
 	 * contract number, VIN, First Name, Last Name
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", dataProvider = "fetchCancelSearchData", dataProviderClass = DataProviderClass.class, description = "Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name")
+	@Test(priority = 1, groups = "regression", dataProvider = "fetchCancelSearchData", dataProviderClass = DataProviderClass.class, description = "Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result")
 	public void searchForContractOnCancelScreen(String[] inputArray) throws Exception {
+		Boolean countFlag = false;
+		Boolean dataFlag = false;
 		//// create data to fill required values in search window
 		HashMap<String, String> uiSearchData = null;
 		//// Navigate to mail service tab
@@ -40,7 +43,6 @@ public class OCEAN_Cancel_TC_01 extends cancellationModulePages {
 		} else {
 			uiSearchData = convertDataRemoveStar(inputArray);
 		}
-
 		//// run code for search
 		searchContractGivenInputParamaters(uiSearchData);
 		//// get number of search result from ocean, actual search result from input
@@ -50,6 +52,36 @@ public class OCEAN_Cancel_TC_01 extends cancellationModulePages {
 		//// parameters
 		int dbCount = Integer.parseInt(getSearchDataCountOnCancellationScreen(uiSearchData).get("count"));
 		//// get data count and verify
-		assertEquals(oceanCount, dbCount);
+		if (oceanCount == dbCount)
+			countFlag = true;
+		//// scroll up to get row 1
+		scrollUp();
+		//// Compare DB data and match data from database
+
+		//// verify data for a max of 4 or search result count which is less
+		for (int i = 0; i < oceanCount; i++) {
+			//// Get contract id at row i
+			String contractId = getFirstContractId(i);
+			//// get data for contract id at row i
+			HashMap<String, String> myDBData = getCancellationMouduleSearchData(contractId);
+			//// get data from db for contract i
+			//// save data from UI searched result
+			HashMap<String, String> gridData = returnSearchResultGridData(i);
+			//// verify both data, must match
+			if (myDBData.equals(gridData))
+				dataFlag = true;
+			else {
+				dataFlag = false;
+				break;
+			}
+
+			if (i > 4) {
+				break;
+			}
+		}
+		if (countFlag == true && dataFlag == true)
+			assertEquals(true, true);
+		else
+			assertEquals(false, true);
 	}
 }
