@@ -1,62 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="32" started-at="2019-11-22T10:51:25 IST" finished-at="2019-11-22T10:51:25 IST">
+  <suite name="Ocean" duration-ms="32" started-at="2019-11-22T15:07:07 IST" finished-at="2019-11-22T15:07:07 IST">
     <groups>
       <group name="regression">
-        <method signature="OCEAN_Cancel_TC_01_02.searchForContractOnCancelScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="searchForContractOnCancelScreen" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02"/>
+        <method signature="OCEAN_Cancel_TC_06.verifyFlatCancelRule()[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@6ad82709]" name="verifyFlatCancelRule" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_06"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Pricing" duration-ms="32" started-at="2019-11-22T10:51:25 IST" finished-at="2019-11-22T10:51:25 IST">
-      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="setup" is-config="true" duration-ms="7169" started-at="2019-11-22T10:51:18 IST" finished-at="2019-11-22T10:51:25 IST">
+    <test name="Pricing" duration-ms="32" started-at="2019-11-22T15:07:07 IST" finished-at="2019-11-22T15:07:07 IST">
+      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_06">
+        <test-method status="FAIL" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@6ad82709]" name="setup" is-config="true" duration-ms="2483" started-at="2019-11-22T15:07:05 IST" finished-at="2019-11-22T15:07:07 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4cbd03e7]]>
+                <![CDATA[org.testng.TestRunner@2bfc268b]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="createParent" is-config="true" duration-ms="4" started-at="2019-11-22T10:51:25 IST" finished-at="2019-11-22T10:51:25 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@4cbd03e7]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createParent -->
-        <test-method status="FAIL" signature="searchForContractOnCancelScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="searchForContractOnCancelScreen" duration-ms="0" started-at="2019-11-22T10:51:25 IST" description="Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result" data-provider="fetchCancelSearchData" finished-at="2019-11-22T10:51:25 IST">
-          <exception class="org.testng.TestNGException">
+          <exception class="java.time.format.DateTimeParseException">
             <message>
-              <![CDATA[
-Found two providers called 'fetchCancelSearchData' on class ocean.common.DataProviderClass]]>
+              <![CDATA[Text '2019-11-15' could not be parsed at index 10]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Found two providers called 'fetchCancelSearchData' on class ocean.common.DataProviderClass
-at org.testng.internal.Parameters.findDataProvider(Parameters.java:682)
-at org.testng.internal.Parameters.findDataProvider(Parameters.java:572)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:795)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:762)
-at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:60)
-at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:39)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:771)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+              <![CDATA[java.time.format.DateTimeParseException: Text '2019-11-15' could not be parsed at index 10
+at java.time.format.DateTimeFormatter.parseResolved0(Unknown Source)
+at java.time.format.DateTimeFormatter.parse(Unknown Source)
+at java.time.Instant.parse(Unknown Source)
+at ocean.com.main.Suite.setup(Suite.java:56)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:340)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:294)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:345)
 at org.testng.SuiteRunner.run(SuiteRunner.java:304)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
@@ -69,22 +49,63 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+          </exception> <!-- java.time.format.DateTimeParseException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- searchForContractOnCancelScreen -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02@8297b3a]" name="tearDown" is-config="true" duration-ms="307" started-at="2019-11-22T10:51:25 IST" finished-at="2019-11-22T10:51:25 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@4cbd03e7]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setup -->
+        <test-method status="SKIP" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@6ad82709]" name="createParent" is-config="true" duration-ms="-1574415427547" started-at="2019-11-22T15:07:07 IST" finished-at="1970-01-01T05:30:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createParent -->
+        <test-method status="SKIP" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@6ad82709]" name="screenshot" is-config="true" duration-ms="-1574415427568" started-at="2019-11-22T15:07:07 IST" finished-at="1970-01-01T05:30:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="SKIP" signature="verifyFlatCancelRule()[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@6ad82709]" name="verifyFlatCancelRule" duration-ms="0" started-at="2019-11-22T15:07:07 IST" description="Validate that OCEAN assign cancel method as Flat (F), if cancel date is within flat cancel period." finished-at="2019-11-22T15:07:07 IST">
+          <exception class="java.time.format.DateTimeParseException">
+            <message>
+              <![CDATA[Text '2019-11-15' could not be parsed at index 10]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.time.format.DateTimeParseException: Text '2019-11-15' could not be parsed at index 10
+at java.time.format.DateTimeFormatter.parseResolved0(Unknown Source)
+at java.time.format.DateTimeFormatter.parse(Unknown Source)
+at java.time.Instant.parse(Unknown Source)
+at ocean.com.main.Suite.setup(Suite.java:56)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:340)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:294)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:345)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.time.format.DateTimeParseException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFlatCancelRule -->
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@6ad82709]" name="tearDown" is-config="true" duration-ms="-1574415427573" started-at="2019-11-22T15:07:07 IST" finished-at="1970-01-01T05:30:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02 -->
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@6ad82709]" name="tearDown" is-config="true" duration-ms="-1574415427618" started-at="2019-11-22T15:07:07 IST" finished-at="1970-01-01T05:30:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_06 -->
     </test> <!-- Pricing -->
   </suite> <!-- Ocean -->
 </testng-results>
