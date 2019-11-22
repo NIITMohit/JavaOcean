@@ -245,7 +245,6 @@ public class Database_Connectivity {
 					myKey = myKey + key + ",";
 					myvalue = myvalue + key + " = '" + value + "' and ";
 				}
-
 			}
 			query = query1 + myKey + query2 + myvalue;
 			query = query.substring(0, query.lastIndexOf("and")) + ";";
@@ -314,7 +313,8 @@ public class Database_Connectivity {
 	}
 
 	/**
-	 * This gets search all sales details and return us latest contract id based on status
+	 * This gets search all sales details and return us latest contract id based on
+	 * status
 	 * 
 	 */
 	public String getContractIdBasedOnStatus(String status) throws Exception {
@@ -335,6 +335,33 @@ public class Database_Connectivity {
 			closeConnection();
 		}
 		return contract_id;
+	}
+
+	/**
+	 * This gets search all sales details and return us latest contract id based on
+	 * status
+	 * 
+	 */
+	public HashMap<String, String> getContractIdBasedOnStatusAndPriceSheet(String status, String priceSheet)
+			throws Exception {
+		HashMap<String, String> myData = new HashMap<String, String>();
+		try {
+			aulDBConnect();
+			String query = "select top 1 CERT,SALE_DATE from [dbo].[ALLSALES_DETAILS] sale join [dbo].[UW_CONTRACT_STATUS] sta "
+					+ "on sale.CONTRACT_STATUS_ID = sta.ID where sta.NAME = '" + status + "' and PROGRAM_CODE = '"
+					+ priceSheet + "';";
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			HashMap<String, String> dbMap = returnData(rs);
+			myData = dbMap;
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return myData;
 	}
 
 	/**

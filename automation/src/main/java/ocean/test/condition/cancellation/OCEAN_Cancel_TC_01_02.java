@@ -75,7 +75,7 @@ public class OCEAN_Cancel_TC_01_02 extends cancellationModulePages {
 				break;
 			}
 
-			if (i > 4) {
+			if (i > 3) {
 				break;
 			}
 		}
