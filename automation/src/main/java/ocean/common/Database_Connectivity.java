@@ -322,7 +322,7 @@ public class Database_Connectivity {
 		try {
 			aulDBConnect();
 			String query = "select top 1 CERT from [dbo].[ALLSALES_DETAILS] sale join [dbo].[UW_CONTRACT_STATUS] sta "
-					+ "on sale.CONTRACT_STATUS_ID = sta.ID where sta.NAME = '" + status + "';";
+					+ "on sale.CONTRACT_STATUS_ID = sta.ID where sta.NAME = '" + status + "' order by 1 desc;";
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);
 			//// save data in map
@@ -349,7 +349,7 @@ public class Database_Connectivity {
 			aulDBConnect();
 			String query = "select top 1 CERT,SALE_DATE from [dbo].[ALLSALES_DETAILS] sale join [dbo].[UW_CONTRACT_STATUS] sta "
 					+ "on sale.CONTRACT_STATUS_ID = sta.ID where sta.NAME = '" + status + "' and PROGRAM_CODE = '"
-					+ priceSheet + "';";
+					+ priceSheet + "'order by 1 desc;";
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);
 			//// save data in map

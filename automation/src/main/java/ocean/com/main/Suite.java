@@ -29,7 +29,6 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import io.appium.java_client.windows.WindowsDriver;
-import ocean.common.CommonFunctions;
 import ocean.common.ReadData;
 
 /**
@@ -50,7 +49,7 @@ public class Suite extends ReadData {
 	@BeforeSuite
 	public void setup(ITestContext context) {
 		//// Path of ocean application assuming it is installed in user app data
-		String oceanApplicationPath = System.getProperty("user.home") + "\\AppData\\Local\\OceanQa\\Ocean.exe";
+		String oceanApplicationPath = System.getProperty("user.home") + "\\AppData\\Local\\OceanDev\\Ocean.exe";
 		//// Code to open application and wait till application is stable before
 		//// attaching win app session to ocean
 		try {

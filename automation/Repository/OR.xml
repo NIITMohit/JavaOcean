@@ -153,6 +153,10 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='Comments' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
 		</keyword>
+		<keyword id="getCancelMethodType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Cancel Method:']/following-sibling::*[@ClassName='TextBlock']</value>
+		</keyword>
 	</Cancellation>
 	<Pricing>
 	<keyword id="clickPricingTab">

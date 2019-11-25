@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Ocean">
-              <span class="suite-name border-skipped">Ocean</span>
+              <span class="suite-name border-passed">Ocean</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Ocean" class="hide-methods skipped suite-Ocean"> (hide)</a> <!-- hide-methods skipped suite-Ocean -->
-                      <a href="#" panel-name="suite-Ocean" class="show-methods skipped suite-Ocean"> (show)</a> <!-- show-methods skipped suite-Ocean -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Ocean" class="hide-methods passed suite-Ocean"> (hide)</a> <!-- hide-methods passed suite-Ocean -->
+                      <a href="#" panel-name="suite-Ocean" class="show-methods passed suite-Ocean"> (show)</a> <!-- show-methods passed suite-Ocean -->
                     </span>
-                    <div class="method-list-content skipped suite-Ocean">
+                    <div class="method-list-content passed suite-Ocean">
                       <span>
-                        <img width="3%" src="skipped.png"/>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_06" hash-for-method="verifyFlatCancelRule">verifyFlatCancelRule</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Ocean -->
+                    </div> <!-- method-list-content passed suite-Ocean -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,9 +117,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Ocean" class="panel Ocean">
-          <div class="suite-Ocean-class-skipped">
+          <div class="suite-Ocean-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="passed.png"/>
               <span class="class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_06</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -128,19 +128,12 @@
                   <a name="verifyFlatCancelRule">
                   </a> <!-- verifyFlatCancelRule -->
                   <span class="method-name">verifyFlatCancelRule</span>
-                  <div class="stack-trace">java.time.format.DateTimeParseException: Text &apos;2019-11-15&apos; could not be parsed at index 10
-	at java.time.format.DateTimeFormatter.parseResolved0(Unknown Source)
-	at java.time.format.DateTimeFormatter.parse(Unknown Source)
-	at java.time.Instant.parse(Unknown Source)
-	at ocean.com.main.Suite.setup(Suite.java:56)
-... Removed 19 stack frames
-</div> <!-- stack-trace -->
                   <em>
 (Validate that OCEAN assign cancel method as Flat (F), if cancel date is within flat cancel period.)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Ocean-class-skipped -->
+          </div> <!-- suite-Ocean-class-passed -->
         </div> <!-- panel Ocean -->
         <div panel-name="test-xml-Ocean" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -205,12 +198,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyFlatCancelRule')
 data.setCell(0, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_06')
-data.setCell(0, 3, 0);
+data.setCell(0, 3, 265610);
 window.suiteTableData['Ocean']= { tableData: data, tableDiv: 'times-div-Ocean'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Ocean">
               </div> <!-- times-div-Ocean -->
             </div> <!-- times-div -->
@@ -238,30 +231,28 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_06</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">setup(org.testng.TestRunner@2bfc268b)</span>
+                <span class="method-name">setup(org.testng.TestRunner@d8d9199)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">createParent</span>
-                <span class="method-start">2491 ms</span>
+                <span class="method-name">createParent(org.testng.TestRunner@d8d9199)</span>
+                <span class="method-start">7502 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">screenshot</span>
-                <span class="method-start">2512 ms</span>
+                <span class="method-start">7519 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyFlatCancelRule</span>
-                <span class="method-start">2513 ms</span>
+                <span class="method-start">7520 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">2517 ms</span>
+                <span class="method-name">tearDown([TestResult name=verifyFlatCancelRule status=SUCCESS method=OCEAN_Cancel_TC_06.verifyFlatCancelRule(...)</span>
+                <span class="method-start">273130 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">2562 ms</span>
+                <span class="method-name">tearDown(org.testng.TestRunner@d8d9199)</span>
+                <span class="method-start">273458 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
