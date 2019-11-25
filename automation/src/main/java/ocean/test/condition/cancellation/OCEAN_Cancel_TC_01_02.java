@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import org.testng.annotations.Test;
 
-import ocean.common.DataProviderClass;
+import ocean.modules.pages.CancellationDataProvider;
 import ocean.modules.pages.cancellationModulePages;
 
 /**
@@ -25,7 +25,7 @@ public class OCEAN_Cancel_TC_01_02 extends cancellationModulePages {
 	 * contract number, VIN, First Name, Last Name
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", dataProvider = "fetchCancelSearchData", dataProviderClass = DataProviderClass.class, description = "Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result")
+	@Test(priority = 1, groups = "regression", dataProvider = "fetchDataForTC01_02", dataProviderClass = CancellationDataProvider.class, description = "Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result")
 	public void searchForContractOnCancelScreen(String[] inputArray) throws Exception {
 		Boolean countFlag = false;
 		Boolean dataFlag = false;

@@ -49,11 +49,12 @@ public class cancellationModulePages extends CommonFunctions {
 	 * click calculate, if cancelMiles, cancelDate, dateReceived are blank random
 	 * values will be saved
 	 * 
-	 * @param string5
-	 * @param string4
-	 * @param string3
-	 * @param string2
-	 * @param string
+	 * @param initiatedBy
+	 * @param cancelReason
+	 * @param cancelMiles,  if blank then it will fetch miles from cancellation
+	 *                      screen
+	 * @param cancelDate,   if blank current date with be taken in account
+	 * @param dateReceived, if blank current date with be taken in account
 	 * 
 	 * 
 	 */
@@ -87,6 +88,7 @@ public class cancellationModulePages extends CommonFunctions {
 		}
 		type("enterDateReceived", dateReceived);
 		click("clickCalculate");
+		click("clickOK");
 		click("clickOK");
 	}
 
