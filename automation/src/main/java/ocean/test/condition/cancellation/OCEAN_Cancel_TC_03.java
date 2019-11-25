@@ -7,7 +7,7 @@ import java.util.HashMap;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-import ocean.common.DataProviderClass;
+import ocean.modules.pages.CancellationDataProvider;
 import ocean.modules.pages.cancellationModulePages;
 
 /**
@@ -24,7 +24,7 @@ public class OCEAN_Cancel_TC_03 extends cancellationModulePages {
 	 * basis of contract status.
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", dataProvider = "fetchCancelStatusData", dataProviderClass = DataProviderClass.class, description = "Validate creation and blocking of cancellation request on the basis of contract status. ")
+	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC03", dataProviderClass = CancellationDataProvider.class, description = "Validate creation and blocking of cancellation request on the basis of contract status. ")
 	public void verifyCancelButtonStatusBasesOnCancellationStatus(String status) throws Exception {
 		///// get contract id from db bases on status of contract
 		String contractId = getContractIdBasedOnStatus(status);

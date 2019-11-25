@@ -2,45 +2,45 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="265942" started-at="2019-11-22T15:56:37 IST" finished-at="2019-11-22T16:01:03 IST">
+  <suite name="Ocean" duration-ms="179828" started-at="2019-11-25T10:14:36 IST" finished-at="2019-11-25T10:17:36 IST">
     <groups>
       <group name="regression">
         <method signature="OCEAN_Cancel_TC_06.verifyFlatCancelRule()[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="verifyFlatCancelRule" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_06"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Pricing" duration-ms="265942" started-at="2019-11-22T15:56:37 IST" finished-at="2019-11-22T16:01:03 IST">
+    <test name="Pricing" duration-ms="179828" started-at="2019-11-25T10:14:36 IST" finished-at="2019-11-25T10:17:36 IST">
       <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_06">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="setup" is-config="true" duration-ms="7500" started-at="2019-11-22T15:56:29 IST" finished-at="2019-11-22T15:56:37 IST">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="setup" is-config="true" duration-ms="8527" started-at="2019-11-25T10:14:28 IST" finished-at="2019-11-25T10:14:36 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@d8d9199]]>
+                <![CDATA[org.testng.TestRunner@bfc14b9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="createParent" is-config="true" duration-ms="3" started-at="2019-11-22T15:56:37 IST" finished-at="2019-11-22T15:56:37 IST">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="createParent" is-config="true" duration-ms="7" started-at="2019-11-25T10:14:36 IST" finished-at="2019-11-25T10:14:36 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@d8d9199]]>
+                <![CDATA[org.testng.TestRunner@bfc14b9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-22T15:56:37 IST" finished-at="2019-11-22T15:56:37 IST">
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-25T10:14:36 IST" finished-at="2019-11-25T10:14:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="verifyFlatCancelRule()[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="verifyFlatCancelRule" duration-ms="265610" started-at="2019-11-22T15:56:37 IST" description="Validate that OCEAN assign cancel method as Flat (F), if cancel date is within flat cancel period." finished-at="2019-11-22T16:01:02 IST">
+        <test-method status="PASS" signature="verifyFlatCancelRule()[pri:1, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="verifyFlatCancelRule" duration-ms="178491" started-at="2019-11-25T10:14:36 IST" description="Validate that OCEAN assign cancel method as Flat (F), if cancel date is within flat cancel period." finished-at="2019-11-25T10:17:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFlatCancelRule -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="tearDown" is-config="true" duration-ms="312" started-at="2019-11-22T16:01:02 IST" finished-at="2019-11-22T16:01:03 IST">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="tearDown" is-config="true" duration-ms="1284" started-at="2019-11-25T10:17:35 IST" finished-at="2019-11-25T10:17:36 IST">
           <params>
             <param index="0">
               <value>
@@ -49,18 +49,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@d8d9199]]>
+                <![CDATA[org.testng.TestRunner@bfc14b9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="tearDown" is-config="true" duration-ms="47" started-at="2019-11-22T16:01:03 IST" finished-at="2019-11-22T16:01:03 IST">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_06@7817fd62]" name="tearDown" is-config="true" duration-ms="71" started-at="2019-11-25T10:17:36 IST" finished-at="2019-11-25T10:17:36 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@d8d9199]]>
+                <![CDATA[org.testng.TestRunner@bfc14b9]]>
               </value>
             </param>
           </params>
