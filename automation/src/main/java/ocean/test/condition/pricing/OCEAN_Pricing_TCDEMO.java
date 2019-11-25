@@ -1,7 +1,6 @@
 package ocean.test.condition.pricing;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.fail;
 
 import org.testng.annotations.Test;
@@ -24,7 +23,7 @@ public class OCEAN_Pricing_TCDEMO extends CommonFunctions {
 			type("typeProgramCode", newProgramCode);
 			// Verify Program code = newProgramCode exists in search results, if exists
 			// delete the same
-			String priceSheet = getValue("getPriceSheetCode");
+			//String priceSheet = getValue("getPriceSheetCode");
 			click("getPriceSheetCode");
 			// right click on price sheet to delete
 			rightClick("getPriceSheetCode");

@@ -2,13 +2,10 @@ package ocean.test.condition.cancellation;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
-import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-import ocean.common.DataProviderClass;
 import ocean.modules.pages.cancellationModulePages;
 
 /**
@@ -30,32 +27,49 @@ public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
 		contractList = getContractIdBasedOnStatusAndPriceSheet("processed", "SNE");
+		//// Navigate to Mail service tab
 		goToCancellationTab();
 		goToMailServiceTab();
+		//// create search data in hash map
 		HashMap<String, String> uiSearchData = new HashMap<String, String>();
 		uiSearchData.put("CERT", contractList.get("CERT"));
 		//// Search Data based on contract Id
 		searchContractGivenInputParamaters(uiSearchData);
+		//// navigate to new cancel tab
 		clickCancelButtonAndNavigateToNewCancellationTab();
-		enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Customer Request", "5000",
-				convertDate(contractList.get("SALE_DATE"), 1), "11/22/2019");
+		//// enter valid values on new cancellation tab screen and click calculate
+		enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Customer Request", "",
+				convertDate(contractList.get("SALE_DATE"), 1), "");
+		//// get cancel method applied as flat or outside flat
+		String cancelMethodType = returnCancelMethodValue();
+		//// assert flat or not flat
+		assertEquals(cancelMethodType.toLowerCase(), "f");
 	}
 
 	// @Test(priority = 1, groups = "regression", description = "Validate that OCEAN
 	// reassign cancel method on a contract, if cancel date is modified by user as
 	// outside flat cancel period.")
 	public void verifyOutsideFlatCancelRule() throws Exception {
+		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
 		contractList = getContractIdBasedOnStatusAndPriceSheet("processed", "SNE");
+		//// Navigate to Mail service tab
 		goToCancellationTab();
 		goToMailServiceTab();
+		//// create search data in hash map
 		HashMap<String, String> uiSearchData = new HashMap<String, String>();
 		uiSearchData.put("CERT", contractList.get("CERT"));
 		//// Search Data based on contract Id
 		searchContractGivenInputParamaters(uiSearchData);
+		//// navigate to new cancel tab
 		clickCancelButtonAndNavigateToNewCancellationTab();
-		enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Customer Request", "5000",
-				contractList.get("SALE_DATE"), "11/22/2019");
+		//// enter valid values on new cancellation tab screen and click calculate
+		enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Customer Request", "",
+				convertDate(contractList.get("SALE_DATE"), 90), "");
+		//// get cancel method applied as flat or outside flat
+		String cancelMethodType = returnCancelMethodValue();
+		//// assert flat or not flat
+		assertEquals(cancelMethodType.toLowerCase(), "f");
 	}
 
 }

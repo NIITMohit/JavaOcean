@@ -77,7 +77,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 				type("selectPayee", "BLANK");
 				click("clickAuthorize");
 				// click("yesBox");
-				String info = getValue("inValidPayeeErrorMessage");
+				//String info = getValue("inValidPayeeErrorMessage");
 				takeScreenshot();
 				click("clickOK");
 				click("overRideRulesCheckBox");
