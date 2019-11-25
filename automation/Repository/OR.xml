@@ -17,6 +17,18 @@
 			<locator>Name</locator>
 			<value>Cancelation fee exceeds refund</value>
 		</keyword>
+		<keyword id="messageForCancelDateLessSaleDate">
+			<locator>Name</locator>
+			<value>Error: Time or mileage less than zero</value>
+		</keyword>
+		<keyword id="messageForCancelFutureDate">
+			<locator>Name</locator>
+			<value>Cancel date is future date, do you want to continue?.</value>
+		</keyword>
+		<keyword id="messageForReceivedFutureDate">
+			<locator>Name</locator>
+			<value>Received date is future date, do you want to continue?.</value>
+		</keyword>
 		<keyword id="typeContractId">
 			<locator>xpath</locator>
 			<value>//*[@Name='Contract Number']/following-sibling::*[@ClassName='TextBox']</value>

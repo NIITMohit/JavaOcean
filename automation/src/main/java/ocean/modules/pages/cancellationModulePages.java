@@ -63,7 +63,7 @@ public class cancellationModulePages extends CommonFunctions {
 		type("selectInitiatedBy", initiatedBy);
 		type("selectCancelReason", cancelReason);
 		if (cancelMiles.length() < 1) {
-			String miles = getValue("getMiles");
+			String miles = getSalesMiles();
 			int milee = 0;
 			milee = Integer.parseInt(miles) + 2214;
 			cancelMiles = Integer.toString(milee);
@@ -73,7 +73,7 @@ public class cancellationModulePages extends CommonFunctions {
 			Format sdf = new SimpleDateFormat("MM/dd/yyyy");
 			Calendar cal = Calendar.getInstance();
 			// Add 7 days to current date
-			cal.add(Calendar.DAY_OF_MONTH, 7);
+			// cal.add(Calendar.DAY_OF_MONTH, 7);
 			// Date after adding the days to the current date
 			cancelDate = sdf.format(cal.getTime());
 		}
@@ -82,14 +82,44 @@ public class cancellationModulePages extends CommonFunctions {
 			Format sdf = new SimpleDateFormat("MM/dd/yyyy");
 			Calendar cal = Calendar.getInstance();
 			// Add 7 days to current date
-			cal.add(Calendar.DAY_OF_MONTH, 7);
+			// cal.add(Calendar.DAY_OF_MONTH, 7);
 			// Date after adding the days to the current date
 			dateReceived = sdf.format(cal.getTime());
 		}
 		type("enterDateReceived", dateReceived);
 		click("clickCalculate");
-		click("clickOK");
-		click("clickOK");
+	}
+
+	/**
+	 * This function is used to get sales miles
+	 * 
+	 */
+	public String getSalesMiles() throws Exception {
+		return getValue("getMiles");
+	}
+
+	/**
+	 * This function is used to get validation if cancel date is future date
+	 * 
+	 */
+	public String getValidationForCancelFutureDate() throws Exception {
+		return getValue("messageForCancelFutureDate");
+	}
+	
+	/**
+	 * This function is used to get validation if received date is future date
+	 * 
+	 */
+	public String getValidationForReceivedFutureDate() throws Exception {
+		return getValue("messageForReceivedFutureDate");
+	}
+
+	/**
+	 * This function is used to get validation if cancel date is less then sale date
+	 * 
+	 */
+	public String getValidationForCancelDateLessSaleDate() throws Exception {
+		return getValue("messageForCancelDateLessSaleDate");
 	}
 
 	/**
@@ -122,6 +152,22 @@ public class cancellationModulePages extends CommonFunctions {
 		}
 		///// click search button
 		click("searchContractButton");
+	}
+
+	/**
+	 * This function is used to navigate selectCancellationTaskStatus based on input
+	 * patamarer given
+	 * 
+	 */
+	public void selectCancellationTaskStatus(String status) throws Exception {
+
+		switch (status.toLowerCase()) {
+		case "authorize":
+			click("clickAuthorize");
+			break;
+		default:
+			click("clickAuthorize");
+		}
 	}
 
 	/**
