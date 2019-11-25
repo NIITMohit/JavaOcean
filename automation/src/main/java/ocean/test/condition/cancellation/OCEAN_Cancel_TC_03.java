@@ -2,7 +2,6 @@ package ocean.test.condition.cancellation;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 import org.testng.SkipException;

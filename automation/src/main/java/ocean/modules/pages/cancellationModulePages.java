@@ -3,7 +3,6 @@ package ocean.modules.pages;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -23,6 +22,17 @@ public class cancellationModulePages extends CommonFunctions {
 	 */
 	public void visitPriceSheetListTab() throws Exception {
 		click("clickPricingSheetListTab");
+	}
+
+	/**
+	 * This function is used to navigate to PricingSheetListTab
+	 * 
+	 * @return
+	 * 
+	 * 
+	 */
+	public String returnCancelMethodValue() throws Exception {
+		return getValue("getCancelMethodType");
 	}
 
 	/**
@@ -59,7 +69,7 @@ public class cancellationModulePages extends CommonFunctions {
 		}
 		type("enterCancelMiles", cancelMiles);
 		if (cancelDate.length() < 1) {
-			Format sdf = new SimpleDateFormat("MM/dd/yy");
+			Format sdf = new SimpleDateFormat("MM/dd/yyyy");
 			Calendar cal = Calendar.getInstance();
 			// Add 7 days to current date
 			cal.add(Calendar.DAY_OF_MONTH, 7);
@@ -68,7 +78,7 @@ public class cancellationModulePages extends CommonFunctions {
 		}
 		type("enterCancelDate", cancelDate);
 		if (dateReceived.length() < 1) {
-			Format sdf = new SimpleDateFormat("MM/dd/yy");
+			Format sdf = new SimpleDateFormat("MM/dd/yyyy");
 			Calendar cal = Calendar.getInstance();
 			// Add 7 days to current date
 			cal.add(Calendar.DAY_OF_MONTH, 7);
