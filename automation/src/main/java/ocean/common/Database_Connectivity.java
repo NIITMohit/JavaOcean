@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -347,9 +348,10 @@ public class Database_Connectivity {
 		HashMap<String, String> myData = new HashMap<String, String>();
 		try {
 			aulDBConnect();
+			int year = Calendar.getInstance().get(Calendar.YEAR);
 			String query = "select top 1 CERT,SALE_DATE from [dbo].[ALLSALES_DETAILS] sale join [dbo].[UW_CONTRACT_STATUS] sta "
 					+ "on sale.CONTRACT_STATUS_ID = sta.ID where sta.NAME = '" + status + "' and PROGRAM_CODE = '"
-					+ priceSheet + "'order by 1 desc;";
+					+ priceSheet + "' and sale_date like '%" + year + "%'order by 1 desc;";
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);
 			//// save data in map

@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,22 @@
                     <div class="method-list-content passed suite-Ocean">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_06" hash-for-method="verifyFlatCancelRule">verifyFlatCancelRule</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_07" hash-for-method="validateMessageWhenCancelDateIsBeforeSaleDate">validateMessageWhenCancelDateIsBeforeSaleDate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_07" hash-for-method="validateMessageWhenCancelDateIsFutureDate">validateMessageWhenCancelDateIsFutureDate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_07" hash-for-method="validateMessageWhenCancelMilesLessThanSalesMiles">validateMessageWhenCancelMilesLessThanSalesMiles</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_07" hash-for-method="validateMessageWhenReceivedDateIsFutureDate">validateMessageWhenReceivedDateIsFutureDate</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Ocean -->
@@ -120,16 +135,43 @@
           <div class="suite-Ocean-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_06</span>
+              <span class="class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_07</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyFlatCancelRule">
-                  </a> <!-- verifyFlatCancelRule -->
-                  <span class="method-name">verifyFlatCancelRule</span>
+                  <a name="validateMessageWhenCancelDateIsBeforeSaleDate">
+                  </a> <!-- validateMessageWhenCancelDateIsBeforeSaleDate -->
+                  <span class="method-name">validateMessageWhenCancelDateIsBeforeSaleDate</span>
                   <em>
-(Validate that OCEAN assign cancel method as Flat (F), if cancel date is within flat cancel period.)                  </em>
+(Validate that Ocean block user to authorize a cancellation, when user provide cancel date before sale date.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateMessageWhenCancelDateIsFutureDate">
+                  </a> <!-- validateMessageWhenCancelDateIsFutureDate -->
+                  <span class="method-name">validateMessageWhenCancelDateIsFutureDate</span>
+                  <em>
+(Validate that Ocean block user to authorize a cancellation, when user provide cancel date greater than today's date.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateMessageWhenCancelMilesLessThanSalesMiles">
+                  </a> <!-- validateMessageWhenCancelMilesLessThanSalesMiles -->
+                  <span class="method-name">validateMessageWhenCancelMilesLessThanSalesMiles</span>
+                  <em>
+(Validate that Ocean block user to authorize a cancellation, when user provide cancel miles less than sale mileage. )                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateMessageWhenReceivedDateIsFutureDate">
+                  </a> <!-- validateMessageWhenReceivedDateIsFutureDate -->
+                  <span class="method-name">validateMessageWhenReceivedDateIsFutureDate</span>
+                  <em>
+(Validate that Ocean block user to authorize a cancellation, when user provide date received greater than today's date.)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,7 +188,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Ocean&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Pricing&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ocean.test.condition.cancellation.OCEAN_Cancel_TC_06&quot;/&gt;
+      &lt;class name=&quot;ocean.test.condition.cancellation.OCEAN_Cancel_TC_07&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Pricing --&gt;
 &lt;/suite&gt; &lt;!-- Ocean --&gt;
@@ -171,10 +213,22 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">regression</span>
+              <span class="test-group-name">sanity</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">verifyFlatCancelRule</span>
+                <span class="method-in-group-name">validateMessageWhenCancelDateIsBeforeSaleDate</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">validateMessageWhenCancelDateIsFutureDate</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">validateMessageWhenCancelMilesLessThanSalesMiles</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">validateMessageWhenReceivedDateIsFutureDate</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -194,16 +248,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyFlatCancelRule')
-data.setCell(0, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_06')
-data.setCell(0, 3, 178491);
+data.setCell(0, 1, 'validateMessageWhenCancelDateIsBeforeSaleDate')
+data.setCell(0, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_07')
+data.setCell(0, 3, 119403);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validateMessageWhenCancelMilesLessThanSalesMiles')
+data.setCell(1, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_07')
+data.setCell(1, 3, 87063);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'validateMessageWhenReceivedDateIsFutureDate')
+data.setCell(2, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_07')
+data.setCell(2, 3, 82000);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'validateMessageWhenCancelDateIsFutureDate')
+data.setCell(3, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_07')
+data.setCell(3, 3, 81553);
 window.suiteTableData['Ocean']= { tableData: data, tableDiv: 'times-div-Ocean'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 6 minutes</span>
               <div id="times-div-Ocean">
               </div> <!-- times-div-Ocean -->
             </div> <!-- times-div -->
@@ -229,30 +295,66 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_06</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_07</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setup(org.testng.TestRunner@bfc14b9)</span>
+                <span class="method-name">setup(org.testng.TestRunner@108531c2)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">createParent(org.testng.TestRunner@bfc14b9)</span>
-                <span class="method-start">8531 ms</span>
+                <span class="method-name">createParent(org.testng.TestRunner@108531c2)</span>
+                <span class="method-start">6516 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">screenshot</span>
-                <span class="method-start">8573 ms</span>
+                <span class="method-start">6536 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyFlatCancelRule</span>
-                <span class="method-start">8574 ms</span>
+                <span class="method-name">validateMessageWhenCancelDateIsBeforeSaleDate</span>
+                <span class="method-start">6537 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=verifyFlatCancelRule status=SUCCESS method=OCEAN_Cancel_TC_06.verifyFlatCancelRule(...)</span>
-                <span class="method-start">187068 ms</span>
+                <span class="method-name">tearDown([TestResult name=validateMessageWhenCancelDateIsBeforeSaleDate status=SUCCESS method=OCEAN_Cancel_TC...)</span>
+                <span class="method-start">125942 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">126362 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateMessageWhenCancelDateIsFutureDate</span>
+                <span class="method-start">126362 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=validateMessageWhenCancelDateIsFutureDate status=SUCCESS method=OCEAN_Cancel_TC_07....)</span>
+                <span class="method-start">207916 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">208125 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateMessageWhenCancelMilesLessThanSalesMiles</span>
+                <span class="method-start">208126 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=validateMessageWhenCancelMilesLessThanSalesMiles status=SUCCESS method=OCEAN_Cancel...)</span>
+                <span class="method-start">295190 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">295379 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateMessageWhenReceivedDateIsFutureDate</span>
+                <span class="method-start">295379 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=validateMessageWhenReceivedDateIsFutureDate status=SUCCESS method=OCEAN_Cancel_TC_0...)</span>
+                <span class="method-start">377379 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
-                <span class="method-name">tearDown(org.testng.TestRunner@bfc14b9)</span>
-                <span class="method-start">188387 ms</span>
+                <span class="method-name">tearDown(org.testng.TestRunner@108531c2)</span>
+                <span class="method-start">377621 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
