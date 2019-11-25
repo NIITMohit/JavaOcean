@@ -4,8 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import org.testng.annotations.Test;
-
-import ocean.common.DataProviderClass;
+import ocean.modules.pages.SearchDataProvider;
 import ocean.modules.pages.searchModulePages;
 
 /**
@@ -21,7 +20,7 @@ public class OCEAN_Search_TC_01_10 extends searchModulePages {
 	 * excel
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", dataProvider = "fetchSearchData", dataProviderClass = DataProviderClass.class, description = "Search test case,Contract should be Search from the given search sheet under Search Section.")
+	@Test(priority = 1, groups = "regression", dataProvider = "fetchDataForTC01_10", dataProviderClass = SearchDataProvider.class, description = "Search test case,Contract should be Search from the given search sheet under Search Section.")
 	public void searchContractWithAnyInputField(String[] inputArray) throws Exception {
 		//// create data to fill required values in search window
 		HashMap<String, String> uiSearchData = null;

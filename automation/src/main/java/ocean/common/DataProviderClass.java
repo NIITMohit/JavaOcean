@@ -106,46 +106,4 @@ public class DataProviderClass {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "PremiumCalculation");
 		return arrayObject;
 	}
-
-	/**
-	 * Data provider for fetchSearchData used in search module
-	 */
-	@DataProvider(name = "fetchSearchData")
-	public static Object[][] fetchSearchData() {
-		//// current runnig directory
-		String currentDir = System.getProperty("user.dir");
-		//// pat of test ng test data
-		String dir = currentDir + "\\Repository\\";
-		//// Excel sheet file name
-		String fileName = "Search.xlsx";
-		//// Excel sheet, sheet name
-		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Search");
-		return arrayObject;
-	}
-
-	/**
-	 * Data provider for fetchSearchData used in search module
-	 */
-	@DataProvider(name = "fetchCancelSearchData")
-	public static Object[][] fetchCancelSearchData() {
-		//// current running directory
-		String currentDir = System.getProperty("user.dir");
-		//// pat of test ng test data
-		String dir = currentDir + "\\Repository\\";
-		//// Excel sheet file name
-		String fileName = "Cancellation.xlsx";
-		//// Excel sheet, sheet name
-		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "Search");
-		return arrayObject;
-	}
-
-	/**
-	 * Data provider for fetchSearchData used in search module
-	 */
-	@DataProvider(name = "fetchCancelStatusData")
-	public static Object[][] getAllStatusOfContract() {
-		return new String[][] { { "UnderW" }, { "OnHold" }, { "Return" }, { "Pending" }, { "Processed" },
-				{ "Cancelled" }, { "Purged" }, { "Reference" }, { "NIS" } };
-	}
-
 }
