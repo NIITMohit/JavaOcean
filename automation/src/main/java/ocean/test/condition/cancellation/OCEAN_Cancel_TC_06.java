@@ -49,6 +49,10 @@ public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
 				cancelReason = inputData[2];
 			enterValuesOnNewCancellationTabAndClickCalculate(initiatedBy, cancelReason, "",
 					convertDate(contractList.get("SALE_DATE"), 1), "");
+			//// click ok for cancellation completed successfully
+			click("clickOk");
+			//// click ok for cancellation completed successfully
+			click("clickOk");
 			//// get cancel method applied as flat or outside flat
 			String cancelMethodType = returnCancelMethodValue();
 			//// assert flat or not flat
@@ -83,6 +87,10 @@ public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
 				cancelReason = inputData[2];
 			enterValuesOnNewCancellationTabAndClickCalculate(initiatedBy, cancelReason, "",
 					convertDate(contractList.get("SALE_DATE"), 1), "");
+			//// click ok for cancellation completed successfully
+			click("clickOk");
+			//// click ok for cancellation completed successfully
+			click("clickOk");
 			//// get cancel method applied as flat or outside flat
 			String cancelMethodType = returnCancelMethodValue();
 			//// assert flat or not flat
@@ -117,6 +125,10 @@ public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
 				cancelReason = inputData[2];
 			enterValuesOnNewCancellationTabAndClickCalculate(initiatedBy, cancelReason, "",
 					convertDate(contractList.get("SALE_DATE"), 1), "");
+			//// click ok for cancellation completed successfully
+			click("clickOk");
+			//// click ok for cancellation completed successfully
+			click("clickOk");
 			//// get cancel method applied as flat or outside flat
 			String cancelMethodType = returnCancelMethodValue();
 			//// assert flat or not flat
@@ -151,6 +163,10 @@ public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
 				cancelReason = inputData[2];
 			enterValuesOnNewCancellationTabAndClickCalculate(initiatedBy, cancelReason, "",
 					convertDate(contractList.get("SALE_DATE"), 1), "");
+			//// click ok for cancellation completed successfully
+			click("clickOk");
+			//// click ok for cancellation completed successfully
+			click("clickOk");
 			//// get cancel method applied as flat or outside flat
 			String cancelMethodType = returnCancelMethodValue();
 			//// assert flat or not flat
