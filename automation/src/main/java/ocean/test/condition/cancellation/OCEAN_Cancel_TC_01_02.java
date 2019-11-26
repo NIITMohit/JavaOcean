@@ -39,7 +39,7 @@ public class OCEAN_Cancel_TC_01_02 extends cancellationModulePages {
 			//// get search data value in a hash map from data provider, all values would be
 			//// appendSearchData saved in searchData hash map same as in excel, all values
 			//// including *, Blanks
-			uiSearchData = getDataSetforSearch(appendSearchData(inputArray));
+			uiSearchData = cancellation_getSearchDataCountOnCancellationScreen(appendSearchData(inputArray));
 		} else {
 			uiSearchData = convertDataRemoveStar(inputArray);
 		}
@@ -50,7 +50,7 @@ public class OCEAN_Cancel_TC_01_02 extends cancellationModulePages {
 		int oceanCount = getSearchResultCount();
 		//// get number of search result from database, actual result from input
 		//// parameters
-		int dbCount = Integer.parseInt(getSearchDataCountOnCancellationScreen(uiSearchData).get("count"));
+		int dbCount = Integer.parseInt(cancellation_getSearchDataCountOnCancellationScreen(uiSearchData).get("count"));
 		//// get data count and verify
 		if (oceanCount == dbCount)
 			countFlag = true;
@@ -63,7 +63,7 @@ public class OCEAN_Cancel_TC_01_02 extends cancellationModulePages {
 			//// Get contract id at row i
 			String contractId = getFirstContractId(i);
 			//// get data for contract id at row i
-			HashMap<String, String> myDBData = getCancellationMouduleSearchData(contractId);
+			HashMap<String, String> myDBData = cancellation_getCancellationMouduleSearchData(contractId);
 			//// get data from db for contract i
 			//// save data from UI searched result
 			HashMap<String, String> gridData = returnSearchResultGridData(i);
