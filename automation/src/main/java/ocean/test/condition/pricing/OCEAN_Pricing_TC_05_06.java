@@ -25,7 +25,7 @@ public class OCEAN_Pricing_TC_05_06 extends underwritingModulePages {
 	 */
 	@Test(priority = 1, groups = "regression", description = "Validate premium calculation for multiple contracts from same master and sub-master price sheet")
 	public void validatePremiumCalculationForMasterAndSubMasterPriceSheet() throws Exception {
-		HashMap<Integer, HashMap<String, String>> contractFromRemittance = getPendingContractwithRemittance();
+		HashMap<Integer, HashMap<String, String>> contractFromRemittance = pricing_underwriting_getPendingContractwithRemittance();
 		//// get remittance name and file name
 		/// iterate to multiple contracts with same price sheet
 		for (Map.Entry<Integer, HashMap<String, String>> maps : contractFromRemittance.entrySet()) {

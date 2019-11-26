@@ -27,7 +27,7 @@ public class OCEAN_Cancel_TC_03 extends cancellationModulePages {
 	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC03", dataProviderClass = CancellationDataProvider.class, description = "Validate creation and blocking of cancellation request on the basis of contract status. ")
 	public void verifyCancelButtonStatusBasesOnCancellationStatus(String status) throws Exception {
 		///// get contract id from db bases on status of contract
-		String contractId = getContractIdBasedOnStatus(status);
+		String contractId = cancellation_getContractIdBasedOnStatus(status);
 		if (contractId.length() > 0) {
 			HashMap<String, String> uiSearchData = new HashMap<String, String>();
 			uiSearchData.put("CERT", contractId);
