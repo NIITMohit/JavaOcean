@@ -45,6 +45,49 @@ public class cancellationModulePages extends CommonFunctions {
 	}
 
 	/**
+	 * This function is used to return contract summary data in a hashmap
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getContractSummary() throws Exception {
+		HashMap<String, String> summaryData = new HashMap<String, String>();
+		summaryData.put("Primary_Account", getValue("contractSummaryPrimaryAccount"));
+		summaryData.put("Primart_Acct_Id", getValue("contractSummaryPrimaryAccountId"));
+		summaryData.put("Primary_Acct_Status", getValue("contractSummaryPrimaryAccountStatus"));
+		summaryData.put("Customer_Name", getValue("contractSummaryCustomerName"));
+		summaryData.put("Sale_Date", getValue("contractSummarySaleDate"));
+		summaryData.put("Sale_Mileage", getValue("contractSummarySaleMileage"));
+		summaryData.put("VIN", getValue("contractSummaryVIN"));
+		summaryData.put("Premium", getValue("contractSummaryPremium"));
+		summaryData.put("Customer_Paid", getValue("contractSummaryCustPaid"));
+		summaryData.put("Pricesheet", getValue("contractSummaryPricesheet"));
+		summaryData.put("Contract_Status", getValue("contractSummaryContStatus"));
+		summaryData.put("Claims_Paid", getValue("contractSummaryClaimsPaid"));
+		String comments = getValue("contractSummaryComments");
+		if (comments.equals("N/A"))
+			comments = null;
+		summaryData.put("Comments", comments);
+		return summaryData;
+	}
+
+	/**
+	 * This function is used to expand all sections on new cancellation screen
+	 * 
+	 * @param section : This is section name which needs to be expanded
+	 * 
+	 * 
+	 */
+	public void toggleSectionsOnNewCancellationScreen(String section) throws Exception {
+		
+		switch (section) {
+		case "Contract Summary":
+			break;
+		default:
+			//// do nothing
+		}
+	}
+
+	/**
 	 * This function is used to navigate to fill details on new cancellation tab and
 	 * click calculate, if cancelMiles, cancelDate, dateReceived are blank random
 	 * values will be saved
@@ -105,7 +148,7 @@ public class cancellationModulePages extends CommonFunctions {
 	public String getValidationForCancelFutureDate() throws Exception {
 		return getValue("messageForCancelFutureDate");
 	}
-	
+
 	/**
 	 * This function is used to get validation if received date is future date
 	 * 
@@ -156,11 +199,10 @@ public class cancellationModulePages extends CommonFunctions {
 
 	/**
 	 * This function is used to navigate selectCancellationTaskStatus based on input
-	 * patamarer given
+	 * paramater given
 	 * 
 	 */
 	public void selectCancellationTaskStatus(String status) throws Exception {
-
 		switch (status.toLowerCase()) {
 		case "authorize":
 			click("clickAuthorize");

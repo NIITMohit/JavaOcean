@@ -165,40 +165,11 @@ public class Database_Connectivity {
 	}
 
 	/**
-	 * Database function to getpricesheet data based on price sheet code
-	 * 
-	 * @throws Exception
-	 * 
-	 */
-	public HashMap<String, String> getPriceSheetList(String priceSheetCode) throws Exception {
-		HashMap<String, String> dbMap = new HashMap<String, String>();
-		try {
-			//// connect to aul db
-			aulDBConnect();
-			///// execute query
-			ResultSet rs = stmt.executeQuery("select * from [dbo].[ACCOUNT_TYPE]");
-			//// save data in map
-			dbMap = returnData(rs);
-
-			String annbc = dbMap.get("ID");
-			System.out.println(annbc);
-
-		} catch (Exception e) {
-			throw e;
-		} finally {
-			//// close connection
-			closeConnection();
-		}
-
-		return dbMap;
-
-	}
-
-	/**
 	 * This gets PendingContractwithRemittance
 	 * 
 	 */
-	public HashMap<Integer, HashMap<String, String>> getPendingContractwithRemittance() throws Exception {
+	public HashMap<Integer, HashMap<String, String>> pricing_underwriting_getPendingContractwithRemittance()
+			throws Exception {
 		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
 		try {
 			//// connect to aul db
@@ -225,7 +196,8 @@ public class Database_Connectivity {
 	 * This gets DataSetforSearch
 	 * 
 	 */
-	public HashMap<String, String> getDataSetforSearch(HashMap<String, String> searchParamater) throws Exception {
+	public HashMap<String, String> search_getDataSetforSearch(HashMap<String, String> searchParamater)
+			throws Exception {
 		HashMap<String, String> dbMap = new HashMap<String, String>();
 		try {
 			String query = "";
@@ -272,8 +244,8 @@ public class Database_Connectivity {
 	 * This gets SearchDataCountOnCancellationScreen
 	 * 
 	 */
-	public HashMap<String, String> getSearchDataCountOnCancellationScreen(HashMap<String, String> searchParamater)
-			throws Exception {
+	public HashMap<String, String> cancellation_getSearchDataCountOnCancellationScreen(
+			HashMap<String, String> searchParamater) throws Exception {
 		HashMap<String, String> dbMap = new HashMap<String, String>();
 		try {
 			String query = "";
@@ -318,7 +290,7 @@ public class Database_Connectivity {
 	 * status
 	 * 
 	 */
-	public String getContractIdBasedOnStatus(String status) throws Exception {
+	public String cancellation_getContractIdBasedOnStatus(String status) throws Exception {
 		String contract_id = "";
 		try {
 			aulDBConnect();
@@ -343,8 +315,8 @@ public class Database_Connectivity {
 	 * status
 	 * 
 	 */
-	public HashMap<String, String> getContractIdBasedOnStatusAndPriceSheet(String status, String priceSheet)
-			throws Exception {
+	public HashMap<String, String> cancellation_getContractIdBasedOnStatusAndPriceSheet(String status,
+			String priceSheet) throws Exception {
 		HashMap<String, String> myData = new HashMap<String, String>();
 		try {
 			aulDBConnect();
@@ -367,21 +339,53 @@ public class Database_Connectivity {
 	}
 
 	/**
+	 * This function gets all required details used in TC 08
+	 * 
+	 */
+	public HashMap<String, String> cancellation_getDetailsForTC08(String status) throws Exception {
+		HashMap<String, String> myData = new HashMap<String, String>();
+		try {
+			aulDBConnect();
+			String query = "select top 1 sales.CERT as Contract_Number, account.NAME as "
+					+ "Primary_Account,account.ROLE_IDENTIFIER as Primart_Acct_Id, accS.Status as Primary_Acct_Status, "
+					+ "CONCAT(sales.CUSTOMER_FIRST, ' ', sales.CUSTOMER_LAST) "
+					+ "AS Customer_Name,sales.SALE_DATE as Sale_Date,sales.START_MILEAGE as Sale_Mileage,sales.VIN, "
+					+ "(sales.DEALER_PAID - sales.DBCR_AMT )as Premium, sales.CUSTOMER_PAID as Customer_Paid, "
+					+ "price.INTERNAL_NAME as " + "Pricesheet,statuss.NAME as Contract_Status, "
+					+ "sales.COMMENTS as Comments " + "from [dbo].[ALLSALES_DETAILS] sales join [dbo].[ACCOUNT] "
+					+ "account on account.id =  sales.PRIMARY_ACCOUNT_ID join "
+					+ "[dbo].[UW_CONTRACT_STATUS] statuss on statuss.id = sales.CONTRACT_STATUS_ID "
+					+ "left join [dbo].[PRICING_PRICESHEET] price on price.id = sales.PRICESHEET_ID "
+					+ "join  ACCOUNT_STATUS accS on " + "accS.id =account.ACCOUNT_STATUS_ID  where statuss.name = '"
+					+ status + "' order by sales.id desc;";
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			HashMap<String, String> dbMap = returnData(rs);
+			myData = dbMap;
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return myData;
+	}
+
+	/**
 	 * This gets search all sales details and return us latest contract id
 	 * 
 	 */
-	public HashMap<String, String> getCancellationMouduleSearchData(String contractId) throws Exception {
+	public HashMap<String, String> cancellation_getCancellationMouduleSearchData(String contractId) throws Exception {
 		HashMap<String, String> dbMap = new HashMap<String, String>();
 		try {
 			String query = "select sales.CERT as Contract_Number,price.INTERNAL_NAME as PriceSheet_Name,sales.PROGRAM_CODE, "
 					+ " account.NAME as Primary_Account,account.ROLE_IDENTIFIER, "
-					+ "CONCAT(sales.CUSTOMER_FIRST, ' ', sales.CUSTOMER_LAST) AS customer_name,statuss.Name as contractStatus ,summary.COMMENTS "
+					+ "CONCAT(sales.CUSTOMER_FIRST, ' ', sales.CUSTOMER_LAST) AS customer_name,statuss.Name as contractStatus ,sales.COMMENTS "
 					+ "from [dbo].[ALLSALES_DETAILS] sales join [dbo].[ACCOUNT] account on account.id =  "
 					+ "sales.PRIMARY_ACCOUNT_ID join [dbo].[UW_CONTRACT_STATUS] statuss on statuss.id = sales.CONTRACT_STATUS_ID "
 					+ "left join [dbo].[PRICING_PRICESHEET] price on price.id = sales.PRICESHEET_ID "
-					+ " left join [dbo].[ALLSALES_DETAILS_LOG] summary on sales.id = "
-					+ "summary.ALLSALES_DETAILS_ID where sales.CERT = '" + contractId
-					+ "' order by summary.LOG_SEQ desc;";
+					+ " where sales.CERT = '" + contractId + "';";
 
 			aulDBConnect();
 			///// execute query

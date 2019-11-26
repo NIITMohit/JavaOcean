@@ -28,7 +28,7 @@ public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
 	public void verifyFlatCancelRuleWithInCancelPeriod(String[] inputData) throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
 		if (contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
@@ -66,7 +66,7 @@ public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
 	public void verifyOutsideFlatCancelRuleWithInCancelPeriod(String[] inputData) throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
 		if (contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
@@ -104,7 +104,7 @@ public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
 	public void verifyBoundryValueFlatCancelPeriod(String[] inputData) throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
 		if (contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
@@ -142,7 +142,7 @@ public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
 	public void verifyBoundryValueFlatOutSideCancelPeriod(String[] inputData) throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
 		if (contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
