@@ -195,7 +195,7 @@
 		</keyword>
 		<keyword id="contractSummaryVIN">
 			<locator>xpath</locator>
-			<value>//*[@Name='VIN']/following-sibling::*[1]</value>
+			<value>(//*[@Name='VIN']/following-sibling::*[1])[2]</value>
 		</keyword>
 		<keyword id="contractSummaryPremium">
 			<locator>xpath</locator>
@@ -220,6 +220,98 @@
 		<keyword id="contractSummaryComments">
 			<locator>xpath</locator>
 			<value>//*[@Name='Comments']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="toggleContractSummaryOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[1]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleContractDetailsOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[2]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="togglePrimaryAccountDetailsOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[3]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleSecondaryAccountDetailsOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[4]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleCustomerDetailsOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[5]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleVehicleDetailsOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[6]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleAgentDetailsOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[7]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleDealerInfoViewOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[8]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleCertInfoViewOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[9]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleBreakDownInfoViewOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[10]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleRuleInfoViewOnNewCancellation">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[11]//*[@ClassName='TextBlock']</value>
+		</keyword>
+		<keyword id="toggleContractSummaryOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[1]</value>
+		</keyword>
+		<keyword id="toggleContractDetailsOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[2]</value>
+		</keyword>
+		<keyword id="togglePrimaryAccountDetailsOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[3]</value>
+		</keyword>
+		<keyword id="toggleSecondaryAccountDetailsOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[4]</value>
+		</keyword>
+		<keyword id="toggleCustomerDetailsOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[5]</value>
+		</keyword>
+		<keyword id="toggleVehicleDetailsOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[6]</value>
+		</keyword>
+		<keyword id="toggleAgentDetailsOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[7]</value>
+		</keyword>
+		<keyword id="toggleDealerInfoViewOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[8]</value>
+		</keyword>
+		<keyword id="toggleCertInfoViewOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[9]</value>
+		</keyword>
+		<keyword id="toggleBreakDownInfoViewOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[10]</value>
+		</keyword>
+		<keyword id="toggleRuleInfoViewOnNewCancellationO">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='toggle'])[11]</value>
+		</keyword>
+		<keyword id="clickSelectForCancelledContracts">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='SelectParameterButton' and @Name = 'Select']</value>
 		</keyword>
 	</Cancellation>
 	<Pricing>

@@ -18,7 +18,7 @@ import ocean.modules.pages.cancellationModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Cancel_TC_08 extends cancellationModulePages {
+public class OCEAN_Cancel_TC_09 extends cancellationModulePages {
 	/**
 	 * This function automates test case for test condition 08; Test Case
 	 * description : Validate contract summary section all fields as read only
@@ -26,7 +26,7 @@ public class OCEAN_Cancel_TC_08 extends cancellationModulePages {
 	 * 
 	 */
 	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC08", dataProviderClass = CancellationDataProvider.class, description = "Validate contract summary section all fields as read only before cancellation of a contract")
-	public void validateContractSummarySectionForAllStatusOfContract(String status) throws Exception {
+	public void validateContractDetailsSectionForAllStatusOfContract(String status) throws Exception {
 		///// get contract id from db bases on status of contract
 		HashMap<String, String> dataForTC08 = cancellation_getDetailsForTC08(status);
 		if (dataForTC08.get("Contract_Number").length() > 0) {
@@ -46,11 +46,11 @@ public class OCEAN_Cancel_TC_08 extends cancellationModulePages {
 				//// click select in cancellation history and proceed to new cancellation tab
 				clickCancelButtonAndNavigateToNewCancellationTab();
 			//// Expand Section for contract Summary
-			toggleSectionsOnNewCancellationScreen("Contract Summary");
+			toggleSectionsOnNewCancellationScreen("Contract Details");
 			//// function to append all contract summary data in a hashmap
-			HashMap<String, String> contractSummary = getContractSummary();
+			HashMap<String, String> contractDetails = getContractSummary();
 			//// validate data as as per db?
-			assertEquals(dataForTC08, contractSummary);
+			assertEquals(dataForTC08, contractDetails);
 		} else {
 			new SkipException("no value exist in db for status = cancelled");
 		}
