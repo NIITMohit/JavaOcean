@@ -38,6 +38,14 @@ public class CancellationDataProvider {
 	}
 
 	/**
+	 * Data provider for fetchSearchData used in search module
+	 */
+	@DataProvider(name = "fetchDataForTC08")
+	public static Object[][] fetchDataForTC08() {
+		return new String[][] { { "Processed" }, { "Cancelled" } };
+	}
+
+	/**
 	 * Data provider for fetchDataForTC06 used in tc 06 module
 	 */
 	@DataProvider(name = "fetchDataForTC06")
