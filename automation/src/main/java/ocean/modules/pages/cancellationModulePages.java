@@ -73,8 +73,7 @@ public class cancellationModulePages extends CommonFunctions {
 		summaryData.put("Comments", comments);
 		return summaryData;
 	}
-	
-	
+
 	/**
 	 * This function is used to return contract details data in a hashmap
 	 * 
@@ -82,22 +81,41 @@ public class cancellationModulePages extends CommonFunctions {
 	 */
 	public HashMap<String, String> getContractDetails() throws Exception {
 		HashMap<String, String> summaryData = new HashMap<String, String>();
-		summaryData.put("Primary_Account", getValue("contractSummaryPrimaryAccount"));
-		summaryData.put("Primart_Acct_Id", getValue("contractSummaryPrimaryAccountId"));
-		summaryData.put("Primary_Acct_Status", getValue("contractSummaryPrimaryAccountStatus"));
-		summaryData.put("Customer_Name", getValue("contractSummaryCustomerName"));
-		summaryData.put("Sale_Date", getValue("contractSummarySaleDate"));
-		summaryData.put("Sale_Mileage", getValue("contractSummarySaleMileage"));
-		summaryData.put("VIN", getValue("contractSummaryVIN"));
-		summaryData.put("Premium", getValue("contractSummaryPremium"));
-		summaryData.put("Customer_Paid", getValue("contractSummaryCustPaid"));
-		summaryData.put("Pricesheet", getValue("contractSummaryPricesheet"));
-		summaryData.put("Contract_Status", getValue("contractSummaryContStatus"));
-		summaryData.put("Claims_Paid", getValue("contractSummaryClaimsPaid"));
-		String comments = getValue("contractSummaryComments");
-		if (comments.length() < 0)
-			comments = null;
-		summaryData.put("Comments", comments);
+		summaryData.put("Sale_Date", getValue("contractDetailsSaleDate"));
+		summaryData.put("Processed_Date", getValue("contractDetailsProcessedDate"));
+		summaryData.put("Check", getValue("contractDetailsCheque"));
+		summaryData.put("Pricesheet", getValue("contractDetailsPricesheet"));
+		summaryData.put("Status", getValue("contractDetailsStatus"));
+		summaryData.put("Premium", getValue("contractDetailsPremium"));
+		summaryData.put("Dealer_Paid", getValue("contractDetailsDealerPaid"));
+		summaryData.put("DB/CR", getValue("contractDetailsDBCR"));
+		summaryData.put("Customer_Paid", getValue("contractDetailsCustPaid"));
+		summaryData.put("Vehicle_Price", getValue("contractDetailsVehiclePrice"));
+		summaryData.put("Term", getValue("contractDetailsTerm"));
+		summaryData.put("Coverage", getValue("contractDetailsCoverage"));
+		return summaryData;
+	}
+
+	/**
+	 * This function is used to return contract details data in a hashmap
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getPrimaryAccountDetails() throws Exception {
+		HashMap<String, String> summaryData = new HashMap<String, String>();
+		summaryData.put("Primary_Account", getValue("primaryAccountDetailsPrimaryAccount"));
+		summaryData.put("Primart_Acct_Id", getValue("primaryAccountDetailsPrimaryAccountId"));
+		summaryData.put("Status", getValue("primaryAccountDetailsStatus"));
+		summaryData.put("Address", getValue("primaryAccountAddress"));
+		summaryData.put("City", getValue("primaryAccountCity"));
+		summaryData.put("Zip", getValue("primaryAccountZip"));
+		summaryData.put("Phone", getValue("primaryAccountPhone"));
+		summaryData.put("Fax", getValue("primaryAccountFax"));
+		summaryData.put("Email", getValue("primaryAccountEmail"));
+		summaryData.put("Reference_Dealer", getValue("primaryAccountReferenceDealer"));
+		summaryData.put("Reference_Dealer_Id", getValue("primaryAccountReferenceDealerId"));
+		summaryData.put("Statement_Balance", getValue("primaryAccountStatementBalance"));
+		summaryData.put("Change_Off_History", getValue("primaryAccountChangeOffHistory"));
 		return summaryData;
 	}
 
