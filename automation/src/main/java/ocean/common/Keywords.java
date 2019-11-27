@@ -75,6 +75,39 @@ public class Keywords extends Variables {
 
 	}
 
+	/**
+	 * click keyword , this function is used to perform click on any object
+	 * 
+	 * @param locator  : unique identifier to locate object
+	 * @param position : position of click element
+	 */
+	public void click(String locator, int position) {
+		String[] object = Variables.oR.get(locator);
+		String xpath = "(" + object[1] + ")[" + ++position + "]";
+		for (int i = 0; i < 4; i++) {
+			try {
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebElement clickElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+				//// Click the web element
+				clickElement.click();
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+
+	}
+
+	/**
+	 * waitForSomeTime keyword , this function is used to indulge some delay in
+	 * script
+	 * 
+	 * @param time : wait time in seconds
+	 */
 	public void waitForSomeTime(int time) {
 		try {
 			Thread.sleep(time * 1000);
@@ -85,6 +118,12 @@ public class Keywords extends Variables {
 
 	}
 
+	/**
+	 * rightClick keyword , this function is used to perform right click on any
+	 * object
+	 * 
+	 * @param unique identifier to locate object
+	 */
 	public void rightClick(String locator) {
 		for (int i = 0; i < 4; i++) {
 			try {
@@ -135,6 +174,13 @@ public class Keywords extends Variables {
 		}
 	}
 
+	/**
+	 * typeKeys keyword , this function is used to keyboard keys events and press
+	 * enter
+	 * 
+	 * @param locator : unique identifier to locate object
+	 * @value value : to be entered in locator
+	 */
 	public void typeKeys(String locator, String value) {
 		for (int i = 0; i < 4; i++) {
 			try {
@@ -314,5 +360,31 @@ public class Keywords extends Variables {
 			}
 		}
 		return flag;
+	}
+
+	/**
+	 * checkEnableDisable keyword , this function is used to get state of object,
+	 * and identify weather it is enable or disable
+	 *
+	 * @param unique identifier to locate object
+	 * @return true or false based on locator state
+	 */
+	public String getAtttibuteValue(String locator, String attribute) {
+		String value = "not able identify";
+		for (int i = 0; i < 4; i++) {
+			try {
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebElement typeElement = wait
+						.until(ExpectedConditions.presenceOfElementLocated(ObjectRepo.fetchOR(locator)));
+				//// Check Enable of button
+				value = typeElement.getAttribute(attribute);
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+			}
+		}
+		return value;
 	}
 }

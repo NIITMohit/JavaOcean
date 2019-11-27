@@ -44,6 +44,10 @@ public class cancellationModulePages extends CommonFunctions {
 		click("clickCancelButton");
 	}
 
+	public void clickselectButtonAndNavigateToNewCancellationTab() throws Exception {
+		click("clickSelectForCancelledContracts");
+	}
+
 	/**
 	 * This function is used to return contract summary data in a hashmap
 	 * 
@@ -64,7 +68,34 @@ public class cancellationModulePages extends CommonFunctions {
 		summaryData.put("Contract_Status", getValue("contractSummaryContStatus"));
 		summaryData.put("Claims_Paid", getValue("contractSummaryClaimsPaid"));
 		String comments = getValue("contractSummaryComments");
-		if (comments.equals("N/A"))
+		if (comments.length() < 0)
+			comments = null;
+		summaryData.put("Comments", comments);
+		return summaryData;
+	}
+	
+	
+	/**
+	 * This function is used to return contract details data in a hashmap
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getContractDetails() throws Exception {
+		HashMap<String, String> summaryData = new HashMap<String, String>();
+		summaryData.put("Primary_Account", getValue("contractSummaryPrimaryAccount"));
+		summaryData.put("Primart_Acct_Id", getValue("contractSummaryPrimaryAccountId"));
+		summaryData.put("Primary_Acct_Status", getValue("contractSummaryPrimaryAccountStatus"));
+		summaryData.put("Customer_Name", getValue("contractSummaryCustomerName"));
+		summaryData.put("Sale_Date", getValue("contractSummarySaleDate"));
+		summaryData.put("Sale_Mileage", getValue("contractSummarySaleMileage"));
+		summaryData.put("VIN", getValue("contractSummaryVIN"));
+		summaryData.put("Premium", getValue("contractSummaryPremium"));
+		summaryData.put("Customer_Paid", getValue("contractSummaryCustPaid"));
+		summaryData.put("Pricesheet", getValue("contractSummaryPricesheet"));
+		summaryData.put("Contract_Status", getValue("contractSummaryContStatus"));
+		summaryData.put("Claims_Paid", getValue("contractSummaryClaimsPaid"));
+		String comments = getValue("contractSummaryComments");
+		if (comments.length() < 0)
 			comments = null;
 		summaryData.put("Comments", comments);
 		return summaryData;
@@ -78,9 +109,74 @@ public class cancellationModulePages extends CommonFunctions {
 	 * 
 	 */
 	public void toggleSectionsOnNewCancellationScreen(String section) throws Exception {
-		
-		switch (section) {
-		case "Contract Summary":
+		String contractSummary = getAtttibuteValue("toggleContractSummaryOnNewCancellationO", "Toggle.ToggleState");
+		if (contractSummary.toLowerCase().equals("1"))
+			click("toggleContractSummaryOnNewCancellation");
+		String contractDetails = getAtttibuteValue("toggleContractDetailsOnNewCancellationO", "Toggle.ToggleState");
+		if (contractDetails.toLowerCase().equals("1"))
+			click("toggleContractDetailsOnNewCancellation");
+		String primaryAccountDetails = getAtttibuteValue("togglePrimaryAccountDetailsOnNewCancellationO",
+				"Toggle.ToggleState");
+		if (primaryAccountDetails.toLowerCase().equals("1"))
+			click("togglePrimaryAccountDetailsOnNewCancellation");
+		String secondaryAccountDetails = getAtttibuteValue("toggleSecondaryAccountDetailsOnNewCancellationO",
+				"Toggle.ToggleState");
+		if (secondaryAccountDetails.toLowerCase().equals("1"))
+			click("toggleSecondaryAccountDetailsOnNewCancellation");
+		String customerDetails = getAtttibuteValue("toggleCustomerDetailsOnNewCancellationO", "Toggle.ToggleState");
+		if (customerDetails.toLowerCase().equals("1"))
+			click("toggleCustomerDetailsOnNewCancellation");
+		String vehicleDetails = getAtttibuteValue("toggleVehicleDetailsOnNewCancellationO", "Toggle.ToggleState");
+		if (vehicleDetails.toLowerCase().equals("1"))
+			click("toggleVehicleDetailsOnNewCancellation");
+		String agentDetails = getAtttibuteValue("toggleAgentDetailsOnNewCancellationO", "Toggle.ToggleState");
+		if (agentDetails.toLowerCase().equals("1"))
+			click("toggleAgentDetailsOnNewCancellation");
+		String dealerInfoView = getAtttibuteValue("toggleDealerInfoViewOnNewCancellationO", "Toggle.ToggleState");
+		if (dealerInfoView.toLowerCase().equals("1"))
+			click("toggleDealerInfoViewOnNewCancellation");
+		String certInfoView = getAtttibuteValue("toggleCertInfoViewOnNewCancellationO", "Toggle.ToggleState");
+		if (certInfoView.toLowerCase().equals("1"))
+			click("toggleCertInfoViewOnNewCancellation");
+		String breakDownInfoView = getAtttibuteValue("toggleBreakDownInfoViewOnNewCancellationO", "Toggle.ToggleState");
+		if (breakDownInfoView.toLowerCase().equals("1"))
+			click("toggleBreakDownInfoViewOnNewCancellation");
+		String ruleInfoView = getAtttibuteValue("toggleRuleInfoViewOnNewCancellationO", "Toggle.ToggleState");
+		if (ruleInfoView.toLowerCase().equals("1"))
+			click("toggleRuleInfoViewOnNewCancellation");
+		switch (section.toLowerCase()) {
+		case "contract summary":
+			click("toggleContractSummaryOnNewCancellation");
+			break;
+		case "contract details":
+			click("toggleContractDetailsOnNewCancellation");
+			break;
+		case "primary account details":
+			click("togglePrimaryAccountDetailsOnNewCancellation");
+			break;
+		case "secondary account details":
+			click("toggleSecondaryAccountDetailsOnNewCancellation");
+			break;
+		case "customer details":
+			click("toggleCustomerDetailsOnNewCancellation");
+			break;
+		case "vehicle details":
+			click("toggleVehicleDetailsOnNewCancellation");
+			break;
+		case "agent details":
+			click("toggleAgentDetailsOnNewCancellation");
+			break;
+		case "dealer info view":
+			click("toggleDealerInfoViewOnNewCancellation");
+			break;
+		case "cert info view":
+			click("toggleCertInfoViewOnNewCancellation");
+			break;
+		case "breakdown info view":
+			click("toggleBreakDownInfoViewOnNewCancellation");
+			break;
+		case "rules info view":
+			click("toggleRuleInfoViewOnNewCancellation");
 			break;
 		default:
 			//// do nothing
