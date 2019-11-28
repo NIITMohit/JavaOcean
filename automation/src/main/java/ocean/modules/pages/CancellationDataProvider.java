@@ -42,7 +42,7 @@ public class CancellationDataProvider {
 	 */
 	@DataProvider(name = "fetchDataForTC08")
 	public static Object[][] fetchDataForTC08() {
-		return new String[][] { { "Processed" }, { "Cancelled" } };
+		return new String[][] { { "Cancelled" } };
 	}
 
 	/**

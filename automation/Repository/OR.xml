@@ -171,55 +171,55 @@
 		</keyword>
 		<keyword id="contractSummaryPrimaryAccount">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Primary Account']/following-sibling::*[1])[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Primary Account']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryPrimaryAccountId">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Primary Acct. ID']/following-sibling::*[1])[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Primary Acct. ID']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryPrimaryAccountStatus">
 			<locator>xpath</locator>
-			<value>//*[@Name='Primary Acct. Status']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Primary Acct. Status']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryCustomerName">
 			<locator>xpath</locator>
-			<value>//*[@Name='Customer Name']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Customer Name']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummarySaleDate">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Sale Date']/following-sibling::*[1])[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Sale Date']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummarySaleMileage">
 			<locator>xpath</locator>
-			<value>//*[@Name='Sale Mileage']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Sale Mileage']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryVIN">
 			<locator>xpath</locator>
-			<value>(//*[@Name='VIN']/following-sibling::*[1])[2]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='VIN']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryPremium">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Premium']/following-sibling::*[1])[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Premium']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryCustPaid">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Customer Paid']/following-sibling::*[1])[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Customer Paid']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryPricesheet">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Pricesheet']/following-sibling::*[1])[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Pricesheet']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryContStatus">
 			<locator>xpath</locator>
-			<value>//*[@Name='Contract Status']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Contract Status']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryClaimsPaid">
 			<locator>xpath</locator>
-			<value>//*[@Name='Claims Paid']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Claims Paid']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractSummaryComments">
 			<locator>xpath</locator>
-			<value>//*[@Name='Comments']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[1]//*[@Name='Comments']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="toggleContractSummaryOnNewCancellation">
 			<locator>xpath</locator>
@@ -315,103 +315,235 @@
 		</keyword>
 		<keyword id="contractDetailsSaleDate">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Sale Date']/following-sibling::*[1])[2]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Sale Date']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsProcessedDate">
 			<locator>xpath</locator>
-			<value>//*[@Name='Processed Date']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Processed Date']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsCheque">
 			<locator>xpath</locator>
-			<value>//*[@Name='Check #']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Check #']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsPricesheet">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Pricesheet']/following-sibling::*[1])[2]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Pricesheet']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsStatus">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Status']/following-sibling::*[1])[1]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Status']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsPremium">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Premium']/following-sibling::*[1])[2]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Premium']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsDealerPaid">
 			<locator>xpath</locator>
-			<value>//*[@Name='Dealer Paid']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Dealer Paid']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsDBCR">
 			<locator>xpath</locator>
-			<value>//*[@Name='DB/CR']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='DB/CR']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsCustPaid">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Customer Paid']/following-sibling::*[1])[2]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Customer Paid']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsVehiclePrice">
 			<locator>xpath</locator>
-			<value>//*[@Name='Vehicle Price']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Vehicle Price']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsTerm">
 			<locator>xpath</locator>
-			<value>//*[@Name='Term']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Term']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="contractDetailsCoverage">
 			<locator>xpath</locator>
-			<value>//*[@Name='Coverage']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[2]//*[@Name='Coverage']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountDetailsPrimaryAccount">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Primary Account']/following-sibling::*[1])[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Primary Account']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountDetailsPrimaryAccountId">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Primary Acct. ID']/following-sibling::*[1])[2]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Primary Acct. ID']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountDetailsStatus">
 			<locator>xpath</locator>
-			<value>(//*[@Name='Status']/following-sibling::*[1])[2]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Status']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountAddress">
 			<locator>xpath</locator>
-			<value>//*[@Name='Address']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Address']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountCity">
 			<locator>xpath</locator>
-			<value>//*[@Name='City']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='City']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="primaryAccountState">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='State']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountZip">
 			<locator>xpath</locator>
-			<value>//*[@Name='Zip']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Zip']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountPhone">
 			<locator>xpath</locator>
-			<value>//*[@Name='Phone']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Phone']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountFax">
 			<locator>xpath</locator>
-			<value>//*[@Name='Fax']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Fax']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountEmail">
 			<locator>xpath</locator>
-			<value>//*[@Name='Email']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Email']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountReferenceDealer">
 			<locator>xpath</locator>
-			<value>//*[@Name='Reference Dealer']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Reference Dealer']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountReferenceDealerId">
 			<locator>xpath</locator>
-			<value>//*[@Name='Reference Dealer ID']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Reference Dealer ID']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountStatementBalance">
 			<locator>xpath</locator>
-			<value>//*[@Name='Statement Balance']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Statement Balance']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="primaryAccountChangeOffHistory">
 			<locator>xpath</locator>
-			<value>//*[@Name='Change Off History']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[3]//*[@Name='Change Off History']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsSecondaryAccount">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Secondary Account']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsSecondaryAccountId">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Secondary Acct.ID']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsStatus">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Status']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsAddress">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Address']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsCity">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='City']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsState">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='State']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsZip">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Zip']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsPhone">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Phone']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsFax">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Fax']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsEmail">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Email']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsStatementBalance">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Statement Balance']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="secondaryAccountDetailsChangeOffHistory">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[4]//*[@Name='Change Off History']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="customerDetailsName">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[5]//*[@Name='Name']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="customerDetailsAddress">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[5]//*[@Name='Address']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="customerDetailsCity">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[5]//*[@Name='City']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="customerDetailsState">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[5]//*[@Name='State']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="customerDetailsZip">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[5]//*[@Name='Zip']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="customerDetailsPhone">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[5]//*[@Name='Phone']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="customerDetailsEmail">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[5]//*[@Name='Email']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="VINDetailsVIN">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[6]//*[@Name='VIN']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="VINDetailsMake">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[6]//*[@Name='Make']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="VINDetailsModel">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[6]//*[@Name='Model']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="VINDetailsYear">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[6]//*[@Name='Year']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="VINDetailsMileage">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[6]//*[@Name='Mileage']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="AgentDetailsAgentName">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='Agent Name']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="AgentDetailsAgentPhone">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='Phone']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="AgentDetailsAgentFax">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='Fax']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="AgentDetailsAgentEmail">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='Email']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="AgentDetailsAgentAddress">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='Address']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="AgentDetailsAgentCity">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='City']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="AgentDetailsAgentState">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='State']/following-sibling::*[1]</value>
+		</keyword>
+		<keyword id="AgentDetailsAgentZip">
+			<locator>xpath</locator>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='Zip']/following-sibling::*[1]</value>
 		</keyword>
 	</Cancellation>
 	<Pricing>
