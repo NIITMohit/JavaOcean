@@ -104,10 +104,11 @@ public class cancellationModulePages extends CommonFunctions {
 	public HashMap<String, String> getPrimaryAccountDetails() throws Exception {
 		HashMap<String, String> summaryData = new HashMap<String, String>();
 		summaryData.put("Primary_Account", getValue("primaryAccountDetailsPrimaryAccount"));
-		summaryData.put("Primart_Acct_Id", getValue("primaryAccountDetailsPrimaryAccountId"));
+		summaryData.put("Primary_Acct_Id", getValue("primaryAccountDetailsPrimaryAccountId"));
 		summaryData.put("Status", getValue("primaryAccountDetailsStatus"));
 		summaryData.put("Address", getValue("primaryAccountAddress"));
 		summaryData.put("City", getValue("primaryAccountCity"));
+		summaryData.put("State", getValue("primaryAccountState"));
 		summaryData.put("Zip", getValue("primaryAccountZip"));
 		summaryData.put("Phone", getValue("primaryAccountPhone"));
 		summaryData.put("Fax", getValue("primaryAccountFax"));
@@ -116,6 +117,78 @@ public class cancellationModulePages extends CommonFunctions {
 		summaryData.put("Reference_Dealer_Id", getValue("primaryAccountReferenceDealerId"));
 		summaryData.put("Statement_Balance", getValue("primaryAccountStatementBalance"));
 		summaryData.put("Change_Off_History", getValue("primaryAccountChangeOffHistory"));
+		return summaryData;
+	}
+
+	/**
+	 * This function is used to return secondary account data in a hashmap
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getSecondaryAccountDetails() throws Exception {
+		HashMap<String, String> summaryData = new HashMap<String, String>();
+		summaryData.put("Secondary_Account", getValue("secondaryAccountDetailsSecondaryAccount"));
+		summaryData.put("SecondaryAcct_Id", getValue("secondaryAccountDetailsSecondaryAccountId"));
+		summaryData.put("Status", getValue("secondaryAccountDetailsStatus"));
+		summaryData.put("Address", getValue("secondaryAccountDetailsAddress"));
+		summaryData.put("City", getValue("secondaryAccountDetailsCity"));
+		summaryData.put("State", getValue("secondaryAccountDetailsState"));
+		summaryData.put("Zip", getValue("secondaryAccountDetailsZip"));
+		summaryData.put("Phone", getValue("secondaryAccountDetailsPhone"));
+		summaryData.put("Fax", getValue("secondaryAccountDetailsFax"));
+		summaryData.put("Email", getValue("secondaryAccountDetailsEmail"));
+		summaryData.put("Statement_Balance", getValue("secondaryAccountDetailsStatementBalance"));
+		summaryData.put("Change_Off_History", getValue("secondaryAccountDetailsChangeOffHistory"));
+		return summaryData;
+	}
+
+	/**
+	 * This function is used to return customer details data in a hashmap
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getCustomerDetails() throws Exception {
+		HashMap<String, String> summaryData = new HashMap<String, String>();
+		summaryData.put("Name", getValue("customerDetailsName"));
+		summaryData.put("Address", getValue("customerDetailsAddress"));
+		summaryData.put("City", getValue("customerDetailsCity"));
+		summaryData.put("State", getValue("customerDetailsState"));
+		summaryData.put("Zip", getValue("customerDetailsZip"));
+		summaryData.put("Phone", getValue("customerDetailsPhone"));
+		summaryData.put("Email", getValue("customerDetailsEmail"));
+		return summaryData;
+	}
+
+	/**
+	 * This function is used to return vin details data in a hashmap
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getVINDetails() throws Exception {
+		HashMap<String, String> summaryData = new HashMap<String, String>();
+		summaryData.put("VIN", getValue("VINDetailsVIN"));
+		summaryData.put("Make", getValue("VINDetailsMake"));
+		summaryData.put("Model", getValue("VINDetailsModel"));
+		summaryData.put("Year", getValue("VINDetailsYear"));
+		summaryData.put("Mileage", getValue("VINDetailsMileage"));
+		return summaryData;
+	}
+
+	/**
+	 * This function is used to return agent details data in a hashmap
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getAgentDetails() throws Exception {
+		HashMap<String, String> summaryData = new HashMap<String, String>();
+		summaryData.put("Agent_Name", getValue("AgentDetailsAgentName"));
+		summaryData.put("Phone", getValue("AgentDetailsAgentPhone"));
+		summaryData.put("Fax", getValue("AgentDetailsAgentFax"));
+		summaryData.put("Email", getValue("AgentDetailsAgentEmail"));
+		summaryData.put("Address", getValue("AgentDetailsAgentAddress"));
+		summaryData.put("City", getValue("AgentDetailsAgentCity"));
+		summaryData.put("State", getValue("AgentDetailsAgentState"));
+		summaryData.put("Zip", getValue("AgentDetailsAgentZip"));
 		return summaryData;
 	}
 
