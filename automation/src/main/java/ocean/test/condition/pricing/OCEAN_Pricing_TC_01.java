@@ -3,7 +3,7 @@ package ocean.test.condition.pricing;
 import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
-import ocean.modules.pages.pricingModulePages;
+import ocean.modules.pages.PricingModulePages;
 
 /**
  * OCEAN_Pricing_TC01 class automates Ocean Pricing module Test Condition 01,
@@ -12,7 +12,7 @@ import ocean.modules.pages.pricingModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Pricing_TC_01 extends pricingModulePages {
+public class OCEAN_Pricing_TC_01 extends PricingModulePages {
 
 	/**
 	 * This function automates test case 01 for test condition 01; Test Case

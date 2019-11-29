@@ -7,8 +7,8 @@ import java.util.HashMap;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-import ocean.modules.pages.CancellationDataProvider;
-import ocean.modules.pages.cancellationModulePages;
+import ocean.modules.dataprovider.CancellationDataProvider;
+import ocean.modules.pages.CancellationModulePages;
 
 /**
  * OCEAN_Cancel_TC_06 class automates Ocean Cancel module Test Condition 06,
@@ -17,7 +17,7 @@ import ocean.modules.pages.cancellationModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Cancel_TC_06 extends cancellationModulePages {
+public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 	/**
 	 * This function automates test case for test condition 02; Test Case
 	 * description : Validate creation and blocking of cancellation request on the

@@ -7,11 +7,11 @@ import static org.testng.Assert.fail;
 import org.testng.annotations.Test;
 
 import ocean.common.CommonFunctions;
-import ocean.common.DataProviderClass;
+import ocean.modules.dataprovider.CancellationDataProvider;
 
 public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 
-	@Test(priority = 1, dataProvider = "clickSearchContract", dataProviderClass = DataProviderClass.class)
+	@Test(priority = 1, dataProvider = "clickSearchContract", dataProviderClass = CancellationDataProvider.class)
 	public void cancelContract(String contractId, String contractStatus) throws Exception {
 		click("clickCancellationTab");
 		click("clickMailservice");
@@ -49,7 +49,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 		}
 	}
 
-	@Test(priority = 2, dataProvider = "clickSearchContractonOverRide", dataProviderClass = DataProviderClass.class)
+	@Test(priority = 2, dataProvider = "clickSearchContractonOverRide", dataProviderClass = CancellationDataProvider.class)
 	public void cancelContractoverRideRulesCheckBox(String contractId, String Rules) throws InterruptedException {
 		String cancelDate = "05-08-2019";
 		String dateReceived = "08-08-2019";
@@ -114,7 +114,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 		}
 	}
 
-	@Test(priority = 3, dataProvider = "cancelContractCalculateVerify", dataProviderClass = DataProviderClass.class)
+	@Test(priority = 3, dataProvider = "cancelContractCalculateVerify", dataProviderClass = CancellationDataProvider.class)
 	public void cancelContractCalculationVerification(String contractId, String cancdd) {
 		Boolean flag1 = true;
 		String cancelDate = "05-08-2019";

@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import ocean.common.CommonFunctions;
+import ocean.modules.database.CancellationDataBase;
 
 /**
  * This is object class which contains all pages of cancellation modules
  * 
  * @author Mohit Goel
  */
-public class cancellationModulePages extends CommonFunctions {
+public class CancellationModulePages extends CancellationDataBase {
 	/**
 	 * This function is used to navigate to PricingSheetListTab
 	 * 

@@ -1,13 +1,13 @@
 package ocean.modules.pages;
 
-import ocean.common.CommonFunctions;
+import ocean.modules.database.PricingDataBase;
 
 /**
  * This is object class which contains all pages of pricing modules
  * 
  * @author Mohit Goel
  */
-public class pricingModulePages extends CommonFunctions {
+public class PricingModulePages extends PricingDataBase {
 	/**
 	 * This function is used delete a price sheet based on search paramater
 	 * 
