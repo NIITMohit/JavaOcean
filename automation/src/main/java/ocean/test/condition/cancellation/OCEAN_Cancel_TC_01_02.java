@@ -7,8 +7,8 @@ import java.util.HashMap;
 
 import org.testng.annotations.Test;
 
-import ocean.modules.pages.CancellationDataProvider;
-import ocean.modules.pages.cancellationModulePages;
+import ocean.modules.dataprovider.CancellationDataProvider;
+import ocean.modules.pages.CancellationModulePages;
 
 /**
  * OCEAN_Cancel_TC_01_02 class automates Ocean Cancel module Test Condition 01
@@ -18,7 +18,7 @@ import ocean.modules.pages.cancellationModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Cancel_TC_01_02 extends cancellationModulePages {
+public class OCEAN_Cancel_TC_01_02 extends CancellationModulePages {
 	/**
 	 * This function automates all test cases for test condition 01; Test Case
 	 * description : Validate contract search for cancellation on the basis of

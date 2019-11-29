@@ -3,14 +3,14 @@ package ocean.modules.pages;
 import java.util.HashMap;
 import java.util.Map;
 
-import ocean.common.CommonFunctions;
+import ocean.modules.database.SearchDataBase;
 
 /**
  * This is object class which contains all pages of search modules
  * 
  * @author Mohit Goel
  */
-public class searchModulePages extends CommonFunctions {
+public class SearchModulePages extends SearchDataBase {
 	/**
 	 * This function is used to navigate to perform search based on search parameter
 	 * given. It accepts a hashmap with input parameters

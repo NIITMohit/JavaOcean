@@ -4,8 +4,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import org.testng.annotations.Test;
-import ocean.modules.pages.SearchDataProvider;
-import ocean.modules.pages.searchModulePages;
+
+import ocean.modules.dataprovider.SearchDataProvider;
+import ocean.modules.pages.SearchModulePages;
 
 /**
  * OCEAN_Search_TC_01_10 class automates Ocean Search module Test Condition
@@ -14,7 +15,7 @@ import ocean.modules.pages.searchModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Search_TC_01_10 extends searchModulePages {
+public class OCEAN_Search_TC_01_10 extends SearchModulePages {
 	/**
 	 * This function covers all search cases based on search parameters given from
 	 * excel

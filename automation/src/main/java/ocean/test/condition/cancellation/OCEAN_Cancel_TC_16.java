@@ -7,8 +7,8 @@ import java.util.HashMap;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-import ocean.modules.pages.CancellationDataProvider;
-import ocean.modules.pages.cancellationModulePages;
+import ocean.modules.dataprovider.CancellationDataProvider;
+import ocean.modules.pages.CancellationModulePages;
 
 /**
  * OCEAN_Cancel_TC_16 class automates Ocean Cancel module Test Condition 16 ,
@@ -18,7 +18,7 @@ import ocean.modules.pages.cancellationModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Cancel_TC_16 extends cancellationModulePages {
+public class OCEAN_Cancel_TC_16 extends CancellationModulePages {
 	/**
 	 * This function automates test case for test condition 16; Test Case
 	 * description : Validation that user is able to edit override customer premium

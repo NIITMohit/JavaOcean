@@ -1,4 +1,4 @@
-package ocean.modules.pages;
+package ocean.modules.dataprovider;
 
 import org.testng.annotations.DataProvider;
 
@@ -10,7 +10,7 @@ import ocean.common.ReadData;
  * 
  * @author Mohit Goel
  */
-public class CancellationDataProvider {
+public class AccountsDataProvider {
 
 	/**
 	 * Data provider for fetchSearchData used in search module

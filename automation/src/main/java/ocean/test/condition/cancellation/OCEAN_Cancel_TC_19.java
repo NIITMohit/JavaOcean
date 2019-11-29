@@ -7,8 +7,8 @@ import java.util.HashMap;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-import ocean.modules.pages.CancellationDataProvider;
-import ocean.modules.pages.cancellationModulePages;
+import ocean.modules.dataprovider.CancellationDataProvider;
+import ocean.modules.pages.CancellationModulePages;
 
 /**
  * OCEAN_Cancel_TC_19 class automates Ocean Cancel module Test Condition 16 ,
@@ -17,7 +17,7 @@ import ocean.modules.pages.cancellationModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Cancel_TC_19 extends cancellationModulePages {
+public class OCEAN_Cancel_TC_19 extends CancellationModulePages {
 	/**
 	 * This function automates test case for test condition 19; Test Case
 	 * description : Validate that OCEAN allow user to assign status as Authorize to
