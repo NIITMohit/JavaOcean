@@ -312,7 +312,7 @@ public class Database_Connectivity {
 
 	/**
 	 * This gets search all sales details and return us latest contract id based on
-	 * status
+	 * status it will fetch contracts for current year only
 	 * 
 	 */
 	public HashMap<String, String> cancellation_getContractIdBasedOnStatusAndPriceSheet(String status,
@@ -324,6 +324,30 @@ public class Database_Connectivity {
 			String query = "select top 1 CERT,SALE_DATE from [dbo].[ALLSALES_DETAILS] sale join [dbo].[UW_CONTRACT_STATUS] sta "
 					+ "on sale.CONTRACT_STATUS_ID = sta.ID where sta.NAME = '" + status + "' and PROGRAM_CODE = '"
 					+ priceSheet + "' and sale_date like '%" + year + "%'order by 1 desc;";
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			HashMap<String, String> dbMap = returnData(rs);
+			myData = dbMap;
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return myData;
+	}
+
+	/**
+	 * This gets search return refund percentage and cancel fees data
+	 * 
+	 */
+	public HashMap<String, String> cancellation_getRefundPercentAndCancelFee(String contractId) throws Exception {
+		HashMap<String, String> myData = new HashMap<String, String>();
+		try {
+			aulDBConnect();
+			String query = "select CANCEL_FEE_AMOUNT,REFUND_PERCENTAGE from [dbo].[CANCELLATION_PARAMETERS]  where ALLSALES_DETAILS_ID in \r\n"
+					+ "(select ID from [dbo].[ALLSALES_DETAILS]\r\n" + "where cert = '" + contractId + "')";
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);
 			//// save data in map
@@ -371,8 +395,7 @@ public class Database_Connectivity {
 		}
 		return myData;
 	}
-	
-	
+
 	/**
 	 * This function gets all required details used in TC 09
 	 * 
