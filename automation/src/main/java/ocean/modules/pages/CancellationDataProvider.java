@@ -40,7 +40,7 @@ public class CancellationDataProvider {
 	/**
 	 * Data provider for fetchSearchData used in search module
 	 */
-	@DataProvider(name = "fetchDataForTC08")
+	@DataProvider(name = "fetchDataForTC08_09")
 	public static Object[][] fetchDataForTC08() {
 		return new String[][] { { "Cancelled" } };
 	}
@@ -58,6 +58,22 @@ public class CancellationDataProvider {
 		String fileName = "Cancellation.xlsx";
 		//// Excel sheet, sheet name
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC_06");
+		return arrayObject;
+	}
+	
+	/**
+	 * Data provider for fetchDataForTC06 used in tc 06 module
+	 */
+	@DataProvider(name = "fetchPriceSheet")
+	public static Object[][] fetchPriceSheet() {
+		//// current running directory
+		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
+		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
+		String fileName = "Cancellation.xlsx";
+		//// Excel sheet, sheet name
+		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "PriceSheet");
 		return arrayObject;
 	}
 }

@@ -427,7 +427,7 @@ public class cancellationModulePages extends CommonFunctions {
 
 	/**
 	 * This function is used to navigate selectCancellationTaskStatus based on input
-	 * paramater given
+	 * Parameter given
 	 * 
 	 */
 	public void selectCancellationTaskStatus(String status) throws Exception {
@@ -435,9 +435,75 @@ public class cancellationModulePages extends CommonFunctions {
 		case "authorize":
 			click("clickAuthorize");
 			break;
+		case "quote":
+			click("clickQuote");
+			break;
+		case "hold":
+			click("clickHold");
+			break;
+		case "denied":
+			click("clickDenied");
+			break;
+		case "cancellation confirmation":
+			click("clickCancellationConfirmation");
+			break;
+		case "delete":
+			click("clickDelete");
+			break;
 		default:
 			click("clickAuthorize");
 		}
+	}
+
+	/**
+	 * This function is used to check for cancellation task status
+	 * 
+	 */
+	public boolean checkCancellationTaskStatus(String status) throws Exception {
+		boolean flag = false;
+		String actualStatus = "";
+		switch (status.toLowerCase()) {
+		case "authorize":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "quote":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "hold":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "denied":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "cancellation confirmation":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "delete":
+			click("clickDcheckAuthorizeelete");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		default:
+			click("checkAuthorize");
+			flag = false;
+		}
+		return flag;
 	}
 
 	/**

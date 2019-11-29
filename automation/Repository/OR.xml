@@ -85,6 +85,10 @@
 			<locator>xpath</locator>			
 			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_CertNumber']</value>
 		</keyword>
+		<keyword id="getCancellationStatus">
+			<locator>xpath</locator>			
+			<value>//*[@Name='Status' and @ClassName='DataCell']</value>
+		</keyword>
 		<keyword id="clickOK">
 			<locator>Name</locator>
 			<value>OK</value>
@@ -124,6 +128,26 @@
 		<keyword id="clickAuthorize">
 			<locator>Name</locator>
 			<value>Authorize</value>
+		</keyword>
+		<keyword id="clickQuote">
+			<locator>Name</locator>
+			<value>Quote</value>
+		</keyword>
+		<keyword id="clickHold">
+			<locator>Name</locator>
+			<value>Hold</value>
+		</keyword>
+		<keyword id="clickDenied">
+			<locator>Name</locator>
+			<value>Denied</value>
+		</keyword>
+		<keyword id="clickCancellationConfirmation">
+			<locator>Name</locator>
+			<value>Cancellation Confirmation</value>
+		</keyword>
+		<keyword id="clickDelete">
+			<locator>Name</locator>
+			<value>Delete</value>
 		</keyword>
 		<keyword id="listOfContractNumbers">
 			<locator>xpath</locator>

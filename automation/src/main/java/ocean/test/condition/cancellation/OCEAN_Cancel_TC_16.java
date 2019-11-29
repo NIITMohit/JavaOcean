@@ -26,10 +26,11 @@ public class OCEAN_Cancel_TC_16 extends cancellationModulePages {
 	 * 2. Refund% 3. Gross Refund 4. Cancel Fee
 	 * 
 	 */
-	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC08", dataProviderClass = CancellationDataProvider.class, description = "Validation that user is able to edit override customer premium refund calculation by OCEAN  via editing of following fields: 1. Cancel Method 2. Refund%"
+	@Test(priority = 2, groups = "regression", dataProvider = "fetchPriceSheet", dataProviderClass = CancellationDataProvider.class, description = "Validation that user is able to edit override customer premium refund calculation by OCEAN  via editing of following fields: 1. Cancel Method 2. Refund%"
 			+ "3. Gross Refund 4. Cancel Fee")
 	public void validateOverRidePremiumRefundForAnyPriceSheet(String pricesheet) throws Exception {
 		HashMap<String, String> contractList = new HashMap<String, String>();
+		//// get contract id based for processed contract only with current year
 		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", pricesheet);
 		String contractId = contractList.get("CERT");
 		if (contractId.length() > 0) {
@@ -44,6 +45,8 @@ public class OCEAN_Cancel_TC_16 extends cancellationModulePages {
 			//// navigate to new cancel tab
 			clickCancelButtonAndNavigateToNewCancellationTab();
 			enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Repossession", "", "", "");
+			click("clickOK");
+			click("clickOK");
 			//// override cancellation values
 			overRideCancellationValuesAndClickCalculate("10", "10");
 			HashMap<String, String> myData = new HashMap<String, String>();

@@ -25,7 +25,7 @@ public class OCEAN_Cancel_TC_08_09 extends cancellationModulePages {
 	 * all status of contract
 	 * 
 	 */
-	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC08", dataProviderClass = CancellationDataProvider.class, description = "Validate contract summary section all fields as read only before cancellation of a contract")
+	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC08_09", dataProviderClass = CancellationDataProvider.class, description = "Validate contract summary section all fields as read only before cancellation of a contract")
 	public void validateContractSummarySectionForAllStatusOfContract(String status) throws Exception {
 		///// get contract id from db bases on status of contract
 		HashMap<String, String> dataForTC08 = cancellation_getDetailsForTC08(status);
