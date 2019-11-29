@@ -2,10 +2,13 @@ package ocean.modules.pages;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import ocean.common.CommonFunctions;
 
@@ -71,6 +74,12 @@ public class cancellationModulePages extends CommonFunctions {
 		if (comments.length() < 0)
 			comments = null;
 		summaryData.put("Comments", comments);
+		return summaryData;
+	}
+
+	public List<String> getDealerInfoViewData() throws Exception {
+		List<String> summaryData = new ArrayList<String>();
+
 		return summaryData;
 	}
 
@@ -329,6 +338,38 @@ public class cancellationModulePages extends CommonFunctions {
 	}
 
 	/**
+	 * This function is used to overRideCancellationValues
+	 * 
+	 * @param refundPercentage, if blank, than random refund would be taken in
+	 *                          account
+	 * @param CancelFees        if blank, than random 2 digit cancel fee would be
+	 *                          applied
+	 * 
+	 */
+	public void overRideCancellationValuesAndClickCalculate(String refundPercentage, String CancelFees)
+			throws Exception {
+		click("overRideRulesCheckBox");
+		String myRefundPercentage = refundPercentage;
+		if (refundPercentage.length() < 1) {
+			String refundPercent = getValue("refundPercent");
+			float refundPercents = 0;
+			refundPercents = Float.valueOf(refundPercent).floatValue() - 6;
+			int abc = (int) refundPercents;
+			myRefundPercentage = Integer.toString(abc);
+		}
+		String mycancelFee = CancelFees;
+		if (CancelFees.length() < 1) {
+			Random rand = new Random();
+			int rand_int1 = rand.nextInt(100);
+			mycancelFee = Integer.toString(rand_int1);
+		}
+		type("refundPercent", myRefundPercentage);
+		type("cancelFee", mycancelFee);
+		click("clickCalculate");
+		click("clickOK");
+	}
+
+	/**
 	 * This function is used to get validation if cancel date is future date
 	 * 
 	 */
@@ -386,7 +427,7 @@ public class cancellationModulePages extends CommonFunctions {
 
 	/**
 	 * This function is used to navigate selectCancellationTaskStatus based on input
-	 * paramater given
+	 * Parameter given
 	 * 
 	 */
 	public void selectCancellationTaskStatus(String status) throws Exception {
@@ -394,9 +435,75 @@ public class cancellationModulePages extends CommonFunctions {
 		case "authorize":
 			click("clickAuthorize");
 			break;
+		case "quote":
+			click("clickQuote");
+			break;
+		case "hold":
+			click("clickHold");
+			break;
+		case "denied":
+			click("clickDenied");
+			break;
+		case "cancellation confirmation":
+			click("clickCancellationConfirmation");
+			break;
+		case "delete":
+			click("clickDelete");
+			break;
 		default:
 			click("clickAuthorize");
 		}
+	}
+
+	/**
+	 * This function is used to check for cancellation task status
+	 * 
+	 */
+	public boolean checkCancellationTaskStatus(String status) throws Exception {
+		boolean flag = false;
+		String actualStatus = "";
+		switch (status.toLowerCase()) {
+		case "authorize":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "quote":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "hold":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "denied":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "cancellation confirmation":
+			click("checkAuthorize");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		case "delete":
+			click("clickDcheckAuthorizeelete");
+			actualStatus = getValue("getCancellationStatus");
+			if (actualStatus.toLowerCase().equals(status.toLowerCase()))
+				flag = true;
+			break;
+		default:
+			click("checkAuthorize");
+			flag = false;
+		}
+		return flag;
 	}
 
 	/**
