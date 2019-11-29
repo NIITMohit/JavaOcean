@@ -3,14 +3,14 @@ package ocean.modules.pages;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import ocean.common.CommonFunctions;
+import ocean.modules.database.UnderwritingDataBase;
 
 /**
  * This is object class which contains all pages of underwriting modules
  * 
  * @author Mohit Goel
  */
-public class underwritingModulePages extends CommonFunctions {
+public class UnderwritingModulePages extends UnderwritingDataBase {
 
 	/**
 	 * This function is used to land to search contract with pending state

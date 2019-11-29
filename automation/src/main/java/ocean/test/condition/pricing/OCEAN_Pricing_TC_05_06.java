@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.testng.annotations.Test;
-import ocean.modules.pages.underwritingModulePages;
+import ocean.modules.pages.UnderwritingModulePages;
 
 /**
  * OCEAN_Pricing_TC05_06 class automates Ocean Pricing module Test Condition 05
@@ -15,7 +15,7 @@ import ocean.modules.pages.underwritingModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Pricing_TC_05_06 extends underwritingModulePages {
+public class OCEAN_Pricing_TC_05_06 extends UnderwritingModulePages {
 
 	/**
 	 * This function automates test case 01 and 02 for test condition 05 and 06

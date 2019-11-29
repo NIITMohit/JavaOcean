@@ -1,4 +1,4 @@
-package ocean.modules.pages;
+package ocean.modules.dataprovider;
 
 import org.testng.annotations.DataProvider;
 

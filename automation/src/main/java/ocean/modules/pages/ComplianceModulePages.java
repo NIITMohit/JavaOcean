@@ -1,13 +1,13 @@
 package ocean.modules.pages;
 
-import ocean.common.CommonFunctions;
+import ocean.modules.database.ComplianceDataBase;
 
 /**
- * This is object class which contains all pages of search modules
+ * This is object class which contains all pages of compliance modules
  * 
  * @author Mohit Goel
  */
-public class accountsModulePages extends CommonFunctions {
+public class ComplianceModulePages extends ComplianceDataBase {
 	/**
 	 * This function is used to navigate to PricingSheetListTab
 	 * 
