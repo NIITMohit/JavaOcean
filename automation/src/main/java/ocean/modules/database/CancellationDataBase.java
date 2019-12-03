@@ -6,6 +6,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import ocean.common.CommonFunctions;
+/**
+ * Data Base class, common class consisting all data base queries consumed in
+ * cancellation Module
+ * 
+ * @author Mohit Goel
+ */
 public class CancellationDataBase extends CommonFunctions {
 	/**
 	 * This gets SearchDataCountOnCancellationScreen
@@ -79,6 +85,37 @@ public class CancellationDataBase extends CommonFunctions {
 
 	/**
 	 * This gets search all sales details and return us latest contract id based on
+	 * status
+	 * 
+	 */
+	public HashMap<String, String> cancellation_getContractHistoryBasedOnStatus(String status) throws Exception {
+		HashMap<String, String> dbMap;
+		try {
+			aulDBConnect();
+			String query = "select  asd.cert as Contract,asd.CUSTOMER_FIRST,"
+					+ "cs.Name as Status,cp.CREATED_DATE as Process_Date,cp.REFUND_PERCENTAGE,cp.NET_REFUND_AMOUNT as Net_Refund "
+					+ ", cp.CANCEL_MILEAGE as Cancel_Miles, cp.CANCEL_DATE, cib.NAME as INITIATED_BY,crt.NAME as Cancel_Reason "
+					+ "from ALLSALES_DETAILS asd join CANCELLATION_PARAMETERS cp on asd.id = cp.ALLSALES_DETAILS_ID join "
+					+ "[dbo].[CANCELLATION_STATUS] cs on cs.id = cp.STATUS_ID join [dbo].[CANCELLATION_INITIATED_BY] cib "
+					+ "on cib.id = cp.INITIATED_BY_ID left join [dbo].[CANCELLATION_REASON_TYPE] crt "
+					+ "on crt.id = cp.REASON_TYPE_ID " + "where cs.name = '" + status.toLowerCase()
+					+ "' and CUSTOMER_FIRST = 'Vivek';";
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			dbMap = returnData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return dbMap;
+	}
+
+	/**
+	 * This gets search all sales details and return us latest contract id based on
 	 * status it will fetch contracts for current year only
 	 * 
 	 */
@@ -113,8 +150,8 @@ public class CancellationDataBase extends CommonFunctions {
 		HashMap<String, String> myData = new HashMap<String, String>();
 		try {
 			aulDBConnect();
-			String query = "select CANCEL_FEE_AMOUNT,REFUND_PERCENTAGE from [dbo].[CANCELLATION_PARAMETERS]  where ALLSALES_DETAILS_ID in \r\n"
-					+ "(select ID from [dbo].[ALLSALES_DETAILS]\r\n" + "where cert = '" + contractId + "')";
+			String query = "select CANCEL_FEE_AMOUNT,REFUND_PERCENTAGE from [dbo].[CANCELLATION_PARAMETERS]  where ALLSALES_DETAILS_ID in "
+					+ "(select ID from [dbo].[ALLSALES_DETAILS] " + "where cert = '" + contractId + "')";
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);
 			//// save data in map
