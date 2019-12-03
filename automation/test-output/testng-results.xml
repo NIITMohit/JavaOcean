@@ -1,148 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="371086" started-at="2019-11-25T15:08:49 IST" finished-at="2019-11-25T15:15:00 IST">
+  <suite name="Ocean" duration-ms="248390" started-at="2019-12-03T15:42:53 IST" finished-at="2019-12-03T15:47:02 IST">
     <groups>
-      <group name="sanity">
-        <method signature="OCEAN_Cancel_TC_07.validateMessageWhenCancelDateIsBeforeSaleDate()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="validateMessageWhenCancelDateIsBeforeSaleDate" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_07"/>
-        <method signature="OCEAN_Cancel_TC_07.validateMessageWhenCancelDateIsFutureDate()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="validateMessageWhenCancelDateIsFutureDate" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_07"/>
-        <method signature="OCEAN_Cancel_TC_07.validateMessageWhenCancelMilesLessThanSalesMiles()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="validateMessageWhenCancelMilesLessThanSalesMiles" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_07"/>
-        <method signature="OCEAN_Cancel_TC_07.validateMessageWhenReceivedDateIsFutureDate()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="validateMessageWhenReceivedDateIsFutureDate" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_07"/>
-      </group> <!-- sanity -->
+      <group name="regression">
+        <method signature="OCEAN_Cancel_TC_05.VerifyCancellationDetailsUsingContractID()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="VerifyCancellationDetailsUsingContractID" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_05"/>
+      </group> <!-- regression -->
     </groups>
-    <test name="Pricing" duration-ms="371086" started-at="2019-11-25T15:08:49 IST" finished-at="2019-11-25T15:15:00 IST">
-      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_07">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="setup" is-config="true" duration-ms="6514" started-at="2019-11-25T15:08:42 IST" finished-at="2019-11-25T15:08:49 IST">
+    <test name="Cancellation" duration-ms="248390" started-at="2019-12-03T15:42:53 IST" finished-at="2019-12-03T15:47:02 IST">
+      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_05">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="setup" is-config="true" duration-ms="6820" started-at="2019-12-03T15:42:46 IST" finished-at="2019-12-03T15:42:53 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@108531c2]]>
+                <![CDATA[org.testng.TestRunner@c6c82aa]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="createParent" is-config="true" duration-ms="4" started-at="2019-11-25T15:08:49 IST" finished-at="2019-11-25T15:08:49 IST">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="createParent" is-config="true" duration-ms="3" started-at="2019-12-03T15:42:53 IST" finished-at="2019-12-03T15:42:53 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@108531c2]]>
+                <![CDATA[org.testng.TestRunner@c6c82aa]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-25T15:08:49 IST" finished-at="2019-11-25T15:08:49 IST">
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-12-03T15:42:53 IST" finished-at="2019-12-03T15:42:53 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="validateMessageWhenCancelDateIsBeforeSaleDate()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="validateMessageWhenCancelDateIsBeforeSaleDate" duration-ms="119403" started-at="2019-11-25T15:08:49 IST" description="Validate that Ocean block user to authorize a cancellation, when user provide cancel date before sale date." finished-at="2019-11-25T15:10:48 IST">
+        <test-method status="PASS" signature="VerifyCancellationDetailsUsingContractID()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="VerifyCancellationDetailsUsingContractID" duration-ms="247428" started-at="2019-12-03T15:42:53 IST" description="Validate user ability to input and modify cancellation details." finished-at="2019-12-03T15:47:01 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateMessageWhenCancelDateIsBeforeSaleDate -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="tearDown" is-config="true" duration-ms="417" started-at="2019-11-25T15:10:48 IST" finished-at="2019-11-25T15:10:49 IST">
+        </test-method> <!-- VerifyCancellationDetailsUsingContractID -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="tearDown" is-config="true" duration-ms="937" started-at="2019-12-03T15:47:01 IST" finished-at="2019-12-03T15:47:02 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validateMessageWhenCancelDateIsBeforeSaleDate status=SUCCESS method=OCEAN_Cancel_TC_07.validateMessageWhenCancelDateIsBeforeSaleDate()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyCancellationDetailsUsingContractID status=SUCCESS method=OCEAN_Cancel_TC_05.VerifyCancellationDetailsUsingContractID()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@108531c2]]>
+                <![CDATA[org.testng.TestRunner@c6c82aa]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="validateMessageWhenCancelDateIsFutureDate()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="validateMessageWhenCancelDateIsFutureDate" duration-ms="81553" started-at="2019-11-25T15:10:49 IST" description="Validate that Ocean block user to authorize a cancellation, when user provide cancel date greater than today&#039;s date." finished-at="2019-11-25T15:12:10 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateMessageWhenCancelDateIsFutureDate -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-25T15:10:49 IST" finished-at="2019-11-25T15:10:49 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="tearDown" is-config="true" duration-ms="209" started-at="2019-11-25T15:12:10 IST" finished-at="2019-11-25T15:12:11 IST">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="tearDown" is-config="true" duration-ms="42" started-at="2019-12-03T15:47:02 IST" finished-at="2019-12-03T15:47:02 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validateMessageWhenCancelDateIsFutureDate status=SUCCESS method=OCEAN_Cancel_TC_07.validateMessageWhenCancelDateIsFutureDate()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@108531c2]]>
+                <![CDATA[org.testng.TestRunner@c6c82aa]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="screenshot" is-config="true" duration-ms="1" started-at="2019-11-25T15:12:11 IST" finished-at="2019-11-25T15:12:11 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="validateMessageWhenCancelMilesLessThanSalesMiles()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="validateMessageWhenCancelMilesLessThanSalesMiles" duration-ms="87063" started-at="2019-11-25T15:12:11 IST" description="Validate that Ocean block user to authorize a cancellation, when user provide cancel miles less than sale mileage. " finished-at="2019-11-25T15:13:38 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateMessageWhenCancelMilesLessThanSalesMiles -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="tearDown" is-config="true" duration-ms="188" started-at="2019-11-25T15:13:38 IST" finished-at="2019-11-25T15:13:38 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validateMessageWhenCancelMilesLessThanSalesMiles status=SUCCESS method=OCEAN_Cancel_TC_07.validateMessageWhenCancelMilesLessThanSalesMiles()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@108531c2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-11-25T15:13:38 IST" finished-at="2019-11-25T15:13:38 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="validateMessageWhenReceivedDateIsFutureDate()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="validateMessageWhenReceivedDateIsFutureDate" duration-ms="82000" started-at="2019-11-25T15:13:38 IST" description="Validate that Ocean block user to authorize a cancellation, when user provide date received greater than today&#039;s date." finished-at="2019-11-25T15:15:00 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateMessageWhenReceivedDateIsFutureDate -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="tearDown" is-config="true" duration-ms="220" started-at="2019-11-25T15:15:00 IST" finished-at="2019-11-25T15:15:00 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validateMessageWhenReceivedDateIsFutureDate status=SUCCESS method=OCEAN_Cancel_TC_07.validateMessageWhenReceivedDateIsFutureDate()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7] output={null}]]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@108531c2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_07@51e2adc7]" name="tearDown" is-config="true" duration-ms="35" started-at="2019-11-25T15:15:00 IST" finished-at="2019-11-25T15:15:00 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@108531c2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_07 -->
-    </test> <!-- Pricing -->
+      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_05 -->
+    </test> <!-- Cancellation -->
   </suite> <!-- Ocean -->
 </testng-results>

@@ -6,7 +6,7 @@ import ocean.common.ReadData;
 
 /**
  * Data provider class, common class consisting all data provider consumed in
- * test classes
+ * Cancellation Module
  * 
  * @author Mohit Goel
  */
@@ -60,7 +60,7 @@ public class CancellationDataProvider {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC_06");
 		return arrayObject;
 	}
-	
+
 	/**
 	 * Data provider for fetchDataForTC06 used in tc 06 module
 	 */
@@ -75,5 +75,13 @@ public class CancellationDataProvider {
 		//// Excel sheet, sheet name
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "PriceSheet");
 		return arrayObject;
+	}
+
+	/**
+	 * Data provider for fetchSearchData used in search module
+	 */
+	@DataProvider(name = "fetchDataForTC04")
+	public static Object[][] fetchDataForTC04() {
+		return new String[][] { { "OnHold" } };
 	}
 }
