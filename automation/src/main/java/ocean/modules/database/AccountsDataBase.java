@@ -7,6 +7,12 @@ import java.util.Map;
 
 import ocean.common.CommonFunctions;
 
+/**
+ * Data Base class, common class consisting all data base queries consumed in
+ * accounts Module
+ * 
+ * @author Mohit Goel
+ */
 public class AccountsDataBase extends CommonFunctions {
 	/**
 	 * This gets SearchDataCountOnCancellationScreen

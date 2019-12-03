@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Ocean]">
-  <test thread-count="5" name="Pricing(failed)">
+  <test thread-count="5" name="Cancellation(failed)">
     <classes>
-      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_06">
+      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_05">
         <methods>
-          <include name="verifyFlatCancelRule"/>
           <include name="createParent"/>
+          <include name="VerifyCancellationDetailsUsingContractID"/>
           <include name="setup"/>
           <include name="screenshot"/>
           <include name="tearDown"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_06 -->
+      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_05 -->
     </classes>
-  </test> <!-- Pricing(failed) -->
+  </test> <!-- Cancellation(failed) -->
 </suite> <!-- Failed suite [Ocean] -->

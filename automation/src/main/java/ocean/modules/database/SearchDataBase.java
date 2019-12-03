@@ -5,7 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import ocean.common.CommonFunctions;
-
+/**
+ * Data Base class, common class consisting all data base queries consumed in
+ * search Module
+ * 
+ * @author Mohit Goel
+ */
 public class SearchDataBase extends CommonFunctions {
 	/**
 	 * This gets DataSetforSearch

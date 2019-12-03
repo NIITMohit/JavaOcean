@@ -6,7 +6,7 @@ import ocean.common.ReadData;
 
 /**
  * Data provider class, common class consisting all data provider consumed in
- * test classes
+ * Compliance Module
  * 
  * @author Mohit Goel
  */

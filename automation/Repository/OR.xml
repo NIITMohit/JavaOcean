@@ -41,6 +41,54 @@
 			<locator>Name</locator>
 			<value>Cancel</value>
 		</keyword>
+		<keyword id="checkContractOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_ALLSALES_DETAIL.CERT' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="checkContractOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_ALLSALES_DETAIL.CERT' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="checkStatusOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CANCELLATION_STATUS.NAME' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="cancelHistoySwipeRight">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='PageRight' and @ClassName='RepeatButton'])[2]</value>
+		</keyword>
+		<keyword id="checkCancelMilesOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CANCEL_MILEAGE' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="checkCancelDateOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CANCEL_DATE' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="checkInitiatedByOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CANCELLATION_INITIATED_BY.NAME' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="checkCancelReasonOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CANCELLATION_REASON_TYPE.NAME' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="checkProcessDateOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CancelProcessDate' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="checkRefundOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_REFUND_PERCENTAGE' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="checkNetRefundOnCancellationHistory">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_NET_REFUND_AMOUNT' and @ClassName='DataCell']</value>
+		</keyword>
+		<keyword id="scrollPageDownForCancelHistory">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='PageUp'and @ClassName='RepeatButton'])[4]</value>
+		</keyword>
 		<keyword id="swipeRight">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='PageRight']</value>

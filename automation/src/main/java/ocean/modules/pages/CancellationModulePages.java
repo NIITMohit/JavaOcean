@@ -52,6 +52,59 @@ public class CancellationModulePages extends CancellationDataBase {
 	}
 
 	/**
+	 * This function is used to check click particular contract based on searched
+	 * data
+	 * 
+	 */
+	public void clickSearchContractFromCancellationSearchResult(HashMap<String, String> cancelDataForTC4) {
+		boolean flag = false;
+		boolean scroll = false;
+		do {
+			if (scroll == true) {
+				try {
+					click("scrollContractsListDown");
+				} catch (Exception e) {
+					//// do nothing
+				}
+			}
+			for (int j = 0; j < 5; j++) {
+				String sid = getValue("listOfContractNumbers", j);
+				if (sid.equals(cancelDataForTC4.get("Contract"))) {
+					click("listOfContractNumbers", j);
+					flag = true;
+					break;
+				}
+			}
+			if (flag == true)
+				break;
+			scroll = true;
+		} while (checkEnableDisableBasedOnBoundingRectangle("scrollContractsListDown").toLowerCase().equals("true"));
+	}
+
+	/**
+	 * This function is used to check contract history on data in a hashmap
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> checkContractHistoryDetails() throws Exception {
+		HashMap<String, String> summaryData = new HashMap<String, String>();
+		summaryData.put("Contract", getValue("checkContractOnCancellationHistory"));
+		summaryData.put("Status", getValue("checkStatusOnCancellationHistory"));
+		summaryData.put("Process_Date", getValue("checkProcessDateOnCancellationHistory"));
+		summaryData.put("REFUND_PERCENTAGE", getValue("checkRefundOnCancellationHistory"));
+		click("scrollPageDownForCancelHistory");
+		click("checkContractOnCancellationHistory");
+		click("cancelHistoySwipeRight");
+		summaryData.put("Net_Refund", getValue("checkNetRefundOnCancellationHistory"));
+		summaryData.put("Cancel_Miles", getValue("checkCancelMilesOnCancellationHistory"));
+		summaryData.put("CANCEL_DATE", getValue("checkCancelDateOnCancellationHistory"));
+		click("cancelHistoySwipeRight");
+		summaryData.put("INITIATED_BY", getValue("checkInitiatedByOnCancellationHistory"));
+		summaryData.put("Cancel_Reason", getValue("checkCancelReasonOnCancellationHistory"));
+		return summaryData;
+	}
+
+	/**
 	 * This function is used to return contract summary data in a hashmap
 	 * 
 	 * 
@@ -391,6 +444,37 @@ public class CancellationModulePages extends CancellationDataBase {
 	 */
 	public String getValidationForCancelDateLessSaleDate() throws Exception {
 		return getValue("messageForCancelDateLessSaleDate");
+	}
+
+	/**
+	 * This function is used to navigate to perform search based on search parameter
+	 * given. It accepts a hash map with input parameters
+	 * 
+	 */
+	public boolean validateInputFieldsValues(String initiatedBy, String cancelReason, String cancelMiles,
+			String cancelDate, String receivedDate) throws Exception {
+		boolean flag = true;
+		if (!getValue("selectInitiatedBy").equals(initiatedBy))
+			flag = false;
+		if (!getValue("selectCancelReason").equals(cancelReason))
+			flag = false;
+		if (!getValue("enterCancelMiles").equals(cancelMiles))
+			flag = false;
+		String enterCancelDate = getValue("enterCancelDate");
+		String dateR = "";
+		if (enterCancelDate.length() > 0) {
+			dateR = enterCancelDate.substring(0, enterCancelDate.indexOf(" "));
+		}
+		if (!dateR.equals(cancelDate))
+			flag = false;
+		String enterDateReceived = getValue("enterDateReceived");
+		String dateC = "";
+		if (enterCancelDate.length() > 0) {
+			dateC = enterDateReceived.substring(0, enterDateReceived.indexOf(" "));
+		}
+		if (!dateC.equals(receivedDate))
+			flag = false;
+		return flag;
 	}
 
 	/**
