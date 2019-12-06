@@ -13,10 +13,10 @@ import ocean.common.CommonFunctions;
  */
 public class SearchDataBase extends CommonFunctions {
 	/**
-	 * This gets DataSetforSearch
+	 * This gets SearchDataCountOnSearchScreen
 	 * 
 	 */
-	public HashMap<String, String> search_getDataSetforSearch(HashMap<String, String> searchParamater)
+	public HashMap<String, String> search_Search(HashMap<String, String> searchParamater)
 			throws Exception {
 		HashMap<String, String> dbMap = new HashMap<String, String>();
 		try {

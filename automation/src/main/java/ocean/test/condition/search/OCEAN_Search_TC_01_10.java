@@ -30,9 +30,9 @@ public class OCEAN_Search_TC_01_10 extends SearchModulePages {
 			//// get search data value in a hashmap from data provider, all values would be
 			//// appendSearchData saved in searchData hash map same as in excel, all values
 			//// including *, Blanks
-			uiSearchData = search_getDataSetforSearch(appendSearchData(inputArray));
+			uiSearchData = search_Search(cancellation_Search_appendSearchData(inputArray));
 		} else {
-			uiSearchData = convertDataRemoveStar(inputArray);
+			uiSearchData = cancellation_Search_convertDataRemoveStar(inputArray);
 		}
 
 		//// run code for search
