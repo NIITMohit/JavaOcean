@@ -20,7 +20,7 @@ public class CommonFunctions extends Suite {
 	 * provider and append data in hashmap with mapping with column and its value
 	 * 
 	 */
-	public HashMap<String, String> appendSearchData(String[] inputArray) {
+	public HashMap<String, String> cancellation_Search_appendSearchData(String[] inputArray) {
 		HashMap<String, String> searchData = new HashMap<String, String>();
 		for (int i = 0; i < inputArray.length; i++) {
 			//// Switch Case to Transform Data
@@ -102,7 +102,7 @@ public class CommonFunctions extends Suite {
 	 * and Blanks columns and values
 	 * 
 	 */
-	public HashMap<String, String> convertDataRemoveStar(String[] inputArray) {
+	public HashMap<String, String> cancellation_Search_convertDataRemoveStar(String[] inputArray) {
 		HashMap<String, String> searchData = new HashMap<String, String>();
 		for (int i = 0; i < inputArray.length; i++) {
 			//// Switch Case to Transform Data
@@ -182,6 +182,93 @@ public class CommonFunctions extends Suite {
 	}
 
 	/**
+	 * This function is used to receive string array which is data from test
+	 * provider and append data in hashmap with mapping with column and its value
+	 * 
+	 */
+	public HashMap<String, String> account_appendSearchData(String[] inputArray) {
+		HashMap<String, String> searchData = new HashMap<String, String>();
+		for (int i = 0; i < inputArray.length; i++) {
+			//// Switch Case to Transform Data
+			switch (i) {
+			case 0:
+				searchData.put("Account_Name", inputArray[i]);
+				break;
+			case 1:
+				searchData.put("Role_Id", inputArray[i]);
+				break;
+			case 2:
+				searchData.put("Role_Type", inputArray[i]);
+				break;
+			case 3:
+				searchData.put("Address", inputArray[i]);
+				break;
+			case 4:
+				searchData.put("State", inputArray[i]);
+				break;
+			case 5:
+				searchData.put("City", inputArray[i]);
+				break;
+			case 6:
+				searchData.put("Zip_Code", inputArray[i]);
+				break;
+			case 7:
+				searchData.put("Status", inputArray[i]);
+				break;
+			default:
+				searchData.put("NoData", inputArray[i]);
+				break;
+			}
+		}
+		return searchData;
+	}
+
+	/**
+	 * This function is used to receive hashmap which have column and data mapping
+	 * and return data and column mapping which have only valid data, will remove *
+	 * and Blanks columns and values
+	 * 
+	 */
+	public HashMap<String, String> account_convertDataRemoveStar(String[] inputArray) {
+		HashMap<String, String> searchData = new HashMap<String, String>();
+		for (int i = 0; i < inputArray.length; i++) {
+			//// Switch Case to Transform Data
+			if (!inputArray[i].equals("*") && inputArray[i].length() > 0) {
+				switch (i) {
+				case 0:
+					searchData.put("Account_Name", inputArray[i]);
+					break;
+				case 1:
+					searchData.put("Role_Id", inputArray[i]);
+					break;
+				case 2:
+					searchData.put("Role_Type", inputArray[i]);
+					break;
+				case 3:
+					searchData.put("Address", inputArray[i]);
+					break;
+				case 4:
+					searchData.put("State", inputArray[i]);
+					break;
+				case 5:
+					searchData.put("City", inputArray[i]);
+					break;
+				case 6:
+					searchData.put("Zip_Code", inputArray[i]);
+					break;
+				case 7:
+					searchData.put("Status", inputArray[i]);
+					break;
+				default:
+					searchData.put("NoData", inputArray[i]);
+					break;
+				}
+			}
+		}
+		return searchData;
+	}
+
+	/**
 	 * This common function is used to search a contract
 	 * 
 	 * @param contract id on which contract needs to be searched
@@ -246,12 +333,38 @@ public class CommonFunctions extends Suite {
 	/**
 	 * This common function is used to go to mail service tab
 	 * 
-	 * @return
 	 * 
 	 */
 	public void goToMailServiceTab() {
 		try {
 			click("clickMailservice");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	/**
+	 * This common function is used to go to mail service tab
+	 * 
+	 * 
+	 */
+	public void goToAccountsTab() {
+		try {
+			click("clickAccountsTab");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	
+	/**
+	 * This common function is used to go to mail service tab
+	 * 
+	 * 
+	 */
+	public void goToAccountsSearchTab() {
+		try {
+			click("clickAccountsSearchTab");
 		} catch (Exception e) {
 			throw e;
 		}
@@ -285,7 +398,8 @@ public class CommonFunctions extends Suite {
 	/**
 	 * This common accepts Date and convert the same in mm/dd/yyyy format after
 	 * adding input days
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 * 
 	 */
 	public String convertDate(String date, int noOfDays) throws Exception {

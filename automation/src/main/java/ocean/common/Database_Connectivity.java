@@ -83,7 +83,7 @@ public class Database_Connectivity {
 					String columnReturnType = metaData.getColumnTypeName(i);
 					//// convert all column type to string and apened to hashmap
 					String data = convertData(columnReturnType, rs, i);
-					dbMap.put(col_name, data);
+					dbMap.put(col_name.trim(), data.trim());
 				}
 				break;
 			}
@@ -126,7 +126,7 @@ public class Database_Connectivity {
 					String columnReturnType = metaData.getColumnTypeName(i);
 					//// convert all column type to string and apened to hashmap
 					String data = convertData(columnReturnType, rs, i);
-					mapp.put(col_name, data);
+					mapp.put(col_name.trim(), data.trim());
 				}
 				dbMap.put(counter, mapp);
 				counter++;

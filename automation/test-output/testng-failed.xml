@@ -3,16 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Ocean]">
   <test thread-count="5" name="Cancellation(failed)">
     <classes>
-      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_05">
+      <class name="ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03">
         <methods>
           <include name="createParent"/>
-          <include name="VerifyCancellationDetailsUsingContractID"/>
           <include name="setup"/>
           <include name="screenshot"/>
           <include name="tearDown"/>
           <include name="tearDown"/>
+          <include name="searchForAccountOnAccountSearchScreen" invocation-numbers="0 1 2 3 4 5"/>
         </methods>
-      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_05 -->
+      </class> <!-- ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03 -->
     </classes>
   </test> <!-- Cancellation(failed) -->
 </suite> <!-- Failed suite [Ocean] -->

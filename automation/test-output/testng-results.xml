@@ -1,73 +1,451 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="6" ignored="0" total="6" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="248390" started-at="2019-12-03T15:42:53 IST" finished-at="2019-12-03T15:47:02 IST">
+  <suite name="Ocean" duration-ms="953" started-at="2019-12-06T14:23:43 IST" finished-at="2019-12-06T14:23:44 IST">
     <groups>
       <group name="regression">
-        <method signature="OCEAN_Cancel_TC_05.VerifyCancellationDetailsUsingContractID()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="VerifyCancellationDetailsUsingContractID" class="ocean.test.condition.cancellation.OCEAN_Cancel_TC_05"/>
+        <method signature="OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="searchForAccountOnAccountSearchScreen" class="ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Cancellation" duration-ms="248390" started-at="2019-12-03T15:42:53 IST" finished-at="2019-12-03T15:47:02 IST">
-      <class name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_05">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="setup" is-config="true" duration-ms="6820" started-at="2019-12-03T15:42:46 IST" finished-at="2019-12-03T15:42:53 IST">
+    <test name="Cancellation" duration-ms="953" started-at="2019-12-06T14:23:43 IST" finished-at="2019-12-06T14:23:44 IST">
+      <class name="ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="setup" is-config="true" duration-ms="140" started-at="2019-12-06T14:23:43 IST" finished-at="2019-12-06T14:23:43 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@c6c82aa]]>
+                <![CDATA[org.testng.TestRunner@2b87581]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="createParent" is-config="true" duration-ms="3" started-at="2019-12-03T15:42:53 IST" finished-at="2019-12-03T15:42:53 IST">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="createParent" is-config="true" duration-ms="0" started-at="2019-12-06T14:23:43 IST" finished-at="2019-12-06T14:23:43 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@c6c82aa]]>
+                <![CDATA[org.testng.TestRunner@2b87581]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-12-03T15:42:53 IST" finished-at="2019-12-03T15:42:53 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="VerifyCancellationDetailsUsingContractID()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="VerifyCancellationDetailsUsingContractID" duration-ms="247428" started-at="2019-12-03T15:42:53 IST" description="Validate user ability to input and modify cancellation details." finished-at="2019-12-03T15:47:01 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyCancellationDetailsUsingContractID -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="tearDown" is-config="true" duration-ms="937" started-at="2019-12-03T15:47:01 IST" finished-at="2019-12-03T15:47:02 IST">
+        <test-method status="FAIL" signature="searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="searchForAccountOnAccountSearchScreen" duration-ms="0" started-at="2019-12-06T14:23:44 IST" description="Validate Account search on the basis of search parameter given." data-provider="fetchDataForTC01_02_03" finished-at="2019-12-06T14:23:44 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyCancellationDetailsUsingContractID status=SUCCESS method=OCEAN_Cancel_TC_05.VerifyCancellationDetailsUsingContractID()[pri:5, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a] output={null}]]]>
+                <![CDATA[[Ljava.lang.String;@a486d78]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at ocean.modules.database.AccountsDataBase.account_getSearchDataCountOnAccountsScreen(AccountsDataBase.java:159)
+at ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen(OCEAN_Account_TC_01_02_03.java:32)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForAccountOnAccountSearchScreen -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="tearDown" is-config="true" duration-ms="281" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchForAccountOnAccountSearchScreen status=FAILURE method=OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@c6c82aa]]>
+                <![CDATA[org.testng.TestRunner@2b87581]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.cancellation.OCEAN_Cancel_TC_05@8297b3a]" name="tearDown" is-config="true" duration-ms="42" started-at="2019-12-03T15:47:02 IST" finished-at="2019-12-03T15:47:02 IST">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="tearDown" is-config="true" duration-ms="32" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@c6c82aa]]>
+                <![CDATA[[TestResult name=searchForAccountOnAccountSearchScreen status=FAILURE method=OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@2b87581]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ocean.test.condition.cancellation.OCEAN_Cancel_TC_05 -->
+        <test-method status="FAIL" signature="searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="searchForAccountOnAccountSearchScreen" duration-ms="0" started-at="2019-12-06T14:23:44 IST" description="Validate Account search on the basis of search parameter given." data-provider="fetchDataForTC01_02_03" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@36074e47]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at ocean.modules.database.AccountsDataBase.account_getSearchDataCountOnAccountsScreen(AccountsDataBase.java:159)
+at ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen(OCEAN_Account_TC_01_02_03.java:32)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForAccountOnAccountSearchScreen -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="tearDown" is-config="true" duration-ms="46" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchForAccountOnAccountSearchScreen status=FAILURE method=OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@2b87581]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="FAIL" signature="searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="searchForAccountOnAccountSearchScreen" duration-ms="0" started-at="2019-12-06T14:23:44 IST" description="Validate Account search on the basis of search parameter given." data-provider="fetchDataForTC01_02_03" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@794b435f]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at ocean.modules.database.AccountsDataBase.account_getSearchDataCountOnAccountsScreen(AccountsDataBase.java:159)
+at ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen(OCEAN_Account_TC_01_02_03.java:32)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForAccountOnAccountSearchScreen -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="tearDown" is-config="true" duration-ms="47" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchForAccountOnAccountSearchScreen status=FAILURE method=OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@2b87581]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="FAIL" signature="searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="searchForAccountOnAccountSearchScreen" duration-ms="0" started-at="2019-12-06T14:23:44 IST" description="Validate Account search on the basis of search parameter given." data-provider="fetchDataForTC01_02_03" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@6b9c69a9]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at ocean.modules.database.AccountsDataBase.account_getSearchDataCountOnAccountsScreen(AccountsDataBase.java:159)
+at ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen(OCEAN_Account_TC_01_02_03.java:32)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForAccountOnAccountSearchScreen -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="tearDown" is-config="true" duration-ms="47" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchForAccountOnAccountSearchScreen status=FAILURE method=OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@2b87581]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="FAIL" signature="searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="searchForAccountOnAccountSearchScreen" duration-ms="0" started-at="2019-12-06T14:23:44 IST" description="Validate Account search on the basis of search parameter given." data-provider="fetchDataForTC01_02_03" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@1623bbe5]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at ocean.modules.database.AccountsDataBase.account_getSearchDataCountOnAccountsScreen(AccountsDataBase.java:159)
+at ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen(OCEAN_Account_TC_01_02_03.java:32)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForAccountOnAccountSearchScreen -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="FAIL" signature="searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="searchForAccountOnAccountSearchScreen" duration-ms="0" started-at="2019-12-06T14:23:44 IST" description="Validate Account search on the basis of search parameter given." data-provider="fetchDataForTC01_02_03" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@27e32fe4]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at ocean.modules.database.AccountsDataBase.account_getSearchDataCountOnAccountsScreen(AccountsDataBase.java:159)
+at ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen(OCEAN_Account_TC_01_02_03.java:32)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForAccountOnAccountSearchScreen -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="screenshot" is-config="true" duration-ms="0" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="tearDown" is-config="true" duration-ms="31" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchForAccountOnAccountSearchScreen status=FAILURE method=OCEAN_Account_TC_01_02_03.searchForAccountOnAccountSearchScreen([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@2b87581]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03@7817fd62]" name="tearDown" is-config="true" duration-ms="31" started-at="2019-12-06T14:23:44 IST" finished-at="2019-12-06T14:23:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2b87581]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03 -->
     </test> <!-- Cancellation -->
   </suite> <!-- Ocean -->
 </testng-results>
