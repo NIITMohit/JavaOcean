@@ -39,9 +39,9 @@ public class OCEAN_Cancel_TC_01_02 extends CancellationModulePages {
 			//// get search data value in a hash map from data provider, all values would be
 			//// appendSearchData saved in searchData hash map same as in excel, all values
 			//// including *, Blanks
-			uiSearchData = cancellation_getSearchDataCountOnCancellationScreen(appendSearchData(inputArray));
+			uiSearchData = cancellation_Search(cancellation_Search_appendSearchData(inputArray));
 		} else {
-			uiSearchData = convertDataRemoveStar(inputArray);
+			uiSearchData = cancellation_Search_convertDataRemoveStar(inputArray);
 		}
 		//// run code for search
 		searchContractGivenInputParamaters(uiSearchData);

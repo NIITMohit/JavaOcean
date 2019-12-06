@@ -35,7 +35,7 @@
 		</keyword>
 		<keyword id="searchContractButton">
 			<locator>xpath</locator>
-			<value>//*[@Name='MaterialTabControl']//*[@ClassName='ScrollViewer']//*[@Name='Search']	</value>
+			<value>//*[@Name='MaterialTabControl']//*[@ClassName='ScrollViewer']//*[@Name='Search']</value>
 		</keyword>
 		<keyword id="clickCancelButton">
 			<locator>Name</locator>
@@ -916,4 +916,90 @@
                <value>//*[@Name='Secondary Seller Type:']/following-sibling::*[1]</value>
     </keyword>
 	</Search>
+	<Account>
+	<keyword id="typeAccountName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Name :']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="typeRoleID">
+			<locator>xpath</locator>
+			<value>//*[@Name='Role ID :']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typeRoleType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Role Type :']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typeAddress">
+			<locator>xpath</locator>
+			<value>//*[@Name='Address :']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typeCity">
+			<locator>xpath</locator>
+			<value>//*[@Name='City :']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typeState">
+			<locator>xpath</locator>
+			<value>//*[@Name='State :']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typeStatus">
+			<locator>xpath</locator>
+			<value>//*[@Name='Status :']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="typeZip">
+			<locator>xpath</locator>
+			<value>//*[@Name='Zip Code :']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="searchAccountButton">
+			<locator>xpath</locator>
+			<value>//*[@Name='MaterialTabControl']//*[@ClassName='AccountDetailsSearchView']//*[@Name='Search']</value>
+		</keyword>
+	<keyword id="clickAccountsTab">
+			<locator>Name</locator>
+			<value>Accounts</value>
+	</keyword>
+	<keyword id="clickAccountsSearchTab">
+			<locator>Name</locator>
+			<value>Account Search</value>
+	</keyword>
+	<keyword id="listOfRoleId">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Role ID']</value>
+	</keyword>
+	<keyword id="listOfAccountName">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Account Name']</value>
+	</keyword>
+	<keyword id="listOfAddress">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Address']</value>
+	</keyword>
+	<keyword id="listOfCity">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='City']</value>
+	</keyword>
+	<keyword id="listOfState">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='State']</value>
+	</keyword>
+	<keyword id="listOfZipCode">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Zip Code']</value>
+	</keyword>
+	<keyword id="listOfAccountType">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Account Type']</value>
+	</keyword>
+	<keyword id="listOfRoleType">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Role Type']</value>
+	</keyword>
+	<keyword id="listOfStatus">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Status']</value>
+	</keyword>
+	<keyword id="clickSortRoleId">
+			<locator>xpath</locator>
+			<value>//*[@Name='ColumnManagerRow']//*[@Name='Role ID']</value>
+	</keyword>
+	</Account>
 </Ocean>

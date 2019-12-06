@@ -4,7 +4,7 @@
 	<test name="Cancellation">
 		<classes>
 			<class
-				name="ocean.test.condition.cancellation.OCEAN_Cancel_TC_04" />
+				name="ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03" />
 		</classes>
 	</test>
 </suite> 
