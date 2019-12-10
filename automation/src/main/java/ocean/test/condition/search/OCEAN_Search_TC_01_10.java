@@ -1,7 +1,11 @@
 package ocean.test.condition.search;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.Arrays;
 import java.util.HashMap;
+
+import javax.mail.Flags.Flag;
 
 import org.testng.annotations.Test;
 
@@ -23,6 +27,8 @@ public class OCEAN_Search_TC_01_10 extends SearchModulePages {
 	 */
 	@Test(priority = 1, groups = "regression", dataProvider = "fetchDataForTC01_10", dataProviderClass = SearchDataProvider.class, description = "Search test case,Contract should be Search from the given search sheet under Search Section.")
 	public void searchContractWithAnyInputField(String[] inputArray) throws Exception {
+		boolean dbFlag = false;
+		boolean matchFlag = false;
 		//// create data to fill required values in search window
 		HashMap<String, String> uiSearchData = null;
 		if (Arrays.stream(inputArray).anyMatch("*"::equals)) {
@@ -38,5 +44,48 @@ public class OCEAN_Search_TC_01_10 extends SearchModulePages {
 		//// run code for search
 		searchContractGivenInputParamaters(uiSearchData);
 
+		///// get count from search screen
+		int screenCount = getSearchesultsCount();
+
+		//// get count from DB
+		int dbCount = Integer.parseInt(searchCountFromDatabase(uiSearchData).get("count"));
+
+		if (screenCount == dbCount) {
+			dbFlag = true;
+			int iterations = dbCount;
+
+			if (dbCount > 5) {
+				iterations = 5;
+			}
+			for (int i = 0; i < iterations; i++) {
+				//// get data from Db for contract id
+				HashMap<String, String> dbMap = searchDetailsFromSearchData(getContractId(i));
+				//// convert date as per Ui format
+				dbMap.put("Sale_Date", convertDate(dbMap.get("Sale_Date"), 0));
+				dbMap.put("Trans_Date", convertDate(dbMap.get("Trans_Date"), 0));
+				//// convert Vin to Masked VIN as per UI
+				dbMap.put("VIN", "XXXXXXXXX"
+						+ dbMap.get("VIN").substring(dbMap.get("VIN").length() - 8, dbMap.get("VIN").length()));
+				//// get All data for search results
+				HashMap<String, String> uiMap = getSearchResult(i);
+				String date = uiMap.get("Trans_Date");
+				int index = date.indexOf(" ");
+				if (index > 0)
+					uiMap.put("Trans_Date", date.substring(0, index));
+				//// compare both data
+				if (!dbMap.equals(uiMap)) {
+					matchFlag = false;
+					break;
+				} else {
+					matchFlag = true;
+					continue;
+				}
+			}
+			assertEquals(matchFlag, true);
+		}
+
+		else {
+			assertEquals(dbFlag, true);
+		}
 	}
 }

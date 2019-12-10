@@ -2,6 +2,8 @@ package ocean.modules.pages;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ocean.modules.database.SearchDataBase;
 
@@ -11,6 +13,31 @@ import ocean.modules.database.SearchDataBase;
  * @author Mohit Goel
  */
 public class SearchModulePages extends SearchDataBase {
+
+	/**
+	 * This function is used to get search count
+	 * 
+	 */
+	public int getSearchesultsCount() {
+		int count = 0;
+		String countText = getAtttibuteValue("getSearchCount", "Name");
+		Pattern p = Pattern.compile("\\d+");
+		Matcher m = p.matcher(countText);
+		while (m.find()) {
+			String aa = m.group();
+			count = Integer.parseInt(aa);
+		}
+		return count;
+	}
+
+	/**
+	 * This function is used to get ccontractId based on row number
+	 * 
+	 */
+	public String getContractId(int i) {
+		return getValue("listOfContractId", i);
+	}
+
 	/**
 	 * This function is used to navigate to perform search based on search parameter
 	 * given. It accepts a hashmap with input parameters
@@ -115,5 +142,33 @@ public class SearchModulePages extends SearchDataBase {
 			}
 		}
 		///// click search button
+	}
+
+	/**
+	 * This function is used to fetch all search data details for row i
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getSearchResult(int i) throws Exception {
+		HashMap<String, String> summaryData = new HashMap<String, String>();
+		summaryData.put("Contract", getValue("listOfContractId", i));
+		summaryData.put("Code", getValue("listOfCode", i));
+		summaryData.put("First_Name", getValue("listOfFirstName", i));
+		summaryData.put("Last_Name", getValue("listOfLastName", i));
+		summaryData.put("Sale_Date", getValue("listOfSaleDate", i));
+		summaryData.put("Trans_Date", getValue("listOfTransDate", i));
+		summaryData.put("VIN", getValue("listOfVIN", i));
+		summaryData.put("Status", getValue("listOfStatus", i));
+		click("swipeRight");
+		summaryData.put("Primary_Seller_Id", getValue("listOfPrimarySellerId", i));
+		summaryData.put("Prmary_Seller_Name", getValue("listOfPrimarySellerName", i));
+		summaryData.put("Secondary_Seller_Name", getValue("listOfSecondarySellerName", i));
+		summaryData.put("Secondary_Seller_Id", getValue("listOfSecondarySellerId", i));
+		summaryData.put("Primary_Seller_Type", getValue("listOfPrimarySellerType", i));
+		summaryData.put("Secondary_Seller_Type", getValue("listOfSecondarySellerType", i));
+		summaryData.put("Primary_Payee_Id", getValue("listOfPrimaryPayeeId", i));
+		summaryData.put("State", getValue("listOfState", i));
+		summaryData.put("Phone", getValue("listOfPhone", i));
+		return summaryData;
 	}
 }
