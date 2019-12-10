@@ -10,7 +10,7 @@
           <include name="screenshot"/>
           <include name="tearDown"/>
           <include name="tearDown"/>
-          <include name="searchForAccountOnAccountSearchScreen" invocation-numbers="0 1 2 3 4 5"/>
+          <include name="searchForAccountOnAccountSearchScreen"/>
         </methods>
       </class> <!-- ocean.test.condition.accounts.OCEAN_Account_TC_01_02_03 -->
     </classes>
