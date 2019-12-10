@@ -911,9 +911,81 @@
               <locator>xpath</locator>
               <value>//*[@Name='Primary Seller Type:']/following-sibling::*[1]</value>
     </keyword>
-       <keyword id="clickSecondarySellertype">
+    <keyword id="clickSecondarySellertype">
                <locator>xpath</locator>
                <value>//*[@Name='Secondary Seller Type:']/following-sibling::*[1]</value>
+    </keyword>
+    <keyword id="getSearchCount">
+               <locator>xpath</locator>
+               <value>//*[contains(@Name='Total Record Count')]</value>
+    </keyword>
+    <keyword id="listOfContractId">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Contract']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfCode">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Code']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfFirstName">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='First Name']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfLastName">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Last Name']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfSaleDate">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Sale Date']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfTransDate">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Trans Date']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfPrimarySellerId">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Primary Seller ID']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfPrimarySellerName">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Primary Seller Name']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfSecondarySellerName">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Secondary Seller Name']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfSecondarySellerId">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Secondary Seller ID']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfPrimarySellerType">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Primary Seller Type']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfSecondarySellerType">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Secondary Seller Type']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfStatus">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Status']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfVIN">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='VIN']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfPrimaryPayeeId">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Primary Payee ID']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfState">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='State']//*[@ClassName='TextBlockLite']</value>
+    </keyword>
+    <keyword id="listOfPhone">
+               <locator>xpath</locator>
+               <value>//*[@ClassName='DataRow']//*[@Name='Phone']//*[@ClassName='TextBlockLite']</value>
     </keyword>
 	</Search>
 	<Account>
@@ -1000,6 +1072,74 @@
 	<keyword id="clickSortRoleId">
 			<locator>xpath</locator>
 			<value>//*[@Name='ColumnManagerRow']//*[@Name='Role ID']</value>
+	</keyword>
+	<keyword id="AccountDetails_AccountInfo_AccountName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Info']//*[@Name='Account Name:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AccountInfo_AccountType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Info']//*[@Name='Account Type:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AccountInfo_RoleId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Info']//*[@Name='Role ID:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AccountInfo_RoleType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Info']//*[@Name='Role Type:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AccountInfo_ReferenceId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Info']//*[@Name='Reference ID:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AccountInfo_Status">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Info']//*[@Name='Status:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AccountInfo_DateAssigned">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Info']//*[@Name='Date Signed:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AddressInfo_PhysicalAddress">
+			<locator>xpath</locator>
+			<value>//*[@Name='Address Info']//*[@Name='Physical Address:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AddressInfo_BillingAddress">
+			<locator>xpath</locator>
+			<value>//*[@Name='Address Info']//*[@Name='Billing Address:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_CorpGroupInfo_CorpId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Corp/Group Info']//*[@Name='Corp ID:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_CorpGroupInfo_CorpName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Corp/Group Info']//*[@Name='Corp Name:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_CorpGroupInfo_GroupId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Corp/Group Info']//*[@Name='Group ID:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_CorpGroupInfo_GroupName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Corp/Group Info']//*[@Name='Group Name:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AccountLevelWarining">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Underwriting Warning' and @CLassName = 'GroupBox']//*[@Name='Account Underwriting Warning']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_AccountCancellationWarining">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Cancellation Warning' and @CLassName = 'GroupBox']//*[@Name='Account Cancellation Warning']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_PriceSheetUnderwritingWarining">
+			<locator>xpath</locator>
+			<value>//*[@Name='Price Sheet Underwriting Warning' and @CLassName = 'GroupBox']//*[@Name='Price Sheet Underwriting Warning']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_PriceSheetCancellationWarining">
+			<locator>xpath</locator>
+			<value>//*[@Name='Price Sheet Cancellations Warning' and @CLassName = 'GroupBox']//*[@Name='Price Sheet Cancellations Warning']/following-sibling::*[1]</value>
 	</keyword>
 	</Account>
 </Ocean>
