@@ -50,7 +50,7 @@ public class OCEAN_Account_TC_01_02_03 extends AccountsModulePages {
 		boolean firstCutDataFlag = false;
 		boolean secondCutDataFlag = false;
 		for (int i = 0; i < iterationsCount; i++) {
-			String roleId = getFirstRoleId(i);
+			String roleId = getRoleId(i);
 			// account_getAccountMouduleSearchData
 			HashMap<String, String> myDBData = account_getAccountMouduleSearchData(roleId);
 			HashMap<String, String> gridData = returnSearchResultGridData(i);
@@ -63,15 +63,15 @@ public class OCEAN_Account_TC_01_02_03 extends AccountsModulePages {
 		}
 		if (dbCount > 10) {
 			//// click sort on role id
-			String roleId1 = getFirstRoleId(0);
+			String roleId1 = getRoleId(0);
 			click("clickSortRoleId");
-			String roleId2 = getFirstRoleId(0);
+			String roleId2 = getRoleId(0);
 			if (roleId1.equals(roleId2))
 				click("clickSortRoleId");
 			//// navigate to top
 			scrollUp();
 			//// get top role id
-			String roleId = getFirstRoleId(0);
+			String roleId = getRoleId(0);
 			HashMap<String, String> myDBData = account_getAccountMouduleSearchData(roleId);
 			HashMap<String, String> gridData = returnSearchResultGridData(0);
 			//// compare final cut
