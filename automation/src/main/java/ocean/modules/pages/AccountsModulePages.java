@@ -63,11 +63,38 @@ public class AccountsModulePages extends AccountsDataBase {
 	/**
 	 * This function is used to get role id based on row number
 	 * 
-	 * @return
 	 * 
 	 */
-	public String getFirstRoleId(int roleRowNumber) throws Exception {
+	public String getRoleId(int roleRowNumber) throws Exception {
 		return getValue("listOfRoleId", roleRowNumber);
+	}
+
+	/**
+	 * This function is used to get role type based on row number
+	 * 
+	 * 
+	 */
+	public String getRoleType(int roleRowNumber) throws Exception {
+		return getValue("listOfRoleType", roleRowNumber);
+	}
+
+	/**
+	 * This function is used to get role type based on row number
+	 * 
+	 * 
+	 */
+	public String getRoleStatus(int roleRowNumber) throws Exception {
+		return getValue("listOfStatus", roleRowNumber);
+	}
+
+	/**
+	 * This function is used to click display button to navigate to account details
+	 * screen
+	 * 
+	 * 
+	 */
+	public String clickDisplayButton(int roleRowNumber) throws Exception {
+		return getValue("listOfDisplayButton", roleRowNumber);
 	}
 
 	/**
@@ -82,6 +109,94 @@ public class AccountsModulePages extends AccountsDataBase {
 				// TODO: handle exception
 			}
 		} while (checkEnableDisableBasedOnBoundingRectangle("scrollContractsListUp").toLowerCase().equals("true"));
+	}
+
+	/**
+	 * This function is used to getphysicalAddressOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public String getphysicalAddressOnAccountDetailScreen() throws Exception {
+		String physicalAddress = getValue("AccountDetails_AddressInfo_PhysicalAddress");
+		physicalAddress.replace("\r\n", "");
+		physicalAddress.replace(",", "");
+		physicalAddress.replace(" ", "");
+		return physicalAddress;
+	}
+
+	/**
+	 * This function is used to getBillingAddressOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public String getBillingAddressOnAccountDetailScreen() throws Exception {
+		String physicalAddress = getValue("AccountDetails_AddressInfo_BillingAddress");
+		physicalAddress.replace("\r\n", "");
+		physicalAddress.replace(",", "");
+		physicalAddress.replace(" ", "");
+		return physicalAddress;
+	}
+
+	/**
+	 * This function is used to getAccountUnderwritingWarningAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public String getAccountUnderwritingWarningAccountDetailScreen() throws Exception {
+		return getValue("AccountDetails_AccountLevelWarining");
+	}
+
+	/**
+	 * This function is used to getAccountUnderwritingWarningAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public String getAccountCancellationWarningAccountDetailScreen() throws Exception {
+		return getValue("AccountDetails_AccountCancellationWarining");
+	}
+
+	/**
+	 * This function is used to getPricesheetUnderwritingWarningAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public String getPricesheetUnderwritingWarningAccountDetailScreen() throws Exception {
+		return getValue("AccountDetails_PriceSheetUnderwritingWarining");
+	}
+
+	/**
+	 * This function is used to getPricesheetCancellationWarningAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public String getPricesheetCancellationWarningAccountDetailScreen() throws Exception {
+		return getValue("AccountDetails_PriceSheetCancellationWarining");
+	}
+
+	/**
+	 * This function is used to return all account info related data only
+	 * 
+	 * @return
+	 * 
+	 */
+	public HashMap<String, String> getAccountInfoOnAccountDetails() throws Exception {
+		HashMap<String, String> searchData = new HashMap<String, String>();
+		//// save Role_Id
+		searchData.put("Account_Name", getValue("AccountDetails_AccountInfo_AccountName").trim());
+		searchData.put("Account_Type", getValue("AccountDetails_AccountInfo_AccountType").trim());
+		searchData.put("Role_Id", getValue("AccountDetails_AccountInfo_RoleId").trim());
+		searchData.put("Role_Type", getValue("AccountDetails_AccountInfo_RoleType").trim());
+		searchData.put("Reference_Id", getValue("AccountDetails_AccountInfo_ReferenceId").trim());
+		searchData.put("Status", getValue("AccountDetails_AccountInfo_Status").trim());
+		searchData.put("Date_Signed", getValue("AccountDetails_AccountInfo_DateAssigned").trim());
+		return searchData;
+
 	}
 
 	/**
@@ -114,4 +229,106 @@ public class AccountsModulePages extends AccountsDataBase {
 		return searchData;
 
 	}
+
+	/**
+	 * This function is used to verifyAccountInfoOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public boolean verifyAccountInfoOnAccountDetailScreen(String roleId, String roleType, String roleStatus)
+			throws Exception {
+		if (roleId.length() > 0) {
+			//// validate Account Info Section
+			boolean accountInfo = false;
+			HashMap<String, String> dbData = account_getAccountInfoOnAccountDetails(roleId, roleType, roleStatus);
+			HashMap<String, String> uiData = getAccountInfoOnAccountDetails();
+			//// manipulate data to match both hash maps
+			dbData.put("Date_Signed", convertDate(dbData.get("Date_Signed"), 0));
+			String date = uiData.get("Trans_Date");
+			int index = date.indexOf(" ");
+			if (index > 0)
+				uiData.put("Trans_Date", date.substring(0, index));
+			if (uiData.equals(dbData)) {
+				return true;
+			} else {
+				return false;
+			}
+
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * This function is used to verifyaAddressInfoOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public boolean verifyAddressInfoOnAccountDetailScreen(String roleId, String roleType, String roleStatus)
+			throws Exception {
+		String physicalAddress = getphysicalAddressOnAccountDetailScreen();
+		String dbPhysicalAddrress = account_getPhysicalAddressOnAccountDetails(roleId, roleType, roleStatus);
+
+		String billingAddress = getBillingAddressOnAccountDetailScreen();
+		String dbBillingAddrress = account_getBillingAddressOnAccountDetails(roleId, roleType, roleStatus);
+		if (physicalAddress.equalsIgnoreCase(dbPhysicalAddrress) && billingAddress.equals(dbBillingAddrress))
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * This function is used to returnFirstPriceSheetToAddPriceSheetExceptions
+	 * 
+	 * @return
+	 * 
+	 */
+	public String returnFirstPriceSheetToAddPriceSheetExceptions() throws Exception {
+		click("AccountDetails_PriceSheetAccociated");
+		return getValue("AccountDetails_PriceSheetAccociated");
+	}
+
+	/**
+	 * This function is used to verifyAccountLevelWarningOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public boolean verifyAccountLevelWarningOnAccountDetailScreen(String roleId, String roleType, String roleStatus)
+			throws Exception {
+
+		String uiAccountWarninig = getAccountUnderwritingWarningAccountDetailScreen();
+		String dbAccountWarninig = account_getAccountUnderwritingWarningAccountDetails(roleId, roleType, roleStatus);
+
+		String uiAccountCanWarnng = getAccountCancellationWarningAccountDetailScreen();
+		String dbAccountCanWarnng = account_getAccountCancellationWarningAccountDetails(roleId, roleType, roleStatus);
+		if (uiAccountWarninig.equalsIgnoreCase(dbAccountWarninig) && uiAccountCanWarnng.equals(dbAccountCanWarnng))
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * This function is used to verifyAccountLevelWarningOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public boolean verifyPriceSheetLevelWarningOnAccountDetailScreen(String priceSheetInternalName) throws Exception {
+
+		///// verify price sheet level warning
+		String psUnderwriting = getPricesheetUnderwritingWarningAccountDetailScreen();
+		String dbpsUnderwriting = account_getPriceSheetUnderwritingWarningAccountDetails(priceSheetInternalName);
+
+		String psCancel = getPricesheetCancellationWarningAccountDetailScreen();
+		String dbpsCancel = account_getPriceSheetCancellationWarningAccountDetails(priceSheetInternalName);
+
+		if (psUnderwriting.equalsIgnoreCase(dbpsUnderwriting) && psCancel.equals(dbpsCancel))
+			return true;
+		else
+			return false;
+	}
+
 }
