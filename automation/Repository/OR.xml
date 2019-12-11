@@ -1037,6 +1037,10 @@
 			<locator>xpath</locator>
 			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Role ID']</value>
 	</keyword>
+	<keyword id="listOfDisplayButton">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Display']</value>
+	</keyword>
 	<keyword id="listOfAccountName">
 			<locator>xpath</locator>
 			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Account Name']</value>
@@ -1133,6 +1137,10 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='Account Cancellation Warning' and @CLassName = 'GroupBox']//*[@Name='Account Cancellation Warning']/following-sibling::*[1]</value>
 	</keyword>
+	<keyword id="AccountDetails_PriceSheetAccociated">
+			<locator>xpath</locator>
+			<value>//*[@Name='AutomationElement']//*[@ClassName='DataRow']//*[@Name='Internal Name']</value>
+	</keyword>
 	<keyword id="AccountDetails_PriceSheetUnderwritingWarining">
 			<locator>xpath</locator>
 			<value>//*[@Name='Price Sheet Underwriting Warning' and @CLassName = 'GroupBox']//*[@Name='Price Sheet Underwriting Warning']/following-sibling::*[1]</value>
@@ -1140,6 +1148,10 @@
 	<keyword id="AccountDetails_PriceSheetCancellationWarining">
 			<locator>xpath</locator>
 			<value>//*[@Name='Price Sheet Cancellations Warning' and @CLassName = 'GroupBox']//*[@Name='Price Sheet Cancellations Warning']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="AccountDetails_EditWarning">
+			<locator>xpath</locator>
+			<value>//*[@Name='Edit Warning']</value>
 	</keyword>
 	</Account>
 </Ocean>

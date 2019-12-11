@@ -26,4 +26,20 @@ public class AccountsDataProvider {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC01_02_03");
 		return arrayObject;
 	}
+
+	/**
+	 * Data provider for fetchSearchData used in search module
+	 */
+	@DataProvider(name = "fetchDataForTC_04_05_06")
+	public static Object[][] fetchDataForTC_04_05_06() {
+		//// current running directory
+		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
+		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
+		String fileName = "Accounts.xlsx";
+		//// Excel sheet, sheet name
+		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC_04_05_06");
+		return arrayObject;
+	}
 }
