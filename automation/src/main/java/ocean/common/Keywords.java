@@ -17,39 +17,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author Mohit Goel
  */
 public class Keywords extends Variables {
-
-	/**
-	 * test object keyword , this function is reserved to debug objects
-	 */
-	public void testObject(String locator) {
-		for (int i = 0; i < 4; i++) {
-			try {
-				@SuppressWarnings("unused")
-				WebDriverWait wait = new WebDriverWait(windowsDriver, 20);
-				@SuppressWarnings("unchecked")
-				List<WebElement> eee = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
-				for (WebElement webElement : eee) {
-					// Thread.sleep(3000);
-					String abc = webElement.getText();
-					System.out.println(abc);
-					try {
-						webElement.sendKeys("2121");
-					} catch (Exception e) {
-						//// do nothing
-					}
-
-				}
-			} catch (Exception e) {
-				System.out.println("fsddf");
-				if (i < 3)
-					continue;
-				else
-					throw e;
-			}
-		}
-
-	}
-
 	/**
 	 * click keyword , this function is used to perform click on any object
 	 * 
@@ -72,7 +39,44 @@ public class Keywords extends Variables {
 					throw e;
 			}
 		}
+	}
 
+	/**
+	 * dragAndDrop keyword , this function is used to perform dragAndDrop on any
+	 * object
+	 * 
+	 * @param sourceLocator      : unique identifier to locate object
+	 * @param destinationLocator : position of click element
+	 * @throws Exception
+	 */
+	public void dragAndDrop(String sourceLocator, String destinationLocator) throws Exception {
+		Actions action = new Actions(windowsDriver);
+		WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+		WebElement sourceElement = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(sourceLocator)));
+		WebElement destinationElement = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(destinationLocator)));
+		for (int i = 0; i < 4; i++) {
+			System.out.println(i);
+			try {
+				action.sendKeys(Keys.ESCAPE);
+				//// Wait till web element is located
+				System.out.println(sourceElement);
+				System.out.println(destinationElement);
+				waitForSomeTime(4);
+				//// perform drag and drop
+				action.dragAndDrop(sourceElement, destinationElement).moveToElement(destinationElement, 40, 40).build()
+						.perform();
+				break;
+			} catch (Exception e) {
+				if (i < 3) {
+					action.sendKeys(Keys.ESCAPE);
+					System.out.println(e.toString());
+					continue;
+				} else
+					throw e;
+			}
+		}
 	}
 
 	/**
@@ -115,7 +119,6 @@ public class Keywords extends Variables {
 			// TODO Auto-generated catch block
 			//// do nothing
 		}
-
 	}
 
 	/**

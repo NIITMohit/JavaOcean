@@ -356,7 +356,6 @@ public class CommonFunctions extends Suite {
 		}
 	}
 
-	
 	/**
 	 * This common function is used to go to mail service tab
 	 * 
@@ -427,5 +426,23 @@ public class CommonFunctions extends Suite {
 
 		return newDate;
 
+	}
+
+	/**
+	 * dataProvider function is used to read data provider excel
+	 * 
+	 * @param excelFileName : excel file name
+	 * @param sheetName     : sheet name in respective excel file
+	 */
+	public static Object[][] dataProvider(String excelFileName, String sheetName) {
+		//// current running directory
+		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
+		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
+		String fileName = excelFileName + ".xlsx";
+		//// Excel sheet, sheet name
+		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, sheetName);
+		return arrayObject;
 	}
 }

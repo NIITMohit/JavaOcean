@@ -5,8 +5,6 @@ import static org.testng.Assert.assertEquals;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import javax.mail.Flags.Flag;
-
 import org.testng.annotations.Test;
 
 import ocean.modules.dataprovider.SearchDataProvider;

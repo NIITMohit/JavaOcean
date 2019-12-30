@@ -772,6 +772,26 @@
 	<keyword id="contractExpander">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='ExpanderHandle' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="remittanceExpander">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='ExpanderHandle' and @ClassName='Button'])[2]</value>
+	</keyword>	
+	<keyword id="viewInToolbar">
+			<locator>Name</locator>
+			<value>_View</value>
+	</keyword>	
+	<keyword id="folderExplorer">
+			<locator>Name</locator>
+			<value>Folder Explorer</value>
+	</keyword>	
+	<keyword id="filesSourcePath">
+			<locator>Name</locator>
+			<value>File Folder</value>
+	</keyword>	
+	<keyword id="filesDestinationPath">
+			<locator>Name</locator>
+			<value>File Name</value>
 	</keyword>	
 	<keyword id="typeContractNumber">
 			<locator>xpath</locator>
@@ -917,7 +937,7 @@
     </keyword>
     <keyword id="getSearchCount">
                <locator>xpath</locator>
-               <value>//*[contains(@Name='Total Record Count')]</value>
+               <value>//*[contains(@Name,'Total Record Count')]</value>
     </keyword>
     <keyword id="listOfContractId">
                <locator>xpath</locator>
@@ -1152,6 +1172,18 @@
 	<keyword id="AccountDetails_EditWarning">
 			<locator>xpath</locator>
 			<value>//*[@Name='Edit Warning']</value>
+	</keyword>
+	<keyword id="AccountDetails_SaveWarning">
+			<locator>xpath</locator>
+			<value>//*[@Name='Save Warning']</value>
+	</keyword>
+	<keyword id="AccountDetails_PropertyInfoHeader">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='PART_PropertyItemsControl']//*[@ClassName='PropertyItem']</value>
+	</keyword>
+	<keyword id="AccountDetails_PropertyInfoName">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='PropertyItemEditor']</value>
 	</keyword>
 	</Account>
 </Ocean>

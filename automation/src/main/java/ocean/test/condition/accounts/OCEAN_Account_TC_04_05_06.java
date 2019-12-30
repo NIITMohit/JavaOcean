@@ -25,7 +25,7 @@ public class OCEAN_Account_TC_04_05_06 extends AccountsModulePages {
 	 * details screen,actually fetched from sugar
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", dataProvider = "fetchDataForTC_04_05_06", dataProviderClass = AccountsDataProvider.class, description = "Validate all information related with Accounts on Account details screen,actually fetched from sugar")
+	@Test(priority = 3, groups = "regression", dataProvider = "fetchDataForTC_04_05_06", dataProviderClass = AccountsDataProvider.class, description = "Validate all information related with Accounts on Account details screen,actually fetched from sugar")
 	public void validateAccountDetailsFromSugar(String[] inputArray) throws Exception {
 		//// create data to fill required values in search window
 		HashMap<String, String> uiSearchData = null;
@@ -57,18 +57,51 @@ public class OCEAN_Account_TC_04_05_06 extends AccountsModulePages {
 		//// verify addressInfo Details
 		boolean addressInfo = verifyAddressInfoOnAccountDetailScreen(roleId, roleType, roleStatus);
 
-		///// get first price sheet associated with account, to edit prixesheet level
+		///// get first price sheet associated with account, to edit pricesheet level
 		///// Warning
 		String priceSheetnternalName = returnFirstPriceSheetToAddPriceSheetExceptions();
 
 		//// verify accountLevelWarninig Details
-		boolean accountLevelWarninig = verifyAddressInfoOnAccountDetailScreen(roleId, roleType, roleStatus);
-
+		boolean accountLevelWarninig = verifyAccountLevelWarningOnAccountDetailScreen(roleId, roleType, roleStatus);
+		boolean priceSheetLevelWarninig = true;
 		//// verify priceSheetLevelWarninig Details
-		boolean priceSheetLevelWarninig = verifyPriceSheetLevelWarningOnAccountDetailScreen(priceSheetnternalName);
-	
-		//// Edit priceSheet
-	
+		if (priceSheetnternalName.length() > 0) {
+			priceSheetLevelWarninig = verifyPriceSheetLevelWarningOnAccountDetailScreen(priceSheetnternalName);
+		}
+
+		//// Edit priceSheet : First Select top pricesheet and click edit warning to
+		//// edit warnings
+		click("AccountDetails_EditWarning");
+		//// type typeAccountWarning
+		typeAccountWarning("account underwriting automation warning", "account cancellation automation warning");
+		//// type typePriceSheetWarning
+		if (priceSheetnternalName.length() > 0)
+			typePriceSheetWarning("pricing underwriting automation warning", "pricing cancellation automation warning");
+
+		//// click save
+		click("AccountDetails_SaveWarning");
+		//// verify edited warnings again
+		returnFirstPriceSheetToAddPriceSheetExceptions();
+		boolean accountLevelWarninigAfterEdit = verifyAccountLevelWarningAfterEditOnAccountDetailScreen(
+				"account underwriting automation warning", "account cancellation automation warning");
+		boolean priceSheetLevelWarninigAfterEdit = true;
+		if (priceSheetnternalName.length() > 0) {
+			priceSheetLevelWarninigAfterEdit = verifyPriceSheetLevelWarningAfterEditOnAccountDetailScreen(
+					"account underwriting automation warning", "account cancellation automation warning");
+		}
+
+		boolean corpDetails = verifyCorpAndGroupDetailsAccountDetailScreen(roleId, roleType, roleStatus);
+
+		///// to be implemented once details are recieved
+		boolean profitPrograms = false;
+
+		///// find properties info
+		boolean propertyInfo = verifyPropertyInfoOnAccountDetailScreen(roleId, roleType, roleStatus);
+		
+		if (accountInfo == propertyInfo == addressInfo == accountLevelWarninig == priceSheetLevelWarninigAfterEdit == priceSheetLevelWarninig == accountLevelWarninigAfterEdit == corpDetails == profitPrograms)
+			assertEquals(accountLevelWarninigAfterEdit, true);
+		else
+			assertEquals(false, true);
 	}
 
 }

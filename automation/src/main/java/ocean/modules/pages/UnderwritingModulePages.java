@@ -63,4 +63,24 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		type("purchaseDateForNewContract", dtf.format(localDate).toString());
 
 	}
+
+	/**
+	 * This function is used to open all necessary windows required for remittance
+	 * creation
+	 * 
+	 */
+	public void landToCreateRemittanceDetailsPage() throws Exception {
+		//// open remittance expander
+		click("remittanceExpander");
+		waitForSomeTime(2);
+		click("remittanceExpander");
+		//// click view to open folder explorer
+		click("viewInToolbar");
+		//// click Folder explorer to upload files
+		click("folderExplorer");
+		waitForSomeTime(4);
+		//// drag and drop files
+		dragAndDrop("filesSourcePath", "filesDestinationPath");
+		System.out.println("dad");
+	}
 }
