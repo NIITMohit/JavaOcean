@@ -2,6 +2,7 @@ package ocean.modules.pages;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 
 import ocean.modules.database.UnderwritingDataBase;
 
@@ -52,14 +53,14 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 * form
 	 * 
 	 */
-	public void enterMandatoryValuesOnContract() throws Exception {
+	public void enterMandatoryValuesOnContract(HashMap<String, String> premiumData) throws Exception {
 		//// type unique contract number
 		type("typeContractNumber", randomString(10));
 		/// click search button to verify unique contract
 		click("clickSearchButtonToSearchContract");
 		//// enter purchase date of contract, -10 days from today's date
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-		LocalDate localDate = LocalDate.now().minusDays(10);
+		LocalDate localDate = LocalDate.now().minusDays(1);
 		type("purchaseDateForNewContract", dtf.format(localDate).toString());
 
 	}
