@@ -62,7 +62,35 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 		LocalDate localDate = LocalDate.now().minusDays(1);
 		type("purchaseDateForNewContract", dtf.format(localDate).toString());
-
+		//// Enter Primary Account Details
+		type("primaryAccountType", premiumData.get("PrimaryAccount"));
+		type("primaryAccountId", premiumData.get("DEALERID"));
+		click("primaryAccountSearchButton");
+		//// Enter Secondary Account Details
+		type("secondaryAccountType", premiumData.get("SecondaryAccount"));
+		type("secondaryAccountId", premiumData.get("SecondaryAccountId"));
+		click("secondaryAccountSearchButton");
+		//// Enter VIN Details
+		type("vinNumber", premiumData.get("VIN"));
+		click("vinNumberOverride");
+		type("vinNumberMake", premiumData.get("MAKE"));
+		type("vinNumberModel", premiumData.get("MODEL"));
+		type("vinNumberYear", premiumData.get("YEAR"));
+		type("vinNumberMileage", premiumData.get("MILEAGE"));
+		type("vinNumberPrice", premiumData.get("VEHICLEPRICE"));
+		//// Enter customer information
+		type("customerFNAME", "Automation");
+		type("customerLNAME", "Testing");
+		click("scrollContractsListDown");
+		type("customerADD", "Baker Street");
+		type("customerZip", "12345");
+		//// navigate to price sheet and select price sheet
+		waitForSomeTime(5);
+		type("selectPricesheet", premiumData.get("PRICESHEETID"));
+		waitForSomeTime(5);
+		System.out.println("dasdasd");
+		clickComboBox("selectPricesheetTerm");
+		System.out.println("ddd");
 	}
 
 	/**

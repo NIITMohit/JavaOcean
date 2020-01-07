@@ -804,7 +804,83 @@
 	<keyword id="purchaseDateForNewContract">
 			<locator>xpath</locator>
 			<value>//*[@Name='DateTimePicker']//*[@Name='ButtonSpinner']//*[@ClassName='WatermarkTextBox']</value>
+	</keyword>	
+	<keyword id="primaryAccountType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary account']//*[@LocalizedControlType='custom']//*[@AutomationId='TypeComboBox']</value>
 	</keyword>		
+	<keyword id="primaryAccountId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary account']//*[@LocalizedControlType='custom']//*[@Name='Account:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="primaryAccountSearchButton">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary account']//*[@LocalizedControlType='custom']//*[@AutomationId='SearchButton']</value>
+	</keyword>	
+	<keyword id="secondaryAccountType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Secondary account']//*[@LocalizedControlType='custom']//*[@AutomationId='TypeComboBox']</value>
+	</keyword>	
+	<keyword id="secondaryAccountId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Secondary account']//*[@LocalizedControlType='custom']//*[@Name='Account:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="secondaryAccountSearchButton">
+			<locator>xpath</locator>
+			<value>//*[@Name='Secondary account']//*[@LocalizedControlType='custom']//*[@AutomationId='SearchButton']</value>
+	</keyword>	
+	<keyword id="vinNumber">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='VIN:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="vinNumberOverride">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@AutomationId='checkboxOverride']</value>
+	</keyword>	
+	<keyword id="vinNumberMake">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Make:']/following-sibling::*[2]</value>
+	</keyword>	
+	<keyword id="vinNumberModel">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Model:']/following-sibling::*[2]</value>
+	</keyword>	
+	<keyword id="vinNumberYear">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Year:']/following-sibling::*[4]</value>
+	</keyword>	
+	<keyword id="vinNumberMileage">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Mileage:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="vinNumberPrice">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Vehicle Price:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="customerZip">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Information']//*[@Name='Zip:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="customerFNAME">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Information']//*[@Name='FirstName:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="customerLNAME">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Information']//*[@Name='LastName:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="customerADD">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Information']//*[@Name='Address:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="selectPricesheet">
+			<locator>xpath</locator>
+			<value>//*[@Name='Pricing Information']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectPricesheetTerm">
+			<locator>xpath</locator>
+			<value>//*[@Name='Plan' and @ClassName = 'GroupBox']//*[@Name='Term:']/following-sibling::*[1]</value>
+	</keyword>
 	</UnderWriting>
 	<Search>
 	<keyword id="searchTypeContract">

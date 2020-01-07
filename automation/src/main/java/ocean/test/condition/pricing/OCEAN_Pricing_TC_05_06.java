@@ -6,8 +6,6 @@ import java.util.Map;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-import com.sun.xml.bind.v2.runtime.SchemaTypeTransducer;
-
 import ocean.modules.dataprovider.UnderwritingDataProvider;
 import ocean.modules.pages.UnderwritingModulePages;
 

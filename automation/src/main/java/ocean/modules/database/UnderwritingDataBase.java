@@ -7,8 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.opencv.features2d.AgastFeatureDetector;
+import java.util.Map.Entry;
 
 import ocean.common.CommonFunctions;
 
@@ -270,11 +269,17 @@ public class UnderwritingDataBase extends CommonFunctions {
 			String progCode = "";
 			try {
 				progCode = map.get("PRICESHEETCODE");
+				if (progCode == null) {
+					progCode = "";
+				}
 			} catch (Exception e) {
 			}
 			String dealerId = "";
 			try {
 				dealerId = map.get("DEALERID");
+				if (dealerId == null) {
+					dealerId = "";
+				}
 			} catch (Exception e) {
 			}
 			String query = "select top 1 p.id as pricesheetId,a.role_identifier as dealerid "
@@ -303,7 +308,7 @@ public class UnderwritingDataBase extends CommonFunctions {
 			String finalQuery = "";
 			if (map.get("DEALERPLANTYPE").toUpperCase().equalsIgnoreCase(map.get("AGENTPLANTYPE").toUpperCase())
 					&& map.get("DEALERPLANTYPE").toUpperCase().equalsIgnoreCase("ALLPLANS")) {
-				finalQuery = "select tt.EFFECTIVE_DATE as PSDATE,t.EFFECTIVE_DATE as expdate,t.STRING_VALUE,t.NUMERIC_VALUE,tp.NAME "
+				finalQuery = "select tt.EFFECTIVE_DATE as PSDATE,t.EFFECTIVE_DATE as expdate,t.NUMERIC_VALUE,tp.NAME "
 						+ "from PRICESHEET_PRODUCT_TIER tt "
 						+ "join PRICESHEET_PRODUCT_TIER_TARGET t  on tt.id = t.TIER_ID "
 						+ "join PRICESHEET_TIER_TARGET_PROPERTY  tp on t.tier_target_property_id  = tp.id "
@@ -313,22 +318,24 @@ public class UnderwritingDataBase extends CommonFunctions {
 						+ "and xtype not like '%STD-XCP%' " + " and tt.EFFECTIVE_DATE < '" + date
 						+ "' and t.EFFECTIVE_DATE < '" + date + "'"
 						+ "order by tt.EFFECTIVE_DATE desc,t.EFFECTIVE_DATE desc;";
+				aulDBConnect();
 				ResultSet rs1 = stmt.executeQuery(finalQuery);
 				HashMap<Integer, HashMap<String, String>> data = returnAllData(rs1);
-				float sumOfPremium = 0;
-				String psDate = data.get(0).get("PSDATE");
-				String expDate = data.get(0).get("expdate");
-				for (Map.Entry<Integer, HashMap<String, String>> maps : data.entrySet()) {
+				float sumOfPremium = 1;
+				String psDate = data.get(1).get("PSDATE");
+				String expDate = data.get(1).get("expdate");
+				for (Entry<Integer, HashMap<String, String>> maps : data.entrySet()) {
 					String psDate1 = maps.getValue().get("PSDATE");
 					String expDate1 = maps.getValue().get("expdate");
 					if (psDate.equals(psDate1) && expDate.equals(expDate1)) {
-						sumOfPremium = Float.parseFloat(maps.getValue().get("NUMERIC_VALUE"));
+						sumOfPremium = sumOfPremium + Float.parseFloat(maps.getValue().get("NUMERIC_VALUE"));
 					}
+
 				}
 				dbMap.put("ExceptionPremium", String.valueOf(sumOfPremium));
 				return dbMap;
 			} else {
-				
+
 			}
 
 		} catch (Exception e) {

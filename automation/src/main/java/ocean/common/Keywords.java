@@ -122,6 +122,38 @@ public class Keywords extends Variables {
 	}
 
 	/**
+	 * waitForSomeTime keyword , this function is used to indulge some delay in
+	 * script
+	 * 
+	 * @param time : wait time in seconds
+	 */
+	public void clickComboBox(String locator) {
+		for (int i = 0; i < 4; i++) {
+			try {
+				Actions action = new Actions(windowsDriver);
+				String attribute = getAtttibuteValue(locator, "BoundingRectangle");
+				String[] coordinates = attribute.split(" ");
+				String x = coordinates[2].substring(coordinates[2].indexOf(":") + 1, coordinates[2].length());
+				String y = coordinates[3].substring(coordinates[3].indexOf(":") + 1, coordinates[3].length());
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebElement comboBox = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				action.moveToElement(comboBox, Integer.parseInt(x) - 10, Integer.parseInt(y) / 2).click().build()
+						.perform();
+				waitForSomeTime(5);
+				//// Click the web element
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+	}
+
+	/**
 	 * rightClick keyword , this function is used to perform right click on any
 	 * object
 	 * 
