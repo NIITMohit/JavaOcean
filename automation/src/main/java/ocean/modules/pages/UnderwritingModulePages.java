@@ -113,7 +113,7 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 			if (premiumData.get("DEDUCTIBLE").toLowerCase().equals("y")
 					&& !premiumData.get("DEDUCTIBLEAMOUNT").equals("0"))
 				deduc = premiumData.get("DEDUCTIBLEAMOUNT").substring(
-						premiumData.get("DEDUCTIBLEAMOUNT").lastIndexOf("$") + 1,
+						premiumData.get("DEDUCTIBLEAMOUNT").lastIndexOf("$") + 1, // lastIndexOf("_BASE") + 6
 						premiumData.get("DEDUCTIBLEAMOUNT").length());
 
 			if (premiumData.get("ExceptionPremium") != null)
@@ -164,15 +164,8 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	public String deductibles() throws Exception {
 		String surcharge = "0";
 		clickComboBox("selectDeductibleConboBox");
+		surcharge = getValue("getDeductibles", 0);
 		click("getDeductibles", 0);
-		surcharge = getAttributeValue("selectDeductibleText", "Value.Value");
-		/*
-		 * HashSet<String> termValues = new HashSet<String>();
-		 * termValues.addAll(specialGetAllValuesSaveInSet("getDeductibles")); int ddi =
-		 * 0; for (String string : termValues) { try { if (string.length() > 0) {
-		 * click("getDeductibles", ddi); surcharge = string; ddi++; break; } else {
-		 * ddi++; continue; } } catch (Exception e) { ddi++; continue; } }
-		 */
 		return surcharge;
 	}
 

@@ -3,12 +3,11 @@ package ocean.test.condition.pricing;
 import static org.testng.Assert.assertEquals;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import org.testng.SkipException;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import ocean.modules.dataprovider.UnderwritingDataProvider;
@@ -185,10 +184,20 @@ public class OCEAN_Pricing_TC_05To14_18 extends UnderwritingModulePages {
 
 	}
 
+	@AfterClass
+	public void collapse() throws Exception {
+		try {
+			click("typeContractNumber");
+			click("contractExpander");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
 	/**
 	 * This function clear pre filled data *
 	 */
-	@AfterTest
+	@AfterMethod
 	public void clearData() throws Exception {
 		//// scroll up and clear data
 		try {
