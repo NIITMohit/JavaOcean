@@ -11,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.windows.WindowsDriver;
+
 /**
  * Keyword class which have basic keywords like click, type, etc
  * 
@@ -128,15 +130,17 @@ public class Keywords extends Variables {
 	 * @param time : wait time in seconds
 	 */
 	public void clickComboBox(String locator) {
+		@SuppressWarnings("rawtypes")
+		WindowsDriver windowsDriver1 = windowsDriver;
+		Actions action = new Actions(windowsDriver1);
 		for (int i = 0; i < 4; i++) {
 			try {
-				Actions action = new Actions(windowsDriver);
-				String attribute = getAtttibuteValue(locator, "BoundingRectangle");
+				String attribute = getAttributeValue(locator, "BoundingRectangle");
 				String[] coordinates = attribute.split(" ");
 				String x = coordinates[2].substring(coordinates[2].indexOf(":") + 1, coordinates[2].length());
 				String y = coordinates[3].substring(coordinates[3].indexOf(":") + 1, coordinates[3].length());
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver1, mediumWait);
 				WebElement comboBox = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 				action.moveToElement(comboBox, Integer.parseInt(x) - 10, Integer.parseInt(y) / 2).click().build()
@@ -149,6 +153,46 @@ public class Keywords extends Variables {
 					continue;
 				else
 					throw e;
+			} finally {
+				action = null;
+				windowsDriver1 = null;
+			}
+		}
+	}
+	
+	/**
+	 * waitForSomeTime keyword , this function is used to indulge some delay in
+	 * script
+	 * 
+	 * @param time : wait time in seconds
+	 */
+	public void specialclickComboBox(String locator) {
+		@SuppressWarnings("rawtypes")
+		WindowsDriver windowsDriver1 = windowsDriver;
+		Actions action = new Actions(windowsDriver1);
+		for (int i = 0; i < 4; i++) {
+			try {
+				String attribute = getAttributeValue(locator, "BoundingRectangle");
+				String[] coordinates = attribute.split(" ");
+				String x = coordinates[2].substring(coordinates[2].indexOf(":") + 1, coordinates[2].length());
+				String y = coordinates[3].substring(coordinates[3].indexOf(":") + 1, coordinates[3].length());
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver1, mediumWait);
+				WebElement comboBox = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				action.moveToElement(comboBox, Integer.parseInt(x) - 10, Integer.parseInt(y) / 2).doubleClick().build()
+						.perform();
+				waitForSomeTime(5);
+				//// Click the web element
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			} finally {
+				action = null;
+				windowsDriver1 = null;
 			}
 		}
 	}
@@ -312,10 +356,47 @@ public class Keywords extends Variables {
 	 * @param unique identifier to locate object
 	 * @return the text/value of locator
 	 */
+	public Set<String> specialGetAllValuesSaveInSet(String locator) {
+		HashSet<String> abc = new HashSet<String>();
+		for (int i = 0; i < 4; i++) {
+			try {
+				waitForSomeTime(5);
+				//// Wait till web element is located
+				@SuppressWarnings("unchecked")
+				//// Find list of web elements
+				List<WebElement> listWebElement = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
+				if (listWebElement.size() < 1) {
+					if (i < 3)
+						continue;
+					else
+						break;
+				}
+				for (WebElement webElement : listWebElement) {
+					//// get value and return the same
+					abc.add(webElement.getAttribute("Name"));
+				}
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+		return abc;
+	}
+
+	/**
+	 * getValue keyword , this function is used to get text/value of locator
+	 *
+	 * @param unique identifier to locate object
+	 * @return the text/value of locator
+	 */
 	public Set<String> getAllValuesSaveInSet(String locator) {
 		HashSet<String> abc = new HashSet<String>();
 		for (int i = 0; i < 4; i++) {
 			try {
+				waitForSomeTime(5);
 				//// Wait till web element is located
 				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
@@ -404,7 +485,7 @@ public class Keywords extends Variables {
 	 * @param unique identifier to locate object
 	 * @return true or false based on locator state
 	 */
-	public String getAtttibuteValue(String locator, String attribute) {
+	public String getAttributeValue(String locator, String attribute) {
 		String value = "not able identify";
 		for (int i = 0; i < 4; i++) {
 			try {

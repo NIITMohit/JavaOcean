@@ -240,6 +240,40 @@ public class UnderwritingDataBase extends CommonFunctions {
 	}
 
 	/**
+	 * This gets search all sales details and return us latest contract id
+	 * 
+	 */
+	public String getPremiumCalculation(HashMap<String, String> map) throws Exception {
+		String sum = "0";
+		HashMap<String, String> dbMap = new HashMap<String, String>();
+		try {
+			String query = "select sum(numeric_value) as ddd from PRICESHEET_PRODUCT_TIER tt join PRICESHEET_PRODUCT_TIER_TARGET "
+					+ "ttt on tt.id  = ttt. tier_id "
+					+ "join [dbo].[PRICESHEET_TIER_TARGET_PROPERTY] pp on pp.id = ttt.tier_target_property_id "
+					+ "where tt.pricesheet_id in( " + "select id from dbo.pricing_pricesheet where code = '"
+					+ map.get("parentpricesheetcode") + "' and parent_pricesheet_id is null) " + "and tt.TERM = '"
+					+ map.get("TERM") + "' and tt.class = '" + map.get("CLASS") + "' and tt.coverage ='"
+					+ map.get("COVERAGE") + "' " + "and tt.MILEAGE_FROM<'" + map.get("MILEAGE")
+					+ "' and tt.MILEAGE_TO>'" + map.get("MILEAGE") + "' and pricesheet_category_id = 2 ;";
+
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			dbMap = returnData(rs);
+			sum = dbMap.get("ddd");
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return sum;
+	}
+
+	/**
 	 * This function correct all data needed to calculate premium
 	 * 
 	 */
@@ -282,7 +316,7 @@ public class UnderwritingDataBase extends CommonFunctions {
 				}
 			} catch (Exception e) {
 			}
-			String query = "select top 1 p.id as pricesheetId,a.role_identifier as dealerid "
+			String query = "select top 1 p.id as pricesheetId,a.role_identifier as dealerid, p.CODE as pcode "
 					+ "from [dbo].[PRICING_PRICESHEET] p join [dbo].[PRICING_PRICESHEET_ACCOUNT_RELATION] pac on pac.PRICESHEET_ID = p.id "
 					+ "join dbo.account a on a.id = pac.PRIMARY_SELLER_ID left join PRICESHEET_PRODUCT_TIER_TARGET t on p.id = t.pricesheet_id "
 					+ " left join PRICESHEET_PRODUCT_TIER tt on tt.id = t.TIER_ID "
@@ -304,7 +338,7 @@ public class UnderwritingDataBase extends CommonFunctions {
 			}
 			dbMap.put("PRICESHEETID", dbMap1.get("pricesheetId"));
 			dbMap.put("DEALERID", dbMap1.get("dealerid"));
-
+			dbMap.put("parentpricesheetcode", dbMap1.get("pcode"));
 			String finalQuery = "";
 			if (map.get("DEALERPLANTYPE").toUpperCase().equalsIgnoreCase(map.get("AGENTPLANTYPE").toUpperCase())
 					&& map.get("DEALERPLANTYPE").toUpperCase().equalsIgnoreCase("ALLPLANS")) {
@@ -321,7 +355,7 @@ public class UnderwritingDataBase extends CommonFunctions {
 				aulDBConnect();
 				ResultSet rs1 = stmt.executeQuery(finalQuery);
 				HashMap<Integer, HashMap<String, String>> data = returnAllData(rs1);
-				float sumOfPremium = 1;
+				float sumOfPremium = 0;
 				String psDate = data.get(1).get("PSDATE");
 				String expDate = data.get(1).get("expdate");
 				for (Entry<Integer, HashMap<String, String>> maps : data.entrySet()) {

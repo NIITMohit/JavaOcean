@@ -881,6 +881,66 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='Plan' and @ClassName = 'GroupBox']//*[@Name='Term:']/following-sibling::*[1]</value>
 	</keyword>
+		<keyword id="selectDeductibleConboBox">
+			<locator>xpath</locator>
+			<value>//*[@Name='Cost Calculation' and @ClassName = 'GroupBox']//*[@Name='Deductible:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectDeductibleText">
+			<locator>xpath</locator>
+			<value>//*[@Name='Cost Calculation' and @ClassName = 'GroupBox']//*[@Name='Deductible:']/following-sibling::*[1]//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectPricesheetCoverage">
+			<locator>xpath</locator>
+			<value>//*[@Name='Plan' and @ClassName = 'GroupBox']//*[@Name='Coverage:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="getTermValues">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_FILTER_TERMReturnModel')]//*[@ClassName='TextBlock']</value>
+	</keyword>
+	<keyword id="getCoverageValues">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_FILTER_COVERAGEReturnModel')]//*[@ClassName='TextBlock']</value>
+	</keyword>
+	<keyword id="getSurcharges">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_SURCHARGEReturnModel')]//*[contains(@Name,'$')]</value>
+	</keyword>
+	<keyword id="getSurchargesCheckBox">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_SURCHARGEReturnModel')]//*[@ClassName='CheckBox']</value>
+	</keyword>
+	<keyword id="getOptions">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_OPTIONReturnModel')]//*[contains(@Name,'$')]</value>
+	</keyword>
+	<keyword id="getOptionsCheckBox">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_OPTIONReturnModel')]//*[@ClassName='CheckBox']</value>
+	</keyword>
+	<keyword id="getDeductibles">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_DEDUCTIBLEReturnModel')]//*[@ClassName='TextBlock']</value>
+	</keyword>
+	<keyword id="clickPremiumCalculate">
+			<locator>xpath</locator>
+			<value>//*[@Name='DoubleUpDown']/following-sibling::*[@ClassName='Button']//*[@ClassName='Image']</value>
+	</keyword>
+	<keyword id="getPremium">
+			<locator>xpath</locator>
+			<value>//*[@Name='AUL Price:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="getClass">
+			<locator>xpath</locator>
+			<value>//*[@Name='Plan' and @ClassName = 'GroupBox']//*[@Name='Class:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="getMielage">
+			<locator>xpath</locator>
+			<value>//*[@Name='Plan' and @ClassName = 'GroupBox']//*[@Name='Mileage Band:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="clearContractData">
+			<locator>xpath</locator>
+			<value>//*[@Name='Purchase Date:']/preceding-sibling::*[1]//*[@ClassName='Image']</value>
+	</keyword>
 	</UnderWriting>
 	<Search>
 	<keyword id="searchTypeContract">

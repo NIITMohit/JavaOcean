@@ -1,8 +1,10 @@
 package ocean.modules.pages;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.HashSet;
 
 import ocean.modules.database.UnderwritingDataBase;
 
@@ -45,15 +47,145 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		//// click contract expander
 		click("contractExpander");
 		waitForSomeTime(2);
-		click("contractExpander");
+		try {
+			click("typeContractNumber");
+		} catch (Exception e) {
+			click("contractExpander");
+		}
+
+	}
+
+	/**
+	 * This function is used to clear data on new business form
+	 * 
+	 */
+	public void clearPreFilledData() throws Exception {
+		click("scrollContractsListUp");
+		try {
+			//// click yes to lock remittance
+			click("scrollContractsListUp");
+
+		} catch (Exception e) {
+			// do nothing
+		}
+		click("clearContractData");
+	}
+
+	/**
+	 * This function is used to get surcharges
+	 * 
+	 */
+	public String surcharges() throws Exception {
+		String surcharge = "0";
+		try {
+			surcharge = getAttributeValue("getSurcharges", "Name");
+			click("getSurchargesCheckBox");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return surcharge;
+	}
+
+	/**
+	 * This function is used to get surcharges
+	 * 
+	 */
+	public String calculateMyPremium(HashMap<String, String> premiumData) throws Exception {
+		String finalValue = "";
+		waitForSomeTime(2);
+		try {
+			String excelPremium = getPremiumCalculation(premiumData);
+			String surcharge = "0.00";
+			String options = "0.00";
+			String deduc = "0.00";
+			String expPre = "0.00";
+			if (premiumData.get("SURCHARGES").toLowerCase().equals("y")
+					&& !premiumData.get("SURCHARGESAMOUNT").equals("0"))
+				surcharge = premiumData.get("SURCHARGESAMOUNT").substring(
+						premiumData.get("SURCHARGESAMOUNT").indexOf("$") + 1,
+						premiumData.get("SURCHARGESAMOUNT").length());
+
+			if (premiumData.get("OPTIONS").toLowerCase().equals("y") && !premiumData.get("OPTIONSAMOUNT").equals("0"))
+				options = premiumData.get("OPTIONSAMOUNT").substring(premiumData.get("OPTIONSAMOUNT").indexOf("$") + 1,
+						premiumData.get("OPTIONSAMOUNT").length());
+
+			if (premiumData.get("DEDUCTIBLE").toLowerCase().equals("y")
+					&& !premiumData.get("DEDUCTIBLEAMOUNT").equals("0"))
+				deduc = premiumData.get("DEDUCTIBLEAMOUNT").substring(
+						premiumData.get("DEDUCTIBLEAMOUNT").lastIndexOf("$") + 1,
+						premiumData.get("DEDUCTIBLEAMOUNT").length());
+
+			if (premiumData.get("ExceptionPremium") != null)
+				expPre = premiumData.get("ExceptionPremium");
+
+			Float finalPre = Float.parseFloat(options) + Float.parseFloat(deduc) + Float.parseFloat(surcharge)
+					+ Float.parseFloat(excelPremium) + Float.parseFloat(expPre);
+
+			DecimalFormat decimalFormat = new DecimalFormat("#.00");
+			String numberAsString = decimalFormat.format(finalPre);
+			String finallyd = "$" + numberAsString;
+			finalValue = finallyd;
+		} catch (Exception e) {
+			throw new Exception("not able to paerse");
+		}
+		return finalValue;
+	}
+
+	/**
+	 * This function is get AUL premim
+	 * 
+	 */
+	public String premium() throws Exception {
+		click("clickPremiumCalculate");
+		return getAttributeValue("getPremium", "Name");
+	}
+
+	/**
+	 * This function is get options
+	 * 
+	 */
+	public String options() throws Exception {
+		String surcharge = "0";
+		try {
+			surcharge = getAttributeValue("getOptions", "Name");
+			click("getOptionsCheckBox");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return surcharge;
+	}
+
+	/**
+	 * This function is used to get deductibles
+	 * 
+	 */
+	public String deductibles() throws Exception {
+		String surcharge = "0";
+		clickComboBox("selectDeductibleConboBox");
+		click("getDeductibles", 0);
+		surcharge = getAttributeValue("selectDeductibleText", "Value.Value");
+		/*
+		 * HashSet<String> termValues = new HashSet<String>();
+		 * termValues.addAll(specialGetAllValuesSaveInSet("getDeductibles")); int ddi =
+		 * 0; for (String string : termValues) { try { if (string.length() > 0) {
+		 * click("getDeductibles", ddi); surcharge = string; ddi++; break; } else {
+		 * ddi++; continue; } } catch (Exception e) { ddi++; continue; } }
+		 */
+		return surcharge;
 	}
 
 	/**
 	 * This function is used to enter all mandatory values on new business contract
 	 * form
 	 * 
+	 * @return
+	 * 
 	 */
-	public void enterMandatoryValuesOnContract(HashMap<String, String> premiumData) throws Exception {
+	public HashMap<String, String> enterMandatoryValuesOnContract(HashMap<String, String> premiumData)
+			throws Exception {
+		HashMap<String, String> ss = new HashMap<String, String>();
 		//// type unique contract number
 		type("typeContractNumber", randomString(10));
 		/// click search button to verify unique contract
@@ -88,9 +220,75 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		waitForSomeTime(5);
 		type("selectPricesheet", premiumData.get("PRICESHEETID"));
 		waitForSomeTime(5);
-		System.out.println("dasdasd");
-		clickComboBox("selectPricesheetTerm");
-		System.out.println("ddd");
+		//// Handling for MielageBand
+		if (premiumData.get("MIELAGEBAND") != null) {
+			type("getMielage", premiumData.get("MIELAGEBAND"));
+		} else {
+			String milegae = getAttributeValue("getMielage", "Value.Value");
+			ss.put("MIELAGEBAND", milegae);
+		}
+		waitForSomeTime(5);
+		//// Handling for Class
+		if (premiumData.get("CLASS") != null) {
+			type("getClass", premiumData.get("CLASS"));
+		} else {
+			String classs = getAttributeValue("getClass", "Value.Value");
+			ss.put("CLASS", classs);
+		}
+		waitForSomeTime(5);
+		//// Term for Price sheet handling
+		specialclickComboBox("selectPricesheetTerm");
+		HashSet<String> termValues = new HashSet<String>();
+		termValues.addAll(specialGetAllValuesSaveInSet("getTermValues"));
+		if (premiumData.get("TERM") != null) {
+			if (termValues.contains(premiumData.get("TERM")))
+				type("selectPricesheetTerm", premiumData.get("TERM"));
+			else
+				throw new Exception("no data found");
+		} else {
+			for (String string : termValues) {
+				try {
+					if (string.length() > 0) {
+						type("selectPricesheetTerm", string);
+						ss.put("TERM", string);
+						break;
+					} else {
+						throw new Exception("no data found");
+					}
+				} catch (Exception e) {
+					continue;
+				}
+			}
+		}
+		waitForSomeTime(5);
+		//// Coverage for Price sheet handling
+		specialclickComboBox("selectPricesheetCoverage");
+
+		HashSet<String> coverageValues = new HashSet<String>();
+		coverageValues.addAll(specialGetAllValuesSaveInSet("getCoverageValues"));
+		if (premiumData.get("COVERAGE") != null) {
+			if (termValues.contains(premiumData.get("COVERAGE")))
+				type("selectPricesheetCoverage", premiumData.get("COVERAGE"));
+			else
+				throw new Exception("no data found");
+		} else {
+			for (String string : coverageValues) {
+				try {
+					if (string.length() > 0) {
+						type("selectPricesheetCoverage", string);
+						ss.put("COVERAGE", string);
+						break;
+					} else {
+						throw new Exception("no data found");
+					}
+				} catch (Exception e) {
+					continue;
+				}
+			}
+		}
+		waitForSomeTime(5);
+		System.out.println("compleetd");
+		return ss;
 	}
 
 	/**

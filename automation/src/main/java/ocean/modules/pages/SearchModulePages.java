@@ -20,7 +20,7 @@ public class SearchModulePages extends SearchDataBase {
 	 */
 	public int getSearchesultsCount() {
 		int count = 0;
-		String countText = getAtttibuteValue("getSearchCount", "Name");
+		String countText = getAttributeValue("getSearchCount", "Name");
 		Pattern p = Pattern.compile("\\d+");
 		Matcher m = p.matcher(countText);
 		while (m.find()) {
@@ -52,10 +52,10 @@ public class SearchModulePages extends SearchDataBase {
 			case "Contract":
 				type("searchTypeContract", valueToInput);
 				break;
-			case "First_Name":
+			case "CUSTOMER_FIRST":
 				type("searchTypeFirstName", valueToInput);
 				break;
-			case "Last_Name":
+			case "CUSTOMER_LAST":
 				type("searchTypeLastName", valueToInput);
 				break;
 			case "VIN":
