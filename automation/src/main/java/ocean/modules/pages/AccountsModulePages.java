@@ -1,7 +1,9 @@
 package ocean.modules.pages;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import ocean.modules.database.AccountsDataBase;
 
@@ -11,11 +13,6 @@ import ocean.modules.database.AccountsDataBase;
  * @author Mohit Goel
  */
 public class AccountsModulePages extends AccountsDataBase {
-	/**
-	 * This function is used to navigate to PricingSheetListTab
-	 * 
-	 * 
-	 */
 	/**
 	 * This function is used to navigate to perform search based on search parameter
 	 * given. It accepts a hash map with input parameters
@@ -240,7 +237,6 @@ public class AccountsModulePages extends AccountsDataBase {
 			throws Exception {
 		if (roleId.length() > 0) {
 			//// validate Account Info Section
-			boolean accountInfo = false;
 			HashMap<String, String> dbData = account_getAccountInfoOnAccountDetails(roleId, roleType, roleStatus);
 			HashMap<String, String> uiData = getAccountInfoOnAccountDetails();
 			//// manipulate data to match both hash maps
@@ -316,6 +312,21 @@ public class AccountsModulePages extends AccountsDataBase {
 	 * @return
 	 * 
 	 */
+	public boolean verifyAccountLevelWarningAfterEditOnAccountDetailScreen(String war1, String war2) throws Exception {
+		String uiAccountWarninig = getAccountUnderwritingWarningAccountDetailScreen();
+		String uiAccountCanWarnng = getAccountCancellationWarningAccountDetailScreen();
+		if (uiAccountWarninig.equalsIgnoreCase(war1) && uiAccountCanWarnng.equals(war2))
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * This function is used to verifyAccountLevelWarningOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
 	public boolean verifyPriceSheetLevelWarningOnAccountDetailScreen(String priceSheetInternalName) throws Exception {
 
 		///// verify price sheet level warning
@@ -329,6 +340,118 @@ public class AccountsModulePages extends AccountsDataBase {
 			return true;
 		else
 			return false;
+	}
+
+	/**
+	 * This function is used to verifyAccountLevelWarningOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public boolean verifyPriceSheetLevelWarningAfterEditOnAccountDetailScreen(String war1, String war2)
+			throws Exception {
+		///// verify price sheet level warning
+		String psUnderwriting = getPricesheetUnderwritingWarningAccountDetailScreen();
+
+		String psCancel = getPricesheetCancellationWarningAccountDetailScreen();
+
+		if (psUnderwriting.equalsIgnoreCase(war1) && psCancel.equals(war2))
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * This function is used to verifyAccountLevelWarningOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public boolean verifyCorpAndGroupDetailsAccountDetailScreen(String roleId, String roleType, String roleStatus)
+			throws Exception {
+		HashMap<Integer, HashMap<String, String>> myData = null;
+		myData = account_getCorpAndGroupOnAccountDetails(roleId, roleType, roleStatus);
+		HashMap<String, String> uiData = new HashMap<String, String>();
+		uiData.put("CorpID", getValue("AccountDetails_CorpGroupInfo_CorpId"));
+		uiData.put("CorpName", getValue("AccountDetails_CorpGroupInfo_CorpName"));
+		uiData.put("GroupID", getValue("AccountDetails_CorpGroupInfo_GroupId"));
+		uiData.put("GroupName", getValue("AccountDetails_CorpGroupInfo_GroupName"));
+		HashMap<String, String> dbData = new HashMap<String, String>();
+		for (Entry<Integer, HashMap<String, String>> letterEntry : myData.entrySet()) {
+			for (Map.Entry<String, String> nameEntry : letterEntry.getValue().entrySet()) {
+				String name = nameEntry.getKey().replace(" ", "");
+				String value = nameEntry.getValue();
+				dbData.put(name, value);
+			}
+		}
+		if (uiData.equals(dbData))
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * This function is used to verifyAccountLevelWarningOnAccountDetailScreen
+	 * 
+	 * @return
+	 * 
+	 */
+	public boolean verifyPropertyInfoOnAccountDetailScreen(String roleId, String roleType, String roleStatus)
+			throws Exception {
+		HashSet<String> propertyHeader = new HashSet<String>();
+		propertyHeader.addAll(getAllValuesSaveInSet("AccountDetails_PropertyInfoHeader"));
+
+		HashSet<String> propertyValue = new HashSet<String>();
+		propertyValue.addAll(getAllValuesSaveInSet("AccountDetails_PropertyInfoName"));
+
+		HashMap<Integer, HashMap<String, String>> myData = null;
+		myData = account_getPropertyInfoOnAccountDetails(roleId, roleType, roleStatus);
+
+		HashSet<String> dbpropertyHeader = new HashSet<String>();
+		HashSet<String> dbpropertyValue = new HashSet<String>();
+		for (Entry<Integer, HashMap<String, String>> letterEntry : myData.entrySet()) {
+			for (Map.Entry<String, String> nameEntry : letterEntry.getValue().entrySet()) {
+				String name = nameEntry.getKey().replace(" ", "");
+				String value = nameEntry.getValue();
+				dbpropertyHeader.add(name);
+				dbpropertyValue.add(value);
+			}
+		}
+
+		if (dbpropertyHeader.equals(propertyHeader) && dbpropertyValue.equals(propertyValue))
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * This function is used to typeAccountWarning
+	 * 
+	 * @return
+	 * 
+	 */
+	public void typeAccountWarning(String underwritingWarning, String cancellationWarning) throws Exception {
+		if (underwritingWarning.length() > 0) {
+			type("AccountDetails_AccountLevelWarining", underwritingWarning);
+		}
+		if (cancellationWarning.length() > 0) {
+			type("AccountDetails_AccountCancellationWarining", cancellationWarning);
+		}
+	}
+
+	/**
+	 * This function is used to typePriceSheetWarning
+	 * 
+	 * @return
+	 * 
+	 */
+	public void typePriceSheetWarning(String underwritingWarning, String cancellationWarning) throws Exception {
+		if (underwritingWarning.length() > 0) {
+			type("AccountDetails_PriceSheetUnderwritingWarining", underwritingWarning);
+		}
+		if (cancellationWarning.length() > 0) {
+			type("AccountDetails_PriceSheetCancellationWarining", cancellationWarning);
+		}
 	}
 
 }

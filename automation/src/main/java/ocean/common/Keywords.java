@@ -11,45 +11,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.windows.WindowsDriver;
+
 /**
  * Keyword class which have basic keywords like click, type, etc
  * 
  * @author Mohit Goel
  */
 public class Keywords extends Variables {
-
-	/**
-	 * test object keyword , this function is reserved to debug objects
-	 */
-	public void testObject(String locator) {
-		for (int i = 0; i < 4; i++) {
-			try {
-				@SuppressWarnings("unused")
-				WebDriverWait wait = new WebDriverWait(windowsDriver, 20);
-				@SuppressWarnings("unchecked")
-				List<WebElement> eee = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
-				for (WebElement webElement : eee) {
-					// Thread.sleep(3000);
-					String abc = webElement.getText();
-					System.out.println(abc);
-					try {
-						webElement.sendKeys("2121");
-					} catch (Exception e) {
-						//// do nothing
-					}
-
-				}
-			} catch (Exception e) {
-				System.out.println("fsddf");
-				if (i < 3)
-					continue;
-				else
-					throw e;
-			}
-		}
-
-	}
-
 	/**
 	 * click keyword , this function is used to perform click on any object
 	 * 
@@ -72,7 +41,42 @@ public class Keywords extends Variables {
 					throw e;
 			}
 		}
+	}
 
+	/**
+	 * dragAndDrop keyword , this function is used to perform dragAndDrop on any
+	 * object
+	 * 
+	 * @param sourceLocator      : unique identifier to locate object
+	 * @param destinationLocator : position of click element
+	 * @throws Exception
+	 */
+	public void dragAndDrop(String sourceLocator, String destinationLocator) throws Exception {
+		@SuppressWarnings("rawtypes")
+		WindowsDriver wd = windowsDriver;
+		for (int i = 0; i < 4; i++) {
+			System.out.println(i+1);
+			Actions action = new Actions(wd);
+			WebDriverWait wait = new WebDriverWait(wd, mediumWait);
+			WebElement sourceElement = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(sourceLocator)));
+			WebElement destinationElement = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(destinationLocator)));
+			try {
+				//// Wait till web element is located
+				System.out.println(sourceElement);
+				System.out.println(destinationElement);
+				waitForSomeTime(4);
+				//// perform drag and drop
+				action.dragAndDrop(sourceElement, destinationElement).moveByOffset(40, 40).build().perform();
+				break;
+			} catch (Exception e) {
+				if (i < 3) {
+					click("clickUnderWritingTab");
+				} else
+					throw e;
+			}
+		}
 	}
 
 	/**
@@ -115,7 +119,80 @@ public class Keywords extends Variables {
 			// TODO Auto-generated catch block
 			//// do nothing
 		}
+	}
 
+	/**
+	 * waitForSomeTime keyword , this function is used to indulge some delay in
+	 * script
+	 * 
+	 * @param time : wait time in seconds
+	 */
+	public void clickComboBox(String locator) {
+		@SuppressWarnings("rawtypes")
+		WindowsDriver windowsDriver1 = windowsDriver;
+		Actions action = new Actions(windowsDriver1);
+		for (int i = 0; i < 4; i++) {
+			try {
+				String attribute = getAttributeValue(locator, "BoundingRectangle");
+				String[] coordinates = attribute.split(" ");
+				String x = coordinates[2].substring(coordinates[2].indexOf(":") + 1, coordinates[2].length());
+				String y = coordinates[3].substring(coordinates[3].indexOf(":") + 1, coordinates[3].length());
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver1, mediumWait);
+				WebElement comboBox = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				action.moveToElement(comboBox, Integer.parseInt(x) - 10, Integer.parseInt(y) / 2).click().build()
+						.perform();
+				waitForSomeTime(5);
+				//// Click the web element
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			} finally {
+				action = null;
+				windowsDriver1 = null;
+			}
+		}
+	}
+
+	/**
+	 * waitForSomeTime keyword , this function is used to indulge some delay in
+	 * script
+	 * 
+	 * @param time : wait time in seconds
+	 */
+	public void specialclickComboBox(String locator) {
+		@SuppressWarnings("rawtypes")
+		WindowsDriver windowsDriver1 = windowsDriver;
+		Actions action = new Actions(windowsDriver1);
+		for (int i = 0; i < 4; i++) {
+			try {
+				String attribute = getAttributeValue(locator, "BoundingRectangle");
+				String[] coordinates = attribute.split(" ");
+				String x = coordinates[2].substring(coordinates[2].indexOf(":") + 1, coordinates[2].length());
+				String y = coordinates[3].substring(coordinates[3].indexOf(":") + 1, coordinates[3].length());
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver1, mediumWait);
+				WebElement comboBox = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				action.moveToElement(comboBox, Integer.parseInt(x) - 10, Integer.parseInt(y) / 2).doubleClick().build()
+						.perform();
+				waitForSomeTime(5);
+				//// Click the web element
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			} finally {
+				action = null;
+				windowsDriver1 = null;
+			}
+		}
 	}
 
 	/**
@@ -277,10 +354,47 @@ public class Keywords extends Variables {
 	 * @param unique identifier to locate object
 	 * @return the text/value of locator
 	 */
+	public Set<String> specialGetAllValuesSaveInSet(String locator) {
+		HashSet<String> abc = new HashSet<String>();
+		for (int i = 0; i < 4; i++) {
+			try {
+				waitForSomeTime(5);
+				//// Wait till web element is located
+				@SuppressWarnings("unchecked")
+				//// Find list of web elements
+				List<WebElement> listWebElement = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
+				if (listWebElement.size() < 1) {
+					if (i < 3)
+						continue;
+					else
+						break;
+				}
+				for (WebElement webElement : listWebElement) {
+					//// get value and return the same
+					abc.add(webElement.getAttribute("Name"));
+				}
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+		return abc;
+	}
+
+	/**
+	 * getValue keyword , this function is used to get text/value of locator
+	 *
+	 * @param unique identifier to locate object
+	 * @return the text/value of locator
+	 */
 	public Set<String> getAllValuesSaveInSet(String locator) {
 		HashSet<String> abc = new HashSet<String>();
 		for (int i = 0; i < 4; i++) {
 			try {
+				waitForSomeTime(5);
 				//// Wait till web element is located
 				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
@@ -357,6 +471,8 @@ public class Keywords extends Variables {
 			} catch (Exception e) {
 				if (i < 3)
 					continue;
+				else
+					throw e;
 			}
 		}
 		return flag;
@@ -369,7 +485,7 @@ public class Keywords extends Variables {
 	 * @param unique identifier to locate object
 	 * @return true or false based on locator state
 	 */
-	public String getAtttibuteValue(String locator, String attribute) {
+	public String getAttributeValue(String locator, String attribute) {
 		String value = "not able identify";
 		for (int i = 0; i < 4; i++) {
 			try {
@@ -383,8 +499,43 @@ public class Keywords extends Variables {
 			} catch (Exception e) {
 				if (i < 3)
 					continue;
+				else
+					throw e;
 			}
 		}
 		return value;
+	}
+
+	/**
+	 * listOfElements keyword , this function is used to get list of all elements
+	 * based on unique identifier
+	 *
+	 * @param locator : unique identifier to locate object
+	 * @return List of web elements
+	 */
+	@SuppressWarnings("unchecked")
+	public List<WebElement> listOfElements(String locator) {
+		List<WebElement> we = null;
+		for (int i = 0; i < 4; i++) {
+			try {
+				waitForSomeTime(5);
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				we = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
+				if (we.size() < 1) {
+					if (i < 3)
+						continue;
+					else
+						break;
+				}
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+		return we;
 	}
 }

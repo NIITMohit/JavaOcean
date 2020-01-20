@@ -109,7 +109,6 @@ public class Database_Connectivity {
 	public HashMap<Integer, HashMap<String, String>> returnAllData(ResultSet rs1) throws Exception {
 		//// Hash map to store columns and value
 		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
-		HashMap<String, String> mapp = new HashMap<String, String>();
 		try {
 			int counter = 1;
 			///// rssult set
@@ -119,6 +118,7 @@ public class Database_Connectivity {
 			int count = metaData.getColumnCount();
 			/// iterate all rows
 			while (rs.next()) {
+				HashMap<String, String> mapp = new HashMap<String, String>();
 				for (int i = 1; i <= count; i++) {
 					//// get column mane
 					String col_name = metaData.getColumnName(i);
@@ -157,6 +157,11 @@ public class Database_Connectivity {
 			return rs.getString(i);
 		case "float":
 			return Float.toString(rs.getFloat(i));
+		case "bigint":
+			return rs.getString(i);
+		case "decimal":
+			return rs.getBigDecimal(i).toString();
+		// return df.format(rs.get(i));
 		default:
 			return rs.getString(i);
 		}
@@ -174,7 +179,7 @@ public class Database_Connectivity {
 			aulDBConnect();
 			///// execute query
 			ResultSet rs = stmt.executeQuery(
-					"select top 2 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
+					"select top 1 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
 							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r .IsDeleted = 0 order by d.CreateByDate desc;");
 			//// save data in map
 			dbMap = returnAllData(rs);

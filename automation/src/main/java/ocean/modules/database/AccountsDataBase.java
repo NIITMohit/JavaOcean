@@ -353,7 +353,6 @@ public class AccountsDataBase extends CommonFunctions {
 					+ "join [dbo].[ACCOUNT_PHONE_FAX] phone on phone.ACCOUNT_ID = account.id "
 					+ "where accountRole.ROLE_NAME = '" + roleType + "' and accStatus.STATUS = '" + roleStatus
 					+ "' and account.ROLE_IDENTIFIER = '" + roleId + "' and address.ADDRESS_TYPE_ID = 1;";
-
 			aulDBConnect();
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);
@@ -411,6 +410,76 @@ public class AccountsDataBase extends CommonFunctions {
 		}
 
 		return physicalAddress;
+	}
+
+	/**
+	 * This gets search billing address info data based on roleId, roleType,
+	 * roleStatus
+	 *
+	 */
+	public HashMap<Integer, HashMap<String, String>> account_getPropertyInfoOnAccountDetails(String roleId,
+			String roleType, String roleStatus) throws Exception {
+		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+		try {
+			String query = "select p.name as Name,val.STRING_VALUE as Message from [dbo].[ACCOUNT_PROPERTY_GROUP] g join [dbo].[ACCOUNT_PROPERTY] p "
+					+ "on g.PROPERTY_VALUE_ID = p.id " + "join [dbo].[ACCOUNT] aa on aa.id = g.ACCOUNT_ID "
+					+ "join [dbo].[ACCOUNT_PROPERTY_VALUE] val on val.ACCOUNT_PROPERTY_ID = p.id "
+					+ "join  [dbo].[ACCOUNT_STATUS] accStatus on accStatus.id  = aa.ACCOUNT_STATUS_ID "
+					+ "join [dbo].[ACCOUNT_ROLE_TYPE] accountRole on aa.ROLE_TYPE_ID = accountRole.id "
+					+ "where p.is_visible = 1 and p.Name in('Corp ID','Corp Name','Group ID','Group Name') "
+					+ "and val.IS_DELETED = 0 " + "and aa.ROLE_IDENTIFIER = '" + roleId + "'"
+					+ " and accStatus.STATUS = '" + roleStatus + "' " + " and  accountRole.ROLE_NAME = '" + roleType
+					+ "';";
+
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			dbMap = returnAllData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return dbMap;
+	}
+
+	/**
+	 * This gets search billing address info data based on roleId, roleType,
+	 * roleStatus
+	 *
+	 */
+	public HashMap<Integer, HashMap<String, String>> account_getCorpAndGroupOnAccountDetails(String roleId,
+			String roleType, String roleStatus) throws Exception {
+		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+		try {
+			String query = "select p.name as Name,val.STRING_VALUE as Message from [dbo].[ACCOUNT_PROPERTY_GROUP] g join [dbo].[ACCOUNT_PROPERTY] p "
+					+ "on g.PROPERTY_VALUE_ID = p.id " + "join [dbo].[ACCOUNT] aa on aa.id = g.ACCOUNT_ID "
+					+ "join [dbo].[ACCOUNT_PROPERTY_VALUE] val on val.ACCOUNT_PROPERTY_ID = p.id "
+					+ "join  [dbo].[ACCOUNT_STATUS] accStatus on accStatus.id  = aa.ACCOUNT_STATUS_ID "
+					+ "join [dbo].[ACCOUNT_ROLE_TYPE] accountRole on aa.ROLE_TYPE_ID = accountRole.id "
+					+ "where p.is_visible = 1 and p.Name in('Corp ID','Corp Name','Group ID','Group Name') "
+					+ "and val.IS_DELETED = 0 " + "and aa.ROLE_IDENTIFIER = '" + roleId + "'"
+					+ " and accStatus.STATUS = '" + roleStatus + "' " + " and  accountRole.ROLE_NAME = '" + roleType
+					+ "';";
+
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			dbMap = returnAllData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return dbMap;
 	}
 
 	/**
@@ -485,7 +554,6 @@ public class AccountsDataBase extends CommonFunctions {
 		return physicalAddress;
 	}
 
-	
 	/**
 	 * This gets account_getAccountUnderwritingWarningAccountDetails based on
 	 * roleId, roleType, roleStatus
@@ -518,6 +586,7 @@ public class AccountsDataBase extends CommonFunctions {
 
 		return physicalAddress;
 	}
+
 	/**
 	 * This gets account_getAccountUnderwritingWarningAccountDetails based on
 	 * roleId, roleType, roleStatus

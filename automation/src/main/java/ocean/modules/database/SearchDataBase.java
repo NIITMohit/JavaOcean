@@ -44,6 +44,7 @@ public class SearchDataBase extends CommonFunctions {
 			query = query.substring(0, query.lastIndexOf(","))
 					+ query.substring(query.lastIndexOf(",") + 1, query.length());
 			aulDBConnect();
+			waitForSomeTime(1);
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);
 			//// save data in map

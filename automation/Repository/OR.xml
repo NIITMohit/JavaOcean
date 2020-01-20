@@ -772,6 +772,26 @@
 	<keyword id="contractExpander">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='ExpanderHandle' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="remittanceExpander">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='ExpanderHandle' and @ClassName='Button'])[2]</value>
+	</keyword>	
+	<keyword id="viewInToolbar">
+			<locator>Name</locator>
+			<value>_View</value>
+	</keyword>	
+	<keyword id="folderExplorer">
+			<locator>Name</locator>
+			<value>Folder Explorer</value>
+	</keyword>	
+	<keyword id="filesSourcePath">
+			<locator>Name</locator>
+			<value>File Folder</value>
+	</keyword>	
+	<keyword id="filesDestinationPath">
+			<locator>Name</locator>
+			<value>File Name</value>
 	</keyword>	
 	<keyword id="typeContractNumber">
 			<locator>xpath</locator>
@@ -784,13 +804,189 @@
 	<keyword id="purchaseDateForNewContract">
 			<locator>xpath</locator>
 			<value>//*[@Name='DateTimePicker']//*[@Name='ButtonSpinner']//*[@ClassName='WatermarkTextBox']</value>
+	</keyword>	
+	<keyword id="primaryAccountType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary account']//*[@LocalizedControlType='custom']//*[@AutomationId='TypeComboBox']</value>
 	</keyword>		
+	<keyword id="primaryAccountId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary account']//*[@LocalizedControlType='custom']//*[@Name='Account:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="primaryAccountSearchButton">
+			<locator>xpath</locator>
+			<value>//*[@Name='Primary account']//*[@LocalizedControlType='custom']//*[@AutomationId='SearchButton']</value>
+	</keyword>	
+	<keyword id="secondaryAccountType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Secondary account']//*[@LocalizedControlType='custom']//*[@AutomationId='TypeComboBox']</value>
+	</keyword>	
+	<keyword id="secondaryAccountId">
+			<locator>xpath</locator>
+			<value>//*[@Name='Secondary account']//*[@LocalizedControlType='custom']//*[@Name='Account:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="secondaryAccountSearchButton">
+			<locator>xpath</locator>
+			<value>//*[@Name='Secondary account']//*[@LocalizedControlType='custom']//*[@AutomationId='SearchButton']</value>
+	</keyword>	
+	<keyword id="vinNumber">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='VIN:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="vinNumberOverride">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@AutomationId='checkboxOverride']</value>
+	</keyword>	
+	<keyword id="vinNumberMake">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Make:']/following-sibling::*[2]</value>
+	</keyword>	
+	<keyword id="vinNumberModel">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Model:']/following-sibling::*[2]</value>
+	</keyword>	
+	<keyword id="vinNumberYear">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Year:']/following-sibling::*[4]</value>
+	</keyword>	
+	<keyword id="vinNumberMileage">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Mileage:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="vinNumberPrice">
+			<locator>xpath</locator>
+			<value>//*[@Name='Vehicle Information']//*[@LocalizedControlType='custom']//*[@Name='Vehicle Price:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="customerZip">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Information']//*[@Name='Zip:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="customerFNAME">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Information']//*[@Name='FirstName:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="customerLNAME">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Information']//*[@Name='LastName:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="customerADD">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Information']//*[@Name='Address:']/following-sibling::*[1]</value>
+	</keyword>	
+	<keyword id="selectPricesheet">
+			<locator>xpath</locator>
+			<value>//*[@Name='Pricing Information']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectPricesheetTerm">
+			<locator>xpath</locator>
+			<value>//*[@Name='Plan' and @ClassName = 'GroupBox']//*[@Name='Term:']/following-sibling::*[1]</value>
+	</keyword>
+		<keyword id="selectDeductibleConboBox">
+			<locator>xpath</locator>
+			<value>//*[@Name='Cost Calculation' and @ClassName = 'GroupBox']//*[@Name='Deductible:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectDeductibleText">
+			<locator>xpath</locator>
+			<value>//*[@Name='Cost Calculation' and @ClassName = 'GroupBox']//*[@Name='Deductible:']/following-sibling::*[1]//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectPricesheetCoverage">
+			<locator>xpath</locator>
+			<value>//*[@Name='Plan' and @ClassName = 'GroupBox']//*[@Name='Coverage:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="getTermValues">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_FILTER_TERMReturnModel')]//*[@ClassName='TextBlock']</value>
+	</keyword>
+	<keyword id="getCoverageValues">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_FILTER_COVERAGEReturnModel')]//*[@ClassName='TextBlock']</value>
+	</keyword>
+	<keyword id="getSurcharges">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_SURCHARGEReturnModel')]//*[contains(@Name,'$')]</value>
+	</keyword>
+	<keyword id="getSurchargesCheckBox">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_SURCHARGEReturnModel')]//*[@ClassName='CheckBox']</value>
+	</keyword>
+	<keyword id="getOptions">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_OPTIONReturnModel')]//*[contains(@Name,'$')]</value>
+	</keyword>
+	<keyword id="getOptionsCheckBox">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_OPTIONReturnModel')]//*[@ClassName='CheckBox']</value>
+	</keyword>
+	<keyword id="getDeductibles">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'PRICING_SELECT_PRICESHEET_DEDUCTIBLEReturnModel')]//*[@ClassName='TextBlock']</value>
+	</keyword>
+	<keyword id="clickPremiumCalculate">
+			<locator>xpath</locator>
+			<value>//*[@Name='DoubleUpDown']/following-sibling::*[@ClassName='Button']//*[@ClassName='Image']</value>
+	</keyword>
+	<keyword id="getPremium">
+			<locator>xpath</locator>
+			<value>//*[@Name='AUL Price:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="getClass">
+			<locator>xpath</locator>
+			<value>//*[@Name='Plan' and @ClassName = 'GroupBox']//*[@Name='Class:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="getMielage">
+			<locator>xpath</locator>
+			<value>//*[@Name='Plan' and @ClassName = 'GroupBox']//*[@Name='Mileage Band:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="clearContractData">
+			<locator>xpath</locator>
+			<value>//*[@Name='Purchase Date:']/preceding-sibling::*[1]//*[@ClassName='Image']</value>
+	</keyword>
+	<keyword id="remittanceName">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='txtRemittanceName']</value>
+	</keyword>
+	<keyword id="remittanceCoreCount">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='txtCoreCount']</value>
+	</keyword>
+	<keyword id="remittanceTypeCombobox">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Type']</value>
+	</keyword>
+	<keyword id="remittanceRemitTypeComboBox">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='RemitType']</value>
+	</keyword>
+	<keyword id="remittanceSubTypeComboBox">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='SubType']</value>
+	</keyword>
+	<keyword id="remittanceComments">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='txtComment']</value>
+	</keyword>
+	<keyword id="closeFolderExplorer">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='HidePinButtonImage']</value>
+	</keyword>
+	<keyword id="documentsStatus">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_UW_DOCUMENTTYPE']//*[@Name='-select-']</value>
+	</keyword>
+	<keyword id="saveRemittance">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='SaveButton']//*[@ClassName='Image']</value>
+	</keyword>
 	</UnderWriting>
 	<Search>
 	<keyword id="searchTypeContract">
 			<locator>xpath</locator>
 			<value>//*[@Name='Contract:']/following-sibling::*[1]</value>
 	</keyword>	
+	<keyword id="clicksearchinBar">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'AvalonDock.Layout.LayoutDocument')]//*[@Name='DropDownControlArea']//*[@Name='Search']</value>
+	</keyword>
 	<keyword id="searchTypeLastName">
 			<locator>xpath</locator>
 			<value>//*[@Name='Last Name:']/following-sibling::*[1]</value>
@@ -869,7 +1065,7 @@
 	</keyword>
 	<keyword id="clickSearch">
 			<locator>xpath</locator>
-			<value>//*[@Name='Search']/following-sibling::*[1]</value>
+			<value>//*[@Name='Search']//*[@Name='Search']</value>
 	</keyword>
 	<keyword id="fromSaleDate">
 			<locator>xpath</locator>
@@ -889,7 +1085,7 @@
 	</keyword>
 	<keyword id="clickClearOnSearch">
 			<locator>xpath</locator>
-			<value>//*[@Name='Clear']/following-sibling::*[1]</value>
+			<value>//*[@Name='Clear']</value>
 	</keyword>
 	<keyword id="selectState">
 			<locator>xpath</locator>
@@ -917,7 +1113,7 @@
     </keyword>
     <keyword id="getSearchCount">
                <locator>xpath</locator>
-               <value>//*[contains(@Name='Total Record Count')]</value>
+               <value>//*[contains(@Name,'Total Record Count')]</value>
     </keyword>
     <keyword id="listOfContractId">
                <locator>xpath</locator>
@@ -1152,6 +1348,18 @@
 	<keyword id="AccountDetails_EditWarning">
 			<locator>xpath</locator>
 			<value>//*[@Name='Edit Warning']</value>
+	</keyword>
+	<keyword id="AccountDetails_SaveWarning">
+			<locator>xpath</locator>
+			<value>//*[@Name='Save Warning']</value>
+	</keyword>
+	<keyword id="AccountDetails_PropertyInfoHeader">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='PART_PropertyItemsControl']//*[@ClassName='PropertyItem']</value>
+	</keyword>
+	<keyword id="AccountDetails_PropertyInfoName">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='PropertyItemEditor']</value>
 	</keyword>
 	</Account>
 </Ocean>
