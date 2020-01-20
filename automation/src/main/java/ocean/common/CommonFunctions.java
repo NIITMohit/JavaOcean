@@ -294,6 +294,21 @@ public class CommonFunctions extends Suite {
 			throw e;
 		}
 	}
+	
+	/**
+	 * This common function is used to go to search tab
+	 * 
+	 * @return
+	 * 
+	 */
+	public void goToSearchTab() {
+		try {
+			click("clicksearchinBar");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 
 	/**
 	 * This common function is used to go to cancellation tab

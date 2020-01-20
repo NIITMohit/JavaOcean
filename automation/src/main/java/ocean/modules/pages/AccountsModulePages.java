@@ -14,11 +14,6 @@ import ocean.modules.database.AccountsDataBase;
  */
 public class AccountsModulePages extends AccountsDataBase {
 	/**
-	 * This function is used to navigate to PricingSheetListTab
-	 * 
-	 * 
-	 */
-	/**
 	 * This function is used to navigate to perform search based on search parameter
 	 * given. It accepts a hash map with input parameters
 	 * 

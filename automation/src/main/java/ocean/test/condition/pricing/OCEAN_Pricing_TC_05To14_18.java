@@ -40,7 +40,7 @@ public class OCEAN_Pricing_TC_05To14_18 extends UnderwritingModulePages {
 		if (sss.size() > 1) {
 			//// enter all mandatory values only on new business form screen
 			premiumData.putAll(enterMandatoryValuesOnContract(premiumData));
-			//// Select Surcharges
+			//// Select Surcharges options, deductibles
 			try {
 				click("scrollContractsListDown");
 			} catch (Exception e) {

@@ -5,6 +5,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import ocean.modules.database.UnderwritingDataBase;
 
@@ -23,12 +28,18 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 */
 	public void searchContractwithPendingState(String remittName, String fileName) throws Exception {
 		//// Type RemittanceName
-		type("typeToSearchRemittance", remittName);
+		searchRemittance(remittName);
 		//// expand remittance to get contracts
 		click("expandRemittance");
 		//// type filename
 		type("typeContract", fileName);
 		//// click view contract
+	}
+
+	public void searchRemittance(String remittName) throws Exception {
+		//// Type RemittanceName
+		type("typeToSearchRemittance", remittName);
+		click("expandRemittance");
 	}
 
 	/**
@@ -47,12 +58,7 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		//// click contract expander
 		click("contractExpander");
 		waitForSomeTime(2);
-		try {
-			click("typeContractNumber");
-		} catch (Exception e) {
-			click("contractExpander");
-		}
-
+		click("contractExpander");
 	}
 
 	/**
@@ -69,6 +75,30 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 			// do nothing
 		}
 		click("clearContractData");
+	}
+
+	/**
+	 * This function is used to assign Documents status to newly created remittance
+	 * 
+	 */
+	public void assignDocumentsStatus(int documentsasContract) throws Exception {
+		Actions action = new Actions(windowsDriver);
+		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).build().perform();
+		List<WebElement> documentStatus = listOfElements("documentsStatus");
+		int count = 1;
+		for (WebElement webElement : documentStatus) {
+			if (count <= documentsasContract)
+				webElement.click();
+			count++;
+		}
+		click("saveRemittance");
+		try {
+			click("lockContractYesButton");
+		} catch (Exception e) {
+			// do nothing
+		}
+		click("clickOK");
+		System.out.println("jhje");
 	}
 
 	/**
@@ -180,7 +210,12 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 			throws Exception {
 		HashMap<String, String> ss = new HashMap<String, String>();
 		//// type unique contract number
-		type("typeContractNumber", randomString(10));
+		try {
+			type("typeContractNumber", randomString(10));
+		} catch (Exception e) {
+			click("scrollContractsListUp");
+			type("typeContractNumber", randomString(10));
+		}
 		/// click search button to verify unique contract
 		click("clickSearchButtonToSearchContract");
 		//// enter purchase date of contract, -10 days from today's date
@@ -197,7 +232,14 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		click("secondaryAccountSearchButton");
 		//// Enter VIN Details
 		type("vinNumber", premiumData.get("VIN"));
-		click("vinNumberOverride");
+		String contractSummary = "0";
+		try {
+			contractSummary = getAttributeValue("vinNumberOverride", "Toggle.ToggleState");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		if (contractSummary.toLowerCase().equals("0"))
+			click("vinNumberOverride");
 		type("vinNumberMake", premiumData.get("MAKE"));
 		type("vinNumberModel", premiumData.get("MODEL"));
 		type("vinNumberYear", premiumData.get("YEAR"));
@@ -299,8 +341,45 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		//// click Folder explorer to upload files
 		click("folderExplorer");
 		waitForSomeTime(4);
+	}
+
+	/**
+	 * This function is used to drag and drop necessary remittance files
+	 * 
+	 */
+	public void dragAndDropFiles() throws Exception {
 		//// drag and drop files
 		dragAndDrop("filesSourcePath", "filesDestinationPath");
-		System.out.println("dad");
+		System.out.println("dd");
+	}
+
+	/**
+	 * This function is used to enter mandatory values in create remittance
+	 * 
+	 */
+	public String enterRemittanceMandatoryValues() throws Exception {
+		//// Type Remittance Name
+		String remittanceName = "";
+		try {
+			remittanceName = randomString(20);
+			type("remittanceName", remittanceName);
+			//// ENter core count
+			type("remittanceCoreCount", "2");
+			//// select remit type
+			typeKeys("remittanceTypeCombobox", "Standard");
+			typeKeys("remittanceRemitTypeComboBox", "Paper Remit");
+			typeKeys("remittanceSubTypeComboBox", "Dealer AGs");
+			//// type comments
+			type("remittanceComments", "Testing 123");
+			//// click save
+			click("clickSave");
+			//// close file explorer
+			click("closeFolderExplorer");
+			//// close remitance
+			click("remittanceExpander");
+		} catch (Exception e) {
+			remittanceName = "";
+		}
+		return remittanceName;
 	}
 }

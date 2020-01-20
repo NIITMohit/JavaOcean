@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 5 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Ocean">
-              <span class="suite-name border-skipped">Ocean</span>
+              <span class="suite-name border-failed">Ocean</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,26 +91,41 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,  2 skipped,  </span>
+                    <span class="method-stats">5 methods, 5 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Ocean" class="hide-methods skipped suite-Ocean"> (hide)</a> <!-- hide-methods skipped suite-Ocean -->
-                      <a href="#" panel-name="suite-Ocean" class="show-methods skipped suite-Ocean"> (show)</a> <!-- show-methods skipped suite-Ocean -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Ocean" class="hide-methods failed suite-Ocean"> (hide)</a> <!-- hide-methods failed suite-Ocean -->
+                      <a href="#" panel-name="suite-Ocean" class="show-methods failed suite-Ocean"> (show)</a> <!-- show-methods failed suite-Ocean -->
                     </span>
-                    <div class="method-list-content skipped suite-Ocean">
+                    <div class="method-list-content failed suite-Ocean">
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18" hash-for-method="validatePremiumCalculationForDealerAsPrimaryAccount">validatePremiumCalculationForDealerAsPrimaryAccount</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02" hash-for-method="searchForContractOnCancelScreen([*, Vivek, , ])">searchForContractOnCancelScreen([*, Vivek, , ])</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18" hash-for-method="validatePremiumCalculationForDealerAsPrimaryAccount">validatePremiumCalculationForDealerAsPrimaryAccount</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02" hash-for-method="searchForContractOnCancelScreen([, Vivek, Singla, *])">searchForContractOnCancelScreen([, Vivek, Singla, *])</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Ocean -->
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02" hash-for-method="searchForContractOnCancelScreen([*, , , ])">searchForContractOnCancelScreen([*, , , ])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02" hash-for-method="searchForContractOnCancelScreen([, *, *, ])">searchForContractOnCancelScreen([, *, *, ])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02" hash-for-method="searchForContractOnCancelScreen([20191411001, , , ])">searchForContractOnCancelScreen([20191411001, , , ])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Ocean -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,42 +137,389 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Ocean" class="panel Ocean">
-          <div class="suite-Ocean-class-skipped">
+          <div class="suite-Ocean-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18</span>
+              <img src="failed.png"/>
+              <span class="class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="validatePremiumCalculationForDealerAsPrimaryAccount">
-                  </a> <!-- validatePremiumCalculationForDealerAsPrimaryAccount -->
-                  <span class="method-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18.prepareRemittance(OCEAN_Pricing_TC_05To14_18.java:173)
+                  <a name="searchForContractOnCancelScreen([*, Vivek, , ])">
+                  </a> <!-- searchForContractOnCancelScreen([*, Vivek, , ]) -->
+                  <span class="method-name">searchForContractOnCancelScreen</span>
+                  <span class="parameters">([*, Vivek, , ])</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Connection refused: connect
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAP-TZD-0X74796&apos;, ip: &apos;10.55.55.153&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: driver.version: WindowsDriver
+	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$2(AppiumCommandExecutor.java:243)
+	at java.util.Optional.orElseGet(Unknown Source)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElementByXPath(WindowsDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at ocean.common.Keywords.getValue(Keywords.java:331)
+	at ocean.modules.pages.CancellationModulePages.returnSearchResultGridData(CancellationModulePages.java:603)
+	at ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02.searchForContractOnCancelScreen(OCEAN_Cancel_TC_01_02.java:69)
 	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 25 stack frames
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
+	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+	at okhttp3.RealCall.execute(RealCall.java:77)
+	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
+	... 51 more
+... Removed 27 stack frames
 </div> <!-- stack-trace -->
                   <em>
-(Validate premium calculation.)                  </em>
+(Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="validatePremiumCalculationForDealerAsPrimaryAccount">
-                  </a> <!-- validatePremiumCalculationForDealerAsPrimaryAccount -->
-                  <span class="method-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18.prepareRemittance(OCEAN_Pricing_TC_05To14_18.java:173)
+                  <a name="searchForContractOnCancelScreen([, Vivek, Singla, *])">
+                  </a> <!-- searchForContractOnCancelScreen([, Vivek, Singla, *]) -->
+                  <span class="method-name">searchForContractOnCancelScreen</span>
+                  <span class="parameters">([, Vivek, Singla, *])</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Connection refused: connect
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAP-TZD-0X74796&apos;, ip: &apos;10.55.55.153&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: driver.version: WindowsDriver
+	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$2(AppiumCommandExecutor.java:243)
+	at java.util.Optional.orElseGet(Unknown Source)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElementByXPath(WindowsDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at ocean.common.Keywords.click(Keywords.java:33)
+	at ocean.common.CommonFunctions.goToMailServiceTab(CommonFunctions.java:355)
+	at ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02.searchForContractOnCancelScreen(OCEAN_Cancel_TC_01_02.java:36)
 	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 25 stack frames
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
+	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+	at okhttp3.RealCall.execute(RealCall.java:77)
+	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
+	... 51 more
+... Removed 27 stack frames
 </div> <!-- stack-trace -->
                   <em>
-(Validate premium calculation.)                  </em>
+(Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="searchForContractOnCancelScreen([*, , , ])">
+                  </a> <!-- searchForContractOnCancelScreen([*, , , ]) -->
+                  <span class="method-name">searchForContractOnCancelScreen</span>
+                  <span class="parameters">([*, , , ])</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Connection refused: connect
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAP-TZD-0X74796&apos;, ip: &apos;10.55.55.153&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: driver.version: WindowsDriver
+	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$2(AppiumCommandExecutor.java:243)
+	at java.util.Optional.orElseGet(Unknown Source)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElementByXPath(WindowsDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at ocean.common.Keywords.click(Keywords.java:33)
+	at ocean.common.CommonFunctions.goToMailServiceTab(CommonFunctions.java:355)
+	at ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02.searchForContractOnCancelScreen(OCEAN_Cancel_TC_01_02.java:36)
+	at java.util.ArrayList.forEach(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
+	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+	at okhttp3.RealCall.execute(RealCall.java:77)
+	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
+	... 51 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="searchForContractOnCancelScreen([, *, *, ])">
+                  </a> <!-- searchForContractOnCancelScreen([, *, *, ]) -->
+                  <span class="method-name">searchForContractOnCancelScreen</span>
+                  <span class="parameters">([, *, *, ])</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Connection refused: connect
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAP-TZD-0X74796&apos;, ip: &apos;10.55.55.153&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: driver.version: WindowsDriver
+	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$2(AppiumCommandExecutor.java:243)
+	at java.util.Optional.orElseGet(Unknown Source)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElementByXPath(WindowsDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at ocean.common.Keywords.click(Keywords.java:33)
+	at ocean.common.CommonFunctions.goToMailServiceTab(CommonFunctions.java:355)
+	at ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02.searchForContractOnCancelScreen(OCEAN_Cancel_TC_01_02.java:36)
+	at java.util.ArrayList.forEach(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
+	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+	at okhttp3.RealCall.execute(RealCall.java:77)
+	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
+	... 51 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="searchForContractOnCancelScreen([20191411001, , , ])">
+                  </a> <!-- searchForContractOnCancelScreen([20191411001, , , ]) -->
+                  <span class="method-name">searchForContractOnCancelScreen</span>
+                  <span class="parameters">([20191411001, , , ])</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Connection refused: connect
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAP-TZD-0X74796&apos;, ip: &apos;10.55.55.153&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: driver.version: WindowsDriver
+	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$2(AppiumCommandExecutor.java:243)
+	at java.util.Optional.orElseGet(Unknown Source)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElementByXPath(WindowsDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at ocean.common.Keywords.click(Keywords.java:33)
+	at ocean.common.CommonFunctions.goToMailServiceTab(CommonFunctions.java:355)
+	at ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02.searchForContractOnCancelScreen(OCEAN_Cancel_TC_01_02.java:36)
+	at java.util.ArrayList.forEach(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
+	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+	at okhttp3.RealCall.execute(RealCall.java:77)
+	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
+	... 51 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Ocean-class-skipped -->
+          </div> <!-- suite-Ocean-class-failed -->
         </div> <!-- panel Ocean -->
         <div panel-name="test-xml-Ocean" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -170,7 +532,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Ocean&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Cancellation&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18&quot;/&gt;
+      &lt;class name=&quot;ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Cancellation --&gt;
 &lt;/suite&gt; &lt;!-- Ocean --&gt;
@@ -198,7 +560,7 @@
               <span class="test-group-name">regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
+                <span class="method-in-group-name">searchForContractOnCancelScreen</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -218,20 +580,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validatePremiumCalculationForDealerAsPrimaryAccount')
-data.setCell(0, 2, 'ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18')
-data.setCell(0, 3, 0);
+data.setCell(0, 1, 'searchForContractOnCancelScreen')
+data.setCell(0, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02')
+data.setCell(0, 3, 153844);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'validatePremiumCalculationForDealerAsPrimaryAccount')
-data.setCell(1, 2, 'ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18')
-data.setCell(1, 3, 0);
+data.setCell(1, 1, 'searchForContractOnCancelScreen')
+data.setCell(1, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02')
+data.setCell(1, 3, 16105);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'searchForContractOnCancelScreen')
+data.setCell(2, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02')
+data.setCell(2, 3, 16102);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'searchForContractOnCancelScreen')
+data.setCell(3, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02')
+data.setCell(3, 3, 16093);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'searchForContractOnCancelScreen')
+data.setCell(4, 2, 'ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02')
+data.setCell(4, 3, 16077);
 window.suiteTableData['Ocean']= { tableData: data, tableDiv: 'times-div-Ocean'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Ocean">
               </div> <!-- times-div-Ocean -->
             </div> <!-- times-div -->
@@ -257,52 +631,88 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ocean.test.condition.cancellation.OCEAN_Cancel_TC_01_02</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setup(org.testng.TestRunner@71945bc0)</span>
+                <span class="method-name">setup(org.testng.TestRunner@24e08d59)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">createParent(org.testng.TestRunner@71945bc0)</span>
-                <span class="method-start">6604 ms</span>
+                <span class="method-name">createParent(org.testng.TestRunner@24e08d59)</span>
+                <span class="method-start">6892 ms</span>
               </div> <!-- configuration-test before -->
-              <div class="configuration-class before">
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">7385 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">prepareRemittance</span>
-                <span class="method-start">6626 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="configuration-method before">
-                <span class="method-name">screenshot</span>
-                <span class="method-start">25835 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
-                <span class="method-start">25840 ms</span>
+                <span class="method-name">searchForContractOnCancelScreen([*, Vivek, , ])</span>
+                <span class="method-start">7386 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">25844 ms</span>
+                <span class="method-name">tearDown([TestResult name=searchForContractOnCancelScreen status=FAILURE method=OCEAN_Cancel_TC_01_02.searchF...)</span>
+                <span class="method-start">161237 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">screenshot</span>
-                <span class="method-start">25845 ms</span>
+                <span class="method-start">163490 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
-                <span class="method-start">25846 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">searchForContractOnCancelScreen([, Vivek, Singla, *])</span>
+                <span class="method-start">163490 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">25849 ms</span>
+                <span class="method-name">tearDown([TestResult name=searchForContractOnCancelScreen status=FAILURE method=OCEAN_Cancel_TC_01_02.searchF...)</span>
+                <span class="method-start">179569 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-test after">
-                <span class="method-name">clearData</span>
-                <span class="method-start">25854 ms</span>
-              </div> <!-- configuration-test after -->
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">181612 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">searchForContractOnCancelScreen([*, , , ])</span>
+                <span class="method-start">181612 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=searchForContractOnCancelScreen status=FAILURE method=OCEAN_Cancel_TC_01_02.searchF...)</span>
+                <span class="method-start">197719 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">199766 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">searchForContractOnCancelScreen([, *, *, ])</span>
+                <span class="method-start">199766 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=searchForContractOnCancelScreen status=FAILURE method=OCEAN_Cancel_TC_01_02.searchF...)</span>
+                <span class="method-start">215870 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">217922 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">searchForContractOnCancelScreen([20191411001, , , ])</span>
+                <span class="method-start">217922 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=searchForContractOnCancelScreen status=FAILURE method=OCEAN_Cancel_TC_01_02.searchF...)</span>
+                <span class="method-start">234018 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">25884 ms</span>
+                <span class="method-name">tearDown(org.testng.TestRunner@24e08d59)</span>
+                <span class="method-start">236108 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

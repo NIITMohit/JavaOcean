@@ -44,6 +44,7 @@ public class SearchModulePages extends SearchDataBase {
 	 * 
 	 */
 	public void searchContractGivenInputParamaters(HashMap<String, String> searchParamaters) throws Exception {
+		click("clickClearOnSearch");
 		for (@SuppressWarnings("rawtypes")
 		Map.Entry mapElement : searchParamaters.entrySet()) {
 			String searchParamater = (String) mapElement.getKey();
@@ -142,6 +143,7 @@ public class SearchModulePages extends SearchDataBase {
 			}
 		}
 		///// click search button
+		click("clickSearch");
 	}
 
 	/**

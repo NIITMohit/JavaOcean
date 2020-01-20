@@ -52,29 +52,27 @@ public class Keywords extends Variables {
 	 * @throws Exception
 	 */
 	public void dragAndDrop(String sourceLocator, String destinationLocator) throws Exception {
-		Actions action = new Actions(windowsDriver);
-		WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
-		WebElement sourceElement = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(sourceLocator)));
-		WebElement destinationElement = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(destinationLocator)));
+		@SuppressWarnings("rawtypes")
+		WindowsDriver wd = windowsDriver;
 		for (int i = 0; i < 4; i++) {
-			System.out.println(i);
+			System.out.println(i+1);
+			Actions action = new Actions(wd);
+			WebDriverWait wait = new WebDriverWait(wd, mediumWait);
+			WebElement sourceElement = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(sourceLocator)));
+			WebElement destinationElement = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(destinationLocator)));
 			try {
-				action.sendKeys(Keys.ESCAPE);
 				//// Wait till web element is located
 				System.out.println(sourceElement);
 				System.out.println(destinationElement);
 				waitForSomeTime(4);
 				//// perform drag and drop
-				action.dragAndDrop(sourceElement, destinationElement).moveToElement(destinationElement, 40, 40).build()
-						.perform();
+				action.dragAndDrop(sourceElement, destinationElement).moveByOffset(40, 40).build().perform();
 				break;
 			} catch (Exception e) {
 				if (i < 3) {
-					action.sendKeys(Keys.ESCAPE);
-					System.out.println(e.toString());
-					continue;
+					click("clickUnderWritingTab");
 				} else
 					throw e;
 			}
@@ -159,7 +157,7 @@ public class Keywords extends Variables {
 			}
 		}
 	}
-	
+
 	/**
 	 * waitForSomeTime keyword , this function is used to indulge some delay in
 	 * script
@@ -473,6 +471,8 @@ public class Keywords extends Variables {
 			} catch (Exception e) {
 				if (i < 3)
 					continue;
+				else
+					throw e;
 			}
 		}
 		return flag;
@@ -499,8 +499,43 @@ public class Keywords extends Variables {
 			} catch (Exception e) {
 				if (i < 3)
 					continue;
+				else
+					throw e;
 			}
 		}
 		return value;
+	}
+
+	/**
+	 * listOfElements keyword , this function is used to get list of all elements
+	 * based on unique identifier
+	 *
+	 * @param locator : unique identifier to locate object
+	 * @return List of web elements
+	 */
+	@SuppressWarnings("unchecked")
+	public List<WebElement> listOfElements(String locator) {
+		List<WebElement> we = null;
+		for (int i = 0; i < 4; i++) {
+			try {
+				waitForSomeTime(5);
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				we = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
+				if (we.size() < 1) {
+					if (i < 3)
+						continue;
+					else
+						break;
+				}
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+		return we;
 	}
 }
