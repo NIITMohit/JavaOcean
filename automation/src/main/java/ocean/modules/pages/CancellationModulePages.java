@@ -262,39 +262,39 @@ public class CancellationModulePages extends CancellationDataBase {
 	 * 
 	 */
 	public void toggleSectionsOnNewCancellationScreen(String section) throws Exception {
-		String contractSummary = getAtttibuteValue("toggleContractSummaryOnNewCancellationO", "Toggle.ToggleState");
+		String contractSummary = getAttributeValue("toggleContractSummaryOnNewCancellationO", "Toggle.ToggleState");
 		if (contractSummary.toLowerCase().equals("1"))
 			click("toggleContractSummaryOnNewCancellation");
-		String contractDetails = getAtttibuteValue("toggleContractDetailsOnNewCancellationO", "Toggle.ToggleState");
+		String contractDetails = getAttributeValue("toggleContractDetailsOnNewCancellationO", "Toggle.ToggleState");
 		if (contractDetails.toLowerCase().equals("1"))
 			click("toggleContractDetailsOnNewCancellation");
-		String primaryAccountDetails = getAtttibuteValue("togglePrimaryAccountDetailsOnNewCancellationO",
+		String primaryAccountDetails = getAttributeValue("togglePrimaryAccountDetailsOnNewCancellationO",
 				"Toggle.ToggleState");
 		if (primaryAccountDetails.toLowerCase().equals("1"))
 			click("togglePrimaryAccountDetailsOnNewCancellation");
-		String secondaryAccountDetails = getAtttibuteValue("toggleSecondaryAccountDetailsOnNewCancellationO",
+		String secondaryAccountDetails = getAttributeValue("toggleSecondaryAccountDetailsOnNewCancellationO",
 				"Toggle.ToggleState");
 		if (secondaryAccountDetails.toLowerCase().equals("1"))
 			click("toggleSecondaryAccountDetailsOnNewCancellation");
-		String customerDetails = getAtttibuteValue("toggleCustomerDetailsOnNewCancellationO", "Toggle.ToggleState");
+		String customerDetails = getAttributeValue("toggleCustomerDetailsOnNewCancellationO", "Toggle.ToggleState");
 		if (customerDetails.toLowerCase().equals("1"))
 			click("toggleCustomerDetailsOnNewCancellation");
-		String vehicleDetails = getAtttibuteValue("toggleVehicleDetailsOnNewCancellationO", "Toggle.ToggleState");
+		String vehicleDetails = getAttributeValue("toggleVehicleDetailsOnNewCancellationO", "Toggle.ToggleState");
 		if (vehicleDetails.toLowerCase().equals("1"))
 			click("toggleVehicleDetailsOnNewCancellation");
-		String agentDetails = getAtttibuteValue("toggleAgentDetailsOnNewCancellationO", "Toggle.ToggleState");
+		String agentDetails = getAttributeValue("toggleAgentDetailsOnNewCancellationO", "Toggle.ToggleState");
 		if (agentDetails.toLowerCase().equals("1"))
 			click("toggleAgentDetailsOnNewCancellation");
-		String dealerInfoView = getAtttibuteValue("toggleDealerInfoViewOnNewCancellationO", "Toggle.ToggleState");
+		String dealerInfoView = getAttributeValue("toggleDealerInfoViewOnNewCancellationO", "Toggle.ToggleState");
 		if (dealerInfoView.toLowerCase().equals("1"))
 			click("toggleDealerInfoViewOnNewCancellation");
-		String certInfoView = getAtttibuteValue("toggleCertInfoViewOnNewCancellationO", "Toggle.ToggleState");
+		String certInfoView = getAttributeValue("toggleCertInfoViewOnNewCancellationO", "Toggle.ToggleState");
 		if (certInfoView.toLowerCase().equals("1"))
 			click("toggleCertInfoViewOnNewCancellation");
-		String breakDownInfoView = getAtttibuteValue("toggleBreakDownInfoViewOnNewCancellationO", "Toggle.ToggleState");
+		String breakDownInfoView = getAttributeValue("toggleBreakDownInfoViewOnNewCancellationO", "Toggle.ToggleState");
 		if (breakDownInfoView.toLowerCase().equals("1"))
 			click("toggleBreakDownInfoViewOnNewCancellation");
-		String ruleInfoView = getAtttibuteValue("toggleRuleInfoViewOnNewCancellationO", "Toggle.ToggleState");
+		String ruleInfoView = getAttributeValue("toggleRuleInfoViewOnNewCancellationO", "Toggle.ToggleState");
 		if (ruleInfoView.toLowerCase().equals("1"))
 			click("toggleRuleInfoViewOnNewCancellation");
 		switch (section.toLowerCase()) {

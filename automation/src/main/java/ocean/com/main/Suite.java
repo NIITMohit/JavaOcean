@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -60,10 +61,8 @@ public class Suite extends ReadData {
 			 * System.out.println("Ocean Application Started Waiting to application to boot"
 			 * ); Thread.sleep(500000); } catch (Exception e) { // do nothing }
 			 */
-
 			//// Read xml, is uses to read object repository and save in local variable
 			readXML(currentDir + "\\Repository\\OR.xml");
-
 			//// Setting desired capabilities to help appium understand which platform and
 			//// application need to attach session
 			DesiredCapabilities appCapabilities = new DesiredCapabilities();
