@@ -500,7 +500,11 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 				click("clickAddCheckAmtOnRemittance");
 			}
 			//// click save
-			click("clickSave");
+			String clickState = getAttributeValue("clickSave", "IsEnabled");
+			if (clickState.toLowerCase().equals("true"))
+				click("clickSave");
+			else
+				return remittanceName;
 			// click("remittanceExpander");
 			//// close file explorer
 			for (int i = 0; i < 2; i++) {
@@ -511,7 +515,6 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 					continue;
 				}
 			}
-
 			//// close remitance
 			remittanceExpander();
 		} catch (Exception e) {
