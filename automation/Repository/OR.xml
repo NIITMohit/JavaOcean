@@ -652,11 +652,11 @@
 			<value>//*[@AutomationId='Code']</value>
 	</keyword>
 	<keyword id="clickSave">
-			<locator>NAME</locator>
+			<locator>Name</locator>
 			<value>Save</value>
 	</keyword>
 	<keyword id="clickEditAndDeletePriceSheet">
-			<locator>NAME</locator>
+			<locator>Name</locator>
 			<value>Display/Edit Price Sheet</value>
 	</keyword>
 	<keyword id="selectCoverage">
@@ -741,6 +741,14 @@
 			<locator>Name</locator>
 			<value>Underwriting</value>
 	</keyword>
+	<keyword id="checkTab">
+			<locator>Name</locator>
+			<value>Checks</value>
+	</keyword>
+	<keyword id="clickRemittanceListTab">
+			<locator>Name</locator>
+			<value>Remittance List</value>
+	</keyword>
 	<keyword id="clickonHoldContractsTab">
 			<locator>Name</locator>
 			<value>OnHold Contracts</value>
@@ -775,7 +783,7 @@
 	</keyword>
 	<keyword id="remittanceExpander">
 			<locator>xpath</locator>
-			<value>(//*[@AutomationId='ExpanderHandle' and @ClassName='Button'])[2]</value>
+			<value>//*[@AutomationId='crRemitExpander']//*[@AutomationId='ExpanderHandle']</value>
 	</keyword>	
 	<keyword id="viewInToolbar">
 			<locator>Name</locator>
@@ -949,9 +957,17 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='txtCoreCount']</value>
 	</keyword>
+	<keyword id="remittanceLWACount">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='txtLWACount']</value>
+	</keyword>
 	<keyword id="remittanceTypeCombobox">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Type']</value>
+	</keyword>
+	<keyword id="remittanceContractCombobox">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Source']</value>
 	</keyword>
 	<keyword id="remittanceRemitTypeComboBox">
 			<locator>xpath</locator>
@@ -973,9 +989,89 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Cell_UW_DOCUMENTTYPE']//*[@Name='-select-']</value>
 	</keyword>
+	<keyword id="comboboxforDocumentStatus">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='ForeignKeyCellEditor']</value>
+	</keyword>
+	<keyword id="selectContractAsDoumentStatus">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'UW_DOCUMENTTYPE_')]//*[@Name='Contract']</value>
+	</keyword>
+	<keyword id="selectCheckAsDoumentStatus">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'UW_DOCUMENTTYPE_')]//*[@Name='Check']</value>
+	</keyword>
 	<keyword id="saveRemittance">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='SaveButton']//*[@ClassName='Image']</value>
+	</keyword>
+	<keyword id="saveAllOnRemittance">
+			<locator>xpath</locator>
+			<value>//*[@ClassName='PaperRemittanceMainView']//*[@ClassName='ToolBar']//*[@ClassName='Button']//*[@ClassName='Image']</value>
+	</keyword>
+	<keyword id="loadRemittance">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='ViewChecks']//*[@ClassName='Image']</value>
+	</keyword>
+	<keyword id="refreshRemittance">
+			<locator>Name</locator>
+			<value>Refresh Remittances</value>
+	</keyword>
+	<keyword id="waitBusyIndicator">
+			<locator>Name</locator>
+			<value>Please wait...</value>
+	</keyword>
+	<keyword id="checkTabCheckNumber">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CHECKNUMBER' and @LocalizedControlType = 'custom']</value>
+	</keyword>
+	<keyword id="checkTabCheckAmount">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CHECKAMOUNT' and @LocalizedControlType = 'custom']</value>
+	</keyword>
+	<keyword id="addCheckOnRemittance">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='CheckNumTxtBox']</value>
+	</keyword>
+	<keyword id="addCheckAmtOnRemittance">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='CheckDlrTxtBox']</value>
+	</keyword>
+	<keyword id="clickAddCheckAmtOnRemittance">
+			<locator>Name</locator>
+			<value>Add</value>
+	</keyword>
+	<keyword id="clickRemittanceReset">
+			<locator>Name</locator>
+			<value>Reset</value>
+	</keyword>
+	<keyword id="remitName">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_RemittanceName']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitCore">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_CoreCount']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitLWA">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_LWACount']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitSource">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_REMIT_SOURCE_ID']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitType">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_REMIT_TYPE_ID']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="UVremitType">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_UW_REMIT_TYPE_ID']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitSubType">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_REMIT_SUBTYPE_ID']//*[@ClassName='TextBlockLite']</value>
 	</keyword>
 	</UnderWriting>
 	<Search>
