@@ -55,24 +55,19 @@ public class Keywords extends Variables {
 		@SuppressWarnings("rawtypes")
 		WindowsDriver wd = windowsDriver;
 		for (int i = 0; i < 4; i++) {
-			System.out.println(i+1);
-			Actions action = new Actions(wd);
-			WebDriverWait wait = new WebDriverWait(wd, mediumWait);
-			WebElement sourceElement = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(sourceLocator)));
-			WebElement destinationElement = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(destinationLocator)));
 			try {
-				//// Wait till web element is located
-				System.out.println(sourceElement);
-				System.out.println(destinationElement);
-				waitForSomeTime(4);
+				Actions action = new Actions(wd);
+				WebDriverWait wait = new WebDriverWait(wd, mediumWait);
+				WebElement sourceElement = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(sourceLocator)));
+				WebElement destinationElement = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(destinationLocator)));
 				//// perform drag and drop
-				action.dragAndDrop(sourceElement, destinationElement).moveByOffset(40, 40).build().perform();
+				action.clickAndHold(sourceElement).moveToElement(destinationElement).release().build().perform();
 				break;
 			} catch (Exception e) {
 				if (i < 3) {
-					click("clickUnderWritingTab");
+					continue;
 				} else
 					throw e;
 			}
@@ -294,7 +289,11 @@ public class Keywords extends Variables {
 			try {
 				//// Wait till web element is located
 				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
-				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				try {
+					wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				} catch (Exception e) {
+					wait.until(ExpectedConditions.presenceOfElementLocated(ObjectRepo.fetchOR(locator)));
+				}
 				@SuppressWarnings("unchecked")
 				//// Find list of web elements
 				List<WebElement> listWebElement = windowsDriver.findElements(ObjectRepo.fetchOR(locator));

@@ -44,6 +44,7 @@ public class Suite extends ReadData {
 	 * driver session to ocean application.
 	 *
 	 * @param context the new up
+	 * @throws Exception
 	 */
 	@SuppressWarnings("rawtypes")
 	@BeforeSuite

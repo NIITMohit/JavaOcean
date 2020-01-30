@@ -17,10 +17,10 @@ import ocean.modules.pages.UnderwritingModulePages;
  * OCEAN_Pricing_TC_05To14_18 class automates Ocean Pricing module Test
  * Condition 05 to 14 and 18, which holds 11 Test Case; Test Condition
  * Description : Validate premium calculation.
- * 
+ * Account : 
  * @author Mohit Goel
  */
-public class OCEAN_Pricing_TC_05To14_18 extends UnderwritingModulePages {
+public class OCEAN_Pricing_TC_05To14_18_Underwriting_TC_21To23_25To33 extends UnderwritingModulePages {
 
 	/**
 	 * This function automates test Condition 05 to 14 and 18 respectively; Test
@@ -173,6 +173,7 @@ public class OCEAN_Pricing_TC_05To14_18 extends UnderwritingModulePages {
 			String fileName = contractFromRemittance.get(1).get("FILE_NAME");
 			//// visit underwriting tab
 			goToUnderWritingTab();
+			goToRemittanceList();
 			//// Search a contract with pending state, remittance name and contract name is
 			//// fetched from database
 			searchContractwithPendingState(remittName, fileName);
