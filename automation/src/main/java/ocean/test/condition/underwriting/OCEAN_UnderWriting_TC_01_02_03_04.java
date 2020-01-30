@@ -35,8 +35,8 @@ public class OCEAN_UnderWriting_TC_01_02_03_04 extends UnderwritingModulePages {
 		dragAndDropFiles();
 		//// fill all necessary fields in create remittance
 		String remittanceName = enterRemittanceValues(inputArray);
-		if (inputArray[4] == null || inputArray[5] == null || inputArray[0] == null || inputArray[1] == null
-				|| inputArray[2] == null) {
+		if (inputArray[4] == "" || inputArray[5] == "" || inputArray[0] == "" || inputArray[1] == ""
+				|| inputArray[2] == "") {
 			if (remittanceName.equals("")) {
 				assertEquals(true, true);
 			} else {
