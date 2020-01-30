@@ -294,7 +294,67 @@ public class CommonFunctions extends Suite {
 			throw e;
 		}
 	}
-	
+
+	/**
+	 * This common function is used to expand contract
+	 * 
+	 * @return
+	 * 
+	 */
+	public void contractExpander() {
+		String att11 = "";
+		String att21 = "";
+		try {
+			att11 = getAttributeValue("checkTab", "IsOffscreen");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		click("contractExpander");
+		try {
+			att21 = getAttributeValue("checkTab", "IsOffscreen");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		if (att11.equals(att21)) {
+			click("contractExpander");
+		}
+	}
+
+	/**
+	 * This common function is used to exoand contract
+	 * 
+	 * @return
+	 * 
+	 */
+	public void remittanceExpander() {
+		String att1 = "";
+		String att2 = "";
+		try {
+			att1 = getAttributeValue("remittanceName", "BoundingRectangle");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		click("remittanceExpander");
+		att2 = getAttributeValue("remittanceName", "BoundingRectangle");
+		if (att1.equals(att2)) {
+			click("remittanceExpander");
+		}
+	}
+
+	/**
+	 * This common function is used to go to underwriting tab
+	 * 
+	 * @return
+	 * 
+	 */
+	public void goToCheckTab() {
+		try {
+			click("checkTab");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 	/**
 	 * This common function is used to go to search tab
 	 * 
@@ -309,11 +369,22 @@ public class CommonFunctions extends Suite {
 		}
 	}
 
+	/**
+	 * This common function is used to go goToRemittanceList
+	 * 
+	 * 
+	 */
+	public void goToRemittanceList() {
+		try {
+			click("clickRemittanceListTab");
+		} catch (Exception e) {
+			// throw e;
+		}
+	}
 
 	/**
 	 * This common function is used to go to cancellation tab
 	 * 
-	 * @return
 	 * 
 	 */
 	public void goToCancellationTab() {
