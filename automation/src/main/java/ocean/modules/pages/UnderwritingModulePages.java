@@ -522,4 +522,33 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		}
 		return remittanceName;
 	}
+
+	/**
+	 * This function is used to enter values in create remittance
+	 * 
+	 */
+	public void enterRemittanceValueswithoutSave(String[] inputArray) throws Exception {
+		//// Type Remittance Name
+		type("remittanceName", inputArray[0]);
+		//// Enter core count
+		type("remittanceCoreCount", inputArray[1]);
+		type("remittanceLWACount", inputArray[2]);
+		//// select remit type
+		typeKeys("remittanceContractCombobox", inputArray[3]);
+		typeKeys("remittanceTypeCombobox", inputArray[4]);
+		typeKeys("remittanceRemitTypeComboBox", inputArray[5]);
+		typeKeys("remittanceSubTypeComboBox", inputArray[6]);
+		//// type comments
+		type("remittanceComments", inputArray[7]);
+	}
+
+	/**
+	 * This function is used to enter values in create remittance
+	 * 
+	 */
+	public String[] getRemittanceValueswithoutSave() throws Exception {
+		String[] dasd = { getValue("remittanceName"), getValue("remittanceCoreCount"), getValue("remittanceLWACount"),
+				getValue("remittanceComments") };
+		return dasd;
+	}
 }

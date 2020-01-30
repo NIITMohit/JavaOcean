@@ -287,6 +287,7 @@ public class Keywords extends Variables {
 		String abc = "";
 		for (int i = 0; i < 4; i++) {
 			try {
+				waitForSomeTime(1);
 				//// Wait till web element is located
 				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
 				try {

@@ -9,26 +9,18 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Ocean</th></tr>
-<tr><td><a href="#t0">Cancellation</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">885,389</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Cancellation</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">751,270</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Ocean</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Cancellation &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04</td><td><a href="#m0">postRemittance</a></td><td rowspan="3">1579767953554</td><td rowspan="3">506755</td></tr><tr class="failedeven"><td><a href="#m1">postRemittance</a></td></tr><tr class="failedeven"><td><a href="#m2">postRemittance</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Ocean</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Cancellation &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06</td><td><a href="#m0">createRemittance</a></td><td rowspan="1">1580380860207</td><td rowspan="1">750911</td></tr></tbody>
 </table>
-<h2>Cancellation</h2><h3 id="m0">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04#postRemittance</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[, 1.0, 1.0, Paper, , , , Automation 1, 1231, 1211]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.name: OK (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at ocean.common.Keywords.click(Keywords.java:33)
-	at ocean.modules.pages.UnderwritingModulePages.addCheck(UnderwritingModulePages.java:152)
-	at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04.postRemittance(OCEAN_UnderWriting_TC_01_02_03_04.java:41)
-	at java.util.ArrayList.forEach(Unknown Source)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+<h2>Cancellation</h2><h3 id="m0">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06#createRemittance</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;LAP-TZD-0X74796&apos;, ip: &apos;10.55.55.153&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
 Driver info: io.appium.java_client.windows.WindowsDriver
 Capabilities {app: C:\Users\mohit.goel\AppData..., deviceName: LAP-TZD-0X74796, javascriptEnabled: true, platform: WINDOWS, platformName: WINDOWS}
-Session ID: 489fb6e9-29d6-4152-a5f4-e66b914cde14
-*** Element info: {Using=name, value=OK}
+Session ID: 007a2646-b4ce-4e98-ac8b-2c60d319e7c2
+*** Element info: {Using=xpath, value=//*[@AutomationId=&apos;txtRemittanceName&apos;]}
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
 	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
@@ -44,98 +36,21 @@ Session ID: 489fb6e9-29d6-4152-a5f4-e66b914cde14
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByName(DefaultGenericMobileDriver.java:118)
-	at io.appium.java_client.AppiumDriver.findElementByName(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElementByName(WindowsDriver.java:1)
-	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.windows.WindowsDriver.findElementByXPath(WindowsDriver.java:1)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
 	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
 	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04#postRemittance</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[, , , ACH, , , , Automation 3, 1233, 1213]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LAP-TZD-0X74796&apos;, ip: &apos;10.55.55.153&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: io.appium.java_client.windows.WindowsDriver
-Capabilities {app: C:\Users\mohit.goel\AppData..., deviceName: LAP-TZD-0X74796, javascriptEnabled: true, platform: WINDOWS, platformName: WINDOWS}
-Session ID: 489fb6e9-29d6-4152-a5f4-e66b914cde14
-*** Element info: {Using=name, value=Underwriting}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByName(DefaultGenericMobileDriver.java:118)
-	at io.appium.java_client.AppiumDriver.findElementByName(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElementByName(WindowsDriver.java:1)
-	at org.openqa.selenium.By$ByName.findElement(By.java:284)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	at ocean.common.Keywords.click(Keywords.java:33)
-	at ocean.common.CommonFunctions.goToUnderWritingTab(CommonFunctions.java:292)
-	at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04.postRemittance(OCEAN_UnderWriting_TC_01_02_03_04.java:27)
-	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04#postRemittance</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[, , , Web, , , , Automation 2, 1232, 1212]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LAP-TZD-0X74796&apos;, ip: &apos;10.55.55.153&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: io.appium.java_client.windows.WindowsDriver
-Capabilities {app: C:\Users\mohit.goel\AppData..., deviceName: LAP-TZD-0X74796, javascriptEnabled: true, platform: WINDOWS, platformName: WINDOWS}
-Session ID: 489fb6e9-29d6-4152-a5f4-e66b914cde14
-*** Element info: {Using=name, value=Underwriting}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByName(DefaultGenericMobileDriver.java:118)
-	at io.appium.java_client.AppiumDriver.findElementByName(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElementByName(WindowsDriver.java:1)
-	at org.openqa.selenium.By$ByName.findElement(By.java:284)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	at ocean.common.Keywords.click(Keywords.java:33)
-	at ocean.common.CommonFunctions.goToUnderWritingTab(CommonFunctions.java:292)
-	at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04.postRemittance(OCEAN_UnderWriting_TC_01_02_03_04.java:27)
+	at ocean.common.Keywords.getValue(Keywords.java:296)
+	at ocean.modules.pages.UnderwritingModulePages.getRemittanceValueswithoutSave(UnderwritingModulePages.java:550)
+	at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06.createRemittance(OCEAN_UnderWriting_TC_06.java:42)
 	at java.util.ArrayList.forEach(Unknown Source)
 ... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>

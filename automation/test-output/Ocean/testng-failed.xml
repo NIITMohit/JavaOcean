@@ -3,16 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Ocean]">
   <test thread-count="5" name="Cancellation(failed)">
     <classes>
-      <class name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04">
+      <class name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06">
         <methods>
           <include name="createParent"/>
           <include name="setup"/>
           <include name="screenshot"/>
-          <include name="postRemittance" invocation-numbers="0 1 2"/>
           <include name="tearDown"/>
           <include name="tearDown"/>
+          <include name="createRemittance"/>
         </methods>
-      </class> <!-- ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04 -->
+      </class> <!-- ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06 -->
     </classes>
   </test> <!-- Cancellation(failed) -->
 </suite> <!-- Failed suite [Ocean] -->
