@@ -90,6 +90,31 @@ public class UnderwritingDataBase extends CommonFunctions {
 
 	/**
 	 * This gets search all sales details and return us latest contract id based on
+	 * status
+	 * 
+	 */
+	public String deleteRemittanceStatus(String remittance) throws Exception {
+		String contract_id = "";
+		try {
+			aulDBConnect();
+			String query = "select isDeleted from  dbo.remittance where remittanceName = '" + remittance
+					+ "'  order by 1 desc;";
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			HashMap<String, String> dbMap = returnData(rs);
+			contract_id = dbMap.get("isDeleted");
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return contract_id;
+	}
+
+	/**
+	 * This gets search all sales details and return us latest contract id based on
 	 * status it will fetch contracts for current year only
 	 * 
 	 */

@@ -5,8 +5,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import ocean.modules.database.UnderwritingDataBase;
@@ -421,12 +423,41 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	}
 
 	/**
+	 * This function is used to delete remittance
+	 * 
+	 */
+	public void deleteMyRemittance() throws Exception {
+		click("remitName");
+		Actions action = new Actions(windowsDriver);
+		action.sendKeys(Keys.ARROW_RIGHT).sendKeys(Keys.ARROW_RIGHT).sendKeys(Keys.ARROW_RIGHT)
+				.sendKeys(Keys.ARROW_RIGHT).build().perform();
+		rightClick("remitName");
+		click("deleteremittance");
+		click("lockContractYesButton");
+
+	}
+
+	/**
 	 * This function is used to drag and drop necessary remittance files
 	 * 
 	 */
 	public void dragAndDropFiles() throws Exception {
 		//// drag and drop files
 		dragAndDrop("filesSourcePath", "filesDestinationPath");
+	}
+
+	/**
+	 * This function is used to drag and drop necessary remittance files
+	 * 
+	 */
+	public void getPDFStatus() throws Exception {
+		//// drag and drop files
+		List<WebElement> we = listOfElements("pdfStatus");
+		for (WebElement webElement : we) {
+			if (!webElement.getText().toLowerCase().contains(".pdf")) {
+				throw new Exception("Contract Files Status didn't matched");
+			}
+		}
 	}
 
 	/**
