@@ -522,4 +522,70 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		}
 		return remittanceName;
 	}
+
+	/**
+	 * This function is used to enter values in create remittance
+	 * 
+	 */
+	public void enterRemittanceValueswithoutSave(String[] inputArray) throws Exception {
+		//// Type Remittance Name
+		type("remittanceName", inputArray[0]);
+		//// Enter core count
+		type("remittanceCoreCount", inputArray[1]);
+		type("remittanceLWACount", inputArray[2]);
+		//// select remit type
+		typeKeys("remittanceContractCombobox", inputArray[3]);
+		typeKeys("remittanceTypeCombobox", inputArray[4]);
+		typeKeys("remittanceRemitTypeComboBox", inputArray[5]);
+		typeKeys("remittanceSubTypeComboBox", inputArray[6]);
+		//// type comments
+		type("remittanceComments", inputArray[7]);
+	}
+
+	/**
+	 * This function is used to enter check details
+	 * 
+	 */
+	public void addCheckDetails(String checkNumber, String checkAmount) throws Exception {
+		//// Type Remittance Name
+		type("addCheckOnRemittance", checkNumber);
+		type("addCheckAmtOnRemittance", checkAmount);
+		click("clickAddCheckAmtOnRemittance");
+	}
+
+	/**
+	 * This function is used to enter check details
+	 * 
+	 */
+	public void deleteCheckDetailsAndVerify(String checkNumber) throws Exception {
+		//// Type Remittance Name
+		String chkNumber = getValue("clickAddedCheck");
+		if (checkNumber.toLowerCase().equals(chkNumber.toLowerCase())) {
+			click("clickAddedCheck");
+			click("deleteCheck");
+			String chkNumberAfterDelete = "";
+			try {
+				chkNumberAfterDelete = getValue("clickAddedCheck");
+			} catch (Exception e) {
+				System.out.println("dsf");
+				// throw new Exception("Check didn't deleted");
+			}
+			if (chkNumberAfterDelete.length() > 1)
+				throw new Exception("Check didn't deleted");
+
+		} else {
+			throw new Exception("Check details didn't matched");
+		}
+
+	}
+
+	/**
+	 * This function is used to enter values in create remittance
+	 * 
+	 */
+	public String[] getRemittanceValueswithoutSave() throws Exception {
+		String[] dasd = { getValue("remittanceName"), getValue("remittanceCoreCount"), getValue("remittanceLWACount"),
+				getValue("remittanceComments") };
+		return dasd;
+	}
 }
