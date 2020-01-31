@@ -245,6 +245,35 @@ public class Keywords extends Variables {
 			}
 		}
 	}
+	/**
+	 * typeKeys keyword , this function is used to keyboard keys events and press
+	 * enter
+	 * 
+	 * @param locator : unique identifier to locate object
+	 * @value value : to be entered in locator
+	 */
+	public void typeWithDoubleClick(String locator, String value) {
+		for (int i = 0; i < 4; i++) {
+			try {
+				 Actions action=new Actions(windowsDriver);
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebElement typeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+			    //// doubleClick the web element
+			    action.doubleClick(typeElement).perform();
+				//// Clear the web element in case any this is already types
+				typeElement.clear();
+				//// type value in web element
+				typeElement.sendKeys(value);
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+	}
 
 	/**
 	 * typeKeys keyword , this function is used to keyboard keys events and press
@@ -276,7 +305,37 @@ public class Keywords extends Variables {
 			}
 		}
 	}
-
+	/**
+	 * typeKeys keyword , this function is used to keyboard keys events and press
+	 * enter
+	 * 
+	 * @param locator : unique identifier to locate object
+	 * @value value : to be entered in locator
+	 */
+	public void typeKeysWithDoubleClick(String locator, String value) {
+		for (int i = 0; i < 4; i++) {
+			try {
+				Actions action=new Actions(windowsDriver);
+				//// Wait till web element is located
+				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebElement typeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				//// Click the web element
+			    //// doubleClick the web element
+			   action.doubleClick(typeElement).perform();
+				//// Clear the web element in case any this is already types
+				typeElement.clear();
+				//// type value in web element
+				typeElement.sendKeys(value);
+				typeElement.sendKeys(Keys.ENTER);
+				break;
+			} catch (Exception e) {
+				if (i < 3)
+					continue;
+				else
+					throw e;
+			}
+		}
+	}
 	/**
 	 * getValue keyword , this function is used to get text/value of locator
 	 *
@@ -288,7 +347,7 @@ public class Keywords extends Variables {
 		for (int i = 0; i < 4; i++) {
 			try {
 				//// Wait till web element is located
-				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+				WebDriverWait wait = new WebDriverWait(windowsDriver, shortWait);
 				try {
 					wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
 				} catch (Exception e) {
