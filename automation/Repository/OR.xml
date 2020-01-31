@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Ocean>
 	<Cancellation>
+		<keyword id="notepad">
+			<locator>Name</locator>
+			<value>Text Editor</value>
+		</keyword>
 		<keyword id="clickCancellationTab">
 			<locator>Name</locator>
 			<value>Cancellation</value>
@@ -643,6 +647,10 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='Clone as a Sub Master' and @ClassName = 'TextBlock']</value>
 	</keyword>
+	<keyword id="clickDisplayAndEditPriceSheet">
+			<locator>xpath</locator>
+			<value>//*[@Name='Display/Edit Price Sheet' and @ClassName = 'TextBlock']</value>
+	</keyword>
 	<keyword id="typeNewPSName">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='SubMaster']</value>
@@ -670,6 +678,18 @@
 	<keyword id="selectTerm">
 			<locator>xpath</locator>
 			<value>//*[@Name='TERM']//*[@ClassName='TextBox']</value>
+	</keyword>
+    <keyword id="getPriceSheetRow1ByClickCategoryValue">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
+	</keyword>
+	<keyword id="getOptionsRow1ByClickCategoryValue">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
+	</keyword>
+	<keyword id="getSurchargesRow1ByClickCategoryValue">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
 	</keyword>
 	<keyword id="getRow1ByClickCategoryValue">
 			<locator>xpath</locator>
@@ -743,6 +763,54 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@Name='RES_BASE']//*[@ClassName='TextBlockLite']</value>
 	</keyword>
+	<keyword id="listOfRES_BUSE_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_BUSE_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_LKIT_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_LKIT_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_SG_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_SG_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_WR_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_WR_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_AWD_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_AWD_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_ONETON_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_ONETON_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_SUPERCHARGE_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_SUPERCHARGE_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_TURBO_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_TURBO_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_DEDUCTIBLE_0_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_DEDUCTIBLE_0_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_DEDUCTIBLE_100_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_DEDUCTIBLE_100_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRERES_DEDUCTIBLE_250_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_DEDUCTIBLE_250_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="listOfRES_DISDEDUCT_BASE">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@Name='RES_DISDEDUCT_BASE']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
 	<keyword id="getPremium">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@Name='COST']//*[@ClassName='TextBlockLite']</value>
@@ -811,6 +879,10 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='Edit selected products']//*[@ClassName='ToolBar']//*[@ClassName='Button']//*[@ClassName='']</value>
 	</keyword>
+	<keyword id="scrollDisplayPSPageDown">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='PageDown' and @ClassName='RepeatButton'])[7]</value>
+		</keyword>
 	<keyword id="clickImportButton">
 			<locator>Name</locator>
 			<value>Import</value>
@@ -1188,6 +1260,14 @@
 	<keyword id="deleteCheck">
 			<locator>xpath</locator>
 			<value>//*[@Name='Delete' and @ClassName = 'Button']</value>
+	</keyword>
+	<keyword id="deleteremittance">
+			<locator>Name</locator>
+			<value>Delete Remittance</value>
+	</keyword>
+	<keyword id="pdfStatus">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'Wrappers.DocumentWrapper')]//*[@ClassName='TextBlock']</value>
 	</keyword>
 	</UnderWriting>
 	<Search>

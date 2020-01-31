@@ -1,5 +1,7 @@
 package ocean.test.condition.underwriting;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
 import ocean.modules.pages.UnderwritingModulePages;
@@ -25,7 +27,28 @@ public class OCEAN_UnderWriting_TC_07 extends UnderwritingModulePages {
 		goToUnderWritingTab();
 		goToRemittanceList();
 		//// navigate to create remittance tab
-		remittanceExpander();
+		landToCreateRemittanceDetailsPage();
+		//// drag and drop files
+		click("clickRemittanceReset");
+		dragAndDropFiles();
+		//// fill all necessary fields in create remittance
+		String[] inputArray = { "random", "1", "1", "Paper", "Standard", "Paper Remit", "Dealer Suspense", "Auto", "",
+				"" };
+		String remittanceName = enterRemittanceValues(inputArray);
+		deleteMyRemittance();
+		String deleted = deleteRemittanceStatus(remittanceName);
+		String reittanceupdatedName = "";
+		try {
+			reittanceupdatedName = getValue("remitName");
+		} catch (Exception e) {
+			System.out.println(reittanceupdatedName);
+			// TODO: handle exception
+		}
+		if (!reittanceupdatedName.toLowerCase().equals(remittanceName.toLowerCase()))
+			assertEquals("1", deleted);
+		else
+			assertEquals("1", "0");
+
 	}
 
 }
