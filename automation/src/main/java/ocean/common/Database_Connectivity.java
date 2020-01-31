@@ -187,7 +187,7 @@ public class Database_Connectivity {
 			///// execute query
 			ResultSet rs = stmt.executeQuery(
 					"select top 1 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
-							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r .IsDeleted = 0 order by d.CreateByDate desc;");
+							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r.IsDeleted = 0 order by d.CreateByDate desc;");
 			//// save data in map
 			dbMap = returnAllData(rs);
 

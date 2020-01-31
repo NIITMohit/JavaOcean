@@ -33,6 +33,8 @@ public class OCEAN_UnderWriting_TC_01_02_03_04 extends UnderwritingModulePages {
 		//// drag and drop files
 		click("clickRemittanceReset");
 		dragAndDropFiles();
+		//// verify drag and drop status for pdf
+		getPDFStatus();
 		//// fill all necessary fields in create remittance
 		String remittanceName = enterRemittanceValues(inputArray);
 		if (inputArray[4] == "" || inputArray[5] == "" || inputArray[0] == "" || inputArray[1] == ""
