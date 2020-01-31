@@ -2,95 +2,44 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="751270" started-at="2020-01-30T16:11:00 IST" finished-at="2020-01-30T16:23:31 IST">
+  <suite name="Ocean" duration-ms="179817" started-at="2020-01-31T11:22:32 IST" finished-at="2020-01-31T11:25:32 IST">
     <groups>
       <group name="regression">
-        <method signature="OCEAN_UnderWriting_TC_06.createRemittance()[pri:5, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="createRemittance" class="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06"/>
+        <method signature="OCEAN_UnderWriting_TC_05.deleteCheckDetails()[pri:5, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05@8297b3a]" name="deleteCheckDetails" class="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Cancellation" duration-ms="751270" started-at="2020-01-30T16:11:00 IST" finished-at="2020-01-30T16:23:31 IST">
-      <class name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="setup" is-config="true" duration-ms="6905" started-at="2020-01-30T16:10:53 IST" finished-at="2020-01-30T16:11:00 IST">
+    <test name="Cancellation" duration-ms="179817" started-at="2020-01-31T11:22:32 IST" finished-at="2020-01-31T11:25:32 IST">
+      <class name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05@8297b3a]" name="setup" is-config="true" duration-ms="6979" started-at="2020-01-31T11:22:25 IST" finished-at="2020-01-31T11:22:32 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@690bc15e]]>
+                <![CDATA[org.testng.TestRunner@4e904fd5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="createParent" is-config="true" duration-ms="3" started-at="2020-01-30T16:11:00 IST" finished-at="2020-01-30T16:11:00 IST">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05@8297b3a]" name="createParent" is-config="true" duration-ms="4" started-at="2020-01-31T11:22:32 IST" finished-at="2020-01-31T11:22:32 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@690bc15e]]>
+                <![CDATA[org.testng.TestRunner@4e904fd5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="screenshot" is-config="true" duration-ms="0" started-at="2020-01-30T16:11:00 IST" finished-at="2020-01-30T16:11:00 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="FAIL" signature="createRemittance()[pri:5, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="createRemittance" duration-ms="750911" started-at="2020-01-30T16:11:00 IST" description="Validate creation of remittance in OCEAN with editing/reset of details given earlier." finished-at="2020-01-30T16:23:31 IST">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
+        <test-method status="FAIL" signature="deleteCheckDetails()[pri:5, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05@8297b3a]" name="deleteCheckDetails" duration-ms="177008" started-at="2020-01-31T11:22:32 IST" description="Validate OCEAN ability to allow check delete by user before remittance is saved. " finished-at="2020-01-31T11:25:29 IST">
+          <exception class="java.lang.Exception">
             <message>
-              <![CDATA[A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAP-TZD-0X74796', ip: '10.55.55.153', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: io.appium.java_client.windows.WindowsDriver
-Capabilities {app: C:\Users\mohit.goel\AppData..., deviceName: LAP-TZD-0X74796, javascriptEnabled: true, platform: WINDOWS, platformName: WINDOWS}
-Session ID: 007a2646-b4ce-4e98-ac8b-2c60d319e7c2
-*** Element info: {Using=xpath, value=//*[@AutomationId='txtRemittanceName']}]]>
+              <![CDATA[Fail]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAP-TZD-0X74796', ip: '10.55.55.153', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: io.appium.java_client.windows.WindowsDriver
-Capabilities {app: C:\Users\mohit.goel\AppData..., deviceName: LAP-TZD-0X74796, javascriptEnabled: true, platform: WINDOWS, platformName: WINDOWS}
-Session ID: 007a2646-b4ce-4e98-ac8b-2c60d319e7c2
-*** Element info: {Using=xpath, value=//*[@AutomationId='txtRemittanceName']}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
-at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-at io.appium.java_client.windows.WindowsDriver.findElementByXPath(WindowsDriver.java:1)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-at ocean.common.Keywords.getValue(Keywords.java:296)
-at ocean.modules.pages.UnderwritingModulePages.getRemittanceValueswithoutSave(UnderwritingModulePages.java:550)
-at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06.createRemittance(OCEAN_UnderWriting_TC_06.java:42)
+              <![CDATA[java.lang.Exception: Fail
+at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05.deleteCheckDetails(OCEAN_UnderWriting_TC_05.java:37)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -121,38 +70,42 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRemittance -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="tearDown" is-config="true" duration-ms="328" started-at="2020-01-30T16:23:31 IST" finished-at="2020-01-30T16:23:31 IST">
+        </test-method> <!-- deleteCheckDetails -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05@8297b3a]" name="screenshot" is-config="true" duration-ms="0" started-at="2020-01-31T11:22:32 IST" finished-at="2020-01-31T11:22:32 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05@8297b3a]" name="tearDown" is-config="true" duration-ms="2771" started-at="2020-01-31T11:25:29 IST" finished-at="2020-01-31T11:25:32 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createRemittance status=FAILURE method=OCEAN_UnderWriting_TC_06.createRemittance()[pri:5, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a] output={null}]]]>
+                <![CDATA[[TestResult name=deleteCheckDetails status=FAILURE method=OCEAN_UnderWriting_TC_05.deleteCheckDetails()[pri:5, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05@8297b3a] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@690bc15e]]>
+                <![CDATA[org.testng.TestRunner@4e904fd5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="tearDown" is-config="true" duration-ms="51" started-at="2020-01-30T16:23:31 IST" finished-at="2020-01-30T16:23:31 IST">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05@8297b3a]" name="tearDown" is-config="true" duration-ms="39" started-at="2020-01-31T11:25:32 IST" finished-at="2020-01-31T11:25:32 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@690bc15e]]>
+                <![CDATA[org.testng.TestRunner@4e904fd5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06 -->
+      </class> <!-- ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05 -->
     </test> <!-- Cancellation -->
   </suite> <!-- Ocean -->
 </testng-results>

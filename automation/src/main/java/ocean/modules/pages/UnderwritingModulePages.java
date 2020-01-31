@@ -543,6 +543,43 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	}
 
 	/**
+	 * This function is used to enter check details
+	 * 
+	 */
+	public void addCheckDetails(String checkNumber, String checkAmount) throws Exception {
+		//// Type Remittance Name
+		type("addCheckOnRemittance", checkNumber);
+		type("addCheckAmtOnRemittance", checkAmount);
+		click("clickAddCheckAmtOnRemittance");
+	}
+
+	/**
+	 * This function is used to enter check details
+	 * 
+	 */
+	public void deleteCheckDetailsAndVerify(String checkNumber) throws Exception {
+		//// Type Remittance Name
+		String chkNumber = getValue("clickAddedCheck");
+		if (checkNumber.toLowerCase().equals(chkNumber.toLowerCase())) {
+			click("clickAddedCheck");
+			click("deleteCheck");
+			String chkNumberAfterDelete = "";
+			try {
+				chkNumberAfterDelete = getValue("clickAddedCheck");
+			} catch (Exception e) {
+				System.out.println("dsf");
+				// throw new Exception("Check didn't deleted");
+			}
+			if (chkNumberAfterDelete.length() > 1)
+				throw new Exception("Check didn't deleted");
+
+		} else {
+			throw new Exception("Check details didn't matched");
+		}
+
+	}
+
+	/**
 	 * This function is used to enter values in create remittance
 	 * 
 	 */
