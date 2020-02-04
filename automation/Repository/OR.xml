@@ -1269,6 +1269,26 @@
 			<locator>xpath</locator>
 			<value>//*[contains(@Name,'Wrappers.DocumentWrapper')]//*[@ClassName='TextBlock']</value>
 	</keyword>
+	<keyword id="clickCheckCheckBox">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'Wrappers.CHECKWrapper')]//*[@ClassName='CheckBox']</value>
+	</keyword>
+	<keyword id="custPaid">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Paid:']/following-sibling::*[@Name='DoubleUpDown']//*[@AutomationId='PART_TextBox']</value>
+	</keyword>
+	<keyword id="dealerPaid">
+			<locator>xpath</locator>
+			<value>//*[@Name='Dealer Paid:']/following-sibling::*[@Name='DoubleUpDown']//*[@AutomationId='PART_TextBox']</value>
+	</keyword>
+	<keyword id="remittanceSummary">
+			<locator>Name</locator>
+			<value>Remittance Summary</value>
+	</keyword>
+	<keyword id="remittancePost">
+			<locator>Name</locator>
+			<value>Post Remittance</value>
+	</keyword>
 	</UnderWriting>
 	<Search>
 	<keyword id="searchTypeContract">
@@ -1296,7 +1316,7 @@
 			<value>//*[@Name='Status:']/following-sibling::*[1]</value>
 	</keyword>
 	<keyword id="clickUnderW">
-			<locator>name</locator>
+			<locator>Name</locator>
 			<value>UnderW</value>
 	</keyword>
 	<keyword id="clickOnHold">

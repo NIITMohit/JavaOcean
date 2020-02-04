@@ -59,6 +59,42 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	}
 
 	/**
+	 * This function is used to select check
+	 * 
+	 */
+	public void selectCheckAndScrollToTop() throws Exception {
+		click("clickCheckCheckBox");
+		for (int i = 0; i < 2; i++) {
+			try {
+				click("scrollContractsListUp");
+				continue;
+			} catch (Exception e) {
+				continue;
+			}
+
+		}
+	}
+
+	/**
+	 * This function is used to select check
+	 * 
+	 */
+	public void postRemittance() throws Exception {
+		click("remittanceSummary");
+		click("remittancePost");
+		contractExpander();
+	}
+
+	/**
+	 * This function is used to select check
+	 * 
+	 */
+	public void enterCustomerPaidAndDealerPaid(String custPaid, String dealerPaid) throws Exception {
+		type("custPaid", custPaid);
+		type("dealerPaid", dealerPaid);
+	}
+
+	/**
 	 * This function is used to clear data on new business form
 	 * 
 	 */
@@ -138,7 +174,7 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 * This function is used to get add check
 	 * 
 	 */
-	public void addCheck() throws Exception {
+	public void addCheck(String checkNumber, String checkAmount) throws Exception {
 		click("typeToSearchRemittance");
 		click("loadRemittance");
 		try {
@@ -148,8 +184,8 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		}
 		contractExpander();
 		goToCheckTab();
-		type("checkTabCheckNumber", "12231");
-		type("checkTabCheckAmount", "12231");
+		type("checkTabCheckNumber", checkNumber);
+		type("checkTabCheckAmount", checkAmount);
 		click("saveAllOnRemittance");
 		click("clickOK");
 		contractExpander();
@@ -464,14 +500,14 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 * This function is used to enter mandatory values in create remittance
 	 * 
 	 */
-	public String enterRemittanceMandatoryValues() throws Exception {
+	public String enterRemittanceMandatoryValues(String coreCount) throws Exception {
 		//// Type Remittance Name
 		String remittanceName = "";
 		try {
 			remittanceName = randomString(20);
 			type("remittanceName", remittanceName);
 			//// ENter core count
-			type("remittanceCoreCount", "2");
+			type("remittanceCoreCount", coreCount);
 			//// select remit type
 			typeKeys("remittanceTypeCombobox", "Standard");
 			typeKeys("remittanceRemitTypeComboBox", "Paper Remit");
