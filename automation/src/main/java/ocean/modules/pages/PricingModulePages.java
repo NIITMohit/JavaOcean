@@ -35,6 +35,21 @@ public class PricingModulePages extends PricingDataBase {
 	}
 
 	/**
+	 * This function is used to return actual breakdown value in map after PS
+	 * editing, to be verified from search result grid
+	 * 
+	 * @return
+	 * 
+	 */
+	public HashMap<String, String> returnActualBreakdownGridData(int i) throws Exception {
+
+		HashMap<String, String> searchData = new HashMap<String, String>();
+		searchData.put("Actual_Breakdown", getValue("getActualBreakdown"));
+		return searchData;
+
+	}
+
+	/**
 	 * This common function is used delete a price sheet based on search paramater
 	 * 
 	 * @param priceSheet on which priceSheet needs to be searched
@@ -97,42 +112,67 @@ public class PricingModulePages extends PricingDataBase {
 	 * Display Price Sheet Window
 	 */
 	public void editSelectedPriceValues() {
-		click("getPriceSheetRow1ByClickCategoryValue");
+		click("getRow1ByClickOnCategoryValue");
 		waitForSomeTime(2);
-
 		try {
-			rightClick("getPriceSheetRow1ByClickCategoryValue");
+			rightClick("getRow1ByClickOnCategoryValue");
 		} catch (Exception e) {
 			throw e;
 		}
 		click("selectEdit");
+
+		click("selectReplace");
+		// select operator
+		typeKeys("selectOperator", "+");
+		// typeKeys("selectOperator", "Enter");
+		// Select Cost Field
+		click("selectCost");
+		// Type Cost
+		type("typeCost", "10");
+		// click save
+		click("clickSaveEditPSROw");
 		// RES_BASE
-		typeKeysWithDoubleClick("selectOperatorResBase", "+");
-		// doubleClick("selectOperatorResBase");
-		// type("selectOperatorResBase", "+");
+
 		/*
+		 * typeKeysWithDoubleClick("selectOperatorResBase", "+");
+		 * typeKeysWithDoubleClick("selectCostResBase", "10");
+		 * 
+		 * //doubleClick("selectCostResBase"); //type("selectCostResBase", "10"); //
+		 * doubleClick("selectOperatorResBase"); // type("selectOperatorResBase", "+");
+		 * 
 		 * // ADMIN_AUL_1_BASE typeKeysWithDoubleClick("selectOperatorAdminAul1Base",
 		 * "+"); // INS_CLIP_BASE typeKeysWithDoubleClick("selectOperatorInsClipBase",
 		 * "-"); // ADMIN_AUL_2_BASE
 		 * typeKeysWithDoubleClick("selectOperatorAdminAul2Base", "+"); // COMM_1_BASE
 		 * typeKeysWithDoubleClick("selectOperatorComm1Base", "+"); // type Cost
 		 * RES_BASE value
-		 */
-		doubleClick("selectCostResBase");
-		type("selectCostResBase", "10");
-		/*
+		 * 
+		 * 
+		 * 
 		 * typeWithDoubleClick("selectCostResBase", "25"); // type Cost ADMIN_AUL_1_BASE
 		 * value typeWithDoubleClick("selectCostAdminAul1Base", "50"); // type Cost
 		 * ADMIN_AUL_2_BASE value typeWithDoubleClick("selectCostAdminAul2Base", "15");
 		 * // type Cost INS_CLIP_BASE value typeWithDoubleClick("selectCostInsClipBase",
 		 * "25"); // type Cost COMM_1_BASE value
 		 * typeWithDoubleClick("selectCostComm1Base", "100");
+		 * 
+		 * try { click("clickSaveEditPSROw"); } catch (Exception e) { throw e; }
 		 */
+	}
+
+	/**
+	 * This common function is used to get actual breakdown post editing values for
+	 * options, surcharges and deductibles
+	 */
+	public void afterEditGetActualBreakdownValue() {
+		click("getRow1ByClickOnCategoryValue");
 		try {
-			click("clickSaveEditPSROw");
+			rightClick("getRow1ByClickOnCategoryValue");
 		} catch (Exception e) {
 			throw e;
 		}
+		click("selectEdit");
+
 	}
 
 	/**
@@ -307,12 +347,12 @@ public class PricingModulePages extends PricingDataBase {
 			click("clickDisplayAndEditPriceSheet");
 		} catch (Exception e) {
 			throw e;
-		}
-
-		type("selectCoverage", inputArray[1]);
-		type("selectMilage_Band", inputArray[2]);
-		type("selectClass", inputArray[3]);
-		type("selectTerm", inputArray[4]);
+		} /*
+			 * 
+			 * type("selectCoverage", inputArray[1]); type("selectMilage_Band",
+			 * inputArray[2]); type("selectClass", inputArray[3]); type("selectTerm",
+			 * inputArray[4]);
+			 */
 		/*
 		 * for (@SuppressWarnings("rawtypes") Map.Entry mapElement :
 		 * searchParamaters.entrySet()) { String searchParamater = (String)

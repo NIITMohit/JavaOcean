@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ocean.tests.Search">
+      <class name="ocean.test.condition.pricing.OCEAN_Pricing_TC16_17">
         <methods>
-          <include name="closeReport"/>
-          <include name="setup"/>
           <include name="createParent"/>
-          <include name="closeParent"/>
-          <include name="createReport"/>
-          <include name="search"/>
-        </methods>
-      </class> <!-- ocean.tests.Search -->
-      <class name="ocean.tests.Search2">
-        <methods>
-          <include name="search"/>
-          <include name="closeReport"/>
           <include name="setup"/>
-          <include name="closeParent"/>
-          <include name="createReport"/>
-          <include name="createParent"/>
+          <include name="screenshot"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="EditingPriceSheetAndVerifyPostSuccessfulUpdation"/>
         </methods>
-      </class> <!-- ocean.tests.Search2 -->
+      </class> <!-- ocean.test.condition.pricing.OCEAN_Pricing_TC16_17 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

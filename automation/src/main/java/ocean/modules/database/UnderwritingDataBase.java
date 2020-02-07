@@ -142,30 +142,6 @@ public class UnderwritingDataBase extends CommonFunctions {
 	}
 
 	/**
-	 * This gets search return refund percentage and cancel fees data
-	 * 
-	 */
-	public HashMap<String, String> cancellation_getRefundPercentAndCancelFee(String contractId) throws Exception {
-		HashMap<String, String> myData = new HashMap<String, String>();
-		try {
-			aulDBConnect();
-			String query = "select CANCEL_FEE_AMOUNT,REFUND_PERCENTAGE from [dbo].[CANCELLATION_PARAMETERS]  where ALLSALES_DETAILS_ID in \r\n"
-					+ "(select ID from [dbo].[ALLSALES_DETAILS]\r\n" + "where cert = '" + contractId + "')";
-			///// execute query
-			ResultSet rs = stmt.executeQuery(query);
-			//// save data in map
-			HashMap<String, String> dbMap = returnData(rs);
-			myData = dbMap;
-		} catch (Exception e) {
-			throw e;
-		} finally {
-			//// close connection
-			closeConnection();
-		}
-		return myData;
-	}
-
-	/**
 	 * This function gets all required details used in TC 08
 	 * 
 	 */
@@ -435,6 +411,10 @@ public class UnderwritingDataBase extends CommonFunctions {
 
 	}
 
+	/**
+	 * This gets getRemitCreationdata
+	 * 
+	 */
 	public HashMap<String, String> getRemitCreationdata(String remitName) throws Exception {
 		HashMap<String, String> dbMap = new HashMap<String, String>();
 		try {
@@ -449,6 +429,42 @@ public class UnderwritingDataBase extends CommonFunctions {
 					+ "join UW_REMITTANCE_TYPE t on t.id = r.remit_type_id "
 					+ "left join [dbo].[UW_CHECK] c on c.remittanceId = r.remittanceNumber "
 					+ "where r.RemittanceName = '" + remitName + "' order by r.[RemittanceID] desc;";
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			dbMap = returnData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return dbMap;
+
+	}
+
+	/**
+	 * This gets getRemitDataForSearch
+	 * 
+	 */
+	public HashMap<String, String> getRemitDataForFilters() throws Exception {
+		HashMap<String, String> dbMap = new HashMap<String, String>();
+		try {
+			//// connect to aul db
+			aulDBConnect();
+			///// execute query
+			String query = "select top 1 r.RemittanceName as Remittance_Name,"
+					+ " r.PostPeriod as Post_Period,r.remittanceNumber as Remittance_Number "
+					+ ", s.Source_Type as Source , st.Subtype_Name as Sub_Type, t.name as Type"
+					+ " ,r.corecount as Core,r.lwacount as LWA ,r.UnderwritingCount as UnderW, "
+					+ "r.comments as Comment, "
+					+ "r.CreateByUser as Created_By,r.locked_by as Locked_By,r.CreateByDate as Created_Date "
+					+ "from REMITTANCE r join UW_REMITTANCE_SOURCE s on s.id = r.remit_source_id "
+					+ "join UW_REMITTANCE_SUBTYPE st on st.id = remit_subtype_id "
+					+ "join UW_REMITTANCE_TYPE t on t.id = r.remit_type_id "
+					+ "where r.isDeleted = 0 and comments like '% %' "
+					+ " and locked_by is not null order by r.[RemittanceID] desc;";
 			ResultSet rs = stmt.executeQuery(query);
 			//// save data in map
 			dbMap = returnData(rs);

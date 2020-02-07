@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Ocean">
-              <span class="suite-name border-skipped">Ocean</span>
+              <span class="suite-name border-failed">Ocean</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,26 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,  2 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Ocean" class="hide-methods skipped suite-Ocean"> (hide)</a> <!-- hide-methods skipped suite-Ocean -->
-                      <a href="#" panel-name="suite-Ocean" class="show-methods skipped suite-Ocean"> (show)</a> <!-- show-methods skipped suite-Ocean -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Ocean" class="hide-methods failed suite-Ocean"> (hide)</a> <!-- hide-methods failed suite-Ocean -->
+                      <a href="#" panel-name="suite-Ocean" class="show-methods failed suite-Ocean"> (show)</a> <!-- show-methods failed suite-Ocean -->
                     </span>
-                    <div class="method-list-content skipped suite-Ocean">
+                    <div class="method-list-content failed suite-Ocean">
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18" hash-for-method="validatePremiumCalculationForDealerAsPrimaryAccount">validatePremiumCalculationForDealerAsPrimaryAccount</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09" hash-for-method="applyFiltersOnAllFields">applyFiltersOnAllFields</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18" hash-for-method="validatePremiumCalculationForDealerAsPrimaryAccount">validatePremiumCalculationForDealerAsPrimaryAccount</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-Ocean -->
+                    </div> <!-- method-list-content failed suite-Ocean -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,54 +117,38 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Ocean" class="panel Ocean">
-          <div class="suite-Ocean-class-skipped">
+          <div class="suite-Ocean-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18</span>
+              <img src="failed.png"/>
+              <span class="class-name">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="validatePremiumCalculationForDealerAsPrimaryAccount">
-                  </a> <!-- validatePremiumCalculationForDealerAsPrimaryAccount -->
-                  <span class="method-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at java.util.Objects.requireNonNull(Unknown Source)
-	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
-	at ocean.common.Keywords.click(Keywords.java:31)
-	at ocean.common.CommonFunctions.goToUnderWritingTab(CommonFunctions.java:292)
-	at ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18.prepareRemittance(OCEAN_Pricing_TC_05To14_18.java:81)
+                  <a name="applyFiltersOnAllFields">
+                  </a> <!-- applyFiltersOnAllFields -->
+                  <span class="method-name">applyFiltersOnAllFields</span>
+                  <div class="stack-trace">com.microsoft.sqlserver.jdbc.SQLServerException: Incorrect syntax near &apos;,&apos;.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:232)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1672)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:903)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:796)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7535)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:2438)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:208)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:183)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeQuery(SQLServerStatement.java:695)
+	at ocean.modules.database.UnderwritingDataBase.getRemitDataForFilters(UnderwritingDataBase.java:468)
+	at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09.applyFiltersOnAllFields(OCEAN_UnderWriting_TC_09.java:130)
 	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 25 stack frames
+... Removed 27 stack frames
 </div> <!-- stack-trace -->
                   <em>
-(Validate premium calculation.)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validatePremiumCalculationForDealerAsPrimaryAccount">
-                  </a> <!-- validatePremiumCalculationForDealerAsPrimaryAccount -->
-                  <span class="method-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at java.util.Objects.requireNonNull(Unknown Source)
-	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
-	at ocean.common.Keywords.click(Keywords.java:31)
-	at ocean.common.CommonFunctions.goToUnderWritingTab(CommonFunctions.java:292)
-	at ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18.prepareRemittance(OCEAN_Pricing_TC_05To14_18.java:81)
-	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Validate premium calculation.)                  </em>
+(Validate user ability to perform following on remittances from remittance list: 3. Apply Filters)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Ocean-class-skipped -->
+          </div> <!-- suite-Ocean-class-failed -->
         </div> <!-- panel Ocean -->
         <div panel-name="test-xml-Ocean" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -182,7 +161,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Ocean&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Cancellation&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18&quot;/&gt;
+      &lt;class name=&quot;ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Cancellation --&gt;
 &lt;/suite&gt; &lt;!-- Ocean --&gt;
@@ -210,7 +189,7 @@
               <span class="test-group-name">regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
+                <span class="method-in-group-name">applyFiltersOnAllFields</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -230,20 +209,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validatePremiumCalculationForDealerAsPrimaryAccount')
-data.setCell(0, 2, 'ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18')
-data.setCell(0, 3, 0);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'validatePremiumCalculationForDealerAsPrimaryAccount')
-data.setCell(1, 2, 'ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18')
-data.setCell(1, 3, 0);
+data.setCell(0, 1, 'applyFiltersOnAllFields')
+data.setCell(0, 2, 'ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09')
+data.setCell(0, 3, 4977);
 window.suiteTableData['Ocean']= { tableData: data, tableDiv: 'times-div-Ocean'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Ocean">
               </div> <!-- times-div-Ocean -->
             </div> <!-- times-div -->
@@ -269,60 +244,32 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ocean.test.condition.pricing.OCEAN_Pricing_TC_05To14_18</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setup(org.testng.TestRunner@2b87581)</span>
+                <span class="method-name">setup(org.testng.TestRunner@743c6ce4)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">createParent(org.testng.TestRunner@2b87581)</span>
-                <span class="method-start">290 ms</span>
+                <span class="method-name">createParent(org.testng.TestRunner@743c6ce4)</span>
+                <span class="method-start">7665 ms</span>
               </div> <!-- configuration-test before -->
-              <div class="configuration-class before">
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">7692 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">prepareRemittance</span>
-                <span class="method-start">310 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="configuration-method before">
-                <span class="method-name">screenshot</span>
-                <span class="method-start">4845 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
-                <span class="method-start">4847 ms</span>
+                <span class="method-name">applyFiltersOnAllFields</span>
+                <span class="method-start">7693 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">clearData</span>
-                <span class="method-start">4853 ms</span>
+                <span class="method-name">tearDown([TestResult name=applyFiltersOnAllFields status=FAILURE method=OCEAN_UnderWriting_TC_09.applyFilters...)</span>
+                <span class="method-start">12674 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">4855 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">screenshot</span>
-                <span class="method-start">4856 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">validatePremiumCalculationForDealerAsPrimaryAccount</span>
-                <span class="method-start">4858 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">clearData</span>
-                <span class="method-start">4862 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">4863 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
-                <span class="method-name">collapse</span>
-                <span class="method-start">4867 ms</span>
-              </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">4913 ms</span>
+                <span class="method-name">tearDown(org.testng.TestRunner@743c6ce4)</span>
+                <span class="method-start">13143 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

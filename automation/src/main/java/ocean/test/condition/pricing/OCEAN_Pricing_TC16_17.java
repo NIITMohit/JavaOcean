@@ -1,12 +1,9 @@
 package ocean.test.condition.pricing;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
-import org.aspectj.lang.annotation.Before;
 import org.testng.annotations.Test;
 
 import ocean.modules.dataprovider.PricingDataProvider;
@@ -14,9 +11,9 @@ import ocean.modules.pages.PricingModulePages;
 
 public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 
-	@SuppressWarnings("null")
 	@Test(priority = 1, groups = "regression", dataProvider = "fetchDataForTC16_17", dataProviderClass = PricingDataProvider.class, description = "Valdiate premium calculation and recalculation for a master price sheet before editing and after editing in OCEAN.")
 	public void EditingPriceSheetAndVerifyPostSuccessfulUpdation(String[] inputArray) throws Exception {
+
 		boolean valueFlag = true;
 		boolean surchargesFlag = false;
 		boolean optionsFlag = false;
@@ -25,9 +22,11 @@ public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 		goToPricingTab();
 		// click price sheet list tab
 		visitPriceSheetListTab();
+
 		if (inputArray[5].toLowerCase().equals("y")) {
 			// apply filters to edit price sheet
 			applyAllMandatoryFiltersUnderDisplayPriceSheet(inputArray);
+			click("getRow1ByClickOnCategoryValue");
 			HashMap<String, String> beforEditingPSValues = returnPriceSheetResultGridData(0);
 			System.out.println("Before Editing Cost Values are :" + beforEditingPSValues);
 			// edit selected price values
@@ -36,9 +35,13 @@ public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
+
 			applyAllMandatoryFiltersUnderDisplayPriceSheet(inputArray);
-			click("getPriceSheetRow1ByClickCategoryValue");
+
+			click("getRow1ByClickOnCategoryValue");
+
 			HashMap<String, String> AfterEditingPSValues = returnPriceSheetResultGridData(0);
+
 			System.out.println("After Editing Cost Values are :" + AfterEditingPSValues);
 			// compare both values
 			if (Float.parseFloat(beforEditingPSValues.get("COST")) + 10 != Float
@@ -48,80 +51,53 @@ public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 		}
 
 		if (inputArray[6].toLowerCase().equals("y")) {
-			click("getOptionsRow1ByClickCategoryValue");
 
-			HashMap<String, String> beforEditingOptionsValues = returnOptionsResultGridData(0);
+			HashMap<String, String> beforEditingOptionsValues = returnActualBreakdownGridData(0);
 			System.out.println(beforEditingOptionsValues);
 
 			editSelectedOptionsValues();
-			click("getOptionsRow1ByClickCategoryValue");
-			HashMap<String, String> afterEditingOptionsValues = returnPriceSheetResultGridData(0);
+			afterEditGetActualBreakdownValue();
+			HashMap<String, String> afterEditingOptionsValues = returnActualBreakdownGridData(0);
 			System.out.println(afterEditingOptionsValues);
 
-			if (Integer.parseInt(beforEditingOptionsValues.get("RES_BUSE_BASE")) + 100 != Integer
-					.parseInt(afterEditingOptionsValues.get("RES_BUSE_BASE"))) {
-
-			} else if (Integer.parseInt(beforEditingOptionsValues.get("RES_LKIT_BASE")) + 100 != Integer
-					.parseInt(afterEditingOptionsValues.get("RES_LKIT_BASE"))) {
-			} else if (Integer.parseInt(beforEditingOptionsValues.get("RES_SG_BASE")) + 100 != Integer
-					.parseInt(afterEditingOptionsValues.get("RES_SG_BASE"))) {
-			} else if (Integer.parseInt(beforEditingOptionsValues.get("RES_WR_BASE")) + 100 != Integer
-					.parseInt(afterEditingOptionsValues.get("RES_WR_BASE"))) {
-			} else {
-				surchargesFlag = true;
+			if (Float.parseFloat(beforEditingOptionsValues.get("Actual_Breakdown")) + 100 != Float
+					.parseFloat(afterEditingOptionsValues.get("Actual_Breakdown"))) {
+				optionsFlag = true;
 			}
+
 		}
 
 		if (inputArray[7].toLowerCase().equals("y")) {
-			click("getSurchargestRow1ByClickCategoryValue");
 
-			HashMap<String, String> beforEditingSurchargesValues = returnSurchargesResultGridData(0);
+			HashMap<String, String> beforEditingSurchargesValues = returnActualBreakdownGridData(0);
 			System.out.println(beforEditingSurchargesValues);
 
 			editSelectedSurchargesValues();
-
-			click("getSurchargestRow1ByClickCategoryValue");
-			HashMap<String, String> afterrEditingSurchargesValues = returnPriceSheetResultGridData(0);
+			afterEditGetActualBreakdownValue();
+			HashMap<String, String> afterrEditingSurchargesValues = returnActualBreakdownGridData(0);
 			System.out.println(afterrEditingSurchargesValues);
 
-			if (Integer.parseInt(beforEditingSurchargesValues.get("RES_AWD_BASE")) + 100 != Integer
-					.parseInt(afterrEditingSurchargesValues.get("RES_AWD_BASE"))) {
-			} else if (Integer.parseInt(beforEditingSurchargesValues.get("RES_ONETON_BASE")) + 100 != Integer
-					.parseInt(afterrEditingSurchargesValues.get("RES_ONETON_BASE"))) {
-			} else if (Integer.parseInt(beforEditingSurchargesValues.get("RES_SUPERCHARGE_BASE")) + 100 != Integer
-					.parseInt(afterrEditingSurchargesValues.get("RES_SUPERCHARGE_BASE"))) {
-			} else if (Integer.parseInt(beforEditingSurchargesValues.get("RES_TURBO_BASE")) + 100 != Integer
-					.parseInt(afterrEditingSurchargesValues.get("RES_TURBO_BASE"))) {
-			} else {
-				surchargesFlag = true;
+			if (Float.parseFloat(beforEditingSurchargesValues.get("Actual_Breakdown")) + 100 != Float
+					.parseFloat(afterrEditingSurchargesValues.get("Actual_Breakdown"))) {
 			}
+			surchargesFlag = true;
 		}
 
 		if (inputArray[8].toLowerCase().equals("y")) {
-			click("getDeductibleRow1ByClickCategoryValue");
 
-			HashMap<String, String> beforeEditingDeductibleValues = returndDeductiblesResultGridData(0);
+			HashMap<String, String> beforeEditingDeductibleValues = returnActualBreakdownGridData(0);
 			System.out.println(beforeEditingDeductibleValues);
 
 			editSelectedDeductibleValues();
-			click("getDeductibleRow1ByClickCategoryValue");
-
-			HashMap<String, String> afterEditingDeductiblevalues = returndDeductiblesResultGridData(0);
+			afterEditGetActualBreakdownValue();
+			HashMap<String, String> afterEditingDeductiblevalues = returnActualBreakdownGridData(0);
 			System.out.println(afterEditingDeductiblevalues);
 
-			if (Integer.parseInt(beforeEditingDeductibleValues.get("RES_DEDUCTIBLE_0_BASE")) + 100 != Integer
-					.parseInt(afterEditingDeductiblevalues.get("RES_DEDUCTIBLE_0_BASE"))) {
-			}
-
-			else if (Integer.parseInt(beforeEditingDeductibleValues.get("RES_DEDUCTIBLE_100_BASE")) + 100 != Integer
-					.parseInt(afterEditingDeductiblevalues.get("RES_DEDUCTIBLE_100_BASE"))) {
-			} else if (Integer.parseInt(beforeEditingDeductibleValues.get("RES_DEDUCTIBLE_250_BASE")) + 100 != Integer
-					.parseInt(afterEditingDeductiblevalues.get("RES_DEDUCTIBLE_250_BASE"))) {
-			} else if (Integer.parseInt(beforeEditingDeductibleValues.get("RES_DISDEDUCT_BASE")) + 100 != Integer
-					.parseInt(afterEditingDeductiblevalues.get("RES_DISDEDUCT_BASE"))) {
-			} else {
+			if (Float.parseFloat(beforeEditingDeductibleValues.get("Actual_Breakdown")) + 100 != Float
+					.parseFloat(afterEditingDeductiblevalues.get("Actual_Breakdown"))) {
 				deductiblesFlag = true;
 			}
+
 			if (valueFlag == surchargesFlag == optionsFlag == deductiblesFlag) {
 				assertEquals(true, true);
 			} else {

@@ -63,7 +63,7 @@ public class OCEAN_UnderWriting_TC_08 extends UnderwritingModulePages {
 				try {
 					click("scrollContractsListDown");
 				} catch (Exception e) {
-					/// do nothing
+					//// do nothing
 				}
 				premium();
 				enterCustomerPaidAndDealerPaid("12344", "12344");
