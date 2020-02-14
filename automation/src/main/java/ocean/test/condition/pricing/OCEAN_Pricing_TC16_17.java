@@ -8,22 +8,35 @@ import org.testng.annotations.Test;
 import ocean.modules.dataprovider.PricingDataProvider;
 import ocean.modules.pages.PricingModulePages;
 
+/**
+ * OCEAN_Pricing_TC_16_17 class automates Ocean Pricing module Test Condition 05
+ * to 14 and 18, which holds 4 Test Case; Test Condition Description : Editing
+ * of Pricing, options, surcharges, deductibles in mater price sheet
+ * 
+ * @author Nainsi Jain
+ */
 public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 
-	@Test(priority = 3, groups = "regression", dataProvider = "fetchDataForTC16_17", dataProviderClass = PricingDataProvider.class, description = "Valdiate premium calculation and recalculation for a master price sheet before editing and after editing in OCEAN.")
-	public void editingPriceSheetAndVerifyPostSuccessfulUpdation(String[] inputArray) throws Exception {
+	@Test(priority = 3, groups = "regression", dataProvider = "fetchDataForTC16_17", dataProviderClass = PricingDataProvider.class, description = "Editing of Pricing, options, surcharges, deductibles in mater price sheet")
+	public void editingandVerifyPriceSheet(String[] inputArray) throws Exception {
+		//// value field
 		boolean valueFlag = false;
+		//// surcharge field
 		boolean surchargesFlag = false;
+		//// options field
 		boolean optionsFlag = false;
+		//// deductible field
 		boolean deductiblesFlag = false;
 		// go to pricing tab
 		goToPricingTab();
 		// click price sheet list tab
 		visitPriceSheetListTab();
+		//// Search Price sheet code
 		selectPriceSheet(inputArray[0]);
 		if (inputArray[5].toLowerCase().equals("y")) {
 			// apply filters to edit price sheet
 			applyAllMandatoryFiltersUnderDisplayPriceSheet(inputArray);
+			//// return before edit data
 			HashMap<String, String> beforEditingPSValues = returnPriceSheetResultGridData();
 			// edit selected price values
 			editSelectedPriceValues();
@@ -31,8 +44,11 @@ public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
+			//// Search Price sheet code
 			selectPriceSheet(inputArray[0]);
+			// apply filters to edit price sheet
 			applyAllMandatoryFiltersUnderDisplayPriceSheet(inputArray);
+			//// return after edit data
 			HashMap<String, String> AfterEditingPSValues = returnPriceSheetResultGridData();
 			// compare both values
 			if (Float.parseFloat(beforEditingPSValues.get("COST")) + 10 == Float
