@@ -31,14 +31,14 @@ public class OCEAN_UnderWriting_TC_01_02_03_045 extends UnderwritingModulePages 
 		//// drag and drop files
 		dragAndDropFiles();
 		//// fill all necessary fields in create remittance
-		String remittanceName = enterRemittanceMandatoryValues();
+		String remittanceName = enterRemittanceMandatoryValues("2");
 		if (remittanceName.length() > 0) {
 			//// search remittance
 			searchRemittance(remittanceName);
 			//// Assign Status of documents and save remittance
 			assignDocumentsStatus(2);
 			///// Update check status
-			addCheck();
+			//addCheck();
 			//// Refresh remittance
 			refreshRemittance();
 			//// Search remittance and file name and issue contract

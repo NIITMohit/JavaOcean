@@ -79,9 +79,6 @@ public class OCEAN_Cancel_TC_01_02 extends CancellationModulePages {
 				break;
 			}
 		}
-		if (countFlag == true && dataFlag == true)
-			assertEquals(true, true);
-		else
-			assertEquals(false, true);
+		assertEquals(countFlag == dataFlag == true, true);
 	}
 }

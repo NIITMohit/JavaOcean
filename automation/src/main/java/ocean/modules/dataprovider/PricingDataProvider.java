@@ -31,6 +31,22 @@ public class PricingDataProvider {
 	/**
 	 * Data provider for fetchSearchData used in search module
 	 */
+	@DataProvider(name = "fetchDataForTC16_17")
+	public static Object[][] fetchDataForTC16_17() {
+		//// current running directory
+		String currentDir = System.getProperty("user.dir");
+		//// pat of test ng test data
+		String dir = currentDir + "\\Repository\\";
+		//// Excel sheet file name
+		String fileName = "Pricing.xlsx";
+		//// Excel sheet, sheet name
+		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC16_17");
+		return arrayObject;
+	}
+
+	/**
+	 * Data provider for fetchSearchData used in search module
+	 */
 	@DataProvider(name = "fetchDataForTC03")
 	public static Object[][] fetchDataForTC03() {
 		return new String[][] { { "UnderW" }, { "OnHold" }, { "Return" }, { "Pending" }, { "Processed" },
@@ -60,7 +76,7 @@ public class PricingDataProvider {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC_06");
 		return arrayObject;
 	}
-	
+
 	/**
 	 * Data provider for fetchDataForTC06 used in tc 06 module
 	 */

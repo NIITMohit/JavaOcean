@@ -671,6 +671,10 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='COVERAGE']//*[@ClassName='TextBox']</value>
 	</keyword>
+	<keyword id="getActualBreakdown">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Actual Breakdown Cost']//*[@ClassName='TextBlockLite'])[2]</value>
+	</keyword>
 	<keyword id="selectClass">
 			<locator>xpath</locator>
 			<value>//*[@Name='CLASS']//*[@ClassName='TextBox']</value>
@@ -679,25 +683,29 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='TERM']//*[@ClassName='TextBox']</value>
 	</keyword>
-    <keyword id="getPriceSheetRow1ByClickCategoryValue">
+	<keyword id="getPriceSheetRow1ByClickCategoryValue">
 			<locator>xpath</locator>
 			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
 	</keyword>
 	<keyword id="getOptionsRow1ByClickCategoryValue">
 			<locator>xpath</locator>
-			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
+			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[2]</value>
 	</keyword>
 	<keyword id="getSurchargesRow1ByClickCategoryValue">
 			<locator>xpath</locator>
-			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
+			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[3]</value>
 	</keyword>
-	<keyword id="getRow1ByClickCategoryValue">
+	<keyword id="getDeductibleRow1ByClickCategoryValue">
 			<locator>xpath</locator>
-			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
+			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[4]</value>
 	</keyword>
 	<keyword id="EditSelectedRows">
 			<locator>NAME</locator>
 			<value>Edit Selected Rows</value>
+	</keyword>
+	<keyword id="clickOnCloseButton">
+			<locator>xpath</locator>
+			<value>(//*[@Name= 'Close' and @LocalizedControlType='button'])[1]</value>
 	</keyword>
 	<keyword id="selectMilage_Band">
 			<locator>xpath</locator>
@@ -823,9 +831,57 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='RES_BASE']//*[@Name='Operator']</value>
 	</keyword>
-	<keyword id="selectOperatorResBase">
+	<keyword id="selectOperator">
 			<locator>xpath</locator>
-			<value>//*[@Name='RES_BASE']//*[@Name='Operator']</value>
+			<value>//*[@Name='RES_BASE']//*[@Name='Operator']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectOptionsReplace">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BUSE_BASE']//*[@Name='Operator']</value>
+	</keyword>
+	<keyword id="selectOptionsOperator">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BUSE_BASE']//*[@Name='Operator']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectOptionsCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BUSE_BASE']//*[@Name='Cost']</value>
+	</keyword>
+	<keyword id="typeOptionsCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BUSE_BASE']//*[@Name='Cost']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectSurchargesReplace">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_AWD_BASE']//*[@Name='Operator']</value>
+	</keyword>
+	<keyword id="selectSurchargesOperator">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_AWD_BASE']//*[@Name='Operator']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectSurchargesCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_AWD_BASE']//*[@Name='Cost']</value>
+	</keyword>
+	<keyword id="typeSurchargesCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_AWD_BASE']//*[@Name='Cost']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectDeductiblesReplace">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_DEDUCTIBLE_250_BASE']//*[@Name='Operator']</value>
+	</keyword>
+	<keyword id="selectDeductiblesOperator">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_DEDUCTIBLE_250_BASE']//*[@Name='Operator']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectDeductiblesCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_DEDUCTIBLE_250_BASE']//*[@Name='Cost']</value>
+	</keyword>
+	<keyword id="typeDeductiblesCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_DEDUCTIBLE_250_BASE']//*[@Name='Cost']//*[@ClassName='TextBox']</value>
 	</keyword>
 	<keyword id="selectOperatorAdminAul1Base">
 			<locator>xpath</locator>
@@ -877,11 +933,11 @@
 	</keyword>
 	<keyword id="clickSaveEditPSROw">
 			<locator>xpath</locator>
-			<value>//*[@Name='Edit selected products']//*[@ClassName='ToolBar']//*[@ClassName='Button']//*[@ClassName='']</value>
+			<value>(//*[@ClassName= 'Button' and @LocalizedControlType='button']//*[@ClassName='Image' and @LocalizedControlType='image'])[1]</value>
 	</keyword>
 	<keyword id="scrollDisplayPSPageDown">
 			<locator>xpath</locator>
-			<value>(//*[@AutomationId='PageDown' and @ClassName='RepeatButton'])[7]</value>
+			<value>//*[@AutomationId='PageUp' and @ClassName='RepeatButton']</value>
 		</keyword>
 	<keyword id="clickImportButton">
 			<locator>Name</locator>
@@ -940,6 +996,66 @@
 	<keyword id="typeToSearchRemittance">
 			<locator>xpath</locator>
 			<value>//*[@Name='Remittance Name' and @AutomationId='Cell_RemittanceName' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="typeToSearchPostPeriod">
+			<locator>xpath</locator>
+			<value>//*[@Name='Post Period' and @AutomationId='Cell_PostPeriod' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="typeToSearchRemittanceNumber">
+			<locator>xpath</locator>
+			<value>//*[@Name='Remittance#' and @AutomationId='Cell_RemittanceNumber' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="typeToSearchCoreCount">
+			<locator>xpath</locator>
+			<value>//*[@Name='Core' and @AutomationId='Cell_CoreCount' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="typeToSearchLWACount">
+			<locator>xpath</locator>
+			<value>//*[@Name='LWA' and @AutomationId='Cell_LWACount' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="typeToSearchUnderW">
+			<locator>xpath</locator>
+			<value>//*[@Name='UnderW' and @AutomationId='Cell_UnderwritingCount' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="typeToSearchSource">
+			<locator>xpath</locator>
+			<value>//*[@Name='Source' and @AutomationId='Cell_REMIT_SOURCE_ID' and @ClassName='FilterCell']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="typeToSearchSourceClear">
+			<locator>xpath</locator>
+			<value>//*[@Name='Source' and @AutomationId='Cell_REMIT_SOURCE_ID' and @ClassName='FilterCell']//*[@AutomationId='clearFilterButton']</value>
+	</keyword>
+	<keyword id="typeToSearchType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Type' and @AutomationId='Cell_REMIT_TYPE_ID' and @ClassName='FilterCell']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="typeToSearchTypeClear">
+			<locator>xpath</locator>
+			<value>//*[@Name='Type' and @AutomationId='Cell_REMIT_TYPE_ID' and @ClassName='FilterCell']//*[@AutomationId='clearFilterButton']</value>
+	</keyword>
+	<keyword id="typeToSearchSubType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Sub Type' and @AutomationId='Cell_REMIT_SUBTYPE_ID' and @ClassName='FilterCell']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="typeToSearchSubTypeClear">
+			<locator>xpath</locator>
+			<value>//*[@Name='Sub Type' and @AutomationId='Cell_REMIT_SUBTYPE_ID' and @ClassName='FilterCell']//*[@AutomationId='clearFilterButton']</value>
+	</keyword>
+	<keyword id="typeToSearchCreatedBy">
+			<locator>xpath</locator>
+			<value>//*[@Name='Created By' and @AutomationId='Cell_CreateByUser' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="typeToSearchLockedBy">
+			<locator>xpath</locator>
+			<value>//*[@Name='Locked By' and @AutomationId='Cell_Locked_by' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="typeToSearchCreatedDate">
+			<locator>xpath</locator>
+			<value>//*[@Name='Created Date' and @AutomationId='Cell_CreatedDateStringFormat' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="typeToSearchComment">
+			<locator>xpath</locator>
+			<value>//*[@Name='Comment' and @AutomationId='Cell_Comments' and @ClassName='FilterCell']//*[@ClassName='TextBox']</value>
 	</keyword>
 	<keyword id="expandRemittance">
 			<locator>xpath</locator>
@@ -1229,6 +1345,14 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_RemittanceName']//*[@ClassName='TextBlockLite']</value>
 	</keyword>
+	<keyword id="remitPostPeriod">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_PostPeriod']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitNumber">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_RemittanceNumber']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
 	<keyword id="remitCore">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_CoreCount']//*[@ClassName='TextBlockLite']</value>
@@ -1237,6 +1361,10 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_LWACount']//*[@ClassName='TextBlockLite']</value>
 	</keyword>
+	<keyword id="remitUnderW">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_UnderwritingCount']//*[@ClassName='TextBlockLite']</value>
+	</keyword>	
 	<keyword id="remitSource">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_REMIT_SOURCE_ID']//*[@ClassName='TextBlockLite']</value>
@@ -1253,6 +1381,22 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_REMIT_SUBTYPE_ID']//*[@ClassName='TextBlockLite']</value>
 	</keyword>
+	<keyword id="remitCreatedBy">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_CreateByUser']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitLockedBy">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_Locked_by']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitCreatedDate">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_CreatedDateStringFormat']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitComment">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_Comments']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
 	<keyword id="clickAddedCheck">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Cell_CHECK_NO' and @LocalizedControlType = 'custom' and @ClassName = 'DataCell']</value>
@@ -1268,6 +1412,86 @@
 	<keyword id="pdfStatus">
 			<locator>xpath</locator>
 			<value>//*[contains(@Name,'Wrappers.DocumentWrapper')]//*[@ClassName='TextBlock']</value>
+	</keyword>
+	<keyword id="clickCheckCheckBox">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'Wrappers.CHECKWrapper')]//*[@ClassName='CheckBox']</value>
+	</keyword>
+	<keyword id="custPaid">
+			<locator>xpath</locator>
+			<value>//*[@Name='Customer Paid:']/following-sibling::*[@Name='DoubleUpDown']//*[@AutomationId='PART_TextBox']</value>
+	</keyword>
+	<keyword id="dealerPaid">
+			<locator>xpath</locator>
+			<value>//*[@Name='Dealer Paid:']/following-sibling::*[@Name='DoubleUpDown']//*[@AutomationId='PART_TextBox']</value>
+	</keyword>
+	<keyword id="remittanceSummary">
+			<locator>Name</locator>
+			<value>Remittance Summary</value>
+	</keyword>
+	<keyword id="remittancePost">
+			<locator>Name</locator>
+			<value>Post Remittance</value>
+	</keyword>
+	<keyword id="remittanceLockUnlockButton">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_IsLocked']//*[@ClassName='Image']</value>
+	</keyword>
+	<keyword id="remittanceSaveButton">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_Save']//*[@ClassName='Image']</value>
+	</keyword>
+	<keyword id="remittancePDFLogo">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@ClassName='DataRow']//*[@AutomationId='Cell_View']//*[@ClassName='Button']</value>
+	</keyword>
+	<keyword id="remittancePostPeriodSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_PostPeriod']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceRemittanceNumberSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_RemittanceNumber']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceRemittanceNameSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_RemittanceName']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceCoreCountSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_CoreCount']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceLWACountSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_LWACount']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceUnderwritingCountSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_UnderwritingCount']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceHoldContractCountSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_HoldContractCount']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceREMIT_SOURCE_IDSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_REMIT_SOURCE_ID']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceREMIT_TYPE_IDSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_REMIT_TYPE_ID']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceRemittanceNumberSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_RemittanceNumber']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceRemittanceNameSecond">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_1']//*[@AutomationId='Cell_RemittanceName']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remittanceRemittanceIdOnContract">
+			<locator>xpath</locator>
+			<value>//*[@ClassName='ScrollViewer']//*[@Name='Remittance#:']/following-sibling::*[1]</value>
 	</keyword>
 	</UnderWriting>
 	<Search>
@@ -1296,7 +1520,7 @@
 			<value>//*[@Name='Status:']/following-sibling::*[1]</value>
 	</keyword>
 	<keyword id="clickUnderW">
-			<locator>name</locator>
+			<locator>Name</locator>
 			<value>UnderW</value>
 	</keyword>
 	<keyword id="clickOnHold">
