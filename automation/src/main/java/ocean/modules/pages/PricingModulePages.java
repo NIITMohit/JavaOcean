@@ -112,15 +112,9 @@ public class PricingModulePages extends PricingDataBase {
 	 * Display Price Sheet Window
 	 */
 	public void editSelectedPriceValues() {
-		click("getRow1ByClickOnCategoryValue");
-		waitForSomeTime(2);
-		try {
-			rightClick("getRow1ByClickOnCategoryValue");
-		} catch (Exception e) {
-			throw e;
-		}
+		click("listOfCost");
+		rightClick("listOfCost");
 		click("selectEdit");
-
 		click("selectReplace");
 		// select operator
 		typeKeys("selectOperator", "+");
@@ -132,32 +126,6 @@ public class PricingModulePages extends PricingDataBase {
 		// click save
 		click("clickSaveEditPSROw");
 		// RES_BASE
-
-		/*
-		 * typeKeysWithDoubleClick("selectOperatorResBase", "+");
-		 * typeKeysWithDoubleClick("selectCostResBase", "10");
-		 * 
-		 * //doubleClick("selectCostResBase"); //type("selectCostResBase", "10"); //
-		 * doubleClick("selectOperatorResBase"); // type("selectOperatorResBase", "+");
-		 * 
-		 * // ADMIN_AUL_1_BASE typeKeysWithDoubleClick("selectOperatorAdminAul1Base",
-		 * "+"); // INS_CLIP_BASE typeKeysWithDoubleClick("selectOperatorInsClipBase",
-		 * "-"); // ADMIN_AUL_2_BASE
-		 * typeKeysWithDoubleClick("selectOperatorAdminAul2Base", "+"); // COMM_1_BASE
-		 * typeKeysWithDoubleClick("selectOperatorComm1Base", "+"); // type Cost
-		 * RES_BASE value
-		 * 
-		 * 
-		 * 
-		 * typeWithDoubleClick("selectCostResBase", "25"); // type Cost ADMIN_AUL_1_BASE
-		 * value typeWithDoubleClick("selectCostAdminAul1Base", "50"); // type Cost
-		 * ADMIN_AUL_2_BASE value typeWithDoubleClick("selectCostAdminAul2Base", "15");
-		 * // type Cost INS_CLIP_BASE value typeWithDoubleClick("selectCostInsClipBase",
-		 * "25"); // type Cost COMM_1_BASE value
-		 * typeWithDoubleClick("selectCostComm1Base", "100");
-		 * 
-		 * try { click("clickSaveEditPSROw"); } catch (Exception e) { throw e; }
-		 */
 	}
 
 	/**
@@ -166,11 +134,7 @@ public class PricingModulePages extends PricingDataBase {
 	 */
 	public void afterEditGetActualBreakdownValue() {
 		click("getRow1ByClickOnCategoryValue");
-		try {
-			rightClick("getRow1ByClickOnCategoryValue");
-		} catch (Exception e) {
-			throw e;
-		}
+		rightClick("getRow1ByClickOnCategoryValue");
 		click("selectEdit");
 
 	}
@@ -180,16 +144,20 @@ public class PricingModulePages extends PricingDataBase {
 	 * Window
 	 */
 	public void editSelectedOptionsValues() {
-
 		click("getOptionsRow1ByClickCategoryValue");
 		rightClick("getOptionsRow1ByClickCategoryValue");
+		// Click on Edit selected rows
 		click("selectEdit");
-		doubleClick("selectOperatorResBase");
-		type("selectOperatorResBase", "+");
-		doubleClick("selectCostResBase");
-		type("selectCostResBase", "100");
+		// select operator
+		click("selectOptionsReplace");
+		// typeKeys("selectOperator", "Enter");
+		typeKeys("selectOptionsOperator", "+");
+		// Select Cost Field
+		click("selectOptionsCost");
+		// Type Cost
+		type("typeOptionsCost", "100");
+		// click save
 		click("clickSaveEditPSROw");
-
 	}
 
 	/**
@@ -197,21 +165,20 @@ public class PricingModulePages extends PricingDataBase {
 	 * Sheet Window
 	 */
 	public void editSelectedSurchargesValues() {
-		click("scrollDisplayPSPageDown");
-
 		click("getSurchargesRow1ByClickCategoryValue");
-		try {
-			rightClick("getSurchargesRow1ByClickCategoryValue");
-		} catch (Exception e) {
-			throw e;
-		}
+		rightClick("getSurchargesRow1ByClickCategoryValue");
+		// Click on Edit rows
 		click("selectEdit");
-		doubleClick("selectOperatorResBase");
-		type("selectOperatorResBase", "+");
-		doubleClick("selectCostResBase");
-		type("selectCostResBase", "100");
+		// select operator
+		click("selectSurchargesReplace");
+		// typeKeys("selectOperator", "Enter");
+		typeKeys("selectSurchargesOperator", "+");
+		// Select Cost Field
+		click("selectSurchargesCost");
+		// Type Cost
+		type("typeSurchargesCost", "100");
+		// click save
 		click("clickSaveEditPSROw");
-
 	}
 
 	/**
@@ -219,18 +186,19 @@ public class PricingModulePages extends PricingDataBase {
 	 * Sheet Window
 	 */
 	public void editSelectedDeductibleValues() {
-		click("scrollDisplayPSPageDown");
 		click("getDeductibleRow1ByClickCategoryValue");
-		try {
-			rightClick("getDeductibleRow1ByClickCategoryValue");
-		} catch (Exception e) {
-			throw e;
-		}
+		rightClick("getDeductibleRow1ByClickCategoryValue");
+		// Click on Edit rows
 		click("selectEdit");
-		doubleClick("selectOperatorResBase");
-		type("selectOperatorResBase", "+");
-		doubleClick("selectCostResBase");
-		type("selectCostResBase", "100");
+		// select operator
+		click("selectDeductiblesReplace");
+		// typeKeys("selectOperator", "Enter");
+		typeKeys("selectDeductiblesOperator", "+");
+		// Select Cost Field
+		click("selectDeductiblesCost");
+		// Type Cost
+		type("typeDeductiblesCost", "100");
+		// click save
 		click("clickSaveEditPSROw");
 	}
 
@@ -241,85 +209,65 @@ public class PricingModulePages extends PricingDataBase {
 	 * @return
 	 * 
 	 */
-	public HashMap<String, String> returnPriceSheetResultGridData(int i) throws Exception {
+	public HashMap<String, String> returnPriceSheetResultGridData() throws Exception {
 		HashMap<String, String> searchData = new HashMap<String, String>();
-		/*
-		 * //// save CATEGORY_VALUE searchData.put("CATEGORY_VALUE",
-		 * getValue("listOfCategoryValue", i).trim()); //// save COVERAGE_TYPE
-		 * searchData.put("COVERAGE_TYPE", getValue("listOfCoverageType", i).trim());
-		 * //// save COVERAGE searchData.put("COVERAGE", getValue("listOfCoverage",
-		 * i).trim()); //// save MILEAGE_BAND searchData.put("MILEAGE_BAND",
-		 * getValue("listOfMileageBand", i).trim()); //// save MILEAGE_FROM
-		 * searchData.put("MILEAGE_FROM", getValue("listOfMileageFrom", i).trim()); ////
-		 * save MILEAGE_TO searchData.put("MILEAGE_TO", getValue("listOfMileageTo",
-		 * i).trim()); //// save CLASS searchData.put("CLASS", getValue("listOfClass",
-		 * i).trim()); //// Save TERM searchData.put("TERM", getValue("listOfTerm",
-		 * i).trim()); //// save TERM_MONTHS searchData.put("TERM_MONTHS",
-		 * getValue("listOfTermMonths", i).trim());
-		 */
-		//// save COST
-		searchData.put("COST", getValue("listOfCost", i).trim());
-		/*
-		 * //// save ADMIN_AUL_1_BASE searchData.put("ADMIN_AUL_1_BASE",
-		 * getValue("listOfAdminAul1Base", i).trim()); //// save ADMIN_AUL_2_BASE
-		 * searchData.put("ADMIN_AUL_2_BASE", getValue("listOfAdminAul2Base",
-		 * i).trim()); //// save COMM_1_BASE searchData.put("COMM_1_BASE",
-		 * getValue("listOfComm1Base", i).trim()); //// save INS_CLIP_BASE
-		 * searchData.put("INS_CLIP_BASE", getValue("listOfInsClipBase", i).trim());
-		 * //// save RES_BASE searchData.put("RES_BASE", getValue("listOfResBase",
-		 * i).trim());
-		 */
+		// save COST
+		searchData.put("COST", getValue("listOfCost"));
 		return searchData;
 
 	}
 
 	/**
-	 * This function is used to return options data in map after optins editing, to
-	 * be verified from search result grid
+	 * This function is used to return optins actual breakdown value in map after PS
+	 * editing, to be verified from search result grid
 	 * 
 	 * @return
 	 * 
 	 */
-	public HashMap<String, String> returnOptionsResultGridData(int i) {
+	public HashMap<String, String> returnOptionsActualBreakdownGridData() throws Exception {
 		HashMap<String, String> searchData = new HashMap<String, String>();
-		searchData.put("RES_BUSE_BASE", getValue("listOfRES_BUSE_BASE", i).trim());
-		searchData.put("RES_LKIT_BASE", getValue("listOfRES_LKIT_BASE", i).trim());
-		searchData.put("RES_SG_BASE", getValue("listOfRES_SG_BASE", i).trim());
-		searchData.put("RES_WR_BASE", getValue("listOfRES_WR_BASE", i).trim());
+		click("getOptionsRow1ByClickCategoryValue");
+		rightClick("getOptionsRow1ByClickCategoryValue");
+		click("selectEdit");
+		// save Actual Breakdown
+		searchData.put("Actual_Breakdown", getValue("getActualBreakdown"));
+		click("clickOnCloseButton");
 		return searchData;
-
 	}
 
 	/**
-	 * This function is used to return options data in map after Surcharges editing,
-	 * to be verified from search result grid
+	 * This function is used to return Surcharges actual breakdown value in map
+	 * after PS editing, to be verified from search result grid
 	 * 
 	 * @return
 	 * 
 	 */
-	public HashMap<String, String> returnSurchargesResultGridData(int i) {
+	public HashMap<String, String> returnSurchargesActualBreakdownGridData() throws Exception {
 		HashMap<String, String> searchData = new HashMap<String, String>();
-		searchData.put("RES_AWD_BASE", getValue("listOfRES_AWD_BASE", i).trim());
-		searchData.put("RES_ONETON_BASE", getValue("listOfRES_ONETON_BASE", i).trim());
-		searchData.put("RES_SUPERCHARGE_BASE", getValue("listOfRES_SUPERCHARGE_BASE", i).trim());
-		searchData.put("RES_TURBO_BASE", getValue("listOfRES_TURBO_BASE", i).trim());
+		click("getSurchargesRow1ByClickCategoryValue");
+		rightClick("getSurchargesRow1ByClickCategoryValue");
+		click("selectEdit");
+		// save Actual Breakdown
+		searchData.put("Actual_Breakdown", getValue("getActualBreakdown"));
+		click("clickOnCloseButton");
 		return searchData;
-
 	}
 
 	/**
-	 * This function is used to return options data in map after Surcharges editing,
-	 * to be verified from search result grid
+	 * This function is used to return Deductible actual breakdown value in map
+	 * after PS editing, to be verified from search result grid
 	 * 
 	 * @return
 	 * 
 	 */
-	public HashMap<String, String> returndDeductiblesResultGridData(int i) {
+	public HashMap<String, String> returnDeductiblesActualBreakdownGridData() throws Exception {
 		HashMap<String, String> searchData = new HashMap<String, String>();
-		searchData.put("RES_DEDUCTIBLE_0_BASE", getValue("listOfRES_DEDUCTIBLE_0_BASE", i).trim());
-		searchData.put("RES_DEDUCTIBLE_100_BASE", getValue("listOfRES_DEDUCTIBLE_100_BASE", i).trim());
-		searchData.put("RES_DEDUCTIBLE_250_BASE", getValue("listOfRERES_DEDUCTIBLE_250_BASE", i).trim());
-		searchData.put("RES_DISDEDUCT_BASE", getValue("listOfRES_DISDEDUCT_BASE", i).trim());
+		click("getDeductibleRow1ByClickCategoryValue");
+		rightClick("getDeductibleRow1ByClickCategoryValue");
+		click("selectEdit");
+		// save Actual Breakdown
+		searchData.put("Actual_Breakdown", getValue("getActualBreakdown"));
+		click("clickOnCloseButton");
 		return searchData;
 
 	}
@@ -329,57 +277,26 @@ public class PricingModulePages extends PricingDataBase {
 	 * given. It accepts a hash map with input parameters
 	 * 
 	 */
+
 	public void applyAllMandatoryFiltersUnderDisplayPriceSheet(String[] inputArray) throws Exception {
-		type("typeProgramCode", inputArray[0]);
+		type("selectCoverage", inputArray[1]);
+		type("selectMilage_Band", inputArray[2]);
+		type("selectClass", inputArray[3]);
+		type("selectTerm", inputArray[4]);
+	}
+
+	/**
+	 * This function is used to navigate to perform search based on search parameter
+	 * given. It accepts a hash map with input parameters
+	 * 
+	 */
+
+	public void selectPriceSheet(String inputArray) throws Exception {
+		type("typeProgramCode", inputArray);
 		waitForSomeTime(2);
 		click("getPriceSheetCode");
-		waitForSomeTime(5);
-
-		try {
-
-			rightClick("getPriceSheetCode");
-		} catch (Exception e) {
-			throw e;
-		}
-		waitForSomeTime(2);
-
-		try {
-			click("clickDisplayAndEditPriceSheet");
-		} catch (Exception e) {
-			throw e;
-		} /*
-			 * 
-			 * type("selectCoverage", inputArray[1]); type("selectMilage_Band",
-			 * inputArray[2]); type("selectClass", inputArray[3]); type("selectTerm",
-			 * inputArray[4]);
-			 */
-		/*
-		 * for (@SuppressWarnings("rawtypes") Map.Entry mapElement :
-		 * searchParamaters.entrySet()) { String searchParamater = (String)
-		 * mapElement.getKey(); String valueToInput = ((String)
-		 * mapElement.getValue()).trim(); switch (searchParamater.toLowerCase()) { case
-		 * "Code": type("typeProgramCode", valueToInput);
-		 * 
-		 * 
-		 * // String priceSheetcode = getValue("getPriceSheetCode"); //
-		 * System.out.println("Price sheet code : " + priceSheetcode);
-		 * click("getPriceSheetCode"); rightClick("getPriceSheetCode");
-		 * click("clickDisplayAndEditPriceSheet");
-		 * 
-		 * case "Coverage_Type": type("selectCoverage", valueToInput);
-		 * 
-		 * case "Mileage_Band": type("selectMilage_Band", valueToInput);
-		 * 
-		 * case "Class": type("selectClass", valueToInput);
-		 * 
-		 * case "Term": type("selectTerm", valueToInput); break; default: //// do
-		 * nothing } try { //String categoryValue =
-		 * getValue("getRow1ByClickCategoryValue");
-		 * //System.out.println("category value is : "+ categoryValue);
-		 * click("getPriceSheetRow1ByClickCategoryValue");
-		 * rightClick("getPriceSheetRow1ByClickCategoryValue"); click("selectEdit"); }
-		 * catch (Exception e) { throw e; } }
-		 */
+		rightClick("getPriceSheetCode");
+		click("clickDisplayAndEditPriceSheet");
 	}
 
 }

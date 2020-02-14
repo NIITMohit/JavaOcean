@@ -607,11 +607,11 @@
 		</keyword>
 		<keyword id="AgentDetailsAgentAddress">
 			<locator>xpath</locator>
-			<value>(//*[@ClassName='er'])[7]//*[@Name='Address']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='Address']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="AgentDetailsAgentCity">
 			<locator>xpath</locator>
-			<value>(//*[@ClassName='er'])[7]//*[@Name='City']/following-sibling::*[1]</value>
+			<value>(//*[@ClassName='Expander'])[7]//*[@Name='City']/following-sibling::*[1]</value>
 		</keyword>
 		<keyword id="AgentDetailsAgentState">
 			<locator>xpath</locator>
@@ -671,6 +671,10 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='COVERAGE']//*[@ClassName='TextBox']</value>
 	</keyword>
+	<keyword id="getActualBreakdown">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Actual Breakdown Cost']//*[@ClassName='TextBlockLite'])[2]</value>
+	</keyword>
 	<keyword id="selectClass">
 			<locator>xpath</locator>
 			<value>//*[@Name='CLASS']//*[@ClassName='TextBox']</value>
@@ -679,25 +683,29 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='TERM']//*[@ClassName='TextBox']</value>
 	</keyword>
-    <keyword id="getPriceSheetRow1ByClickCategoryValue">
+	<keyword id="getPriceSheetRow1ByClickCategoryValue">
 			<locator>xpath</locator>
 			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
 	</keyword>
 	<keyword id="getOptionsRow1ByClickCategoryValue">
 			<locator>xpath</locator>
-			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
+			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[2]</value>
 	</keyword>
 	<keyword id="getSurchargesRow1ByClickCategoryValue">
 			<locator>xpath</locator>
-			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
+			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[3]</value>
 	</keyword>
-	<keyword id="getRow1ByClickCategoryValue">
+	<keyword id="getDeductibleRow1ByClickCategoryValue">
 			<locator>xpath</locator>
-			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[1]</value>
+			<value>(//*[@AutomationId='Row_0']//*[@Name='CATEGORY_VALUE']//*[@ClassName='TextBlockLite'])[4]</value>
 	</keyword>
 	<keyword id="EditSelectedRows">
 			<locator>NAME</locator>
 			<value>Edit Selected Rows</value>
+	</keyword>
+	<keyword id="clickOnCloseButton">
+			<locator>xpath</locator>
+			<value>(//*[@Name= 'Close' and @LocalizedControlType='button'])[1]</value>
 	</keyword>
 	<keyword id="selectMilage_Band">
 			<locator>xpath</locator>
@@ -823,9 +831,57 @@
 			<locator>xpath</locator>
 			<value>//*[@Name='RES_BASE']//*[@Name='Operator']</value>
 	</keyword>
-	<keyword id="selectOperatorResBase">
+	<keyword id="selectOperator">
 			<locator>xpath</locator>
-			<value>//*[@Name='RES_BASE']//*[@Name='Operator']</value>
+			<value>//*[@Name='RES_BASE']//*[@Name='Operator']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectOptionsReplace">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BUSE_BASE']//*[@Name='Operator']</value>
+	</keyword>
+	<keyword id="selectOptionsOperator">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BUSE_BASE']//*[@Name='Operator']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectOptionsCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BUSE_BASE']//*[@Name='Cost']</value>
+	</keyword>
+	<keyword id="typeOptionsCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_BUSE_BASE']//*[@Name='Cost']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectSurchargesReplace">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_AWD_BASE']//*[@Name='Operator']</value>
+	</keyword>
+	<keyword id="selectSurchargesOperator">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_AWD_BASE']//*[@Name='Operator']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectSurchargesCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_AWD_BASE']//*[@Name='Cost']</value>
+	</keyword>
+	<keyword id="typeSurchargesCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_AWD_BASE']//*[@Name='Cost']//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectDeductiblesReplace">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_DEDUCTIBLE_250_BASE']//*[@Name='Operator']</value>
+	</keyword>
+	<keyword id="selectDeductiblesOperator">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_DEDUCTIBLE_250_BASE']//*[@Name='Operator']//*[@ClassName='ComboBox']</value>
+	</keyword>
+	<keyword id="selectDeductiblesCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_DEDUCTIBLE_250_BASE']//*[@Name='Cost']</value>
+	</keyword>
+	<keyword id="typeDeductiblesCost">
+			<locator>xpath</locator>
+			<value>//*[@Name='RES_DEDUCTIBLE_250_BASE']//*[@Name='Cost']//*[@ClassName='TextBox']</value>
 	</keyword>
 	<keyword id="selectOperatorAdminAul1Base">
 			<locator>xpath</locator>
@@ -877,11 +933,11 @@
 	</keyword>
 	<keyword id="clickSaveEditPSROw">
 			<locator>xpath</locator>
-			<value>//*[@Name='Edit selected products']//*[@ClassName='ToolBar']//*[@ClassName='Button']//*[@ClassName='']</value>
+			<value>(//*[@ClassName= 'Button' and @LocalizedControlType='button']//*[@ClassName='Image' and @LocalizedControlType='image'])[1]</value>
 	</keyword>
 	<keyword id="scrollDisplayPSPageDown">
 			<locator>xpath</locator>
-			<value>(//*[@AutomationId='PageDown' and @ClassName='RepeatButton'])[7]</value>
+			<value>//*[@AutomationId='PageUp' and @ClassName='RepeatButton']</value>
 		</keyword>
 	<keyword id="clickImportButton">
 			<locator>Name</locator>
