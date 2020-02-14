@@ -11,6 +11,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import ocean.common.ObjectRepo;
 import ocean.modules.database.UnderwritingDataBase;
 
 /**
@@ -34,11 +35,333 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		//// click view contract
 	}
 
+	/**
+	 * This function is used to land to applyFiltersOnInputField
+	 * 
+	 * @return
+	 * 
+	 */
+	public boolean applyFiltersOnInputFieldAndVerifyData(String filterName, String filterExpectedValue)
+			throws Exception {
+		try {
+			click("scrollContractsListDown", 2);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		boolean flag = false;
+		switch (filterName) {
+		case "Remittance_Name":
+			try {
+				click("swipeLeft", 1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchRemittance", filterExpectedValue);
+			String old = getValue("remitName");
+			String compare = filterExpectedValue;
+			flag = old.toLowerCase().equals(compare.toLowerCase());
+			type("typeToSearchRemittance", "");
+			break;
+		case "Post_Period":
+			try {
+				click("swipeLeft", 1);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchPostPeriod", filterExpectedValue);
+			String old1 = getValue("remitPostPeriod");
+			String compare1 = filterExpectedValue;
+			flag = old1.toLowerCase().equals(compare1.toLowerCase());
+			type("typeToSearchPostPeriod", "");
+			break;
+		case "Remittance_Number":
+			try {
+				click("swipeLeft", 1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchRemittanceNumber", filterExpectedValue);
+			String old11 = getValue("remitNumber");
+			String compare11 = filterExpectedValue;
+			flag = old11.toLowerCase().equals(compare11.toLowerCase());
+			type("typeToSearchRemittanceNumber", "");
+			break;
+		case "Source":
+			try {
+				click("swipeLeft", 1);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+			}
+			typeKeys("typeToSearchSource", filterExpectedValue);
+			String old111 = getValue("remitSource");
+			String compare111 = filterExpectedValue;
+			flag = old111.toLowerCase().equals(compare111.toLowerCase());
+			click("typeToSearchSourceClear");
+			break;
+		case "Sub_Type":
+			try {
+				click("swipeRight", 1);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			typeKeys("typeToSearchSubType", filterExpectedValue);
+			String old2 = getValue("remitSubType");
+			String compare2 = filterExpectedValue;
+			flag = old2.toLowerCase().equals(compare2.toLowerCase());
+			click("typeToSearchSubTypeClear");
+			break;
+		case "Type":
+			try {
+				click("swipeLeft", 1);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			typeKeys("typeToSearchType", filterExpectedValue);
+			String old21 = getValue("remitType");
+			String compare21 = filterExpectedValue;
+			flag = old21.toLowerCase().equals(compare21.toLowerCase());
+			click("typeToSearchTypeClear");
+			break;
+		case "Core":
+			try {
+				click("swipeLeft", 1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchCoreCount", filterExpectedValue);
+			String old211 = getValue("remitCore");
+			String compare211 = filterExpectedValue;
+			flag = old211.toLowerCase().equals(compare211.toLowerCase());
+			type("typeToSearchCoreCount", "");
+			break;
+		case "LWA":
+			try {
+				click("swipeLeft", 1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchLWACount", filterExpectedValue);
+			String old3 = getValue("remitLWA");
+			String compare3 = filterExpectedValue;
+			flag = old3.toLowerCase().equals(compare3.toLowerCase());
+			type("typeToSearchLWACount", "");
+			break;
+		case "UnderW":
+			try {
+				click("swipeLeft", 1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchUnderW", filterExpectedValue);
+			String old31 = getValue("remitUnderW");
+			String compare31 = filterExpectedValue;
+			flag = old31.toLowerCase().equals(compare31.toLowerCase());
+			type("typeToSearchUnderW", "");
+			break;
+		case "Comment":
+			try {
+				click("swipeRight", 1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchComment", filterExpectedValue);
+			String old311 = getValue("remitComment");
+			String compare311 = filterExpectedValue;
+			flag = old311.toLowerCase().equals(compare311.toLowerCase());
+			type("typeToSearchComment", "");
+			break;
+		case "Created_By":
+			try {
+				click("swipeRight", 1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchCreatedBy", filterExpectedValue);
+			String old3111 = getValue("remitCreatedBy");
+			String compare3111 = filterExpectedValue;
+			flag = old3111.toLowerCase().equals(compare3111.toLowerCase());
+			type("typeToSearchCreatedBy", "");
+			break;
+		case "Locked_By":
+			try {
+				click("swipeRight", 1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchLockedBy", filterExpectedValue);
+			String old4 = getValue("remitLockedBy");
+			String compare4 = filterExpectedValue;
+			flag = old4.toLowerCase().equals(compare4.toLowerCase());
+			type("typeToSearchLockedBy", "");
+			break;
+		case "Created_Date":
+			try {
+				click("swipeRight", 1);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			try {
+				click("scrollContractsListUp", 2);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			type("typeToSearchCreatedDate", filterExpectedValue);
+			String old41 = getValue("remitCreatedDate");
+			String compare41 = filterExpectedValue;
+			flag = old41.toLowerCase().equals(compare41.toLowerCase());
+			type("typeToSearchCreatedDate", "");
+			break;
+		default:
+			flag = false;
+			break;
+		}
+
+		return flag;
+	}
+
+	/**
+	 * This function is used to view PDF, View PDF in new window and delete PDF
+	 * 
+	 */
+	public void viewPDFandDeletePDF() throws Exception {
+		click("clickOnPDF");
+		click("closePDF");
+		waitForSomeTime(2);
+		rightClick("clickOnPDF");
+		click("clickOnDeletePdf");
+		click("clickOK");
+	}
+
+	/**
+	 * This function is used to apply filter on documents like contract, check
+	 * ,remit,miscellaneous,web contract etc
+	 * 
+	 */
+	public void applyFilterOnDocument() throws Exception {
+		type("clickOnDocumentTYpeForFilter", "Contract");
+		click("saveRemittance");
+
+	}
+
 	public void searchRemittance(String remittName) throws Exception {
 		//// Type RemittanceName
 		type("typeToSearchRemittance", remittName);
 		//// expand remittance to get contracts
 		click("expandRemittance");
+	}
+
+	/**
+	 * This function is used to lock remittance
+	 * 
+	 */
+	public void lockTopRemittance() throws Exception {
+		click("remittanceLockUnlockButton");
+		try {
+			click("lockContractYesButton");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	/**
+	 * This function is used to verify pdf status
+	 * 
+	 */
+	public boolean thumbNailOfUploadedPDFOnTopRemittance() throws Exception {
+		boolean flag = true;
+		List<WebElement> we = listOfElements("remittancePDFLogo");
+		if (we.size() < 1) {
+			flag = false;
+		}
+		for (WebElement webElement : we) {
+			String ss = webElement.getAttribute("AutomationId");
+			if (!ss.toLowerCase().equals("ViewPDFButton")) {
+				flag = false;
+				break;
+			}
+		}
+		return flag;
+	}
+
+	/**
+	 * This function is used to unlock remittance
+	 * 
+	 */
+	public void unlockTopRemittance() throws Exception {
+		click("remittanceLockUnlockButton");
+		try {
+			click("lockContractYesButton");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	/**
@@ -56,6 +379,79 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		}
 		//// click contract expander
 		contractExpander();
+	}
+
+	/**
+	 * This function is used to block remittance posting
+	 * 
+	 */
+	public void blockRemittancePosting() throws Exception {
+		goToRemittanceSummary();
+		click("clickOnRemittanceSummary");
+		click("clickOnPostRemittance");
+		for (int i = 0; i < 4; i++) {
+			try {
+				click("clickOnYesButton");
+			} catch (Exception e) {
+				break;
+				// // do nothing
+			}
+		}
+		WebElement successMsg = windowsDriver.findElement(ObjectRepo.fetchOR("getTextOfSuccessMessage"));
+		if (successMsg.getText().equals("Success")) {
+			System.out.println("Post remittance successfully");
+		} else {
+			System.out.println("Block Remittance");
+
+		}
+	}
+
+	/**
+	 * This function is used to view contract click on link-view PDF in new window
+	 * 
+	 */
+	public void openContractByPDFInNewWindow() throws Exception {
+		waitForSomeTime(2);
+		rightClick("clickOnPDF");
+		waitForSomeTime(2);
+		click("clickOnViewPdfInNewWindow");
+		click("closePDF");
+	}
+
+	/**
+	 * This function is used to select check
+	 * 
+	 */
+	public void selectCheckAndScrollToTop() throws Exception {
+		click("clickCheckCheckBox");
+		for (int i = 0; i < 2; i++) {
+			try {
+				click("scrollContractsListUp");
+				continue;
+			} catch (Exception e) {
+				continue;
+			}
+
+		}
+	}
+
+	/**
+	 * This function is used to select check
+	 * 
+	 */
+	public void postRemittance() throws Exception {
+		click("remittanceSummary");
+		click("remittancePost");
+		contractExpander();
+	}
+
+	/**
+	 * This function is used to select check
+	 * 
+	 */
+	public void enterCustomerPaidAndDealerPaid(String custPaid, String dealerPaid) throws Exception {
+		type("custPaid", custPaid);
+		type("dealerPaid", dealerPaid);
 	}
 
 	/**
@@ -138,7 +534,7 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 * This function is used to get add check
 	 * 
 	 */
-	public void addCheck() throws Exception {
+	public void addCheck(String checkNumber, String checkAmount) throws Exception {
 		click("typeToSearchRemittance");
 		click("loadRemittance");
 		try {
@@ -148,8 +544,8 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		}
 		contractExpander();
 		goToCheckTab();
-		type("checkTabCheckNumber", "12231");
-		type("checkTabCheckAmount", "12231");
+		type("checkTabCheckNumber", checkNumber);
+		type("checkTabCheckAmount", checkAmount);
 		click("saveAllOnRemittance");
 		click("clickOK");
 		contractExpander();
@@ -179,6 +575,21 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 				break;
 			}
 		}
+	}
+
+	/**
+	 * This function is used to view contract by clicking on the view contract icon
+	 * before remittance posting
+	 * 
+	 */
+	public void viewContractBeforeContractPosting(String remittName) throws Exception {
+		//// Type RemittanceName
+		type("typeToSearchRemittance", remittName);
+		//// expand remittance to get contracts
+		click("expandRemittance");
+		click("viewContract", 1);
+		;
+		contractExpander();
 	}
 
 	/**
@@ -464,14 +875,14 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 * This function is used to enter mandatory values in create remittance
 	 * 
 	 */
-	public String enterRemittanceMandatoryValues() throws Exception {
+	public String enterRemittanceMandatoryValues(String coreCount) throws Exception {
 		//// Type Remittance Name
 		String remittanceName = "";
 		try {
 			remittanceName = randomString(20);
 			type("remittanceName", remittanceName);
 			//// ENter core count
-			type("remittanceCoreCount", "2");
+			type("remittanceCoreCount", coreCount);
 			//// select remit type
 			typeKeys("remittanceTypeCombobox", "Standard");
 			typeKeys("remittanceRemitTypeComboBox", "Paper Remit");

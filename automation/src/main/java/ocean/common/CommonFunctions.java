@@ -513,7 +513,7 @@ public class CommonFunctions extends Suite {
 		return newDate;
 
 	}
-	
+
 ///// Prepare test data needed for test case
 	///// validatePremiumCalculationForMasterAndSubMasterPriceSheet
 	public HashMap<String, String> prepareData(String[] inputData) {
@@ -608,6 +608,18 @@ public class CommonFunctions extends Suite {
 		return premiumData;
 	}
 
+	/**
+	 * This common function is used to go to mail service tab
+	 * 
+	 * 
+	 */
+	public void goToRemittanceSummary() {
+		try {
+			click("clickOnRemittanceSummary");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
 
 	/**
 	 * dataProvider function is used to read data provider excel

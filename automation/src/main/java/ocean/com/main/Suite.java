@@ -38,6 +38,7 @@ import ocean.common.ReadData;
  * @author Mohit Goel
  */
 public class Suite extends ReadData {
+
 	/**
 	 * Executed as just before Test cases suite setup class to open ocean
 	 * application, read OR (Object repository), create reports, attach win APP

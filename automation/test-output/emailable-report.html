@@ -9,10 +9,23 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Ocean</th></tr>
-<tr><td><a href="#t0">Cancellation</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">484,387</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Cancellation</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">5,462</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Ocean</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Cancellation &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_07</td><td><a href="#m0">deleteRemittance</a></td><td rowspan="1">1580462720213</td><td rowspan="1">483348</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Ocean</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Cancellation &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09</td><td><a href="#m0">applyFiltersOnAllFields</a></td><td rowspan="1">1580981326839</td><td rowspan="1">4977</td></tr></tbody>
 </table>
-<h2>Cancellation</h2><h3 id="m0">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_07#deleteRemittance</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Cancellation</h2><h3 id="m0">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09#applyFiltersOnAllFields</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">com.microsoft.sqlserver.jdbc.SQLServerException: Incorrect syntax near &apos;,&apos;.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:232)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1672)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:903)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:796)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7535)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:2438)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:208)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:183)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeQuery(SQLServerStatement.java:695)
+	at ocean.modules.database.UnderwritingDataBase.getRemitDataForFilters(UnderwritingDataBase.java:468)
+	at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09.applyFiltersOnAllFields(OCEAN_UnderWriting_TC_09.java:130)
+	at java.util.ArrayList.forEach(Unknown Source)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
