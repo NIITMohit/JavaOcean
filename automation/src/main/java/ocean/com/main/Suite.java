@@ -165,11 +165,11 @@ public class Suite extends ReadData {
 			//// in case of skip
 			else if (result.getStatus() == ITestResult.SKIP) {
 				Statuss = "skip";
-				node1.log(Status.SKIP, "TEST CASE FAILED IS " + result.getName());
+				node1.log(Status.SKIP, "TEST CASE SKIPED IS " + result.getName());
 			} //// in case of pass
 			else {
 				Statuss = "pass";
-				node1.log(Status.PASS, "TEST CASE FAILED IS " + result.getName());
+				node1.log(Status.PASS, "TEST CASE PASSED IS " + result.getName());
 			}
 			//// Append all screenshot with the node
 			for (String path : screenShots) {
