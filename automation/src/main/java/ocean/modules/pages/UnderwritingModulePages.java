@@ -300,17 +300,6 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		click("clickOK");
 	}
 
-	/**
-	 * This function is used to apply filter on documents like contract, check
-	 * ,remit,miscellaneous,web contract etc
-	 * 
-	 */
-	public void applyFilterOnDocument() throws Exception {
-		type("clickOnDocumentTYpeForFilter", "Contract");
-		click("saveRemittance");
-
-	}
-
 	public void searchRemittance(String remittName) throws Exception {
 		//// Type RemittanceName
 		type("typeToSearchRemittance", remittName);
@@ -577,20 +566,6 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		}
 	}
 
-	/**
-	 * This function is used to view contract by clicking on the view contract icon
-	 * before remittance posting
-	 * 
-	 */
-	public void viewContractBeforeContractPosting(String remittName) throws Exception {
-		//// Type RemittanceName
-		type("typeToSearchRemittance", remittName);
-		//// expand remittance to get contracts
-		click("expandRemittance");
-		click("viewContract", 1);
-		;
-		contractExpander();
-	}
 
 	/**
 	 * This function is used to get surcharges
@@ -685,34 +660,6 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	public String getRemittanceName() throws Exception {
 		click("remitName");
 		return getValue("remitName");
-	}
-
-	/**
-	 * This function is used to bget all data fields for remittance information
-	 * under remittance list
-	 * 
-	 */
-	public HashMap<String, String> getAllDataUnderRemittanceList() {
-		HashMap<String, String> dataMap = new HashMap<String, String>();
-		dataMap.put("PostPeriod", getValue("getPostPeriodValue"));
-		dataMap.put("RemittanceNumber", getValue("remitNumber"));
-		dataMap.put("RemittanceName", getValue("remitName"));
-		dataMap.put("UnderwritingCount", getValue("remitUWCount"));
-		dataMap.put("HoldCount", getValue("remitHolds"));
-		dataMap.put("Source_Type", getValue("remitSource"));
-		dataMap.put("Subtype_Name", getValue("remitSubType"));
-		dataMap.put("name", getValue("remitType"));
-		dataMap.put("RemitType", getValue("UVremitType"));
-		dataMap.put("corecount", getValue("remitCore"));
-		dataMap.put("lwacount", getValue("remitLWA"));
-		click("swipeRight");
-		dataMap.put("comments", getValue("getCommentsOnRemittanceScreen"));
-		dataMap.put("CreateByDate", getValue("getCreatedDate"));
-		dataMap.put("Locked_by", getValue("getLockedByValue"));
-		dataMap.put("CreateByUser", getValue("getCreatedByOnRemittanceScreen"));
-		click("swipeLeft");
-		return dataMap;
-
 	}
 
 	/**
@@ -1071,4 +1018,112 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 				getValue("remittanceComments") };
 		return dasd;
 	}
+
+	/**
+	 * This function is used to view PDF, View PDF in new window and delete PDF
+	 * 
+	 */
+	public void viewAndDeletePDF() throws Exception {
+		click("expandRemittance");
+		click("clickOnPDF");
+		click("clickOnSelectAllForPDF");
+		click("clickOnZoomOut");
+		click("clickOnZoomIn");
+		click("closePDF");
+		waitForSomeTime(2);
+		rightClick("clickOnPDF");
+		click("clickOnDeletePdf");
+		click("clickOK");
+
+	}
+
+	/**
+	 * This function is used to view contract by clicking on the view contract
+	 * icon before remittance posting
+	 * 
+	 */
+	public void viewContractBeforeContractPosting(String remittName)
+			throws Exception {
+		// // Type RemittanceName
+		type("typeToSearchRemittance", remittName);
+		// // expand remittance to get contracts
+		click("expandRemittance");
+		click("viewContract", 1);
+		contractExpander();
+	}
+
+
+	/**
+	 * This function is used to upload the pdf using draganddrop to add the file
+	 * 
+	 */
+	public void uploadPdfByDragAndDrop() throws Exception {
+
+		click("expandRemittance");
+		dragAndDropFiles();
+		waitForSomeTime(2);
+		click("saveRemittance");
+		click("expandRemittance");
+
+	}
+
+	/**
+	 * This function is used to apply filter on documents like contract, check
+	 * ,remit,miscellaneous,web contract etc
+	 * 
+	 */
+	public void applyFilterOnDocument() throws Exception {
+		click("expandRemittance");
+
+		type("clickOnDocumentTYpeForFilter", "Contract");
+		type("clickOnDocumentTYpeForFilter", "Check");
+		type("clickOnDocumentTYpeForFilter", "Remit");
+		type("clickOnDocumentTYpeForFilter", "WebContract");
+		type("clickOnDocumentTYpeForFilter", "Miscellaneous");
+		/*try {
+            for(int i=1;i<5;i++){
+			WebElement ele = windowsDriver.findElement(By.className("ComboBox"));
+			List<WebElement> lis = ele.findElements(By.className("ListBoxItem"));
+			System.out.println(lis);
+
+			lis.get(i).click();
+            }
+		}
+		catch(Exception e)
+		{
+			//do nothing
+		}*/
+		click("saveRemittance");
+		waitForSomeTime(10);
+		click("clickOK");
+	}
+
+	/**
+	 * This function is used to bget all data fields for remittance information under remittance list
+	 * 
+	 */
+	public HashMap<String, String> getAllDataUnderRemittanceList(){
+		HashMap<String, String> dataMap = new HashMap<String, String>();
+		dataMap.put("PostPeriod", getValue("getPostPeriodValue"));
+		dataMap.put("RemittanceNumber", getValue("remitNumber"));
+		dataMap.put("RemittanceName", getValue("remitName"));
+		dataMap.put("UnderwritingCount", getValue("remitUWCount"));
+		dataMap.put("HoldCount", getValue("remitHolds"));
+		dataMap.put("Source_Type", getValue("remitSource"));
+		dataMap.put("Subtype_Name", getValue("remitSubType"));
+		dataMap.put("name", getValue("remitType")); 
+		dataMap.put("RemitType", getValue("UVremitType")); 
+		dataMap.put("corecount", getValue("remitCore"));
+		dataMap.put("lwacount", getValue("remitLWA"));
+		click("swipeRight");
+		dataMap.put("comments", getValue("getCommentsOnRemittanceScreen"));
+		dataMap.put("CreateByDate", getValue("getCreatedDate"));
+		dataMap.put("Locked_by", getValue("getLockedByValue"));
+		dataMap.put("CreateByUser", getValue("getCreatedByOnRemittanceScreen"));
+		click("swipeLeft");
+		return dataMap;
+
+	}
+
+
 }
