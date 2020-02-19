@@ -566,7 +566,6 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		}
 	}
 
-
 	/**
 	 * This function is used to get surcharges
 	 * 
@@ -1034,16 +1033,14 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		rightClick("clickOnPDF");
 		click("clickOnDeletePdf");
 		click("clickOK");
-
 	}
 
 	/**
-	 * This function is used to view contract by clicking on the view contract
-	 * icon before remittance posting
+	 * This function is used to view contract by clicking on the view contract icon
+	 * before remittance posting
 	 * 
 	 */
-	public void viewContractBeforeContractPosting(String remittName)
-			throws Exception {
+	public void viewContractBeforeContractPosting(String remittName) throws Exception {
 		// // Type RemittanceName
 		type("typeToSearchRemittance", remittName);
 		// // expand remittance to get contracts
@@ -1052,19 +1049,17 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		contractExpander();
 	}
 
-
 	/**
 	 * This function is used to upload the pdf using draganddrop to add the file
 	 * 
 	 */
 	public void uploadPdfByDragAndDrop() throws Exception {
-
 		click("expandRemittance");
 		dragAndDropFiles();
+		//// check if pdf is successfully uploaded
 		waitForSomeTime(2);
 		click("saveRemittance");
 		click("expandRemittance");
-
 	}
 
 	/**
@@ -1074,35 +1069,22 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 */
 	public void applyFilterOnDocument() throws Exception {
 		click("expandRemittance");
-
 		type("clickOnDocumentTYpeForFilter", "Contract");
 		type("clickOnDocumentTYpeForFilter", "Check");
 		type("clickOnDocumentTYpeForFilter", "Remit");
 		type("clickOnDocumentTYpeForFilter", "WebContract");
 		type("clickOnDocumentTYpeForFilter", "Miscellaneous");
-		/*try {
-            for(int i=1;i<5;i++){
-			WebElement ele = windowsDriver.findElement(By.className("ComboBox"));
-			List<WebElement> lis = ele.findElements(By.className("ListBoxItem"));
-			System.out.println(lis);
-
-			lis.get(i).click();
-            }
-		}
-		catch(Exception e)
-		{
-			//do nothing
-		}*/
 		click("saveRemittance");
 		waitForSomeTime(10);
 		click("clickOK");
 	}
 
 	/**
-	 * This function is used to bget all data fields for remittance information under remittance list
+	 * This function is used to bget all data fields for remittance information
+	 * under remittance list
 	 * 
 	 */
-	public HashMap<String, String> getAllDataUnderRemittanceList(){
+	public HashMap<String, String> getAllDataUnderRemittanceList() {
 		HashMap<String, String> dataMap = new HashMap<String, String>();
 		dataMap.put("PostPeriod", getValue("getPostPeriodValue"));
 		dataMap.put("RemittanceNumber", getValue("remitNumber"));
@@ -1111,8 +1093,8 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		dataMap.put("HoldCount", getValue("remitHolds"));
 		dataMap.put("Source_Type", getValue("remitSource"));
 		dataMap.put("Subtype_Name", getValue("remitSubType"));
-		dataMap.put("name", getValue("remitType")); 
-		dataMap.put("RemitType", getValue("UVremitType")); 
+		dataMap.put("name", getValue("remitType"));
+		dataMap.put("RemitType", getValue("UVremitType"));
 		dataMap.put("corecount", getValue("remitCore"));
 		dataMap.put("lwacount", getValue("remitLWA"));
 		click("swipeRight");
@@ -1124,6 +1106,5 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		return dataMap;
 
 	}
-
 
 }
