@@ -35,6 +35,7 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 	@Test(priority = 1, groups = "regression", description = "Validate that user is able to perform on a remittance under remittance enquiry: 1.View/Delete uploaded PDF.")
 	public void viewAndDeletePdf() throws Exception {
 		goToUnderWritingTab();
+		goToRemittanceList();
 		viewAndDeletePDF();
 		boolean flag = true;
 		try {
@@ -71,14 +72,15 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 	/**
 	 * Validate that user is able to perform following on a remittance under
 	 * remittance enquiry: this function cover all the condition of this test cases
-	 * like 3. Assign document type to uploaded document.
+	 * like 3. Assign document type to uploaded document. 5. Save changes to
+	 * remittances.
 	 */
 	@Test(priority = 3, groups = "regression", description = "Validate that user is able to perform on a remittance under remittance enquiry: 3.Assign document type to uploaded document.")
-	public void assignDocumentToUploadPDF() throws Exception {
+	public void assignDocumentToUploadPDFAndSave() throws Exception {
 		//// Defect lock in Defect tracker.Defect id 8
+		uplocadNewPDF();
 		goToUnderWritingTab();
 		goToRemittanceList();
-		click("expandRemittance");
 		assignDocumentsStatus(1);
 		click("saveRemittance");
 		click("expandRemittance");
@@ -90,7 +92,6 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 			System.out.println("Apply filter is clicked");
 		}
 		assertEquals(flag, true);
-
 	}
 
 	/**
@@ -103,7 +104,6 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 		goToUnderWritingTab();
 		goToRemittanceList();
 		applyFilterOnDocument();
-		waitForSomeTime(2);
 		click("expandRemittance");
 		boolean flag = true;
 		try {
@@ -119,36 +119,13 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 	/**
 	 * Validate that user is able to perform following on a remittance under
 	 * remittance enquiry: this function cover all the condition of this test cases
-	 * like 5. Save changes to remittances.
-	 */
-	@Test(priority = 5, groups = "regression", description = "Validate that user is able to perform on a remittance under remittance enquiry: 5.Save changes to remittances.")
-	public void saveChangesOnRemittanceForNewUploadedPdf() throws Exception {
-		goToUnderWritingTab();
-		goToRemittanceList();
-		//// Defect lock in Defect tracker.Defect id 8
-		click("saveRemittance");
-		click("expandRemittance");
-
-		boolean flag = true;
-		try {
-			click("clickOnDocumentTYpeForFilter");
-			flag = false;
-		} catch (Exception e) {
-			System.out.println("Apply filter is clicked");
-		}
-		assertEquals(flag, true);
-
-	}
-
-	/**
-	 * Validate that user is able to perform following on a remittance under
-	 * remittance enquiry: this function cover all the condition of this test cases
 	 * like 6. View contract before/after remittance posting.
 	 */
 	@Test(priority = 7, groups = "regression", dataProvider = "fetchDataForTC_05_06", dataProviderClass = UnderwritingDataProvider.class, description = "Validate that user is able to perform on a remittance under remittance enquiry: 6.View contract before/after remittance posting.")
 	public void viewContractBeforeAfterRemittancePosting(String[] inputData) throws Exception {
 		//// create remittance with documents count as 1
 		goToUnderWritingTab();
+		goToRemittanceList();
 		landToCreateRemittanceDetailsPage();
 		///// Prepare Data
 		HashMap<String, String> premiumData = prepareData(inputData);
@@ -175,12 +152,17 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 				premiumData.put("DEDUCTIBLEAMOUNT", deductibles());
 			//// Get AUL Premium
 			String premium = premium();
-
 			String finalValue = calculateMyPremium(premiumData);
-
 			assertEquals(premium, finalValue);
-
+			premium();
+			enterCustomerPaidAndDealerPaid("12345", "12345");
+			selectCheckAndScrollToTop();
+			//// click under
+			click("clickUnderW");
+			//// click ok
 			//// post remittance and verify
+			postRemittance();
+			//// code to be added once underwrite code issue is fixed
 
 		} else {
 			new SkipException("no actual value exist for combination feeded in excel as test data");
@@ -251,16 +233,13 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 		goToRemittanceList();
 		click("expandRemittance");
 		openContractByPDFInNewWindow();
-		click("saveRemittance");
 		boolean flag = true;
 		try {
 			click("closePDF");
 			flag = false;
 		} catch (Exception e) {
-			System.out.println("PDF is close");
-			assertEquals(flag, true);
 		}
-
+		assertEquals(flag, true);
 	}
 
 }
