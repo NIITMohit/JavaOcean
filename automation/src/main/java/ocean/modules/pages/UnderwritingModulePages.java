@@ -675,6 +675,47 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	}
 
 	/**
+	 * This function is used to get the remittance name from Remittance screen
+	 * 
+	 * @param
+	 * 
+	 * @return
+	 * 
+	 */
+	public String getRemittanceName() throws Exception {
+		click("remitName");
+		return getValue("remitName");
+	}
+
+	/**
+	 * This function is used to bget all data fields for remittance information
+	 * under remittance list
+	 * 
+	 */
+	public HashMap<String, String> getAllDataUnderRemittanceList() {
+		HashMap<String, String> dataMap = new HashMap<String, String>();
+		dataMap.put("PostPeriod", getValue("getPostPeriodValue"));
+		dataMap.put("RemittanceNumber", getValue("remitNumber"));
+		dataMap.put("RemittanceName", getValue("remitName"));
+		dataMap.put("UnderwritingCount", getValue("remitUWCount"));
+		dataMap.put("HoldCount", getValue("remitHolds"));
+		dataMap.put("Source_Type", getValue("remitSource"));
+		dataMap.put("Subtype_Name", getValue("remitSubType"));
+		dataMap.put("name", getValue("remitType"));
+		dataMap.put("RemitType", getValue("UVremitType"));
+		dataMap.put("corecount", getValue("remitCore"));
+		dataMap.put("lwacount", getValue("remitLWA"));
+		click("swipeRight");
+		dataMap.put("comments", getValue("getCommentsOnRemittanceScreen"));
+		dataMap.put("CreateByDate", getValue("getCreatedDate"));
+		dataMap.put("Locked_by", getValue("getLockedByValue"));
+		dataMap.put("CreateByUser", getValue("getCreatedByOnRemittanceScreen"));
+		click("swipeLeft");
+		return dataMap;
+
+	}
+
+	/**
 	 * This function is used to enter all mandatory values on new business contract
 	 * form
 	 * 

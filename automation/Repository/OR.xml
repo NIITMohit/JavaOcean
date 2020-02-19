@@ -1357,6 +1357,14 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_CoreCount']//*[@ClassName='TextBlockLite']</value>
 	</keyword>
+	<keyword id="remitHolds">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_HoldContractCount']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="remitUWCount">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_UnderwritingCount']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
 	<keyword id="remitLWA">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_LWACount']//*[@ClassName='TextBlockLite']</value>
@@ -1380,6 +1388,78 @@
 	<keyword id="remitSubType">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='Row_0']//*[@AutomationId='Cell_REMIT_SUBTYPE_ID']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="getLockedByValue">
+			<locator>xpath</locator>
+			<value>//*[@AutomationaId='Row_0']//*[@AutomationId='Cell_Locked_by' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	<keyword id="getCommentsOnRemittanceScreen">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Comment']//*[@ClassName='TextBlockLite'])[2]</value>
+	</keyword>
+	<keyword id="getCreatedByOnRemittanceScreen">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Cell_CreateByUser']//*[@ClassName='TextBlockLite'])[2]</value>
+	</keyword>
+	<keyword id="getCreatedDate">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Cell_CreatedDateStringFormat']//*[@ClassName='TextBlockLite'])[2]</value>
+	</keyword>
+	<keyword id="clickOnPDF">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='ViewPDFButton' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="closePDF">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Close' and @LocalizedControlType='button'])[1]</value>
+	</keyword>
+	<keyword id="clickOnViewPdfInNewWindow">
+			<locator>xpath</locator>
+			<value>//*[@Name='View PDF in new window' and @ClassName='TextBlock']</value>
+	</keyword>
+	<keyword id="clickOnDeletePdf">
+			<locator>xpath</locator>
+			<value>//*[@Name='Delete PDF' and @ClassName='TextBlock']</value>
+	</keyword>
+	<keyword id="clickOnDocumentTYpeForFilter">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_UW_DOCUMENTTYPE' and @ClassName='FilterCell']</value>
+	</keyword>
+	<keyword id="clickOnRemittanceSummary">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Remittance Summary' and @ClassName='MaterialTabItem']</value>
+	</keyword>
+		<keyword id="clickOnYesButton">
+			<locator>xpath</locator>
+			<value>//*[@Name='Yes' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="getTextOfSuccessMessage">
+			<locator>xpath</locator>
+			<value>//*[@Name='HeaderThumb' and @ClassName='Thumb']</value>
+	</keyword>
+	<keyword id="clickOnSelectAllForPDF">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='btnSelectAll' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="clickOnZoomOut">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='btnZoomOut' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="clickOnZoomIn">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='btnZoomIn' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="fillExplanationComments">
+			<locator>xpath</locator>
+			<value>(//*[@LocalizedControlType='edit' and @ClassName='TextBox'])[1]</value>
+	</keyword>
+	<keyword id="getPostPeriodValue">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Cell_PostPeriod' and @ClassName='DataCell'])[1]</value>
+	</keyword>
+	<keyword id="clickOnPostRemittance">
+			<locator>xpath</locator>
+			<value>//*[@Name='Post Remittance' and @ClassName='Button']</value>
 	</keyword>
 	<keyword id="remitCreatedBy">
 			<locator>xpath</locator>

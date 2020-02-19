@@ -75,7 +75,7 @@ public class Suite extends ReadData {
 			// Ocean Application Path
 			appCapabilities.setCapability("app", oceanApplicationPath);
 			//// win app driver session attached successfully
-			windowsDriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
+		 	windowsDriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
 			//// create report folder in running directory
 			createReportFolder();
 			//// Create reports
@@ -165,11 +165,11 @@ public class Suite extends ReadData {
 			//// in case of skip
 			else if (result.getStatus() == ITestResult.SKIP) {
 				Statuss = "skip";
-				node1.log(Status.SKIP, "TEST CASE FAILED IS " + result.getName());
+				node1.log(Status.SKIP, "TEST CASE SKIPED IS " + result.getName());
 			} //// in case of pass
 			else {
 				Statuss = "pass";
-				node1.log(Status.PASS, "TEST CASE FAILED IS " + result.getName());
+				node1.log(Status.PASS, "TEST CASE PASSED IS " + result.getName());
 			}
 			//// Append all screenshot with the node
 			for (String path : screenShots) {
