@@ -144,10 +144,11 @@ public class PricingModulePages extends PricingDataBase {
 	 * Window
 	 */
 	public void editSelectedOptionsValues() {
-		click("getOptionsRow1ByClickCategoryValue");
-		rightClick("getOptionsRow1ByClickCategoryValue");
-		// Click on Edit selected rows
-		click("selectEdit");
+		/*
+		 * click("getOptionsRow1ByClickCategoryValue");
+		 * rightClick("getOptionsRow1ByClickCategoryValue"); // Click on Edit selected
+		 * rows click("selectEdit");
+		 */
 		// select operator
 		click("selectOptionsReplace");
 		// typeKeys("selectOperator", "Enter");
@@ -165,10 +166,11 @@ public class PricingModulePages extends PricingDataBase {
 	 * Sheet Window
 	 */
 	public void editSelectedSurchargesValues() {
-		click("getSurchargesRow1ByClickCategoryValue");
-		rightClick("getSurchargesRow1ByClickCategoryValue");
-		// Click on Edit rows
-		click("selectEdit");
+		/*
+		 * click("getSurchargesRow1ByClickCategoryValue");
+		 * rightClick("getSurchargesRow1ByClickCategoryValue"); // Click on Edit rows
+		 * click("selectEdit");
+		 */
 		// select operator
 		click("selectSurchargesReplace");
 		// typeKeys("selectOperator", "Enter");
@@ -186,10 +188,11 @@ public class PricingModulePages extends PricingDataBase {
 	 * Sheet Window
 	 */
 	public void editSelectedDeductibleValues() {
-		click("getDeductibleRow1ByClickCategoryValue");
-		rightClick("getDeductibleRow1ByClickCategoryValue");
-		// Click on Edit rows
-		click("selectEdit");
+		/*
+		 * click("getDeductibleRow1ByClickCategoryValue");
+		 * rightClick("getDeductibleRow1ByClickCategoryValue"); // Click on Edit rows
+		 * click("selectEdit");
+		 */
 		// select operator
 		click("selectDeductiblesReplace");
 		// typeKeys("selectOperator", "Enter");
@@ -291,13 +294,13 @@ public class PricingModulePages extends PricingDataBase {
 	 */
 
 	public void applyAllMandatoryFiltersUnderDisplayPriceSheet(String[] inputArray) throws Exception {
-		if (inputArray[1].length() > 1)
+		if (inputArray[1].length() > 0)
 			type("selectCoverage", inputArray[1]);
-		if (inputArray[2].length() > 1)
+		if (inputArray[2].length() > 0)
 			type("selectMilage_Band", inputArray[2]);
-		if (inputArray[3].length() > 1)
+		if (inputArray[3].length() > 0)
 			type("selectClass", inputArray[3]);
-		if (inputArray[4].length() > 1)
+		if (inputArray[4].length() > 0)
 			type("selectTerm", inputArray[4]);
 	}
 

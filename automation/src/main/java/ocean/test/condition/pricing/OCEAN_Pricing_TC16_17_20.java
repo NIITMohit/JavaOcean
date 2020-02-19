@@ -15,7 +15,7 @@ import ocean.modules.pages.PricingModulePages;
  * 
  * @author Nainsi Jain
  */
-public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
+public class OCEAN_Pricing_TC16_17_20 extends PricingModulePages {
 
 	@Test(priority = 3, groups = "regression", dataProvider = "fetchDataForTC16_17", dataProviderClass = PricingDataProvider.class, description = "Editing of Pricing, options, surcharges, deductibles in mater price sheet")
 	public void editingandVerifyPriceSheet(String[] inputArray) throws Exception {
@@ -47,7 +47,7 @@ public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 			// edit selected price values
 			editSelectedPriceValues();
 			// go to pricing tab
-			waitForSomeTime(5);
+			waitForSomeTime(10);
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
@@ -77,7 +77,7 @@ public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 				// TODO: handle exception
 			}
 			HashMap<String, String> beforEditingOptionsValues = returnOptionsActualBreakdownGridData(true);
-			waitForSomeTime(5);
+			waitForSomeTime(10);
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
@@ -102,7 +102,7 @@ public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 				// TODO: handle exception
 			}
 			HashMap<String, String> beforEditingSurchargesValues = returnSurchargesActualBreakdownGridData(true);
-			waitForSomeTime(5);
+			waitForSomeTime(10);
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
@@ -110,8 +110,8 @@ public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 			HashMap<String, String> afterrEditingSurchargesValues = returnSurchargesActualBreakdownGridData(false);
 			if (Float.parseFloat(beforEditingSurchargesValues.get("Actual_Breakdown")) + 100 == Float
 					.parseFloat(afterrEditingSurchargesValues.get("Actual_Breakdown"))) {
+				surchargesFlag = true;
 			}
-			surchargesFlag = true;
 		} else
 			valueFlag = true;
 
@@ -128,7 +128,7 @@ public class OCEAN_Pricing_TC16_17 extends PricingModulePages {
 				// TODO: handle exception
 			}
 			HashMap<String, String> beforeEditingDeductibleValues = returnDeductiblesActualBreakdownGridData(true);
-			waitForSomeTime(5);
+			waitForSomeTime(10);
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
