@@ -144,10 +144,11 @@ public class PricingModulePages extends PricingDataBase {
 	 * Window
 	 */
 	public void editSelectedOptionsValues() {
-		click("getOptionsRow1ByClickCategoryValue");
-		rightClick("getOptionsRow1ByClickCategoryValue");
-		// Click on Edit selected rows
-		click("selectEdit");
+		/*
+		 * click("getOptionsRow1ByClickCategoryValue");
+		 * rightClick("getOptionsRow1ByClickCategoryValue"); // Click on Edit selected
+		 * rows click("selectEdit");
+		 */
 		// select operator
 		click("selectOptionsReplace");
 		// typeKeys("selectOperator", "Enter");
@@ -165,10 +166,11 @@ public class PricingModulePages extends PricingDataBase {
 	 * Sheet Window
 	 */
 	public void editSelectedSurchargesValues() {
-		click("getSurchargesRow1ByClickCategoryValue");
-		rightClick("getSurchargesRow1ByClickCategoryValue");
-		// Click on Edit rows
-		click("selectEdit");
+		/*
+		 * click("getSurchargesRow1ByClickCategoryValue");
+		 * rightClick("getSurchargesRow1ByClickCategoryValue"); // Click on Edit rows
+		 * click("selectEdit");
+		 */
 		// select operator
 		click("selectSurchargesReplace");
 		// typeKeys("selectOperator", "Enter");
@@ -186,10 +188,11 @@ public class PricingModulePages extends PricingDataBase {
 	 * Sheet Window
 	 */
 	public void editSelectedDeductibleValues() {
-		click("getDeductibleRow1ByClickCategoryValue");
-		rightClick("getDeductibleRow1ByClickCategoryValue");
-		// Click on Edit rows
-		click("selectEdit");
+		/*
+		 * click("getDeductibleRow1ByClickCategoryValue");
+		 * rightClick("getDeductibleRow1ByClickCategoryValue"); // Click on Edit rows
+		 * click("selectEdit");
+		 */
 		// select operator
 		click("selectDeductiblesReplace");
 		// typeKeys("selectOperator", "Enter");
@@ -224,14 +227,18 @@ public class PricingModulePages extends PricingDataBase {
 	 * @return
 	 * 
 	 */
-	public HashMap<String, String> returnOptionsActualBreakdownGridData() throws Exception {
+	public HashMap<String, String> returnOptionsActualBreakdownGridData(boolean edit) throws Exception {
 		HashMap<String, String> searchData = new HashMap<String, String>();
 		click("getOptionsRow1ByClickCategoryValue");
 		rightClick("getOptionsRow1ByClickCategoryValue");
 		click("selectEdit");
 		// save Actual Breakdown
 		searchData.put("Actual_Breakdown", getValue("getActualBreakdown"));
-		click("clickOnCloseButton");
+		if (edit == true) {
+			editSelectedOptionsValues();
+		} else {
+			click("clickOnCloseButton");
+		}
 		return searchData;
 	}
 
@@ -242,14 +249,18 @@ public class PricingModulePages extends PricingDataBase {
 	 * @return
 	 * 
 	 */
-	public HashMap<String, String> returnSurchargesActualBreakdownGridData() throws Exception {
+	public HashMap<String, String> returnSurchargesActualBreakdownGridData(boolean edit) throws Exception {
 		HashMap<String, String> searchData = new HashMap<String, String>();
 		click("getSurchargesRow1ByClickCategoryValue");
 		rightClick("getSurchargesRow1ByClickCategoryValue");
 		click("selectEdit");
 		// save Actual Breakdown
 		searchData.put("Actual_Breakdown", getValue("getActualBreakdown"));
-		click("clickOnCloseButton");
+		if (edit == true) {
+			editSelectedSurchargesValues();
+		} else {
+			click("clickOnCloseButton");
+		}
 		return searchData;
 	}
 
@@ -260,14 +271,18 @@ public class PricingModulePages extends PricingDataBase {
 	 * @return
 	 * 
 	 */
-	public HashMap<String, String> returnDeductiblesActualBreakdownGridData() throws Exception {
+	public HashMap<String, String> returnDeductiblesActualBreakdownGridData(boolean edit) throws Exception {
 		HashMap<String, String> searchData = new HashMap<String, String>();
 		click("getDeductibleRow1ByClickCategoryValue");
 		rightClick("getDeductibleRow1ByClickCategoryValue");
 		click("selectEdit");
 		// save Actual Breakdown
 		searchData.put("Actual_Breakdown", getValue("getActualBreakdown"));
-		click("clickOnCloseButton");
+		if (edit == true) {
+			editSelectedDeductibleValues();
+		} else {
+			click("clickOnCloseButton");
+		}
 		return searchData;
 
 	}
@@ -279,10 +294,14 @@ public class PricingModulePages extends PricingDataBase {
 	 */
 
 	public void applyAllMandatoryFiltersUnderDisplayPriceSheet(String[] inputArray) throws Exception {
-		type("selectCoverage", inputArray[1]);
-		type("selectMilage_Band", inputArray[2]);
-		type("selectClass", inputArray[3]);
-		type("selectTerm", inputArray[4]);
+		if (inputArray[1].length() > 0)
+			type("selectCoverage", inputArray[1]);
+		if (inputArray[2].length() > 0)
+			type("selectMilage_Band", inputArray[2]);
+		if (inputArray[3].length() > 0)
+			type("selectClass", inputArray[3]);
+		if (inputArray[4].length() > 0)
+			type("selectTerm", inputArray[4]);
 	}
 
 	/**

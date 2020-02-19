@@ -342,7 +342,9 @@ public class UnderwritingDataBase extends CommonFunctions {
 			dbMap.put("parentpricesheetcode", dbMap1.get("pcode"));
 			String finalQuery = "";
 			if (map.get("DEALERPLANTYPE").toUpperCase().equalsIgnoreCase(map.get("AGENTPLANTYPE").toUpperCase())
-					&& map.get("DEALERPLANTYPE").toUpperCase().equalsIgnoreCase("ALLPLANS")) {
+					&& map.get("DEALERPLANTYPE").toUpperCase().equalsIgnoreCase("ALLPLANS")
+					&& (map.get("DEALEREXCEPTION").equalsIgnoreCase("y")
+							|| map.get("AGENTEXCEPTION").equalsIgnoreCase("y"))) {
 				finalQuery = "select tt.EFFECTIVE_DATE as PSDATE,t.EFFECTIVE_DATE as expdate,t.NUMERIC_VALUE,tp.NAME "
 						+ "from PRICESHEET_PRODUCT_TIER tt "
 						+ "join PRICESHEET_PRODUCT_TIER_TARGET t  on tt.id = t.TIER_ID "
@@ -478,5 +480,39 @@ public class UnderwritingDataBase extends CommonFunctions {
 
 		return dbMap;
 
+	}
+	
+	/**
+	 * This gets all data fields for remittance information under remittance list
+	 * 
+	 */
+	public HashMap<String,String> getAllDataFieldsUnderRemittanceList(String remitName) throws Exception
+	{
+		HashMap<String, String> dbMap = new HashMap<String, String>();
+		try {
+			waitForSomeTime(1);
+			//// connect to aul db
+			aulDBConnect();
+			///// execute query
+			String query = "select r.PostPeriod,r.RemittanceNumber,r.RemittanceName,r.UnderwritingCount,"
+					+ " s.Source_Type, st.Subtype_Name, t.name,r.corecount,r.lwacount,"
+					+ "r.comments ,r.CreateByDate, r.Locked_by,r.CreateByUser "
+					+ "from REMITTANCE r join UW_REMITTANCE_SOURCE s on s.id = r.remit_source_id "
+					+ " left join UW_REMITTANCE_SUBTYPE st on st.id = remit_subtype_id "
+					+ "join UW_REMITTANCE_TYPE t on t.id = r.remit_type_id  "
+					+ "+left join [dbo].[UW_CHECK] c on c.remittanceId = r.remittanceNumber "
+					+ "where r.RemittanceName = '" + remitName + "' order by r.[RemittanceID] desc;";
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			dbMap = returnData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+
+		return dbMap;
 	}
 }
