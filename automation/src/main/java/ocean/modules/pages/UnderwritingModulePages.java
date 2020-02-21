@@ -413,12 +413,18 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 */
 	public void selectCheckAndScrollToTop() throws Exception {
 		click("clickCheckCheckBox");
+		contractScrollToTop();
+	}
+
+	/**
+	 * This function is used to select check
+	 * 
+	 */
+	public void contractScrollToTop() throws Exception {
 		for (int i = 0; i < 2; i++) {
 			try {
 				click("scrollContractsListUp");
-				continue;
 			} catch (Exception e) {
-				continue;
 			}
 
 		}
@@ -670,7 +676,9 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 */
 	public HashMap<String, String> enterMandatoryValuesOnContract(HashMap<String, String> premiumData)
 			throws Exception {
+		contractScrollToTop();
 		HashMap<String, String> ss = new HashMap<String, String>();
+		click("clearContractData");
 		//// type unique contract number
 		try {
 			type("typeContractNumber", randomString(10));
