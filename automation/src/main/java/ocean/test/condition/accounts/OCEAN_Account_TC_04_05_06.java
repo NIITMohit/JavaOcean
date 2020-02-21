@@ -43,7 +43,6 @@ public class OCEAN_Account_TC_04_05_06 extends AccountsModulePages {
 		}
 		//// run code for search
 		searchContractGivenInputParamaters(uiSearchData);
-
 		//// click display button to load account details page
 		clickDisplayButton(0);
 		//// get role id of first searched data
@@ -97,7 +96,7 @@ public class OCEAN_Account_TC_04_05_06 extends AccountsModulePages {
 
 		///// find properties info
 		boolean propertyInfo = verifyPropertyInfoOnAccountDetailScreen(roleId, roleType, roleStatus);
-		
+
 		if (accountInfo == propertyInfo == addressInfo == accountLevelWarninig == priceSheetLevelWarninigAfterEdit == priceSheetLevelWarninig == accountLevelWarninigAfterEdit == corpDetails == profitPrograms)
 			assertEquals(accountLevelWarninigAfterEdit, true);
 		else

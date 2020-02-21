@@ -9,9 +9,9 @@ import ocean.modules.dataprovider.PricingDataProvider;
 import ocean.modules.pages.PricingModulePages;
 
 /**
- * OCEAN_Pricing_TC_16_17 class automates Ocean Pricing module Test Condition 14
- * and 18, which holds 4 Test Case; Test Condition Description : Editing of
- * Pricing, options, surcharges, deductibles in mater price sheet
+ * OCEAN_Pricing_TC16_17_20 class automates Ocean Pricing module Test Condition 16,17
+ * and 20, which holds 8 Test Case; Test Condition Description : Editing of
+ * Pricing, options, surcharges, deductibles in master price sheet
  * 
  * @author Nainsi Jain
  */
@@ -29,10 +29,11 @@ public class OCEAN_Pricing_TC16_17_20 extends PricingModulePages {
 		boolean deductiblesFlag = false;
 		// go to pricing tab
 		if (inputArray[5].toLowerCase().equals("y")) {
+			// go to pricing tab
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
-			//// Search Price sheet code
+		    // Search Price sheet code
 			selectPriceSheet(inputArray[0]);
 			try {
 				waitForSomeTime(3);
@@ -42,20 +43,21 @@ public class OCEAN_Pricing_TC16_17_20 extends PricingModulePages {
 			}
 			// apply filters to edit price sheet
 			applyAllMandatoryFiltersUnderDisplayPriceSheet(inputArray);
-			//// return before edit data
+			// return before edit data
 			HashMap<String, String> beforEditingPSValues = returnPriceSheetResultGridData();
 			// edit selected price values
 			editSelectedPriceValues();
 			// go to pricing tab
 			waitForSomeTime(10);
+			// go to pricing tab
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
-			//// Search Price sheet code
+			// Search Price sheet code
 			selectPriceSheet(inputArray[0]);
 			// apply filters to edit price sheet
 			applyAllMandatoryFiltersUnderDisplayPriceSheet(inputArray);
-			//// return after edit data
+			// return after edit data
 			HashMap<String, String> AfterEditingPSValues = returnPriceSheetResultGridData();
 			// compare both values
 			if (Float.parseFloat(beforEditingPSValues.get("COST")) + 10 == Float
@@ -65,51 +67,62 @@ public class OCEAN_Pricing_TC16_17_20 extends PricingModulePages {
 		} else
 			valueFlag = true;
 		if (inputArray[6].toLowerCase().equals("y")) {
+			// go to pricing tab
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
-			//// Search Price sheet code
+			// Search Price sheet code
 			selectPriceSheet(inputArray[0]);
+			// To Sroll down
 			try {
 				waitForSomeTime(3);
 				click("scrollContractsListUp", 6);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
+			// return before edit data
 			HashMap<String, String> beforEditingOptionsValues = returnOptionsActualBreakdownGridData(true);
 			waitForSomeTime(10);
+			// go to pricing tab
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
 			selectPriceSheet(inputArray[0]);
+			// return after edit data
 			HashMap<String, String> afterEditingOptionsValues = returnOptionsActualBreakdownGridData(false);
-			if (Float.parseFloat(beforEditingOptionsValues.get("Actual_Breakdown")) + 100 == Float
-					.parseFloat(afterEditingOptionsValues.get("Actual_Breakdown"))) {
+			// compare both values
+			if (Float.parseFloat(beforEditingOptionsValues.get("Actual_Breakdown")) + 100 == Float.parseFloat(afterEditingOptionsValues.get("Actual_Breakdown"))) {
 				optionsFlag = true;
 			}
 		} else
 			valueFlag = true;
 		if (inputArray[7].toLowerCase().equals("y")) {
+			// go to pricing tab
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
-			//// Search Price sheet code
+			// Search Price sheet code
 			selectPriceSheet(inputArray[0]);
+			// To Sroll down
 			try {
 				waitForSomeTime(3);
 				click("scrollDisplayPSPageDown", 6);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
+			// return before edit data
 			HashMap<String, String> beforEditingSurchargesValues = returnSurchargesActualBreakdownGridData(true);
 			waitForSomeTime(10);
+			// go to pricing tab
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
+			// Search Price sheet code
 			selectPriceSheet(inputArray[0]);
+			// return after edit data
 			HashMap<String, String> afterrEditingSurchargesValues = returnSurchargesActualBreakdownGridData(false);
-			if (Float.parseFloat(beforEditingSurchargesValues.get("Actual_Breakdown")) + 100 == Float
-					.parseFloat(afterrEditingSurchargesValues.get("Actual_Breakdown"))) {
+			// compare both values
+			if (Float.parseFloat(beforEditingSurchargesValues.get("Actual_Breakdown")) + 100 == Float.parseFloat(afterrEditingSurchargesValues.get("Actual_Breakdown"))) {
 				surchargesFlag = true;
 			}
 		} else
@@ -119,27 +132,32 @@ public class OCEAN_Pricing_TC16_17_20 extends PricingModulePages {
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
-			//// Search Price sheet code
+			// Search Price sheet code
 			selectPriceSheet(inputArray[0]);
+			// To Sroll down
 			try {
 				waitForSomeTime(3);
 				click("scrollDisplayPSPageDown", 6);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
+			// return before edit data
 			HashMap<String, String> beforeEditingDeductibleValues = returnDeductiblesActualBreakdownGridData(true);
 			waitForSomeTime(10);
 			goToPricingTab();
 			// click price sheet list tab
 			visitPriceSheetListTab();
+			// Search Price sheet code
 			selectPriceSheet(inputArray[0]);
+			// return after edit data
 			HashMap<String, String> afterEditingDeductiblevalues = returnDeductiblesActualBreakdownGridData(false);
-			if (Float.parseFloat(beforeEditingDeductibleValues.get("Actual_Breakdown")) + 100 == Float
-					.parseFloat(afterEditingDeductiblevalues.get("Actual_Breakdown"))) {
+			// compare both values
+			if (Float.parseFloat(beforeEditingDeductibleValues.get("Actual_Breakdown")) + 100 == Float.parseFloat(afterEditingDeductiblevalues.get("Actual_Breakdown"))) {
 				deductiblesFlag = true;
 			}
 		} else
 			valueFlag = true;
+		//Validate using Assertions
 		assertEquals(valueFlag == surchargesFlag == optionsFlag == deductiblesFlag == true, false);
 	}
 }

@@ -80,7 +80,6 @@ public class OCEAN_Account_TC_01_02_03 extends AccountsModulePages {
 			else
 				secondCutDataFlag = false;
 		}
-
 		if (firstCutDataFlag == secondCutDataFlag && firstCutDataFlag == true)
 			assertEquals(true, true);
 		else
