@@ -1825,6 +1825,10 @@
 			<locator>Name</locator>
 			<value>Account Search</value>
 	</keyword>
+	<keyword id="clickAccountsDetailsTab">
+			<locator>Name</locator>
+			<value>Accounts Details</value>
+	</keyword>
 	<keyword id="listOfRoleId">
 			<locator>xpath</locator>
 			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Role ID']</value>
@@ -1833,6 +1837,34 @@
 			<locator>xpath</locator>
 			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Display']</value>
 	</keyword>
+	<keyword id="clickOnSetupNewPricing">
+	       <locator>xpath</locator>
+           <value>//*[@Name='Setup New Pricing' and @ClassName='Button']</value>
+    </keyword>
+       <keyword id="PriceSheetInternalName">
+            <locator>xpath</locator>
+            <value>(//*[@Name='Name:' and @ClassName= 'Text']/following-sibling::*[1])[2]</value>
+       </keyword>
+         <keyword id="InternalNameOfPSInfo">
+            <locator>xpath</locator>
+            <value>//*[@AutomationId='Row_0']//*[@Name='Internal Name']//*[@ClassName='TextBlockLite']</value>
+       </keyword>
+        <keyword id="typePayeeNameInTextBox">
+               <locator>xpath</locator>
+            <value>//*[@Name='Search Price Sheets/Assign Relation']//*[@Name='Payee:']/following-sibling::*[1]//*[@ClassName='TextBox']</value>
+        </keyword>
+         <keyword id="listOfSelectbutton">
+               <locator>xpath</locator>
+           <value>//*[@Name='Select' and @ClassName='Button']</value>
+         </keyword>
+          <keyword id="listOfSelectbuttonOfRow1">
+               <locator>xpath</locator>
+           <value>(//*[@Name='Select' and @ClassName='Button'])[1]</value>
+         </keyword>
+         <keyword id="assignPriceSheet">
+             <locator>xpath</locator>
+             <value>//*[@Name='Assign' and @ClassName='Button']</value>
+        </keyword>
 	<keyword id="listOfAccountName">
 			<locator>xpath</locator>
 			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Account Name']</value>
@@ -1956,6 +1988,42 @@
 	<keyword id="AccountDetails_PropertyInfoName">
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='PropertyItemEditor']</value>
+	</keyword>
+	<keyword id="listOfPSInfoInternalName">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Internal Name']</value>
+	</keyword>
+	<keyword id="listOfPSInfoExternalName">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='External Name']</value>
+	</keyword>
+	<keyword id="listOfPSInfoCode">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Code']</value>
+	</keyword>
+	<keyword id="listOfPSInfoEffectiveDate">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Effective Date']</value>
+	</keyword>
+	<keyword id="listOfPSInfoClassificationList">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Classification List']</value>
+	</keyword>
+	<keyword id="listOfPSInfoStatus">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Status']</value>
+	</keyword>
+	<keyword id="listOfPSInfoMaster">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Master']</value>
+	</keyword>
+	<keyword id="listOfPSInfoCreatedDate">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Created Date']</value>
+	</keyword>
+	<keyword id="listOfPSInfoCreatedBy">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='dataitem' and @ClassName='DataRow']//*[@Name='Created By']</value>
 	</keyword>
 	</Account>
 </Ocean>

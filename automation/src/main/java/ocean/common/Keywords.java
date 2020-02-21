@@ -31,7 +31,6 @@ public class Keywords extends Variables {
 				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
 				WebElement clickElement = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
-				//// Click the web element
 				clickElement.click();
 				break;
 			} catch (Exception e) {

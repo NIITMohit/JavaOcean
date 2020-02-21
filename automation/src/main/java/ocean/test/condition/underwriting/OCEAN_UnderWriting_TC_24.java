@@ -35,13 +35,13 @@ public class OCEAN_UnderWriting_TC_24 extends UnderwritingModulePages {
 			String remittName = contractFromRemittance.get(1).get("RemittanceName");
 			String fileName = contractFromRemittance.get(1).get("FILE_NAME");
 			//// visit underwriting tab
-			//goToUnderWritingTab();
-			//goToRemittanceList();
+			goToUnderWritingTab();
+			goToRemittanceList();
 			//// Search a contract with pending state, remittance name and contract name is
 			//// fetched from database
-			//searchContractwithPendingState(remittName, fileName);
+			searchContractwithPendingState(remittName, fileName);
 			//// lock contract on user name and open enter values in contract window
-			//lockAndViewContract();
+			lockAndViewContract();
 			String oldPriceSheet = inputData[0];
 			String newPriceSheet = inputData[1];
 			String[] impData = { oldPriceSheet, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",

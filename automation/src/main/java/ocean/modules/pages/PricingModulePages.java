@@ -80,8 +80,7 @@ public class PricingModulePages extends PricingDataBase {
 	}
 
 	/**
-	 * This common function is used search a price sheet based on search paramater
-	 * 
+	 * This function is used search a price sheet based on search paramater
 	 * @param priceSheet on which priceSheet needs to be searched
 	 */
 	public String searchPriceSheet(String newPriceSheetCode) {
@@ -93,23 +92,7 @@ public class PricingModulePages extends PricingDataBase {
 	}
 
 	/**
-	 * This common function is used to apply mandatory filter under Display Price
-	 * Sheet Window
-	 */
-	/*
-	 * public void applyAllMandatoryFiltersUnderDisplayPriceSheet() { try {
-	 * type("selectCoverage", "Powertrain"); // Select Class type("selectClass",
-	 * "2"); // Select Term type("selectTerm", "24/24"); // Select Milage_Band
-	 * type("selectMilage_Band", "0-60");
-	 * 
-	 * click("getRow1ByClickCategoryValue"); rightClick("selectEdit"); } catch
-	 * (Exception e) { throw e; }
-	 * 
-	 * }
-	 */
-	/**
-	 * This common function is used to apply mandatory filter for price under
-	 * Display Price Sheet Window
+	 * This function is used to edit selected product under Display PS window.
 	 */
 	public void editSelectedPriceValues() {
 		click("listOfCost");
@@ -140,15 +123,9 @@ public class PricingModulePages extends PricingDataBase {
 	}
 
 	/**
-	 * This common function is used to edit options values under Display Price Sheet
-	 * Window
+	 * This function is used to edit options values under Display Price Sheet Window
 	 */
 	public void editSelectedOptionsValues() {
-		/*
-		 * click("getOptionsRow1ByClickCategoryValue");
-		 * rightClick("getOptionsRow1ByClickCategoryValue"); // Click on Edit selected
-		 * rows click("selectEdit");
-		 */
 		// select operator
 		click("selectOptionsReplace");
 		// typeKeys("selectOperator", "Enter");
@@ -166,11 +143,6 @@ public class PricingModulePages extends PricingDataBase {
 	 * Sheet Window
 	 */
 	public void editSelectedSurchargesValues() {
-		/*
-		 * click("getSurchargesRow1ByClickCategoryValue");
-		 * rightClick("getSurchargesRow1ByClickCategoryValue"); // Click on Edit rows
-		 * click("selectEdit");
-		 */
 		// select operator
 		click("selectSurchargesReplace");
 		// typeKeys("selectOperator", "Enter");
@@ -188,11 +160,6 @@ public class PricingModulePages extends PricingDataBase {
 	 * Sheet Window
 	 */
 	public void editSelectedDeductibleValues() {
-		/*
-		 * click("getDeductibleRow1ByClickCategoryValue");
-		 * rightClick("getDeductibleRow1ByClickCategoryValue"); // Click on Edit rows
-		 * click("selectEdit");
-		 */
 		// select operator
 		click("selectDeductiblesReplace");
 		// typeKeys("selectOperator", "Enter");
@@ -206,8 +173,8 @@ public class PricingModulePages extends PricingDataBase {
 	}
 
 	/**
-	 * This function is used to return price sheet data in map after PS editing, to
-	 * be verified from search result grid
+	 * This function is used to return price sheet cost value in map after PS
+	 * editing, to be verified from search result grid.
 	 * 
 	 * @return
 	 * 
@@ -221,8 +188,8 @@ public class PricingModulePages extends PricingDataBase {
 	}
 
 	/**
-	 * This function is used to return optins actual breakdown value in map after PS
-	 * editing, to be verified from search result grid
+	 * This function is used to return options actual breakdown value in map after
+	 * PS editing, to be verified from search result grid
 	 * 
 	 * @return
 	 * 
@@ -266,7 +233,7 @@ public class PricingModulePages extends PricingDataBase {
 
 	/**
 	 * This function is used to return Deductible actual breakdown value in map
-	 * after PS editing, to be verified from search result grid
+	 * after PS editing, to be verified from search result grid.
 	 * 
 	 * @return
 	 * 
@@ -288,9 +255,8 @@ public class PricingModulePages extends PricingDataBase {
 	}
 
 	/**
-	 * This function is used to navigate to perform search based on search parameter
-	 * given. It accepts a hash map with input parameters
-	 * 
+	 * This function is used to apply filters on selected PS under display PS
+	 * window.
 	 */
 
 	public void applyAllMandatoryFiltersUnderDisplayPriceSheet(String[] inputArray) throws Exception {
@@ -305,9 +271,8 @@ public class PricingModulePages extends PricingDataBase {
 	}
 
 	/**
-	 * This function is used to navigate to perform search based on search parameter
-	 * given. It accepts a hash map with input parameters
-	 * 
+	 * This function is used to select pricesheet using search parameter as code
+	 * under Pricing module
 	 */
 
 	public void selectPriceSheet(String inputArray) throws Exception {
