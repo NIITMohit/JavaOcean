@@ -66,7 +66,7 @@ public class Suite extends ReadData {
 	public void setup(ITestContext context) {
 		//// Path of ocean application assuming it is installed in user app data
 		String oceanApplicationPath = System.getProperty("user.home") + "\\AppData\\Local\\OceanDev\\Ocean.exe";
-		//String oceanApplicationPath = "c:\\Windows\\System32\\notepad.exe";
+		// String oceanApplicationPath = "c:\\Windows\\System32\\notepad.exe";
 		//// Code to open application and wait till application is stable before
 		//// attaching win app session to ocean
 		try {
@@ -90,7 +90,7 @@ public class Suite extends ReadData {
 			// Ocean Application Path
 			appCapabilities.setCapability("app", oceanApplicationPath);
 			//// win app driver session attached successfully
-			//windowsDriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
+			windowsDriver = new WindowsDriver(new URL("http://127.0.0.1:4723/wd/hub"), appCapabilities);
 			//// create report folder in running directory
 			createReportFolder();
 			//// Create reports
