@@ -60,4 +60,13 @@ public class PricingDataProvider extends CommonFunctions {
 	public static Object[][] fetchPriceSheet() {
 		return dataProvider("Cancellation", "PriceSheet");
 	}
+
+	/**
+	 * Data provider for fetchDataForTC06 used in tc 24 module
+	 */
+	@DataProvider(name = "fetchDataForTC24")
+	public static Object[][] fetchDataForTC24() {
+		return dataProvider("Pricing", "TC_24");
+
+	}
 }

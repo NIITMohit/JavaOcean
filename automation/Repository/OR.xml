@@ -971,6 +971,75 @@
 			<locator>xpath</locator>
 			<value>//*[@AutomationId='browsePricesheet']//*[@Name='Import price sheet']//*[@Name='OK']</value>
 	</keyword>
+	<keyword id="clickOnClassificationTab">
+			<locator>xpath</locator>
+			<value>//*[@Name='Classification List' and @ClassName='MaterialTabItem']</value>
+	</keyword>
+	<keyword id="listOfClassificationList">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CLASS_GROUP_NAME' and @ClassName='DataCell']</value>
+	</keyword>
+	
+	<keyword id="clickOnClonePriceSheet">
+			<locator>xpath</locator>
+			<value>//*[@Name='Clone Classification' and @ClassName='MenuItem']</value>
+	</keyword>
+	<keyword id="typeSubMasterPriceSheetNameForCloning">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='SubMasterName' and @ClassName='TextBox']</value>
+	</keyword>
+    <keyword id="clickOnSaveclonePriceSheet">
+			<locator>xpath</locator>
+			<value>//*[@Name='Save' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="typeForFilterClassificationList">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Classification List' and @ClassName='FilterCell'])[2]</value>
+	</keyword>
+	<keyword id="clickOnCheckbox">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_IsSelected' and @ClassName='DataCell']</value>
+  </keyword>
+  <keyword id="clickOnYesForDeleteClassification">
+			<locator>xpath</locator>
+			<value>//*[@Name='Yes' and @ClassName='Button']</value>
+  </keyword>
+   <keyword id="clickForExportClassification">
+			<locator>xpath</locator>
+			<value>//*[@Name='Export Classification' and @ClassName='MenuItem']</value>
+  </keyword>
+  <keyword id="clickForDeleteClassification">
+			<locator>xpath</locator>
+			<value>//*[@Name='Delete Classification' and @ClassName='MenuItem']</value>
+  </keyword>
+  <keyword id="clickForEditTurboDiesel">
+			<locator>xpath</locator>
+			<value>//*[@Name='Edit Turbo/Diesel' and @ClassName='MenuItem']</value>
+  </keyword>
+    <keyword id="clickCheckBoxOfTurbo">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Cell_TURBO' ]//*[@ClassName='CheckBox'])[2]</value>
+  </keyword>
+  <keyword id="clickCheckBoxOfDiesel">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Cell_DIESEL' ]//*[@ClassName='CheckBox'])[2]</value>
+  </keyword>
+   <keyword id="clickSaveForTurboDiesel">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_save']//*[@AutomationId='SaveGroupButton']</value>
+  </keyword>
+  <keyword id="clickTocloseMSExcel">
+			<locator>xpath</locator>
+			<value>//*[@Name='Close' and @ClassName='NetUIAppFrameHelper']</value>
+  </keyword>
+   <keyword id="getExportClassificationListName">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Cell_CLASS_GROUP_NAME' and @ClassName='DataCell'])[1]</value>
+  </keyword>
+  <keyword id="createNewFolder">
+			<locator>Name</locator>
+			<value>Make New Folder</value>
+  </keyword>
 	</Pricing>
 	<UnderWriting>
 	<keyword id="clickUnderWritingTab">

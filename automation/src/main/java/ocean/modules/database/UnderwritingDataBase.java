@@ -328,7 +328,7 @@ public class UnderwritingDataBase extends CommonFunctions {
 					+ "where Parent_PriceSheet_id in(select id from [dbo].[PRICING_PRICESHEET] where Parent_PriceSheet_id is null) and "
 					+ "t.id is " + agentException + ") and t.id is " + dealerException + " and p.code like '%"
 					+ progCode + "%' and a.role_identifier like '%" + dealerId
-					+ "%' and a.account_status_id = 1 and a.account_type_id = 1 order by 1 desc";
+					+ "%' and a.account_status_id = 1 and a.role_type_id = 1 order by 1 desc";
 			aulDBConnect();
 			///// execute query
 			ResultSet rs = stmt.executeQuery(query);

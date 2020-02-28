@@ -1075,16 +1075,32 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 	 * ,remit,miscellaneous,web contract etc
 	 * 
 	 */
-	public void applyFilterOnDocument() throws Exception {
+	public boolean applyFilterOnDocument(String remittName) throws Exception {
+		searchRemittance(remittName);
 		click("expandRemittance");
+		boolean flag = false;
 		type("clickOnDocumentTYpeForFilter", "Contract");
+		try {
+			if (getValue("getValuefromFilters").toLowerCase().equals("contract")) {
+				flag = true;
+			} else {
+				flag = false;
+			}
+		} catch (Exception e) {
+			throw new Exception("Filter on contract is failed");
+
+		}
 		type("clickOnDocumentTYpeForFilter", "Check");
-		type("clickOnDocumentTYpeForFilter", "Remit");
-		type("clickOnDocumentTYpeForFilter", "WebContract");
-		type("clickOnDocumentTYpeForFilter", "Miscellaneous");
-		click("saveRemittance");
-		waitForSomeTime(10);
-		click("clickOK");
+		try {
+			if (getValue("getValuefromFilters").toLowerCase().equals("check")) {
+				flag = true;
+			} else {
+				flag = false;
+			}
+		} catch (Exception e) {
+			throw new Exception("Filter on check is failed");
+		}
+		return flag;
 	}
 
 	/**
