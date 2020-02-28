@@ -2,7 +2,7 @@ package ocean.modules.dataprovider;
 
 import org.testng.annotations.DataProvider;
 
-import ocean.common.ReadData;
+import ocean.common.CommonFunctions;
 
 /**
  * Data provider class, common class consisting all data provider consumed in
@@ -10,36 +10,28 @@ import ocean.common.ReadData;
  * 
  * @author Mohit Goel
  */
-public class AccountsDataProvider {
+public class AccountsDataProvider extends CommonFunctions {
 	/**
-	 * Data provider for fetchSearchData used in search module
+	 * Data provider for fetchSearchData used in account module
 	 */
 	@DataProvider(name = "fetchDataForTC01_02_03")
 	public static Object[][] fetchDataForTC01_02_03() {
-		//// current running directory
-		String currentDir = System.getProperty("user.dir");
-		//// pat of test ng test data
-		String dir = currentDir + "\\Repository\\";
-		//// Excel sheet file name
-		String fileName = "Accounts.xlsx";
-		//// Excel sheet, sheet name
-		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC01_02_03");
-		return arrayObject;
+		return dataProvider("Accounts", "TC01_02_03");
 	}
 
 	/**
-	 * Data provider for fetchSearchData used in search module
+	 * Data provider for fetchSearchData used in account module
 	 */
 	@DataProvider(name = "fetchDataForTC_04_05_06")
 	public static Object[][] fetchDataForTC_04_05_06() {
-		//// current running directory
-		String currentDir = System.getProperty("user.dir");
-		//// pat of test ng test data
-		String dir = currentDir + "\\Repository\\";
-		//// Excel sheet file name
-		String fileName = "Accounts.xlsx";
-		//// Excel sheet, sheet name
-		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC_04_05_06");
-		return arrayObject;
+		return dataProvider("Accounts", "TC_04_05_06");
+	}
+
+	/**
+	 * Data provider for fetchSearchData used in account module
+	 */
+	@DataProvider(name = "fetchDataForTC013")
+	public static Object[][] fetchDataForTC013() {
+		return new String[][] { { "Dealer", "Active" }, { "Lender", "Active" }, { "Agent", "Active" } };
 	}
 }

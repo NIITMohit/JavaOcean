@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Ocean">
-              <span class="suite-name border-failed">Ocean</span>
+              <span class="suite-name border-passed">Ocean</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Ocean" class="hide-methods failed suite-Ocean"> (hide)</a> <!-- hide-methods failed suite-Ocean -->
-                      <a href="#" panel-name="suite-Ocean" class="show-methods failed suite-Ocean"> (show)</a> <!-- show-methods failed suite-Ocean -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Ocean" class="hide-methods passed suite-Ocean"> (hide)</a> <!-- hide-methods passed suite-Ocean -->
+                      <a href="#" panel-name="suite-Ocean" class="show-methods passed suite-Ocean"> (show)</a> <!-- show-methods passed suite-Ocean -->
                     </span>
-                    <div class="method-list-content failed suite-Ocean">
+                    <div class="method-list-content passed suite-Ocean">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06" hash-for-method="createRemittance">createRemittance</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25" hash-for-method="TCase_01_changePriceSheet([SNE, SNF])">TCase_01_changePriceSheet([SNE, SNF])</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Ocean -->
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25" hash-for-method="TCase_01_changePriceSheet([ABC, ABE])">TCase_01_changePriceSheet([ABC, ABE])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25" hash-for-method="TCase_02_changePriceSheet([ABC, ABE])">TCase_02_changePriceSheet([ABC, ABE])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Ocean" title="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25" hash-for-method="TCase_02_changePriceSheet([SNE, SNF])">TCase_02_changePriceSheet([SNE, SNF])</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Ocean -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,64 +132,54 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Ocean" class="panel Ocean">
-          <div class="suite-Ocean-class-failed">
+          <div class="suite-Ocean-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06</span>
+              <img src="passed.png"/>
+              <span class="class-name">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createRemittance">
-                  </a> <!-- createRemittance -->
-                  <span class="method-name">createRemittance</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LAP-TZD-0X74796&apos;, ip: &apos;10.55.55.153&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: io.appium.java_client.windows.WindowsDriver
-Capabilities {app: C:\Users\mohit.goel\AppData..., deviceName: LAP-TZD-0X74796, javascriptEnabled: true, platform: WINDOWS, platformName: WINDOWS}
-Session ID: 007a2646-b4ce-4e98-ac8b-2c60d319e7c2
-*** Element info: {Using=xpath, value=//*[@AutomationId=&apos;txtRemittanceName&apos;]}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElementByXPath(WindowsDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	at ocean.common.Keywords.getValue(Keywords.java:296)
-	at ocean.modules.pages.UnderwritingModulePages.getRemittanceValueswithoutSave(UnderwritingModulePages.java:550)
-	at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06.createRemittance(OCEAN_UnderWriting_TC_06.java:42)
-	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
+                  <a name="TCase_01_changePriceSheet([SNE, SNF])">
+                  </a> <!-- TCase_01_changePriceSheet([SNE, SNF]) -->
+                  <span class="method-name">TCase_01_changePriceSheet</span>
+                  <span class="parameters">([SNE, SNF])</span>
                   <em>
-(Validate creation of remittance in OCEAN with editing/reset of details given earlier.)                  </em>
+(Validate premium calculation for a contract/contract adjustment in a remittance, if it's price sheet is changed from : 1. One product to another product.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TCase_01_changePriceSheet([ABC, ABE])">
+                  </a> <!-- TCase_01_changePriceSheet([ABC, ABE]) -->
+                  <span class="method-name">TCase_01_changePriceSheet</span>
+                  <span class="parameters">([ABC, ABE])</span>
+                  <em>
+(Validate premium calculation for a contract/contract adjustment in a remittance, if it's price sheet is changed from : 1. One product to another product.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TCase_02_changePriceSheet([ABC, ABE])">
+                  </a> <!-- TCase_02_changePriceSheet([ABC, ABE]) -->
+                  <span class="method-name">TCase_02_changePriceSheet</span>
+                  <span class="parameters">([ABC, ABE])</span>
+                  <em>
+(Validate premium calculation for a contract/contract adjustment in a remittance, if it's price sheet is changed from : 1. One product to another product.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TCase_02_changePriceSheet([SNE, SNF])">
+                  </a> <!-- TCase_02_changePriceSheet([SNE, SNF]) -->
+                  <span class="method-name">TCase_02_changePriceSheet</span>
+                  <span class="parameters">([SNE, SNF])</span>
+                  <em>
+(Validate premium calculation for a contract/contract adjustment in a remittance, if it's price sheet is changed from : 1. One product to another product.)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Ocean-class-failed -->
+          </div> <!-- suite-Ocean-class-passed -->
         </div> <!-- panel Ocean -->
         <div panel-name="test-xml-Ocean" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -187,7 +192,7 @@ Session ID: 007a2646-b4ce-4e98-ac8b-2c60d319e7c2
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Ocean&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Cancellation&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06&quot;/&gt;
+      &lt;class name=&quot;ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Cancellation --&gt;
 &lt;/suite&gt; &lt;!-- Ocean --&gt;
@@ -215,7 +220,11 @@ Session ID: 007a2646-b4ce-4e98-ac8b-2c60d319e7c2
               <span class="test-group-name">regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">createRemittance</span>
+                <span class="method-in-group-name">TCase_01_changePriceSheet</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">TCase_02_changePriceSheet</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -235,16 +244,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createRemittance')
-data.setCell(0, 2, 'ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06')
-data.setCell(0, 3, 750911);
+data.setCell(0, 1, 'TCase_02_changePriceSheet')
+data.setCell(0, 2, 'ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25')
+data.setCell(0, 3, 1001);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'TCase_01_changePriceSheet')
+data.setCell(1, 2, 'ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25')
+data.setCell(1, 3, 1001);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'TCase_02_changePriceSheet')
+data.setCell(2, 2, 'ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25')
+data.setCell(2, 3, 998);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'TCase_01_changePriceSheet')
+data.setCell(3, 2, 'ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25')
+data.setCell(3, 3, 477);
 window.suiteTableData['Ocean']= { tableData: data, tableDiv: 'times-div-Ocean'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 minutes</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Ocean">
               </div> <!-- times-div-Ocean -->
             </div> <!-- times-div -->
@@ -270,32 +291,74 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setup(org.testng.TestRunner@690bc15e)</span>
+                <span class="method-name">setup(org.testng.TestRunner@36dce7ed)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">createParent(org.testng.TestRunner@690bc15e)</span>
-                <span class="method-start">6907 ms</span>
+                <span class="method-name">createParent(org.testng.TestRunner@36dce7ed)</span>
+                <span class="method-start">9668 ms</span>
               </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">resultsStatus</span>
+                <span class="method-start">9688 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">screenshot</span>
-                <span class="method-start">6925 ms</span>
+                <span class="method-start">10104 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">createRemittance</span>
-                <span class="method-start">6926 ms</span>
+                <span class="method-name">TCase_01_changePriceSheet([SNE, SNF])</span>
+                <span class="method-start">10105 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=createRemittance status=FAILURE method=OCEAN_UnderWriting_TC_06.createRemittance()[...)</span>
-                <span class="method-start">757844 ms</span>
+                <span class="method-name">tearDown([TestResult name=TCase_01_changePriceSheet status=SUCCESS method=OCEAN_UnderWriting_TC_25.TCase_01_c...)</span>
+                <span class="method-start">10585 ms</span>
               </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">10651 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">TCase_01_changePriceSheet([ABC, ABE])</span>
+                <span class="method-start">10651 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=TCase_01_changePriceSheet status=SUCCESS method=OCEAN_UnderWriting_TC_25.TCase_01_c...)</span>
+                <span class="method-start">11653 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">11748 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">TCase_02_changePriceSheet([SNE, SNF])</span>
+                <span class="method-start">11749 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=TCase_02_changePriceSheet status=SUCCESS method=OCEAN_UnderWriting_TC_25.TCase_02_c...)</span>
+                <span class="method-start">12751 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">12815 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">TCase_02_changePriceSheet([ABC, ABE])</span>
+                <span class="method-start">12815 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=TCase_02_changePriceSheet status=SUCCESS method=OCEAN_UnderWriting_TC_25.TCase_02_c...)</span>
+                <span class="method-start">13814 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">appendResults(org.testng.TestRunner@36dce7ed)</span>
+                <span class="method-start">13879 ms</span>
+              </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
-                <span class="method-name">tearDown(org.testng.TestRunner@690bc15e)</span>
-                <span class="method-start">758203 ms</span>
+                <span class="method-name">tearDown1(org.testng.TestRunner@36dce7ed)</span>
+                <span class="method-start">15026 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

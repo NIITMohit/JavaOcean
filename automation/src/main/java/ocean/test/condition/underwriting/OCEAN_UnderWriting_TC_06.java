@@ -3,13 +3,10 @@ package ocean.test.condition.underwriting;
 import static org.testng.Assert.assertEquals;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.testng.annotations.Test;
 
-import ocean.modules.dataprovider.UnderwritingDataProvider;
 import ocean.modules.pages.UnderwritingModulePages;
 
 /**
@@ -26,7 +23,7 @@ public class OCEAN_UnderWriting_TC_06 extends UnderwritingModulePages {
 	 * 
 	 */
 	@Test(priority = 5, groups = "regression", description = "Validate creation of remittance in OCEAN with editing/reset of details given earlier.")
-	public void createRemittance() throws Exception {
+	public void editAndResetRemittanceValues() throws Exception {
 		//// go to underwriting tab
 		goToUnderWritingTab();
 		goToRemittanceList();

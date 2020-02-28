@@ -2,7 +2,7 @@ package ocean.modules.dataprovider;
 
 import org.testng.annotations.DataProvider;
 
-import ocean.common.ReadData;
+import ocean.common.CommonFunctions;
 
 /**
  * Data provider class, common class consisting all data provider consumed in
@@ -10,22 +10,22 @@ import ocean.common.ReadData;
  * 
  * @author Mohit Goel
  */
-public class PricingDataProvider {
+public class PricingDataProvider extends CommonFunctions {
 
 	/**
 	 * Data provider for fetchSearchData used in search module
 	 */
 	@DataProvider(name = "fetchDataForTC01_02")
 	public static Object[][] fetchDataForTC01_02() {
-		//// current running directory
-		String currentDir = System.getProperty("user.dir");
-		//// pat of test ng test data
-		String dir = currentDir + "\\Repository\\";
-		//// Excel sheet file name
-		String fileName = "Cancellation.xlsx";
-		//// Excel sheet, sheet name
-		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC_01_02");
-		return arrayObject;
+		return dataProvider("Cancellation", "TC_01_02");
+	}
+
+	/**
+	 * Data provider for fetchSearchData used in search module
+	 */
+	@DataProvider(name = "fetchDataForTC16_17")
+	public static Object[][] fetchDataForTC16_17() {
+		return dataProvider("Pricing", "TC16_17");
 	}
 
 	/**
@@ -50,30 +50,23 @@ public class PricingDataProvider {
 	 */
 	@DataProvider(name = "fetchDataForTC06")
 	public static Object[][] fetchDataForTC06() {
-		//// current running directory
-		String currentDir = System.getProperty("user.dir");
-		//// pat of test ng test data
-		String dir = currentDir + "\\Repository\\";
-		//// Excel sheet file name
-		String fileName = "Cancellation.xlsx";
-		//// Excel sheet, sheet name
-		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "TC_06");
-		return arrayObject;
+		return dataProvider("Cancellation", "TC_06");
 	}
-	
+
 	/**
 	 * Data provider for fetchDataForTC06 used in tc 06 module
 	 */
 	@DataProvider(name = "fetchPriceSheet")
 	public static Object[][] fetchPriceSheet() {
-		//// current running directory
-		String currentDir = System.getProperty("user.dir");
-		//// pat of test ng test data
-		String dir = currentDir + "\\Repository\\";
-		//// Excel sheet file name
-		String fileName = "Cancellation.xlsx";
-		//// Excel sheet, sheet name
-		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, "PriceSheet");
-		return arrayObject;
+		return dataProvider("Cancellation", "PriceSheet");
+	}
+
+	/**
+	 * Data provider for fetchDataForTC06 used in tc 24 module
+	 */
+	@DataProvider(name = "fetchDataForTC24")
+	public static Object[][] fetchDataForTC24() {
+		return dataProvider("Pricing", "TC_24");
+
 	}
 }

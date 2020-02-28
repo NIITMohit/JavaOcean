@@ -1,158 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="751270" started-at="2020-01-30T16:11:00 IST" finished-at="2020-01-30T16:23:31 IST">
+  <suite name="Ocean" duration-ms="5347" started-at="2020-02-25T15:13:05 IST" finished-at="2020-02-25T15:13:11 IST">
     <groups>
       <group name="regression">
-        <method signature="OCEAN_UnderWriting_TC_06.createRemittance()[pri:5, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="createRemittance" class="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06"/>
+        <method signature="OCEAN_UnderWriting_TC_25.TCase_01_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="TCase_01_changePriceSheet" class="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25"/>
+        <method signature="OCEAN_UnderWriting_TC_25.TCase_02_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="TCase_02_changePriceSheet" class="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Cancellation" duration-ms="751270" started-at="2020-01-30T16:11:00 IST" finished-at="2020-01-30T16:23:31 IST">
-      <class name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="setup" is-config="true" duration-ms="6905" started-at="2020-01-30T16:10:53 IST" finished-at="2020-01-30T16:11:00 IST">
+    <test name="Cancellation" duration-ms="5347" started-at="2020-02-25T15:13:05 IST" finished-at="2020-02-25T15:13:11 IST">
+      <class name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="setup" is-config="true" duration-ms="9666" started-at="2020-02-25T15:12:56 IST" finished-at="2020-02-25T15:13:05 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@690bc15e]]>
+                <![CDATA[org.testng.TestRunner@36dce7ed]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="createParent" is-config="true" duration-ms="3" started-at="2020-01-30T16:11:00 IST" finished-at="2020-01-30T16:11:00 IST">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="createParent" is-config="true" duration-ms="3" started-at="2020-02-25T15:13:05 IST" finished-at="2020-02-25T15:13:05 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@690bc15e]]>
+                <![CDATA[org.testng.TestRunner@36dce7ed]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="screenshot" is-config="true" duration-ms="0" started-at="2020-01-30T16:11:00 IST" finished-at="2020-01-30T16:11:00 IST">
+        <test-method status="PASS" signature="resultsStatus()[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="resultsStatus" is-config="true" duration-ms="0" started-at="2020-02-25T15:13:05 IST" finished-at="2020-02-25T15:13:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resultsStatus -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="screenshot" is-config="true" duration-ms="0" started-at="2020-02-25T15:13:06 IST" finished-at="2020-02-25T15:13:06 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenshot -->
-        <test-method status="FAIL" signature="createRemittance()[pri:5, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="createRemittance" duration-ms="750911" started-at="2020-01-30T16:11:00 IST" description="Validate creation of remittance in OCEAN with editing/reset of details given earlier." finished-at="2020-01-30T16:23:31 IST">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAP-TZD-0X74796', ip: '10.55.55.153', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: io.appium.java_client.windows.WindowsDriver
-Capabilities {app: C:\Users\mohit.goel\AppData..., deviceName: LAP-TZD-0X74796, javascriptEnabled: true, platform: WINDOWS, platformName: WINDOWS}
-Session ID: 007a2646-b4ce-4e98-ac8b-2c60d319e7c2
-*** Element info: {Using=xpath, value=//*[@AutomationId='txtRemittanceName']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAP-TZD-0X74796', ip: '10.55.55.153', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
-Driver info: io.appium.java_client.windows.WindowsDriver
-Capabilities {app: C:\Users\mohit.goel\AppData..., deviceName: LAP-TZD-0X74796, javascriptEnabled: true, platform: WINDOWS, platformName: WINDOWS}
-Session ID: 007a2646-b4ce-4e98-ac8b-2c60d319e7c2
-*** Element info: {Using=xpath, value=//*[@AutomationId='txtRemittanceName']}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:231)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.windows.WindowsDriver.execute(WindowsDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
-at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-at io.appium.java_client.windows.WindowsDriver.findElementByXPath(WindowsDriver.java:1)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.windows.WindowsDriver.findElement(WindowsDriver.java:1)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-at ocean.common.Keywords.getValue(Keywords.java:296)
-at ocean.modules.pages.UnderwritingModulePages.getRemittanceValueswithoutSave(UnderwritingModulePages.java:550)
-at ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06.createRemittance(OCEAN_UnderWriting_TC_06.java:42)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRemittance -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="tearDown" is-config="true" duration-ms="328" started-at="2020-01-30T16:23:31 IST" finished-at="2020-01-30T16:23:31 IST">
+        <test-method status="PASS" signature="TCase_01_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="TCase_01_changePriceSheet" duration-ms="477" started-at="2020-02-25T15:13:06 IST" description="Validate premium calculation for a contract/contract adjustment in a remittance, if it&#039;s price sheet is changed from : 1. One product to another product." data-provider="fetchDataForTC24" finished-at="2020-02-25T15:13:06 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createRemittance status=FAILURE method=OCEAN_UnderWriting_TC_06.createRemittance()[pri:5, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a] output={null}]]]>
+                <![CDATA[[Ljava.lang.String;@13e3c1c7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TCase_01_changePriceSheet -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="tearDown" is-config="true" duration-ms="66" started-at="2020-02-25T15:13:06 IST" finished-at="2020-02-25T15:13:06 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TCase_01_changePriceSheet status=SUCCESS method=OCEAN_UnderWriting_TC_25.TCase_01_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@690bc15e]]>
+                <![CDATA[org.testng.TestRunner@36dce7ed]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06@8297b3a]" name="tearDown" is-config="true" duration-ms="51" started-at="2020-01-30T16:23:31 IST" finished-at="2020-01-30T16:23:31 IST">
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="screenshot" is-config="true" duration-ms="0" started-at="2020-02-25T15:13:06 IST" finished-at="2020-02-25T15:13:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="TCase_01_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="TCase_01_changePriceSheet" duration-ms="1001" started-at="2020-02-25T15:13:06 IST" description="Validate premium calculation for a contract/contract adjustment in a remittance, if it&#039;s price sheet is changed from : 1. One product to another product." data-provider="fetchDataForTC24" finished-at="2020-02-25T15:13:07 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@690bc15e]]>
+                <![CDATA[[Ljava.lang.String;@1623134f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TCase_01_changePriceSheet -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="tearDown" is-config="true" duration-ms="67" started-at="2020-02-25T15:13:07 IST" finished-at="2020-02-25T15:13:07 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TCase_01_changePriceSheet status=SUCCESS method=OCEAN_UnderWriting_TC_25.TCase_01_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@36dce7ed]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06 -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="screenshot" is-config="true" duration-ms="1" started-at="2020-02-25T15:13:07 IST" finished-at="2020-02-25T15:13:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="TCase_02_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="TCase_02_changePriceSheet" duration-ms="1001" started-at="2020-02-25T15:13:07 IST" description="Validate premium calculation for a contract/contract adjustment in a remittance, if it&#039;s price sheet is changed from : 1. One product to another product." data-provider="fetchDataForTC24" finished-at="2020-02-25T15:13:08 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@7e3060d8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TCase_02_changePriceSheet -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="tearDown" is-config="true" duration-ms="64" started-at="2020-02-25T15:13:08 IST" finished-at="2020-02-25T15:13:09 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TCase_02_changePriceSheet status=SUCCESS method=OCEAN_UnderWriting_TC_25.TCase_02_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@36dce7ed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="screenshot" is-config="true" duration-ms="0" started-at="2020-02-25T15:13:09 IST" finished-at="2020-02-25T15:13:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="TCase_02_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="TCase_02_changePriceSheet" duration-ms="998" started-at="2020-02-25T15:13:09 IST" description="Validate premium calculation for a contract/contract adjustment in a remittance, if it&#039;s price sheet is changed from : 1. One product to another product." data-provider="fetchDataForTC24" finished-at="2020-02-25T15:13:10 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@71ae31b0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TCase_02_changePriceSheet -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="tearDown" is-config="true" duration-ms="64" started-at="2020-02-25T15:13:10 IST" finished-at="2020-02-25T15:13:10 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TCase_02_changePriceSheet status=SUCCESS method=OCEAN_UnderWriting_TC_25.TCase_02_changePriceSheet([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@36dce7ed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="appendResults(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="appendResults" is-config="true" duration-ms="1133" started-at="2020-02-25T15:13:10 IST" finished-at="2020-02-25T15:13:11 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@36dce7ed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- appendResults -->
+        <test-method status="PASS" signature="tearDown1(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08]" name="tearDown1" is-config="true" duration-ms="33" started-at="2020-02-25T15:13:11 IST" finished-at="2020-02-25T15:13:11 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@36dce7ed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown1 -->
+      </class> <!-- ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25 -->
     </test> <!-- Cancellation -->
   </suite> <!-- Ocean -->
 </testng-results>

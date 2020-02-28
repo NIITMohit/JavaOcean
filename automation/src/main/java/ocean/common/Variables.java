@@ -14,7 +14,7 @@ import io.appium.java_client.windows.WindowsDriver;
  * 
  * @author Mohit Goel
  */
-public class Variables  extends Database_Connectivity{
+public class Variables extends Database_Connectivity {
 
 	/** Static variable OR - which holds object repo xml data */
 	public static HashMap<String, String[]> oR = new HashMap<String, String[]>();
@@ -34,9 +34,17 @@ public class Variables  extends Database_Connectivity{
 	 * test
 	 */
 	public static List<String> screenShots;
+	/**
+	 * Static variable executionResult - append all results for all test data in a
+	 * single test case
+	 */
+	public static HashMap<String, List<HashMap<String, List<String>>>> executionResult;
 
 	/** Static variable mapTest - list of all test parent node */
 	public static HashMap<String, ExtentTest> mapTest;
+
+	/** Static variable mapTest - list of all test parent node */
+	public static HashMap<String, ExtentTest> resultData;
 
 	/** Static variable nodeTest - list of all test child node */
 	public static HashMap<String, ExtentTest> nodeTest;

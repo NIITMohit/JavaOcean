@@ -25,7 +25,13 @@ public class OCEAN_Account_TC_01_02_03 extends AccountsModulePages {
 	 * 
 	 */
 	@Test(priority = 1, groups = "regression", dataProvider = "fetchDataForTC01_02_03", dataProviderClass = AccountsDataProvider.class, description = "Validate Account search on the basis of search parameter given.")
-	public void searchForAccountOnAccountSearchScreen(String[] inputArray) throws Exception {
+	public void TC_04_AccountSeacrhByAddress(String[] inputArray) throws Exception {
+		if(inputArray[8].equals("1")) {
+			
+		}
+		else{
+			//// dp
+		}
 		//// create data to fill required values in search window
 		HashMap<String, String> uiSearchData = null;
 		//// Navigate to mail service tab
@@ -80,7 +86,6 @@ public class OCEAN_Account_TC_01_02_03 extends AccountsModulePages {
 			else
 				secondCutDataFlag = false;
 		}
-
 		if (firstCutDataFlag == secondCutDataFlag && firstCutDataFlag == true)
 			assertEquals(true, true);
 		else

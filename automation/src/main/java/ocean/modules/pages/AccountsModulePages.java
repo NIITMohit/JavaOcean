@@ -2,8 +2,12 @@ package ocean.modules.pages;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import ocean.modules.database.AccountsDataBase;
 
@@ -454,4 +458,148 @@ public class AccountsModulePages extends AccountsDataBase {
 		}
 	}
 
+	/**
+	 * This function is used to assign priceSheet on data in a hashmap
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getAccountAssignPriceSheetOnRoleType() throws Exception {
+		HashMap<String, String> assignData = new HashMap<String, String>();
+
+		assignData.put("InternalName", getValue("PriceSheetInternalName"));
+		assignData.put("RoleTypeId", getValue("getRoleTypeId"));
+		assignData.put("PriceSheetCode", getValue("typePriceCode"));
+		return assignData;
+
+	}
+
+	/**
+	 * This function is used to type the pricesheet Code and select the pricesheet
+	 * for assign
+	 * 
+	 * 
+	 */
+	public void typePriceSheetCode(String priceSheet) {
+		click("clickToSelectProgramCodeOfPRiceSheet");
+		type("clickToSelectProgramCodeOfPRiceSheet", priceSheet);
+		/*
+		 * String abc = randomString(10); type("PriceSheetInternalName",abc);
+		 */
+		click("listOfSelectbutton", 0);
+	}
+
+	/**
+	 * This function is used to type the pricesheet Code and select the pricesheet
+	 * for assign
+	 * 
+	 * 
+	 */
+	public void typePriceSheetCodeMaster(String priceSheet, String roleType) {
+		click("clickToSelectProgramCodeOfPRiceSheet");
+		type("clickToSelectProgramCodeOfPRiceSheet", priceSheet);
+		/*
+		 * String abc = randomString(10); type("PriceSheetInternalName",abc);
+		 */
+		if (roleType.toLowerCase().equals("agent"))
+			type("typePriceSheetInFilter", "Master");
+		click("listOfSelectbutton", 0);
+	}
+
+	/**
+	 * This function is used to verify payee is disabled or enabled and select the
+	 * payee
+	 * 
+	 */
+	public void verifyAndSelectPayee(HashMap<String, String> pricesheetDataMap) throws Exception {
+		if (pricesheetDataMap.get("Role_Type").toLowerCase().equals("lender")
+				|| pricesheetDataMap.get("Role_Type").toLowerCase().equals("dealer")) {
+			type("typePayeeNameInTextBox", pricesheetDataMap.get("Payee"));
+			waitForSomeTime(2);
+			WebElement ele = windowsDriver.findElement(By.className("AutoCompleteBox"));
+			List<WebElement> lis = ele.findElements(By.className("ListBoxItem"));
+			lis.get(1).click();
+		}
+		click("listOfSelectbutton");
+	}
+
+	/**
+	 * This function is used to select the top or First account for the agent,
+	 * lender and dealer
+	 * 
+	 * 
+	 */
+	public void selectTopAccountOnTheBasisOfRoleType() {
+		click("listOfDisplayButton", 0);
+
+	}
+
+	/**
+	 * This function is used to click For SetUpNewPricing
+	 * 
+	 * 
+	 */
+	public void clickForSetUpNewPricing() {
+		click("clickOnSetupNewPricing");
+	}
+
+	/**
+	 * This function is used to get firstPrice sheet internal name
+	 * 
+	 * 
+	 */
+	public String getPriceSheetName() {
+		// To get Internal name of PS info
+		click("InternalNameOfPSInfo");
+		// this is used to get the value of priceSheet internal name
+		return getValue("InternalNameOfPSInfo");
+	}
+
+	/**
+	 * This function is used to assign For SetUpNewPricing
+	 * 
+	 * @param <WebElement>
+	 * 
+	 * @return
+	 * 
+	 */
+	public void selectPriceSheetToAssign() {
+		click("assignPriceSheet");
+		waitForSomeTime(2);
+		click("clickOK");
+		waitForSomeTime(2);
+		click("savePriceSheet");
+		waitForSomeTime(2);
+		click("clickOK");
+	}
+
+	/**
+	 * This function is used to return Account Details PS Info searched data in map,
+	 * to be verified from search result grid
+	 * 
+	 * @return
+	 * 
+	 */
+	public HashMap<String, String> returnAccountDetailsPSInfoResultGridData(int i) throws Exception {
+		HashMap<String, String> searchData = new HashMap<String, String>();
+		//// save Role_Id
+		searchData.put("Internal_Name", getValue("listOfPSInfoInternalName", i).trim());
+		//// save Account_Name
+		searchData.put("External_Name", getValue("listOfPSInfoExternalName", i).trim());
+		//// Address
+		searchData.put("Code", getValue("listOfPSInfoCode", i).trim());
+		//// save CITY
+		searchData.put("Effective_Date", getValue("listOfPSInfoEffectiveDate", i).trim());
+		//// save STATE
+		searchData.put("Classification_List", getValue("listOfPSInfoClassificationList", i).trim());
+		//// save ZIP_CODE
+		searchData.put("Status", getValue("listOfPSInfoStatus", i).trim());
+		//// save Account_Type
+		searchData.put("Master", getValue("listOfPSInfoMaster", i).trim());
+		//// Save Role_Type
+		searchData.put("Created_Date", getValue("listOfPSInfoCreatedDate", i).trim());
+		//// save STATUS
+		searchData.put("Created_By", getValue("listOfPSInfoCreatedBy", i).trim());
+		return searchData;
+
+	}
 }
