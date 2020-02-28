@@ -64,6 +64,7 @@ public class Suite extends ReadData {
 	@SuppressWarnings("rawtypes")
 	@BeforeSuite
 	public void setup(ITestContext context) {
+		String desktopPath = System.getProperty("user.home") + "\\Desktop";
 		//// Path of ocean application assuming it is installed in user app data
 		String oceanApplicationPath = System.getProperty("user.home") + "\\AppData\\Local\\OceanDev\\Ocean.exe";
 		// String oceanApplicationPath = "c:\\Windows\\System32\\notepad.exe";
