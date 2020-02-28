@@ -21,9 +21,9 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 		String stateofbutton = checkEnableDisable("clickCancelButton");
 		click("swipeRight");
 		String status = getValue("statusOfContract");
-		takeScreenshot();
+		//takeScreenshot(new Throwable().getStackTrace()[0].getMethodName());
 		click("swipeLeft");
-		takeScreenshot();
+	//	takeScreenshot(new Throwable().getStackTrace()[0].getMethodName());
 		if (!status.toLowerCase().equals("processed") && stateofbutton.toLowerCase().equals("false"))
 			assertEquals(stateofbutton, "false");
 		else if (status.toLowerCase().equals("processed") && stateofbutton.toLowerCase().equals("true")) {
@@ -78,7 +78,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 				click("clickAuthorize");
 				// click("yesBox");
 				//String info = getValue("inValidPayeeErrorMessage");
-				takeScreenshot();
+			//	takeScreenshot(new Throwable().getStackTrace()[0].getMethodName());
 				click("clickOK");
 				click("overRideRulesCheckBox");
 				type("selectPayee", "Primary Account");
@@ -105,7 +105,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 				type("cancelFee", "2000");
 				click("clickCalculate");
 				String messageFromToast = getValue("textMessageForFeeExceeds");
-				takeScreenshot();
+				//takeScreenshot(new Throwable().getStackTrace()[0].getMethodName());
 				click("clickOK");
 				assertEquals(messageFromToast, "Cancelation fee exceeds refund");
 			}
@@ -150,7 +150,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 				refundPercent = Integer.toString(abc);
 				type("refundPercent", refundPercent);
 				type("cancelFee", "96");
-				takeScreenshot();
+				//takeScreenshot(new Throwable().getStackTrace()[0].getMethodName());
 				click("clickCalculate");
 				click("clickOK");
 				click("clickCalculate");
@@ -167,7 +167,7 @@ public class OCEAN_Cancel_TCDEMO extends CommonFunctions {
 			else {
 				Boolean flag = false;
 				type("selectPayee", "AUL");
-				takeScreenshot();
+				//takeScreenshot(new Throwable().getStackTrace()[0].getMethodName());
 				click("clickCalculate");
 				click("clickOK");
 				assertEquals(flag, flag1);

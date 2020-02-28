@@ -638,4 +638,18 @@ public class CommonFunctions extends Suite {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, sheetName);
 		return arrayObject;
 	}
+
+	/**
+	 * This common function is used to go to Classification Tab
+	 * 
+	 * 
+	 */
+	public void goToClassficationList() {
+		try {
+			click("clickOnClassificationTab");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 }
