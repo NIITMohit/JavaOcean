@@ -49,6 +49,7 @@ public class PricingModulePages extends PricingDataBase {
 	public void selectClassificationList() throws Exception {
 		click("clickOnCheckbox", 0);
 		rightClick("clickOnCheckbox");
+
 	}
 
 	/**
@@ -56,18 +57,12 @@ public class PricingModulePages extends PricingDataBase {
 	 * 
 	 * 
 	 */
-	public void selectCloneClassfication(HashMap<String, String> priceSheetName) throws Exception {
+	public void selectCloneClassfication(String priceSheetName) throws Exception {
 		selectClassificationList();
 		click("clickOnClonePriceSheet");
 		click("typeSubMasterPriceSheetNameForCloning");
-		type("typeSubMasterPriceSheetNameForCloning", priceSheetName.get("PriceSheetName"));
+		type("typeSubMasterPriceSheetNameForCloning", priceSheetName);
 		click("clickOnSaveclonePriceSheet");
-		try {
-			click("clickOnSaveclonePriceSheet");
-		} catch (Exception e) {
-			// do nothing
-		}
-
 	}
 
 	/**
@@ -75,10 +70,19 @@ public class PricingModulePages extends PricingDataBase {
 	 * 
 	 * 
 	 */
-	public void validateClonePriceSheet(HashMap<String, String> priceSheetName) throws Exception {
+	public void validateClonePriceSheet(String priceSheetName) throws Exception {
 		click("typeForFilterClassificationList");
-		type("typeForFilterClassificationList", priceSheetName.get("PriceSheetName"));
+		type("typeForFilterClassificationList", priceSheetName);
 		click("listOfClassificationList");
+	}
+
+	/**
+	 * This function is use to get value of clone price sheet
+	 * 
+	 * 
+	 */
+	public String getValueofClonePriceSheet() throws Exception {
+		return getTextOfElement("listOfClassificationList");
 	}
 
 	/**
@@ -123,51 +127,6 @@ public class PricingModulePages extends PricingDataBase {
 	}
 
 	/**
-	 * This function is use to edit classification list for turbo
-	 * 
-	 * 
-	 */
-	public void editClassificationListForTurbo(HashMap<String, String> turboOption) throws Exception {
-
-		click("clickForEditTurboDiesel");
-		if (turboOption.get("Turbo").toLowerCase().equals("y")) {
-			click("clickCheckBoxOfTurbo");
-			click("clickSaveForTurboDiesel");
-		}
-		for (int i = 0; i < 4; i++) {
-			try {
-				click("clickOK");
-			} catch (Exception e) {
-				break;
-				// // do nothing
-			}
-		}
-	}
-
-	/**
-	 * This function is use to edit classification list for Diesel
-	 * 
-	 * 
-	 */
-	public void editClassificationListForDiesel(HashMap<String, String> dieselOption) throws Exception {
-		click("clickForEditTurboDiesel");
-		if (dieselOption.get("Diesel").toLowerCase().equals("y")) {
-			click("clickCheckBoxOfDiesel");
-			click("clickSaveForTurboDiesel");
-		}
-
-		for (int i = 0; i < 2; i++) {
-			try {
-				click("clickOK");
-			} catch (Exception e) {
-				break;
-				// // do nothing
-			}
-		}
-
-	}
-
-	/**
 	 * This function is use to check that file is download or not
 	 * 
 	 * 
@@ -176,20 +135,13 @@ public class PricingModulePages extends PricingDataBase {
 		boolean flag = false;
 		File dir = new File(downloadPath);
 		File[] dir_contents = dir.listFiles();
+
 		for (int i = 0; i < dir_contents.length; i++) {
 			if (dir_contents[i].getName().equals(fileName))
 				return flag = true;
 		}
-		return flag;
-	}
 
-	/**
-	 * This function is use to get value of clone price sheet
-	 * 
-	 * 
-	 */
-	public String getValueofClonePriceSheet() throws Exception {
-		return getTextOfElement("listOfClassificationList");
+		return flag;
 	}
 
 	/**
@@ -197,10 +149,10 @@ public class PricingModulePages extends PricingDataBase {
 	 * 
 	 * 
 	 */
-	public void deleteExportFile(String deletePath) throws Exception {
+	public void deleteExportFile(String deletepath) throws Exception {
 		try {
 			// creates a file instance
-			File file = new File(deletePath);
+			File file = new File(deletepath);
 			// deletes the file when JVM terminates
 			file.deleteOnExit();
 			System.out.println("Done");
@@ -216,9 +168,9 @@ public class PricingModulePages extends PricingDataBase {
 	 * 
 	 * 
 	 */
-	public void selectPricesheetForTurbo(HashMap<String, String> turboOption) throws Exception {
+	public void selectPricesheetForTurbo(String turboPriceSheet) throws Exception {
 		click("listOfClassificationList");
-		type("typeForFilterClassificationList", turboOption.get("ClassificationListForTurbo"));
+		type("typeForFilterClassificationList", turboPriceSheet);
 		selectClassificationList();
 	}
 
@@ -227,24 +179,48 @@ public class PricingModulePages extends PricingDataBase {
 	 * 
 	 * 
 	 */
-	public void selectPricesheetForDiesel(HashMap<String, String> dieselOption) throws Exception {
+	public void selectPricesheetForDiesel(String dieselPriceSheet) throws Exception {
 		click("listOfClassificationList");
-		type("typeForFilterClassificationList", dieselOption.get("ClassificationListForDiesel"));
+		type("typeForFilterClassificationList", dieselPriceSheet);
 		selectClassificationList();
 	}
 
-	public void uncheckedEditTurboCheckbox() throws Exception {
-		selectClassificationList();
-		click("clickForEditTurboDiesel");
-		click("clickCheckBoxOfTurbo");
-		click("clickSaveForTurboDiesel");
-	}
+	/**
+	 * This function is use to edit classification list for turbo or Diesel used for
+	 * checked and unchecked the checkbox
+	 * 
+	 * 
+	 */
+	public void editClassificationListForTurboAndDiesel(String turboDieselOption, String value) throws Exception {
 
-	public void uncheckedEditDieselCheckbox() throws Exception {
-		selectClassificationList();
 		click("clickForEditTurboDiesel");
-		click("clickCheckBoxOfDiesel");
+		switch (turboDieselOption.toLowerCase()) {
+		case "turbo":
+			if (turboDieselOption.toLowerCase().equals("y")) {
+				click("clickCheckBoxOfTurbo");
+			} else {
+				click("clickCheckBoxOfTurbo");
+			}
+			break;
+		case "diesel":
+			if (turboDieselOption.toLowerCase().equals("y")) {
+				click("clickCheckBoxOfDiesel");
+			}
+
+			else {
+				click("clickCheckBoxOfDiesel");
+			}
+			break;
+		}
 		click("clickSaveForTurboDiesel");
+
+		for (int i = 0; i < 2; i++) {
+			try {
+				click("clickOK");
+			} catch (Exception e) {
+				// // do nothing
+			}
+		}
 	}
 
 	/**
