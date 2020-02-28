@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -503,6 +504,196 @@ public class AccountsModulePages extends AccountsDataBase {
 		if (roleType.toLowerCase().equals("agent"))
 			type("typePriceSheetInFilter", "Master");
 		click("listOfSelectbutton", 0);
+	}
+
+	/**
+	 * This function is used to add Administraion Exception on priceSheet
+	 * 
+	 * 
+	 */
+	public void addAdministraionExceptions(HashMap<String, String> commissionsData) {
+		String[] bucket = commissionsData.get("AdminBucket").split(",");
+		for (String string : bucket) {
+			type("selectBucketForAdmistration", string);
+			type("select$ToFillAmountForAdministration", commissionsData.get("$ForCommissions"));
+			click("clickOnAddButton", 3);
+		}
+	}
+
+	/**
+	 * This function is used to add Reserve Exception on priceSheet
+	 * 
+	 * 
+	 */
+	public void addReserveException(HashMap<String, String> commissionsData) {
+		String[] bucket = commissionsData.get("ReserveBucket").split(",");
+		for (String string : bucket) {
+			type("selectBucketForReserve", string);
+			type("select$ToFillAmountForReserve", commissionsData.get("$ForCommissions"));
+			click("clickOnAddButton", 4);
+		}
+	}
+
+	/**
+	 * This function is used to edit and delete the priceSheet Exceptions
+	 * 
+	 * @param <WebElement>
+	 * 
+	 * @return
+	 * 
+	 */
+	public void editAndDeletePriceSheetExceptions(HashMap<String, String> exceptionData) {
+		type("clickToFilterInternalName", exceptionData.get("internalName"));
+		click("clickOnEditButton", 0);
+		try {
+			click("scrollContractsListDown");
+		} catch (Exception e) {
+			// // do nothing
+		}
+		if (exceptionData.get("delete").toLowerCase().equals("y")) {
+			rightClick("rightClickToDeleteExceptions");
+			click("clickOnDeleteForException");
+			click("clickOK");
+		}
+		if (exceptionData.get("edit").toLowerCase().equals("y")) {
+			// // code to be added
+			click("savePriceSheet");
+		}
+	}
+
+	/**
+	 * This function is used to add Insurance Exception on priceSheet
+	 * 
+	 * 
+	 */
+	public void addInsuranceExceptions(HashMap<String, String> commissionsData) {
+		String[] bucket = commissionsData.get("InsuranceBucket").split(",");
+		for (String string : bucket) {
+			type("selectBucketForInsurance", string);
+			type("select$ToFillAmountForInsurance", commissionsData.get("$ForCommissions"));
+			click("clickOnAddButton", 5);
+		}
+	}
+
+	/**
+	 * This function is used to assign the priceSheet to add the exceptions
+	 * 
+	 * @param <WebElement>
+	 * 
+	 * @return
+	 * 
+	 */
+	public void selectPriceSheetToAssigntToAddExceptions(HashMap<String, String> excelSheetData) {
+		click("assignPriceSheet");
+		waitForSomeTime(2);
+		for (int i = 0; i < 4; i++) {
+			try {
+				click("clickOK");
+			} catch (Exception e) {
+				break;
+				// // do nothing
+			}
+		}
+		type("selectEffectiveDate", excelSheetData.get("EffectiveDate"));
+		type("selectExceptionType", excelSheetData.get("ExceptionType"));
+		if (excelSheetData.get("ExceptionType").toLowerCase().equals("SELECTEDPLANS")) {
+			type("selectClasstype", excelSheetData.get("Class"));
+			type("selectCoverageType", excelSheetData.get("Coverage"));
+			type("selectTermType", excelSheetData.get("Term"));
+		}
+	}
+
+	/**
+	 * This function is used to get the exceptions on agent, lender, dealer
+	 * 
+	 * 
+	 */
+	public HashMap<String, String> getExceptionsOnTheBasisOfPriceSheet() throws Exception {
+		HashMap<String, String> exceptionsData = new HashMap<String, String>();
+		exceptionsData.put("InternalName", getValue("PriceSheetInternalName"));
+		try {
+			click("scrollContractsListDown");
+		} catch (Exception e) {
+			// / do noting
+		}
+		exceptionsData.put("ExceptionType", getValue("selectExceptionType"));
+		exceptionsData.put("Class", getValue("selectClasstype"));
+		exceptionsData.put("Coverage", getValue("selectCoverageType"));
+		exceptionsData.put("Term", getValue("selectTermType"));
+		return exceptionsData;
+	}
+
+	/**
+	 * This function is used to get the internal name of priceSheet which is
+	 * assigned on agent, lender, dealer
+	 * 
+	 * @param <WebElement>
+	 * 
+	 * @return
+	 * 
+	 */
+	public String getInternalNameOfPriceSheet() throws Exception {
+		click("PriceSheetInternalName");
+		return getValue("PriceSheetInternalName");
+	}
+
+	public Map<String, String> replaceNullValues(Map<String, String> map, String defaultValue) {
+
+		// Replace the null value
+		map = map.entrySet().stream().map(entry -> {
+			if (entry.getValue() == null)
+				entry.setValue(defaultValue);
+			return entry;
+		}).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
+		return map;
+	}
+
+	/**
+	 * This function is used to add NCBAdministartionsExceptions on priceSheet
+	 * 
+	 * 
+	 */
+	public void addNCBAdministartionsExceptions(HashMap<String, String> commissionsData) {
+		String[] bucket = commissionsData.get("AdminBucket").split(",");
+		for (String string : bucket) {
+			type("selectNCBBucket", string);
+			type("selectNCBFee", commissionsData.get("NCBFee"));
+			type("selectWaitingPeriod", commissionsData.get("WaitingPeriod"));
+			click("clickOnAddButton", 2);
+
+			type("selectNCBRetail", "ADMIN_NCB_FEE_RETAIL_AX");
+			type("selectRetailMax", "30");
+			type("selectWaitingPeriod", "30");
+			click("clickOnAddButton", 2);
+
+		}
+	}
+
+	/**
+	 * This function is used to get firstPrice sheet internal name
+	 * 
+	 * @param <WebElement>
+	 * 
+	 * @return
+	 * 
+	 */
+	public void addCommissionsExceptions(HashMap<String, String> commessionsData) {
+		String[] bucket = commessionsData.get("Bucket").split(",");
+		for (String string : bucket) {
+			type("selectBucketForCommissions", string);
+			try {
+				type("typePayeeNameInTextBox", commessionsData.get("Payee"));
+				WebElement ele = windowsDriver.findElement(By.className("AutoCompleteBox"));
+				List<WebElement> lis = ele.findElements(By.className("ListBoxItem"));
+				lis.get(1).click();
+			} catch (Exception e) {
+				// do nothing
+			}
+			type("select$ToFillAmountForCommissions", commessionsData.get("$ForCommissions"));
+			type("selectCancelMethod", commessionsData.get("cancelMethod"));
+			click("clickOnAddButton", 1);
+		}
 	}
 
 	/**

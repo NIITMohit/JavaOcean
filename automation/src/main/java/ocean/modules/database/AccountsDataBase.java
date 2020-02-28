@@ -619,4 +619,36 @@ public class AccountsDataBase extends CommonFunctions {
 
 		return physicalAddress;
 	}
+
+	/**
+	 * This gets exceptions which we have added in pricsheet based on internal name
+	 *
+	 */
+	public HashMap<Integer, HashMap<String, String>> validateExceptionDataOnTheBasisOfInternalName(String internalName)
+			throws Exception {
+		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+		try {
+
+			String query = "select ap.INTERNAL_NAME as InternalName, q.CATEGORY_VALUE as ExceptionType ,"
+					+ " q.CLASS as Class,q.COVERAGE as Coverage, q.TERM as Term "
+					+ " from dbo.PRICING_PRICESHEET_ACCOUNT_RELATION as p"
+					+ " join dbo.pricing_pricesheet as ap on p.pricesheet_id= ap.id  "
+					+ " join dbo.account ac on p.payee_id = ac.id "
+					+ "join PRICESHEET_PRODUCT_TIER q on  ap.id=q.[PRICESHEET_ID] "
+					+ "join PRICESHEET_PRODUCT_TIER_TARGET r on q.id=r.TIER_ID"
+					+ " join [PRICESHEET_TIER_TARGET_PROPERTY] s on r.TIER_TARGET_PROPERTY_ID =s.ID "
+					+ "where ap.internal_name like '" + internalName + "' ";
+			aulDBConnect();
+			// /// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			// // save data in map
+			dbMap = returnAllData(rs);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			// // close connection
+			closeConnection();
+		}
+		return dbMap;
+	}
 }

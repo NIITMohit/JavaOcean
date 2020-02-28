@@ -34,4 +34,13 @@ public class AccountsDataProvider extends CommonFunctions {
 	public static Object[][] fetchDataForTC013() {
 		return new String[][] { { "Dealer", "Active" }, { "Lender", "Active" }, { "Agent", "Active" } };
 	}
+	
+	/**
+	 * Data provider for fetchData used on Account Search and add the exceptions On the excel data 
+	 */
+	@DataProvider(name = "fetchDataForTC_17_18_19")
+	public static Object[][] fetchDataForTC_17_18_19() {
+		return dataProvider("Accounts", "TC_17_18_19");
+	}
+	
 }
