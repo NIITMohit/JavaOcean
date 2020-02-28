@@ -25,7 +25,7 @@ public class OCEAN_UnderWriting_TC_24 extends UnderwritingModulePages {
 	 * it's price sheet is changed from : 1. One product to another product.
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", description = "Validate premium calculation for a contract/contract adjustment in a remittance, ifit's price sheet is changed from : 1. One product to another product.")
+	@Test(priority = 6, groups = "regression", description = "Validate premium calculation for a contract/contract adjustment in a remittance, ifit's price sheet is changed from : 1. One product to another product.")
 	public void changePriceSheet() throws Exception {
 		HashMap<Integer, HashMap<String, String>> contractFromRemittance = pricing_underwriting_getPendingContractwithRemittance();
 		//// get remittance name and file name
@@ -284,7 +284,7 @@ public class OCEAN_UnderWriting_TC_24 extends UnderwritingModulePages {
 	 * it's price sheet is changed from : 1. One product to another product.
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", description = "Validate premium calculation for a contract/contract adjustment in a remittance, ifit's price sheet is changed from : 1. One product to another product.")
+	@Test(priority = 6, groups = "regression", description = "Validate premium calculation for a contract/contract adjustment in a remittance, ifit's price sheet is changed from : 1. One product to another product.")
 	public void changeAgnet() throws Exception {
 		HashMap<Integer, HashMap<String, String>> contractFromRemittance = pricing_underwriting_getPendingContractwithRemittance();
 		//// get remittance name and file name
