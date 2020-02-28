@@ -456,6 +456,19 @@ public class CommonFunctions extends Suite {
 	}
 
 	/**
+	 * This common function is used to go to Account Details tab
+	 * 
+	 * 
+	 */
+	public void goToAccountsDetailsTab() {
+		try {
+			click("clickOnAccountDetails");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	/**
 	 * This common function is used to generate random string of length n
 	 * 
 	 */
@@ -521,6 +534,8 @@ public class CommonFunctions extends Suite {
 		//// Fetch PRICESHEETCODE, if exist
 		if (inputData[0].length() > 0)
 			premiumData.put("PRICESHEETCODE", inputData[0]);
+		else
+			premiumData.put("PRICESHEETCODE", "");
 		//// Fetch ACTUALPRICESHEETCODE, if exist
 		if (inputData[1].length() > 0)
 			premiumData.put("DEALERID", inputData[1]);
@@ -638,4 +653,18 @@ public class CommonFunctions extends Suite {
 		Object[][] arrayObject = ReadData.getExcelData(dir + fileName, sheetName);
 		return arrayObject;
 	}
+
+	/**
+	 * This common function is used to go to Classification Tab
+	 * 
+	 * 
+	 */
+	public void goToClassficationList() {
+		try {
+			click("clickOnClassificationTab");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 }

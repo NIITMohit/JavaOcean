@@ -1,7 +1,13 @@
 package ocean.modules.pages;
 
+import static org.testng.Assert.assertFalse;
+
+import java.io.File;
 import java.util.HashMap;
 
+import org.openqa.selenium.NoSuchElementException;
+
+import ocean.common.ObjectRepo;
 import ocean.modules.database.PricingDataBase;
 
 /**
@@ -32,6 +38,213 @@ public class PricingModulePages extends PricingDataBase {
 			throw e;
 		}
 
+	}
+
+	/**
+	 * This function is used to click display button to navigate to account details
+	 * screen
+	 * 
+	 * 
+	 */
+	public void selectClassificationList() throws Exception {
+		click("clickOnCheckbox", 0);
+		rightClick("clickOnCheckbox");
+	}
+
+	/**
+	 * This function is use to clone Price Sheet
+	 * 
+	 * 
+	 */
+	public void selectCloneClassfication(HashMap<String, String> priceSheetName) throws Exception {
+		selectClassificationList();
+		click("clickOnClonePriceSheet");
+		click("typeSubMasterPriceSheetNameForCloning");
+		type("typeSubMasterPriceSheetNameForCloning", priceSheetName.get("PriceSheetName"));
+		click("clickOnSaveclonePriceSheet");
+		try {
+			click("clickOnSaveclonePriceSheet");
+		} catch (Exception e) {
+			// do nothing
+		}
+
+	}
+
+	/**
+	 * This function is use or validate to clone Price Sheet
+	 * 
+	 * 
+	 */
+	public void validateClonePriceSheet(HashMap<String, String> priceSheetName) throws Exception {
+		click("typeForFilterClassificationList");
+		type("typeForFilterClassificationList", priceSheetName.get("PriceSheetName"));
+		click("listOfClassificationList");
+	}
+
+	/**
+	 * This function is use to export or delete the price sheet
+	 * 
+	 * 
+	 */
+	public void exportClassificationPriceSheet() throws Exception {
+		click("listOfClassificationList");
+		selectClassificationList();
+		click("clickForExportClassification");
+		click("clickOK");
+
+		// click("clickTocloseMSExcel");
+	}
+
+	/**
+	 * This function is use to that priceSheet is delete or not
+	 * 
+	 */
+	public void validateDeleteClassificationPriceSheet(String locator) {
+		try {
+			int count = windowsDriver.findElements(ObjectRepo.fetchOR(locator)).size();
+			if (count != 0) {
+				assertFalse(true, "Pricesheet is not visible");
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("Price sheet is not visible");
+		}
+	}
+
+	/**
+	 * This function is use to delete the ClassificationList Pricesheet
+	 * 
+	 * 
+	 */
+	public void deleteClassificationPriceSheet(String priceSheet) throws Exception {
+		type("typeForFilterClassificationList", priceSheet);
+		selectClassificationList();
+		click("clickForDeleteClassification");
+		click("clickOnYesForDeleteClassification");
+	}
+
+	/**
+	 * This function is use to edit classification list for turbo
+	 * 
+	 * 
+	 */
+	public void editClassificationListForTurbo(HashMap<String, String> turboOption) throws Exception {
+
+		click("clickForEditTurboDiesel");
+		if (turboOption.get("Turbo").toLowerCase().equals("y")) {
+			click("clickCheckBoxOfTurbo");
+			click("clickSaveForTurboDiesel");
+		}
+		for (int i = 0; i < 4; i++) {
+			try {
+				click("clickOK");
+			} catch (Exception e) {
+				break;
+				// // do nothing
+			}
+		}
+	}
+
+	/**
+	 * This function is use to edit classification list for Diesel
+	 * 
+	 * 
+	 */
+	public void editClassificationListForDiesel(HashMap<String, String> dieselOption) throws Exception {
+		click("clickForEditTurboDiesel");
+		if (dieselOption.get("Diesel").toLowerCase().equals("y")) {
+			click("clickCheckBoxOfDiesel");
+			click("clickSaveForTurboDiesel");
+		}
+
+		for (int i = 0; i < 2; i++) {
+			try {
+				click("clickOK");
+			} catch (Exception e) {
+				break;
+				// // do nothing
+			}
+		}
+
+	}
+
+	/**
+	 * This function is use to check that file is download or not
+	 * 
+	 * 
+	 */
+	public boolean isFileDownloaded(String downloadPath, String fileName) throws Exception {
+		boolean flag = false;
+		File dir = new File(downloadPath);
+		File[] dir_contents = dir.listFiles();
+		for (int i = 0; i < dir_contents.length; i++) {
+			if (dir_contents[i].getName().equals(fileName))
+				return flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 * This function is use to get value of clone price sheet
+	 * 
+	 * 
+	 */
+	public String getValueofClonePriceSheet() throws Exception {
+		return getTextOfElement("listOfClassificationList");
+	}
+
+	/**
+	 * This function is use to delete the download file
+	 * 
+	 * 
+	 */
+	public void deleteExportFile(String deletePath) throws Exception {
+		try {
+			// creates a file instance
+			File file = new File(deletePath);
+			// deletes the file when JVM terminates
+			file.deleteOnExit();
+			System.out.println("Done");
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * This function is use to select the price for turbo option
+	 * 
+	 * 
+	 */
+	public void selectPricesheetForTurbo(HashMap<String, String> turboOption) throws Exception {
+		click("listOfClassificationList");
+		type("typeForFilterClassificationList", turboOption.get("ClassificationListForTurbo"));
+		selectClassificationList();
+	}
+
+	/**
+	 * This function is use to select the price for diesel option
+	 * 
+	 * 
+	 */
+	public void selectPricesheetForDiesel(HashMap<String, String> dieselOption) throws Exception {
+		click("listOfClassificationList");
+		type("typeForFilterClassificationList", dieselOption.get("ClassificationListForDiesel"));
+		selectClassificationList();
+	}
+
+	public void uncheckedEditTurboCheckbox() throws Exception {
+		selectClassificationList();
+		click("clickForEditTurboDiesel");
+		click("clickCheckBoxOfTurbo");
+		click("clickSaveForTurboDiesel");
+	}
+
+	public void uncheckedEditDieselCheckbox() throws Exception {
+		selectClassificationList();
+		click("clickForEditTurboDiesel");
+		click("clickCheckBoxOfDiesel");
+		click("clickSaveForTurboDiesel");
 	}
 
 	/**
@@ -81,6 +294,7 @@ public class PricingModulePages extends PricingDataBase {
 
 	/**
 	 * This function is used search a price sheet based on search paramater
+	 * 
 	 * @param priceSheet on which priceSheet needs to be searched
 	 */
 	public String searchPriceSheet(String newPriceSheetCode) {

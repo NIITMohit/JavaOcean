@@ -54,7 +54,7 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 	 * like 2. Upload new PDFs.
 	 */
 	@Test(priority = 2, groups = "regression", description = "Validate that user is able to perform on a remittance under remittance enquiry: 2.Upload new PDFs.")
-	public void uplocadNewPDF() throws Exception {
+	public void uploadNewPDF() throws Exception {
 		//// Defect lock in Defect tracker.Defect id 8
 		goToUnderWritingTab();
 		goToRemittanceList();
@@ -78,7 +78,7 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 	@Test(priority = 3, groups = "regression", description = "Validate that user is able to perform on a remittance under remittance enquiry: 3.Assign document type to uploaded document.")
 	public void assignDocumentToUploadPDFAndSave() throws Exception {
 		//// Defect lock in Defect tracker.Defect id 8
-		uplocadNewPDF();
+		uploadNewPDF();
 		goToUnderWritingTab();
 		goToRemittanceList();
 		assignDocumentsStatus(1);
@@ -103,17 +103,17 @@ public class OCEAN_UnderWriting_TC_11 extends UnderwritingModulePages {
 	public void applyFilterOnDocumentType() throws Exception {
 		goToUnderWritingTab();
 		goToRemittanceList();
-		applyFilterOnDocument();
-		click("expandRemittance");
-		boolean flag = true;
-		try {
-			click("clickOnDocumentTYpeForFilter");
-			flag = false;
-		} catch (Exception e) {
-			System.out.println("Apply filter is not clicked");
-			assertEquals(flag, true);
+		landToCreateRemittanceDetailsPage();
+		dragAndDropFiles();
+		String remittanceName = enterRemittanceMandatoryValues("1");
+		if (remittanceName.length() > 0) {
+			assignDocumentsStatus(1);
+			boolean filterCheck = applyFilterOnDocument(remittanceName);
+			click("expandRemittance");
+			assertEquals(filterCheck, true);
+		} else {
+			throw new Exception("Remittance not created");
 		}
-
 	}
 
 	/**

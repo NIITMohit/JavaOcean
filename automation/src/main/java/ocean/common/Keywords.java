@@ -564,4 +564,24 @@ public class Keywords extends Variables {
 		}
 		return we;
 	}
+
+	/**
+	 * getTextOfElement keyword , this function is used to get text/value of locator
+	 *
+	 * @param unique identifier to locate object
+	 * @return the text/value of locator
+	 */
+	public String getTextOfElement(String locator) {
+		String abc = "";
+		try {
+			// // Wait till web element is located
+			WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+			abc = windowsDriver.findElement(ObjectRepo.fetchOR(locator)).getText();
+			;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return abc;
+	}
 }
