@@ -1918,7 +1918,11 @@
             <locator>xpath</locator>
             <value>//*[@AutomationId='Row_0']//*[@Name='Internal Name']//*[@ClassName='TextBlockLite']</value>
        </keyword>
-        <keyword id="typePayeeNameInTextBox">
+       <keyword id="clickToSelectProgramCodeOfPRiceSheet">
+			<locator>xpath</locator>
+			<value>//*[@Name='Code' and @ClassName='FilterCell']</value>
+	   </keyword>
+       <keyword id="typePayeeNameInTextBox">
                <locator>xpath</locator>
             <value>//*[@Name='Search Price Sheets/Assign Relation']//*[@Name='Payee:']/following-sibling::*[1]//*[@ClassName='TextBox']</value>
         </keyword>
@@ -1930,6 +1934,192 @@
                <locator>xpath</locator>
            <value>(//*[@Name='Select' and @ClassName='Button'])[1]</value>
          </keyword>
+         <keyword id="selectPriceSheet">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Select' and @ClassName='Button'])[1]</value>
+	</keyword>
+	<keyword id="savePriceSheet">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Save' and @ClassName='Button'])[1]</value>
+	</keyword>
+	<keyword id="assignPriceSheet">
+			<locator>xpath</locator>
+			<value>//*[@Name='Assign' and @ClassName='Button']</value>
+	</keyword>
+		<keyword id="selectAgentPriceSheet">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='window' and @ClassName='Popup']//*[@ClassName='ListBoxItem']//*[@Name='Agent']</value>
+	</keyword>
+		<keyword id="selectMasterPriceSheet">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='window' and @ClassName='Popup']//*[@ClassName='ListBoxItem']//*[@Name='Master']</value>
+	</keyword>
+	  <keyword id="selectLenderPriceSheet">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='window' and @ClassName='Popup']//*[@ClassName='ListBoxItem']//*[@Name='Lender']</value>
+	</keyword>
+	<keyword id="selectSubMasterPriceSheet">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='window' and @ClassName='Popup']//*[@ClassName='ListBoxItem']//*[@Name='SubMaster']</value>
+	</keyword>
+	<keyword id="selectDealerPriceSheet">
+			<locator>xpath</locator>
+			<value>//*[@LocalizedControlType='window' and @ClassName='Popup']//*[@ClassName='ListBoxItem']//*[@Name='Dealer']</value>
+	</keyword>
+	<keyword id="typePayeeNameInTextBox">
+			<locator>xpath</locator>
+			<value>//*[@Name='Search Price Sheets/Assign Relation']//*[@Name='Payee:']/following-sibling::*[1]//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="checkPriceSheetForRoleType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Role Type' and @ClassName='DataCell']//*[@ClassName='TextBlockLite']</value>
+	</keyword>
+	
+	<keyword id="checkPriceSheetForSingleRoleType">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Role Type' and @ClassName='DataCell']//*[@ClassName='TextBlockLite'])[1]</value>
+	</keyword>
+	
+	<keyword id="roleTypeDropDown">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_PRICESHEET_TYPE_ID' and @ClassName='FilterCell']</value>
+	</keyword>
+	<keyword id="typePriceCode">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CODE' and @ClassName='FilterCell']</value>
+	</keyword>
+	<keyword id="typeLenderNameInTextbox">
+			<locator>xpath</locator>
+			<value>//*[@Name='Search Price Sheets/Assign Relation']//*[@Name='Lender:']/following-sibling::*[1]//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectdropdownForPayeeOrLender">
+			<locator>xpath</locator>
+			<value>//*[@Name='Payee:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectLenderClassificationList">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_LenderClassificationType' and @ClassName='DataCell']</value>
+	</keyword>
+	<keyword id="clickOnPriceSheetCode">
+			<locator>xpath</locator>
+			<value>//*[@AutomationId='Cell_CODE' and @ClassName='DataCell']</value>
+	</keyword>
+	<keyword id="getRoleTypeId">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Role ID:' and @ClassName= 'Text']/following-sibling::*[1])[1]</value>
+	</keyword>
+	<keyword id="PriceSheetInternalName">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Name:' and @ClassName= 'Text']/following-sibling::*[1])[2]</value>
+	</keyword>
+	<keyword id="typePriceSheetInFilter">
+			<locator>xpath</locator>
+			<value>(//*[@AutomationId='Cell_PRICESHEET_TYPE_ID'])[2]</value>
+	</keyword>
+	<keyword id="selectEffectiveDate">
+			<locator>xpath</locator>
+			<value>//*[@Name='Effective Date:' and @ClassName='TextBlock']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectClasstype">
+			<locator>xpath</locator>
+			<value> //*[@Name='Class:' and @ClassName='TextBlock']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectExceptionType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Exception Type:' and @ClassName='TextBlock']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectCoverageType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Coverage:' and @ClassName='TextBlock']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectTermType">
+			<locator>xpath</locator>
+			<value>//*[@Name='Term:' and @ClassName='TextBlock']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectBucketForCommissions">
+			<locator>xpath</locator>
+			<value>( //*[@Name='Bucket:']/following-sibling::*[1])[1]</value>
+	</keyword>
+	<keyword id="selectBucketForAdmistration">
+			<locator>xpath</locator>
+			<value>( //*[@Name='Bucket:']/following-sibling::*[1])[2]</value>
+	</keyword>
+	<keyword id="selectBucketForReserve">
+			<locator>xpath</locator>
+			<value>( //*[@Name='Bucket:']/following-sibling::*[1])[3]</value>
+	</keyword>
+	<keyword id="selectBucketForInsurance">
+			<locator>xpath</locator>
+			<value>( //*[@Name='Bucket:']/following-sibling::*[1])[4]</value>
+	</keyword>
+	<keyword id="select$ToFillAmountForCommissions">
+			<locator>xpath</locator>
+			<value> (//*[@Name='$:' and @ClassName='Text']/following-sibling::*[1])[1]</value>
+	</keyword>
+	<keyword id="select$ToFillAmountForAdministration">
+			<locator>xpath</locator>
+			<value> (//*[@Name='$:' and @ClassName='Text']/following-sibling::*[1])[2]</value>
+	</keyword>
+	<keyword id="select$ToFillAmountForReserve">
+			<locator>xpath</locator>
+			<value> (//*[@Name='$:' and @ClassName='Text']/following-sibling::*[1])[3]</value>
+	</keyword>
+	<keyword id="select$ToFillAmountForInsurance">
+			<locator>xpath</locator>
+			<value> (//*[@Name='$:' and @ClassName='Text']/following-sibling::*[1])[4]</value>
+	</keyword>
+	<keyword id="clickOnAddButton">
+			<locator>xpath</locator>
+			<value>//*[@Name='Add' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="selectNCBRetail">
+			<locator>xpath</locator>
+			<value>//*[@Name='NCB Retail:' ]/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectRetailMax">
+			<locator>xpath</locator>
+			<value>//*[@Name='Retail Max $:' ]/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="selectWaitingPeriod">
+			<locator>xpath</locator>
+			<value>//*[@Name='Waiting Period:' ]/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="clickOnAccountDetails">
+			<locator>xpath</locator>
+			<value>//*[@Name='Account Details' and @ClassName='MaterialTabItem']</value>
+	</keyword>
+	<keyword id="clickOnEditButton">
+			<locator>xpath</locator>
+			<value>//*[@Name='Edit' and @ClassName='Button']</value>
+	</keyword>
+	<keyword id="clickToFilterInternalName">
+			<locator>xpath</locator>
+			<value>//*[@Name='Internal Name' and @ClassName='FilterCell']</value>
+	</keyword>
+	<keyword id="selectPayeeForCommessions">
+			<locator>xpath</locator>
+			<value>(//*[@Name='Payee:']/following-sibling::*[1]//*[@ClassName='TextBox'])[2]</value>
+	</keyword>
+	<keyword id="selectCancelMethod">
+			<locator>xpath</locator>
+			<value>//*[@Name='Cancel Method:']/following-sibling::*[1]//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectNCBBucket">
+			<locator>xpath</locator>
+			<value>//*[@Name='NCB Bucket:']/following-sibling::*[1]//*[@ClassName='TextBox']</value>
+	</keyword>
+	<keyword id="selectNCBFee">
+			<locator>xpath</locator>
+			<value>//*[@Name='NCB Fee $:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="rightClickToDeleteExceptions">
+			<locator>xpath</locator>
+			<value>//*[@Name='COVERAGE' and @ClassName='DataCell']</value>
+	</keyword>
+	<keyword id="clickOnDeleteForException">
+			<locator>xpath</locator>
+			<value>//*[@Name='Delete' and @ClassName='MenuItem']]</value>
+	</keyword>
          <keyword id="assignPriceSheet">
              <locator>xpath</locator>
              <value>//*[@Name='Assign' and @ClassName='Button']</value>

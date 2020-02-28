@@ -388,6 +388,83 @@ public class UnderwritingDataBase extends CommonFunctions {
 	 * This function correct all data needed to calculate premium
 	 * 
 	 */
+	public HashMap<String, String> setAllDataForPremiumCalculationNotIn(HashMap<String, String> map) throws Exception {
+		HashMap<String, String> dbMap = new HashMap<String, String>();
+		try {
+			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date currentDate = new Date();
+			Calendar c = Calendar.getInstance();
+			c.setTime(currentDate);
+			c.add(Calendar.DATE, -2);
+			String date = dateFormat.format(c.getTime());
+			//// get data for query
+			String agentException = "";
+			if (map.get("AGENTEXCEPTION").toLowerCase().equals("y"))
+				agentException = "not null and t.EFFECTIVE_DATE < '" + date + "' and tt.EFFECTIVE_DATE < '" + date
+						+ "' and tt.CATEGORY_VALUE = '" + map.get("AGENTPLANTYPE").toUpperCase() + "'";
+
+			else
+				agentException = "null";
+			String dealerException = "";
+			if (map.get("DEALEREXCEPTION").toLowerCase().equals("y"))
+				dealerException = "not null and t.EFFECTIVE_DATE < '" + date + "' and tt.EFFECTIVE_DATE < '" + date
+						+ "' and tt.CATEGORY_VALUE = '" + map.get("DEALERPLANTYPE").toUpperCase() + "'";
+			else
+				dealerException = "null";
+			String progCode = "";
+			try {
+				progCode = map.get("PRICESHEETCODE");
+				if (progCode == null) {
+					progCode = "";
+				}
+			} catch (Exception e) {
+			}
+			String dealerId = "";
+			try {
+				dealerId = map.get("DEALERID");
+				if (dealerId == null) {
+					dealerId = "";
+				}
+			} catch (Exception e) {
+			}
+			String query = "select top 1 p.id as pricesheetId,a.role_identifier as dealerid, p.CODE as pcode "
+					+ "from [dbo].[PRICING_PRICESHEET] p join [dbo].[PRICING_PRICESHEET_ACCOUNT_RELATION] pac on pac.PRICESHEET_ID = p.id "
+					+ "join dbo.account a on a.id = pac.PRIMARY_SELLER_ID left join PRICESHEET_PRODUCT_TIER_TARGET t on p.id = t.pricesheet_id "
+					+ " left join PRICESHEET_PRODUCT_TIER tt on tt.id = t.TIER_ID "
+					+ "left join PRICESHEET_TIER_TARGET_PROPERTY  tp on t.tier_target_property_id  = tp.id "
+					+ "where p.parent_PriceSheet_id in(select p.id from [dbo].[PRICING_PRICESHEET] p left join PRICESHEET_PRODUCT_TIER_TARGET t on p.id = t.pricesheet_id "
+					+ "left join PRICESHEET_PRODUCT_TIER tt on tt.id = t.TIER_ID "
+					+ "left join PRICESHEET_TIER_TARGET_PROPERTY tp on t.tier_target_property_id  = tp.id "
+					+ "where Parent_PriceSheet_id in(select id from [dbo].[PRICING_PRICESHEET] where Parent_PriceSheet_id is null) and "
+					+ "t.id is " + agentException + ") and t.id is " + dealerException + " and p.code like '%"
+					+ progCode + "%' and a.role_identifier like '%" + dealerId
+					+ "%' and a.account_status_id = 1 and a.role_type_id = 1 and p.id not in ("
+					+ map.get("PRICESHEETID") + ") order by 1 desc";
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(query);
+			//// save data in map
+			HashMap<String, String> dbMap1 = returnData(rs);
+			if (dbMap1.size() == 0) {
+				return dbMap = null;
+			}
+			dbMap.put("PRICESHEETID", dbMap1.get("pricesheetId"));
+			dbMap.put("DEALERID", dbMap1.get("dealerid"));
+			dbMap.put("parentpricesheetcode", dbMap1.get("pcode"));
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return dbMap;
+	}
+
+	/**
+	 * This function correct all data needed to calculate premium
+	 * 
+	 */
 	public HashMap<String, String> setAllDataForPremiumCalculationLender(HashMap<String, String> map) throws Exception {
 		HashMap<String, String> dbMap = new HashMap<String, String>();
 		try {
@@ -547,7 +624,7 @@ public class UnderwritingDataBase extends CommonFunctions {
 		try {
 			String query = "select a.role_identifier as dealerId from  [dbo].[PRICING_PRICESHEET] p "
 					+ "join [dbo].[PRICING_PRICESHEET_ACCOUNT_RELATION] pac on pac.PRICESHEET_ID = p.id "
-					+ "join dbo.account a on a.id = pac.SECONDARY_SELLER_ID \r\n" + "where p.id = "
+					+ "join dbo.account a on a.id = pac.SECONDARY_SELLER_ID " + "where p.id = "
 					+ map.get("PRICESHEETID");
 			aulDBConnect();
 			///// execute query
