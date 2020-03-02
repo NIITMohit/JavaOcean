@@ -1,13 +1,8 @@
 package ocean.modules.pages;
 
-import static org.testng.Assert.assertFalse;
-
 import java.io.File;
 import java.util.HashMap;
 
-import org.openqa.selenium.NoSuchElementException;
-
-import ocean.common.ObjectRepo;
 import ocean.modules.database.PricingDataBase;
 
 /**
@@ -102,16 +97,16 @@ public class PricingModulePages extends PricingDataBase {
 	/**
 	 * This function is use to that priceSheet is delete or not
 	 * 
+	 * @return
+	 * 
 	 */
-	public void validateDeleteClassificationPriceSheet(String locator) {
-		try {
-			int count = windowsDriver.findElements(ObjectRepo.fetchOR(locator)).size();
-			if (count != 0) {
-				assertFalse(true, "Pricesheet is not visible");
-			}
-		} catch (NoSuchElementException e) {
-			System.out.println("Price sheet is not visible");
+	public boolean validateDeleteClassificationPriceSheet(String locator) {
+		boolean flag = false;
+		int count = listOfElements(locator).size();
+		if (count != 0) {
+			flag = true;
 		}
+		return flag;
 	}
 
 	/**
@@ -192,28 +187,16 @@ public class PricingModulePages extends PricingDataBase {
 	 * 
 	 */
 	public void editClassificationListForTurboAndDiesel(String turboDieselOption, String value) throws Exception {
-
 		click("clickForEditTurboDiesel");
 		switch (turboDieselOption.toLowerCase()) {
 		case "turbo":
-			if (turboDieselOption.toLowerCase().equals("y")) {
-				click("clickCheckBoxOfTurbo");
-			} else {
-				click("clickCheckBoxOfTurbo");
-			}
+			click("clickCheckBoxOfTurbo");
 			break;
 		case "diesel":
-			if (turboDieselOption.toLowerCase().equals("y")) {
-				click("clickCheckBoxOfDiesel");
-			}
-
-			else {
-				click("clickCheckBoxOfDiesel");
-			}
+			click("clickCheckBoxOfDiesel");
 			break;
 		}
 		click("clickSaveForTurboDiesel");
-
 		for (int i = 0; i < 2; i++) {
 			try {
 				click("clickOK");
