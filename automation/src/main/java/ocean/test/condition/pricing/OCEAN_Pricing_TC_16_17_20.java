@@ -15,7 +15,7 @@ import ocean.modules.pages.PricingModulePages;
  * 
  * @author Nainsi Jain
  */
-public class OCEAN_Pricing_TC16_17_20 extends PricingModulePages {
+public class OCEAN_Pricing_TC_16_17_20 extends PricingModulePages {
 
 	@Test(priority = 3, groups = "regression", dataProvider = "fetchDataForTC16_17", dataProviderClass = PricingDataProvider.class, description = "Editing of Pricing, options, surcharges, deductibles in mater price sheet")
 	public void editingandVerifyPriceSheet(String[] inputArray) throws Exception {

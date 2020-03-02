@@ -1,7 +1,6 @@
 package ocean.test.condition.pricing;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.util.HashMap;
@@ -60,12 +59,13 @@ public class OCEAN_Pricing_TC_23_24 extends PricingModulePages {
 	 * Validate classification list for cloning/exporting and delete.this function
 	 * cover the condition of this test case like 3. Delete ClassificationList
 	 */
-	@Test(priority = 5, groups = "regression", description = "Validate classification list for delete.")
+	@Test(dependsOnMethods = {
+			"validateClassificationListForCloneExport" }, priority = 5, groups = "regression", description = "Validate classification list for delete.")
 	public void validateClassificationListForDelete() throws Exception {
 		goToPricingTab();
 		goToClassficationList();
 		deleteClassificationPriceSheet("ClonePriceSheet");
-		validateDeleteClassificationPriceSheet("listOfClassificationList");
+		assertEquals(validateDeleteClassificationPriceSheet("listOfClassificationList"), true);
 	}
 
 	/**
@@ -81,11 +81,27 @@ public class OCEAN_Pricing_TC_23_24 extends PricingModulePages {
 		HashMap<String, String> actualTurboValue = getClassificationInfomation("", "0", "0");
 		selectPricesheetForTurbo(actualTurboValue.get("CLASS_GROUP_NAME"));
 		editClassificationListForTurboAndDiesel("Turbo", "Y");
-		checkEnableDisable("clickCheckBoxOfTurbo");
-		HashMap<String, String> expectedTurboValue = getClassificationInfomation(
-				actualTurboValue.get("CLASS_GROUP_NAME"), "1", "0");
-		editClassificationListForTurboAndDiesel("Turbo", "N");
-		assertNotEquals(actualTurboValue, expectedTurboValue);
+		boolean checkboxYes = Boolean.valueOf(checkEnableDisable("clickCheckBoxOfTurbo"));
+		if (checkboxYes == true) {
+			HashMap<String, String> expectedTurboValue = getClassificationInfomation(
+					actualTurboValue.get("CLASS_GROUP_NAME"), "1", "0");
+			if (expectedTurboValue.size() > 1) {
+				editClassificationListForTurboAndDiesel("Turbo", "N");
+				boolean checkboxNo = Boolean.valueOf(checkEnableDisable("clickCheckBoxOfTurbo"));
+				HashMap<String, String> expectedTurboValueFinal = getClassificationInfomation(
+						actualTurboValue.get("CLASS_GROUP_NAME"), "0", "0");
+				if (expectedTurboValueFinal.size() > 1)
+					assertEquals(checkboxNo, false);
+				else
+					assertEquals(false, true);
+
+			} else {
+				throw new Exception("Case failed");
+			}
+		} else {
+			throw new Exception("checkbox is not clicked");
+		}
+
 	}
 
 	/**
@@ -98,12 +114,28 @@ public class OCEAN_Pricing_TC_23_24 extends PricingModulePages {
 	public void validateClassificationListForDiesel() throws Exception {
 		goToPricingTab();
 		goToClassficationList();
-		selectPricesheetForDiesel("ACL");
-		HashMap<String, String> actualDieselValue = getClassficationListForDieselBeforeAndAfterEditing("ACL", 0);
-		editClassificationListForTurboAndDiesel("Diesel", "Y");
-		checkEnableDisable("clickCheckBoxOfDiesel");
-		HashMap<String, String> expectedDieselValue = getClassficationListForDieselBeforeAndAfterEditing("ACL", 1);
-		editClassificationListForTurboAndDiesel("Diesel", "N");
-		assertNotEquals(actualDieselValue, expectedDieselValue);
+		HashMap<String, String> actualTurboValue = getClassificationInfomation("", "0", "0");
+		selectPricesheetForTurbo(actualTurboValue.get("CLASS_GROUP_NAME"));
+		editClassificationListForTurboAndDiesel("diesel", "Y");
+		boolean checkboxYes = Boolean.valueOf(checkEnableDisable("clickCheckBoxOfTurbo"));
+		if (checkboxYes == true) {
+			HashMap<String, String> expectedTurboValue = getClassificationInfomation(
+					actualTurboValue.get("CLASS_GROUP_NAME"), "0", "1");
+			if (expectedTurboValue.size() > 1) {
+				editClassificationListForTurboAndDiesel("Turbo", "N");
+				boolean checkboxNo = Boolean.valueOf(checkEnableDisable("clickCheckBoxOfTurbo"));
+				HashMap<String, String> expectedTurboValueFinal = getClassificationInfomation(
+						actualTurboValue.get("CLASS_GROUP_NAME"), "0", "0");
+				if (expectedTurboValueFinal.size() > 1)
+					assertEquals(checkboxNo, false);
+				else
+					assertEquals(false, true);
+
+			} else {
+				throw new Exception("Case failed");
+			}
+		} else {
+			throw new Exception("checkbox is not clicked");
+		}
 	}
 }
