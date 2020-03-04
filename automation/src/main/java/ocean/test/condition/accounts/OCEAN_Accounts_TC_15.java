@@ -9,33 +9,33 @@ import org.testng.annotations.Test;
 import ocean.modules.pages.AccountsModulePages;
 
 /**
- * OCEAN_Accounts_TC_14 class automates Ocean Accounts module Test Condition 14
- * which holds 4 Test Case; Test Condition Description : Validate for a
- * lender/dealer account that assigned price sheet is available for contract
- * with sale date equal to or after their effective date only.
+ * OCEAN_Accounts_TC_15 class automates Ocean Accounts module Test Condition 15
+ * which holds 6 Test Case; Test Condition Description : Validate the
+ * availability of a price sheet for related account on a contract, only if it's
+ * sales date is on same day/after effective date from account pricing..
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Accounts_TC_14 extends AccountsModulePages {
+public class OCEAN_Accounts_TC_15 extends AccountsModulePages {
 	/**
-	 * This function automates all test cases for test condition 14 ; Test Case
-	 * description : Validate only Dealer Level Price Sheet is visible while
-	 * creating contract if Sale Date >= Dealer Level price sheet association.
+	 * This function automates all test cases for test condition 15 ; Test Case
+	 * description : Validate only Lender Level Price Sheet is visible while
+	 * creating contract if Sale Date >= lender Level price sheet association.
 	 * 
 	 */
-	@Test(priority = 3, groups = "regression", description = "Validate Dealer Level Price Sheet is visible while creating contract if Sale Date > Dealer Level price sheet association")
-	public void TestCase45_SaleDateGreaterThanDealerPriceSheetDate() throws Exception {
+	@Test(priority = 3, groups = "regression", description = "Validate Lender Level Price Sheet is visible while creating contract if Sale Date > Dealer Level price sheet association")
+	public void TestCase49_SaleDateGreaterThanLenderPriceSheetDate() throws Exception {
 		//// create data to fill required values in search window
 		HashMap<String, String> dataforquery = new HashMap<String, String>();
 		dataforquery.put("AGENTEXCEPTION", "N");
 		dataforquery.put("DEALEREXCEPTION", "N");
 		dataforquery.put("PRICESHEETCODE", "");
 		dataforquery.put("DEALERID", "");
-		dataforquery.put("ROLETYPE", "1");
+		dataforquery.put("ROLETYPE", "4");
 		//// Get Required Data from DB
 		HashMap<String, String> dataForValidation = setAllDataForPriceSheetVisibility(dataforquery);
 		dataForValidation.put("DEALERID", dataForValidation.get("DEALERID"));
-		dataForValidation.put("PrimaryAccount", "Dealer");
+		dataForValidation.put("PrimaryAccount", "Lender");
 		///// modify sale date
 		dataForValidation.put("SaleDate", convertDate(dataForValidation.get("PRICESHEETMAINEFFECTIVEDATE"), 1));
 		//// Search a contract with pending state, remittance name and contract name is
@@ -61,19 +61,19 @@ public class OCEAN_Accounts_TC_14 extends AccountsModulePages {
 
 	}
 
-	@Test(priority = 4, groups = "regression", description = "Validate Dealer Level Price Sheet is not visible while creating contract if Sale Date < Dealer Level price sheet association")
-	public void TestCase46_SaleDateLessThanDealerPriceSheetDate() throws Exception {
+	@Test(priority = 4, groups = "regression", description = "Validate Lender Level Price Sheet is not visible while creating contract if Sale Date < Lender Level price sheet association")
+	public void TestCase50_SaleDateLessThanLenderPriceSheetDate() throws Exception {
 		//// create data to fill required values in search window
 		HashMap<String, String> dataforquery = new HashMap<String, String>();
 		dataforquery.put("AGENTEXCEPTION", "N");
 		dataforquery.put("DEALEREXCEPTION", "N");
 		dataforquery.put("PRICESHEETCODE", "");
 		dataforquery.put("DEALERID", "");
-		dataforquery.put("ROLETYPE", "1");
+		dataforquery.put("ROLETYPE", "4");
 		//// Get Required Data from DB
 		HashMap<String, String> dataForValidation = setAllDataForPriceSheetVisibility(dataforquery);
 		dataForValidation.put("DEALERID", dataForValidation.get("DEALERID"));
-		dataForValidation.put("PrimaryAccount", "Dealer");
+		dataForValidation.put("PrimaryAccount", "Lender");
 		///// modify sale date
 		dataForValidation.put("SaleDate", convertDate(dataForValidation.get("PRICESHEETMAINEFFECTIVEDATE"), -1));
 		//// Search a contract with pending state, remittance name and contract name is
@@ -99,19 +99,19 @@ public class OCEAN_Accounts_TC_14 extends AccountsModulePages {
 
 	}
 
-	@Test(priority = 5, groups = "regression", description = "Validate Dealer Level Price Sheet is visible while creating contract if Sale Date = Dealer Level price sheet association")
-	public void TestCase45_SaleDateIsEqualDealerPriceSheetDate() throws Exception {
+	@Test(priority = 5, groups = "regression", description = "Validate Lender Level Price Sheet is visible while creating contract if Sale Date = Lender Level price sheet association")
+	public void TestCase49_SaleDateIsEqualLenderPriceSheetDate() throws Exception {
 		//// create data to fill required values in search window
 		HashMap<String, String> dataforquery = new HashMap<String, String>();
 		dataforquery.put("AGENTEXCEPTION", "N");
 		dataforquery.put("DEALEREXCEPTION", "N");
 		dataforquery.put("PRICESHEETCODE", "");
 		dataforquery.put("DEALERID", "");
-		dataforquery.put("ROLETYPE", "1");
+		dataforquery.put("ROLETYPE", "4");
 		//// Get Required Data from DB
 		HashMap<String, String> dataForValidation = setAllDataForPriceSheetVisibility(dataforquery);
 		dataForValidation.put("DEALERID", dataForValidation.get("DEALERID"));
-		dataForValidation.put("PrimaryAccount", "Dealer");
+		dataForValidation.put("PrimaryAccount", "Lender");
 		///// modify sale date
 		dataForValidation.put("SaleDate", convertDate(dataForValidation.get("PRICESHEETMAINEFFECTIVEDATE"), 0));
 		//// Search a contract with pending state, remittance name and contract name is
