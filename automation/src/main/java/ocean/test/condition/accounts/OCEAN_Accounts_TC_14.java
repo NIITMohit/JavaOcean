@@ -32,7 +32,21 @@ public class OCEAN_Accounts_TC_14 extends AccountsModulePages {
 		dataForValidation.put("primaryAccountType", "Dealer");
 		///// modify sale date
 		dataForValidation.put("SaleDate", convertDate(dataForValidation.get("PRICESHEETMAINEFFECTIVEDATE"), 10));
-		String priceSheetContains = enterMandatoryValuesOnContractAndCheckForPriceSheet(dataForValidation);
-		assertEquals(priceSheetContains, "Hurray Data Exists");
+		HashMap<Integer, HashMap<String, String>> contractFromRemittance = pricing_underwriting_getPendingContractwithRemittance();
+		if (contractFromRemittance.size() > 0) {
+			String remittName = contractFromRemittance.get(1).get("RemittanceName");
+			String fileName = contractFromRemittance.get(1).get("FILE_NAME");
+			//// visit underwriting tab
+			goToUnderWritingTab();
+			goToRemittanceList();
+			//// Search a contract with pending state, remittance name and contract name is
+			//// fetched from database
+			searchContractwithPendingState(remittName, fileName);
+			lockAndViewContract();
+			String priceSheetContains = enterMandatoryValuesOnContractAndCheckForPriceSheet(dataForValidation);
+			assertEquals(priceSheetContains, "Hurray Data Exists");
+		} else
+			throw new Exception("No remittance exists");
+
 	}
 }
