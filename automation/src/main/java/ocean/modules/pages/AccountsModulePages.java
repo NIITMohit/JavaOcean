@@ -809,19 +809,21 @@ public class AccountsModulePages extends AccountsDataBase {
 		type("primaryAccountId", premiumData.get("DEALERID"));
 		click("primaryAccountSearchButton");
 		click("scrollContractsListDown");
+		type("selectPricesheet", premiumData.get("PRICESHEETINTERNALCODE"));
+		String text = getAttributeValue("selectPricesheet", "Value.Value");
+		if (text.contains(premiumData.get("PRICESHEETINTERNALNAME")))
+			return "Hurray Data Exists";
+		else
+			return "No Data Exists";
+
 		//// Code to check pricesheet existance
-		clickComboBox("selectPricesheetComboBox");
-		waitForSomeTime(2);
-		List<WebElement> listItem = listOfElements("uwPSTextBlock");
-		if (listItem.size() < 1)
-			return flag;
-		for (WebElement www : listItem) {
-			String PSTextforEff = www.getText();
-			if (PSTextforEff.toLowerCase().equals(premiumData.get("PRICESHEETINTERNALCODE").toLowerCase()))
-				return "Hurray Data Exists";
-			else
-				return "No Data Exists";
-		}
-		return flag;
+		/*
+		 * clickComboBox("selectPricesheetComboBox"); waitForSomeTime(2);
+		 * List<WebElement> listItem = listOfElements("uwPSTextBlock"); if
+		 * (listItem.size() < 1) return flag; for (WebElement www : listItem) { String
+		 * PSTextforEff = www.getText(); if
+		 * (PSTextforEff.toLowerCase().equals(premiumData.get("PRICESHEETINTERNALCODE").
+		 * toLowerCase())) return "Hurray Data Exists"; else return "No Data Exists"; }
+		 */
 	}
 }

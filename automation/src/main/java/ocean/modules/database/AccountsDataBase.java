@@ -701,7 +701,7 @@ public class AccountsDataBase extends CommonFunctions {
 			}
 			String query = "select top 1 p.id as pricesheetId "
 					+ ",a.role_identifier as dealerid, p.CODE as pcode , pac.EFFECTIVEDATE as MainPSeffDate, "
-					+ "tp.EFFECTIVE_DATE as EffDate2,tt.EFFECTIVE_DATE as effDate3 "
+					+ "tp.EFFECTIVE_DATE as EffDate2,tt.EFFECTIVE_DATE as effDate3 ," + "p.INTERNAL_NAME as intName "
 					+ "from [dbo].[PRICING_PRICESHEET] p join [dbo].[PRICING_PRICESHEET_ACCOUNT_RELATION] pac on pac.PRICESHEET_ID = p.id "
 					+ "join dbo.account a on a.id = pac.PRIMARY_SELLER_ID left join PRICESHEET_PRODUCT_TIER_TARGET t on p.id = t.pricesheet_id "
 					+ " left join PRICESHEET_PRODUCT_TIER tt on tt.id = t.TIER_ID "
@@ -723,10 +723,11 @@ public class AccountsDataBase extends CommonFunctions {
 			}
 			dbMap.put("PRICESHEETID", dbMap1.get("pricesheetId"));
 			dbMap.put("DEALERID", dbMap1.get("dealerid"));
-			dbMap.put("PRICESHEETINTERNALCODE", dbMap1.get("pcode"));
+			dbMap.put("PRICESHEETINTERNALCODE", dbMap1.get("pricesheetId"));
 			dbMap.put("PRICESHEETMAINEFFECTIVEDATE", dbMap1.get("MainPSeffDate"));
 			dbMap.put("PRICESHEETMAINEFFECTIVEDATEEXCEPTION1", dbMap1.get("EffDate2"));
 			dbMap.put("PRICESHEETMAINEFFECTIVEDATEEXCEPTION2", dbMap1.get("effDate3"));
+			dbMap.put("PRICESHEETINTERNALNAME", dbMap1.get("intName"));
 		} catch (Exception e) {
 			throw e;
 		} finally {
