@@ -502,7 +502,7 @@ public class AccountsModulePages extends AccountsDataBase {
 		 * String abc = randomString(10); type("PriceSheetInternalName",abc);
 		 */
 		if (roleType.toLowerCase().equals("agent"))
-			type("typePriceSheetInFilter", "Master");
+			typeKeys("typePriceSheetInFilter", "Master");
 		click("listOfSelectbutton", 0);
 	}
 
@@ -516,7 +516,7 @@ public class AccountsModulePages extends AccountsDataBase {
 		for (String string : bucket) {
 			type("selectBucketForAdmistration", string);
 			type("select$ToFillAmountForAdministration", commissionsData.get("$ForCommissions"));
-			click("clickOnAddButton", 3);
+			click("clickOnAddButton", 2);
 		}
 	}
 
@@ -530,7 +530,7 @@ public class AccountsModulePages extends AccountsDataBase {
 		for (String string : bucket) {
 			type("selectBucketForReserve", string);
 			type("select$ToFillAmountForReserve", commissionsData.get("$ForCommissions"));
-			click("clickOnAddButton", 4);
+			click("clickOnAddButton", 3);
 		}
 	}
 
@@ -571,7 +571,7 @@ public class AccountsModulePages extends AccountsDataBase {
 		for (String string : bucket) {
 			type("selectBucketForInsurance", string);
 			type("select$ToFillAmountForInsurance", commissionsData.get("$ForCommissions"));
-			click("clickOnAddButton", 5);
+			click("clickOnAddButton", 4);
 		}
 	}
 
@@ -585,15 +585,7 @@ public class AccountsModulePages extends AccountsDataBase {
 	 */
 	public void selectPriceSheetToAssigntToAddExceptions(HashMap<String, String> excelSheetData) {
 		click("assignPriceSheet");
-		waitForSomeTime(2);
-		for (int i = 0; i < 4; i++) {
-			try {
-				click("clickOK");
-			} catch (Exception e) {
-				break;
-				// // do nothing
-			}
-		}
+		click("clickOK");
 		type("selectEffectiveDate", excelSheetData.get("EffectiveDate"));
 		type("selectExceptionType", excelSheetData.get("ExceptionType"));
 		if (excelSheetData.get("ExceptionType").toLowerCase().equals("SELECTEDPLANS")) {
@@ -660,13 +652,9 @@ public class AccountsModulePages extends AccountsDataBase {
 			type("selectNCBBucket", string);
 			type("selectNCBFee", commissionsData.get("NCBFee"));
 			type("selectWaitingPeriod", commissionsData.get("WaitingPeriod"));
-			click("clickOnAddButton", 2);
-
 			type("selectNCBRetail", "ADMIN_NCB_FEE_RETAIL_AX");
 			type("selectRetailMax", "30");
-			type("selectWaitingPeriod", "30");
-			click("clickOnAddButton", 2);
-
+			click("clickOnAddButton", 1);
 		}
 	}
 
@@ -692,7 +680,7 @@ public class AccountsModulePages extends AccountsDataBase {
 			}
 			type("select$ToFillAmountForCommissions", commessionsData.get("$ForCommissions"));
 			type("selectCancelMethod", commessionsData.get("cancelMethod"));
-			click("clickOnAddButton", 1);
+			click("clickOnAddButton", 0);
 		}
 	}
 
@@ -792,5 +780,48 @@ public class AccountsModulePages extends AccountsDataBase {
 		searchData.put("Created_By", getValue("listOfPSInfoCreatedBy", i).trim());
 		return searchData;
 
+	}
+
+	/**
+	 * This function is used to enter all mandatory values on new business contract
+	 * form
+	 * 
+	 * @return
+	 * 
+	 */
+	public String enterMandatoryValuesOnContractAndCheckForPriceSheet(HashMap<String, String> premiumData)
+			throws Exception {
+		String flag = "pata nahi";
+		contractScrollToTop();
+		click("clearContractData");
+		//// type unique contract number
+		try {
+			type("typeContractNumber", randomString(10));
+		} catch (Exception e) {
+			click("scrollContractsListUp");
+			type("typeContractNumber", randomString(10));
+		}
+		/// click search button to verify unique contract
+		click("clickSearchButtonToSearchContract");
+		type("purchaseDateForNewContract", premiumData.get("SaleDate"));
+		//// Enter Primary Account Details
+		type("primaryAccountType", premiumData.get("PrimaryAccount"));
+		type("primaryAccountId", premiumData.get("DEALERID"));
+		click("primaryAccountSearchButton");
+		click("scrollContractsListDown");
+		//// Code to check pricesheet existance
+		clickComboBox("selectPricesheetComboBox");
+		waitForSomeTime(2);
+		List<WebElement> listItem = listOfElements("uwPSTextBlock");
+		if (listItem.size() < 1)
+			return flag;
+		for (WebElement www : listItem) {
+			String PSTextforEff = www.getText();
+			if (PSTextforEff.toLowerCase().equals(premiumData.get("PRICESHEETINTERNALCODE").toLowerCase()))
+				return "Hurray Data Exists";
+			else
+				return "No Data Exists";
+		}
+		return flag;
 	}
 }

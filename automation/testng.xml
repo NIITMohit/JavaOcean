@@ -4,7 +4,7 @@
 	<test name="Cancellation">
 		<classes>
 			<class
-				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_24" />
+				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33" />
 		</classes>
 	</test>
 </suite> 

@@ -416,20 +416,7 @@ public class UnderwritingModulePages extends UnderwritingDataBase {
 		contractScrollToTop();
 	}
 
-	/**
-	 * This function is used to select check
-	 * 
-	 */
-	public void contractScrollToTop() throws Exception {
-		for (int i = 0; i < 2; i++) {
-			try {
-				click("scrollContractsListUp");
-			} catch (Exception e) {
-			}
-
-		}
-	}
-
+	
 	/**
 	 * This function is used to select check
 	 * 
