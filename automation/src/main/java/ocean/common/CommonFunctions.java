@@ -681,4 +681,42 @@ public class CommonFunctions extends Suite {
 		}
 	}
 
+	public void searchRemittance(String remittName) throws Exception {
+		//// Type RemittanceName
+		type("typeToSearchRemittance", remittName);
+		//// expand remittance to get contracts
+		click("expandRemittance");
+	}
+
+	/**
+	 * This function is used to lock and view contract post contract search
+	 * 
+	 */
+	public void lockAndViewContract() throws Exception {
+		click("viewContract");
+		try {
+			//// click yes to lock remittance
+			click("lockContractYesButton");
+
+		} catch (Exception e) {
+			// do nothing
+		}
+		//// click contract expander
+		contractExpander();
+	}
+
+	/**
+	 * This function is used to land to search contract with pending state
+	 * 
+	 * @return
+	 * 
+	 */
+	public void searchContractwithPendingState(String remittName, String fileName) throws Exception {
+		//// Type RemittanceName
+		searchRemittance(remittName);
+		//// type filename
+		type("typeContract", fileName);
+		//// click view contract
+	}
+
 }
