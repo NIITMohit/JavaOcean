@@ -818,7 +818,7 @@ public class AccountsModulePages extends AccountsDataBase {
 
 		//// Code to check pricesheet existance
 		/*
-		 * clickComboBox("selectPricesheetComboBox"); waitForSomeTime(2);
+		 * clickComboBox("selectPricesheetComboBoxd"); waitForSomeTime(2);
 		 * List<WebElement> listItem = listOfElements("uwPSTextBlock"); if
 		 * (listItem.size() < 1) return flag; for (WebElement www : listItem) { String
 		 * PSTextforEff = www.getText(); if

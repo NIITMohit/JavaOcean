@@ -231,12 +231,16 @@ public class Suite extends ReadData {
 		try {
 			String methodName = result.getName();
 			String className = this.getClass().getName();
-			Object paramw = (result.getParameters())[0];
-			if (paramw instanceof String[]) {
-				String[] strArray = (String[]) paramw;
-				for (String string : strArray) {
-					System.out.println(string);
+			try {
+				Object paramw = (result.getParameters())[0];
+				if (paramw instanceof String[]) {
+					String[] strArray = (String[]) paramw;
+					for (String string : strArray) {
+						System.out.println(string);
+					}
 				}
+			} catch (Exception e) {
+				// TODO: handle exception
 			}
 			className = className.substring(this.getClass().getName().lastIndexOf('.') + 1,
 					this.getClass().getName().length());

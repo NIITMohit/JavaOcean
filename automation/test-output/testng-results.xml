@@ -2,80 +2,80 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="270708" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:17:30 IST">
+  <suite name="Ocean" duration-ms="870" started-at="2020-03-04T13:46:32 IST" finished-at="2020-03-04T13:46:33 IST">
     <groups>
       <group name="regression">
-        <method signature="OCEAN_Accounts_TC_14.TestCase45_SaleDateGreaterThanDealerPriceSheetDate()[pri:3, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="TestCase45_SaleDateGreaterThanDealerPriceSheetDate" class="ocean.test.condition.accounts.OCEAN_Accounts_TC_14"/>
+        <method signature="OCEAN_Accounts_TC_14.TestCase45_SaleDateGreaterThanDealerPriceSheetDate()[pri:3, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee]" name="TestCase45_SaleDateGreaterThanDealerPriceSheetDate" class="ocean.test.condition.accounts.OCEAN_Accounts_TC_14"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Cancellation" duration-ms="270708" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:17:30 IST">
+    <test name="Cancellation" duration-ms="870" started-at="2020-03-04T13:46:32 IST" finished-at="2020-03-04T13:46:33 IST">
       <class name="ocean.test.condition.accounts.OCEAN_Accounts_TC_14">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="setup" is-config="true" duration-ms="7218" started-at="2020-03-04T12:12:52 IST" finished-at="2020-03-04T12:13:00 IST">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee]" name="setup" is-config="true" duration-ms="3599" started-at="2020-03-04T13:46:29 IST" finished-at="2020-03-04T13:46:32 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@66f0548d]]>
+                <![CDATA[org.testng.TestRunner@542e560f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="createParent" is-config="true" duration-ms="4" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:13:00 IST">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee]" name="createParent" is-config="true" duration-ms="4" started-at="2020-03-04T13:46:32 IST" finished-at="2020-03-04T13:46:32 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@66f0548d]]>
+                <![CDATA[org.testng.TestRunner@542e560f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="resultsStatus()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="resultsStatus" is-config="true" duration-ms="0" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:13:00 IST">
+        <test-method status="PASS" signature="resultsStatus()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee]" name="resultsStatus" is-config="true" duration-ms="0" started-at="2020-03-04T13:46:32 IST" finished-at="2020-03-04T13:46:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resultsStatus -->
-        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="screenshot" is-config="true" duration-ms="0" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:13:00 IST">
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee]" name="screenshot" is-config="true" duration-ms="0" started-at="2020-03-04T13:46:32 IST" finished-at="2020-03-04T13:46:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="TestCase45_SaleDateGreaterThanDealerPriceSheetDate()[pri:3, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="TestCase45_SaleDateGreaterThanDealerPriceSheetDate" duration-ms="270357" started-at="2020-03-04T12:13:00 IST" description="Validate Dealer Level Price Sheet is visible while creating contract if Sale Date &gt;= Dealer Level price sheet association" finished-at="2020-03-04T12:17:30 IST">
+        <test-method status="PASS" signature="TestCase45_SaleDateGreaterThanDealerPriceSheetDate()[pri:3, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee]" name="TestCase45_SaleDateGreaterThanDealerPriceSheetDate" duration-ms="7" started-at="2020-03-04T13:46:32 IST" description="Validate Dealer Level Price Sheet is visible while creating contract if Sale Date &gt;= Dealer Level price sheet association" finished-at="2020-03-04T13:46:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase45_SaleDateGreaterThanDealerPriceSheetDate -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-03-04T12:17:30 IST" finished-at="2020-03-04T12:17:30 IST">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee]" name="tearDown" is-config="true" duration-ms="107" started-at="2020-03-04T13:46:32 IST" finished-at="2020-03-04T13:46:32 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TestCase45_SaleDateGreaterThanDealerPriceSheetDate status=SUCCESS method=OCEAN_Accounts_TC_14.TestCase45_SaleDateGreaterThanDealerPriceSheetDate()[pri:3, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d] output={null}]]]>
+                <![CDATA[[TestResult name=TestCase45_SaleDateGreaterThanDealerPriceSheetDate status=SUCCESS method=OCEAN_Accounts_TC_14.TestCase45_SaleDateGreaterThanDealerPriceSheetDate()[pri:3, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@66f0548d]]>
+                <![CDATA[org.testng.TestRunner@542e560f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="appendResults(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="appendResults" is-config="true" duration-ms="316" started-at="2020-03-04T12:17:30 IST" finished-at="2020-03-04T12:17:30 IST">
+        <test-method status="PASS" signature="appendResults(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee]" name="appendResults" is-config="true" duration-ms="721" started-at="2020-03-04T13:46:32 IST" finished-at="2020-03-04T13:46:33 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@66f0548d]]>
+                <![CDATA[org.testng.TestRunner@542e560f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- appendResults -->
-        <test-method status="PASS" signature="tearDown1(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="tearDown1" is-config="true" duration-ms="42" started-at="2020-03-04T12:17:30 IST" finished-at="2020-03-04T12:17:30 IST">
+        <test-method status="PASS" signature="tearDown1(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@fad74ee]" name="tearDown1" is-config="true" duration-ms="65" started-at="2020-03-04T13:46:33 IST" finished-at="2020-03-04T13:46:33 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@66f0548d]]>
+                <![CDATA[org.testng.TestRunner@542e560f]]>
               </value>
             </param>
           </params>
