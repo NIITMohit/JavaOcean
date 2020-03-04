@@ -1642,6 +1642,15 @@
 			<locator>xpath</locator>
 			<value>//*[@ClassName='ScrollViewer']//*[@Name='Remittance#:']/following-sibling::*[1]</value>
 	</keyword>
+	
+	<keyword id="selectPricesheetComboBox">
+			<locator>xpath</locator>
+			<value>//*[@Name='Pricing Information']//*[@Name='Price Sheet:']/following-sibling::*[1]</value>
+	</keyword>
+	<keyword id="uwPSTextBlock">
+			<locator>xpath</locator>
+			<value>//*[contains(@Name,'System.Data.Entity.DynamicProxies.PRICING_PRICESHEET')]//*[@ClassName='TextBlock']</value>
+	</keyword>
 	</UnderWriting>
 	<Search>
 	<keyword id="searchTypeContract">

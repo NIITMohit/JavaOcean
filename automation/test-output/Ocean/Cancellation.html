@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cancellation</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Feb 25 15:13:05 IST 2020</td>
+<td>Started on:</td><td>Wed Mar 04 10:02:11 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>5 seconds (5347 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1017 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,33 +67,49 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25.TCase_01_changePriceSheet()'><b>TCase_01_changePriceSheet</b><br>Test class: ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25<br>Test method: Validate premium calculation for a contract/contract adjustment in a remittance, if it's price sheet is changed from : 1. One product to another product.<br>Parameters: [Ljava.lang.String;@13e3c1c7</td>
-<td></td>
+<td title='ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33.validateRemittancePostingForDealerAsPrimaryAccount()'><b>validateRemittancePostingForDealerAsPrimaryAccount</b><br>Test class: ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33<br>Test method:  Validate remittance posting</td>
+<td><div><pre>org.testng.TestNGException: 
+Data Provider public static java.lang.Object[][] ocean.modules.dataprovider.UnderwritingDataProvider.fetchDataForTC_05_06() returned a null value
+	at java.util.ArrayList.forEach(Unknown Source)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace986238875", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace986238875'><pre>org.testng.TestNGException: 
+Data Provider public static java.lang.Object[][] ocean.modules.dataprovider.UnderwritingDataProvider.fetchDataForTC_05_06() returned a null value
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:148)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:820)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:762)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:60)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:39)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:771)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
 <td>0</td>
-<td>ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08</td></tr>
-<tr>
-<td title='ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25.TCase_01_changePriceSheet()'><b>TCase_01_changePriceSheet</b><br>Test class: ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25<br>Test method: Validate premium calculation for a contract/contract adjustment in a remittance, if it's price sheet is changed from : 1. One product to another product.<br>Parameters: [Ljava.lang.String;@1623134f</td>
-<td></td>
-<td>1</td>
-<td>ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08</td></tr>
-<tr>
-<td title='ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25.TCase_02_changePriceSheet()'><b>TCase_02_changePriceSheet</b><br>Test class: ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25<br>Test method: Validate premium calculation for a contract/contract adjustment in a remittance, if it's price sheet is changed from : 1. One product to another product.<br>Parameters: [Ljava.lang.String;@7e3060d8</td>
-<td></td>
-<td>1</td>
-<td>ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08</td></tr>
-<tr>
-<td title='ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25.TCase_02_changePriceSheet()'><b>TCase_02_changePriceSheet</b><br>Test class: ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25<br>Test method: Validate premium calculation for a contract/contract adjustment in a remittance, if it's price sheet is changed from : 1. One product to another product.<br>Parameters: [Ljava.lang.String;@71ae31b0</td>
-<td></td>
-<td>0</td>
-<td>ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_25@1a1d6a08</td></tr>
+<td>ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33@71e9ddb4</td></tr>
 </table><p>
 </body>
 </html>

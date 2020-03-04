@@ -1,4 +1,4 @@
-package ocean.test.condition.underwriting;
+package ocean.test.condition.pricing;
 
 import static org.testng.Assert.assertEquals;
 
@@ -17,7 +17,7 @@ import ocean.modules.pages.UnderwritingModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_UnderWriting_TC_24 extends UnderwritingModulePages {
+public class OCEAN_Pricing_TC_15 extends UnderwritingModulePages {
 
 	/**
 	 * This function automates test Condition 24; Test Case description :Validate
@@ -93,13 +93,6 @@ public class OCEAN_UnderWriting_TC_24 extends UnderwritingModulePages {
 					//// Get AUL Premium
 					String premium2 = premium();
 					String finalValue2 = calculateMyPremium(premiumData);
-					enterCustomerPaidAndDealerPaid("12345", "12345");
-					selectCheckAndScrollToTop();
-					//// click under
-					click("clickUnderW");
-					//// click ok
-					//// post remittance and verify
-					postRemittance();
 					assertEquals(premium2, finalValue2);
 
 				} else {
@@ -187,13 +180,6 @@ public class OCEAN_UnderWriting_TC_24 extends UnderwritingModulePages {
 					//// Get AUL Premium
 					String premium2 = premium();
 					String finalValue2 = calculateMyPremium(premiumData);
-					enterCustomerPaidAndDealerPaid("12345", "12345");
-					selectCheckAndScrollToTop();
-					//// click under
-					click("clickUnderW");
-					//// click ok
-					//// post remittance and verify
-					postRemittance();
 					assertEquals(premium2, finalValue2);
 				} else {
 					new SkipException("value not matched");
@@ -279,13 +265,6 @@ public class OCEAN_UnderWriting_TC_24 extends UnderwritingModulePages {
 					//// Get AUL Premium
 					String premium2 = premium();
 					String finalValue2 = calculateMyPremium(premiumData);
-					enterCustomerPaidAndDealerPaid("12345", "12345");
-					selectCheckAndScrollToTop();
-					//// click under
-					click("clickUnderW");
-					//// click ok
-					//// post remittance and verify
-					postRemittance();
 					assertEquals(premium2, finalValue2);
 				} else {
 					new SkipException("value not matched");
@@ -373,13 +352,6 @@ public class OCEAN_UnderWriting_TC_24 extends UnderwritingModulePages {
 					//// Get AUL Premium
 					String premium2 = premium();
 					String finalValue2 = calculateMyPremium(premiumData);
-					enterCustomerPaidAndDealerPaid("12345", "12345");
-					selectCheckAndScrollToTop();
-					//// click under
-					click("clickUnderW");
-					//// click ok
-					//// post remittance and verify
-					postRemittance();
 					assertEquals(premium2, finalValue2);
 
 				} else {

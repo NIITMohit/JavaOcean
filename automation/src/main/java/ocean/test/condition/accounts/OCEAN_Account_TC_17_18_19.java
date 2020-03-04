@@ -32,13 +32,13 @@ public class OCEAN_Account_TC_17_18_19 extends AccountsModulePages {
 	 * NCB/Offset shall be tested under cancellation.
 	 * 
 	 */
-
 	@Test(priority = 1, groups = "regression", dataProvider = "fetchDataForTC_17_18_19", dataProviderClass = AccountsDataProvider.class, description = "Validate that add,delete and edit the exceptions on the basis of RoleType like Agent,Lender, Dealer .")
 	public void addDeleteAndEditExceptionOnTheBasisOfRoletype(String[] inputData) throws Exception {
 		// // create data to fill required values in search window
 		HashMap<String, String> uiSearchData = new HashMap<String, String>();
 		// put all the excel sheet data in Hash map
 		uiSearchData.put("Role_Type", inputData[0]);
+		uiSearchData.put("role_id", "155");
 		uiSearchData.put("Status", inputData[1]);
 		// // Navigate to mail service tab
 		goToAccountsTab();
@@ -68,7 +68,6 @@ public class OCEAN_Account_TC_17_18_19 extends AccountsModulePages {
 		// // select first account for every role type like Agent, lender and
 		// dealer
 		selectTopAccountOnTheBasisOfRoleType();
-		// waitForSomeTime(2);
 		// // setup a new price sheet
 		clickForSetUpNewPricing();
 		// Verify payee is disabled for Agent or Enable for lender
@@ -81,7 +80,11 @@ public class OCEAN_Account_TC_17_18_19 extends AccountsModulePages {
 		addCommissionsExceptions(uiSearchData);
 		// add NCBAdministartions exception on priceSheet
 		addNCBAdministartionsExceptions(uiSearchData);
-		// add Administraion Exception on priceSheet
+		try {
+			click("scrollContractsListDown");
+		} catch (Exception e) {
+		}
+		// add Administration Exception on priceSheet
 		addAdministraionExceptions(uiSearchData);
 		// add Reserve Exception on priceSheet
 		addReserveException(uiSearchData);
