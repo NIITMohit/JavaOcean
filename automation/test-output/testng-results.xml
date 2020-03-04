@@ -1,104 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Ocean" duration-ms="1017" started-at="2020-03-04T10:02:11 IST" finished-at="2020-03-04T10:02:12 IST">
+  <suite name="Ocean" duration-ms="270708" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:17:30 IST">
     <groups>
       <group name="regression">
-        <method signature="OCEAN_UnderWriting_TC_21To23_25To33.validateRemittancePostingForDealerAsPrimaryAccount([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33@71e9ddb4]" name="validateRemittancePostingForDealerAsPrimaryAccount" class="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33"/>
+        <method signature="OCEAN_Accounts_TC_14.TestCase45_SaleDateGreaterThanDealerPriceSheetDate()[pri:3, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="TestCase45_SaleDateGreaterThanDealerPriceSheetDate" class="ocean.test.condition.accounts.OCEAN_Accounts_TC_14"/>
       </group> <!-- regression -->
     </groups>
-    <test name="Cancellation" duration-ms="1017" started-at="2020-03-04T10:02:11 IST" finished-at="2020-03-04T10:02:12 IST">
-      <class name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33">
-        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33@71e9ddb4]" name="setup" is-config="true" duration-ms="8011" started-at="2020-03-04T10:02:03 IST" finished-at="2020-03-04T10:02:11 IST">
+    <test name="Cancellation" duration-ms="270708" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:17:30 IST">
+      <class name="ocean.test.condition.accounts.OCEAN_Accounts_TC_14">
+        <test-method status="PASS" signature="setup(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="setup" is-config="true" duration-ms="7218" started-at="2020-03-04T12:12:52 IST" finished-at="2020-03-04T12:13:00 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@21c815e4]]>
+                <![CDATA[org.testng.TestRunner@66f0548d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33@71e9ddb4]" name="createParent" is-config="true" duration-ms="12" started-at="2020-03-04T10:02:11 IST" finished-at="2020-03-04T10:02:11 IST">
+        <test-method status="PASS" signature="createParent(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="createParent" is-config="true" duration-ms="4" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:13:00 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@21c815e4]]>
+                <![CDATA[org.testng.TestRunner@66f0548d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createParent -->
-        <test-method status="PASS" signature="resultsStatus()[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33@71e9ddb4]" name="resultsStatus" is-config="true" duration-ms="0" started-at="2020-03-04T10:02:11 IST" finished-at="2020-03-04T10:02:11 IST">
+        <test-method status="PASS" signature="resultsStatus()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="resultsStatus" is-config="true" duration-ms="0" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:13:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- resultsStatus -->
-        <test-method status="FAIL" signature="validateRemittancePostingForDealerAsPrimaryAccount([Ljava.lang.String;)[pri:1, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33@71e9ddb4]" name="validateRemittancePostingForDealerAsPrimaryAccount" duration-ms="0" started-at="2020-03-04T10:02:12 IST" description=" Validate remittance posting" data-provider="fetchDataForTC_05_06" finished-at="2020-03-04T10:02:12 IST">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Data Provider public static java.lang.Object[][] ocean.modules.dataprovider.UnderwritingDataProvider.fetchDataForTC_05_06() returned a null value]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Data Provider public static java.lang.Object[][] ocean.modules.dataprovider.UnderwritingDataProvider.fetchDataForTC_05_06() returned a null value
-at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:148)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:820)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:762)
-at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:60)
-at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:39)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:771)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method status="PASS" signature="screenshot()[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="screenshot" is-config="true" duration-ms="0" started-at="2020-03-04T12:13:00 IST" finished-at="2020-03-04T12:13:00 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateRemittancePostingForDealerAsPrimaryAccount -->
-        <test-method status="PASS" signature="appendResults(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33@71e9ddb4]" name="appendResults" is-config="true" duration-ms="256" started-at="2020-03-04T10:02:12 IST" finished-at="2020-03-04T10:02:12 IST">
+        </test-method> <!-- screenshot -->
+        <test-method status="PASS" signature="TestCase45_SaleDateGreaterThanDealerPriceSheetDate()[pri:3, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="TestCase45_SaleDateGreaterThanDealerPriceSheetDate" duration-ms="270357" started-at="2020-03-04T12:13:00 IST" description="Validate Dealer Level Price Sheet is visible while creating contract if Sale Date &gt;= Dealer Level price sheet association" finished-at="2020-03-04T12:17:30 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase45_SaleDateGreaterThanDealerPriceSheetDate -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-03-04T12:17:30 IST" finished-at="2020-03-04T12:17:30 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@21c815e4]]>
+                <![CDATA[[TestResult name=TestCase45_SaleDateGreaterThanDealerPriceSheetDate status=SUCCESS method=OCEAN_Accounts_TC_14.TestCase45_SaleDateGreaterThanDealerPriceSheetDate()[pri:3, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@66f0548d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="appendResults(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="appendResults" is-config="true" duration-ms="316" started-at="2020-03-04T12:17:30 IST" finished-at="2020-03-04T12:17:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@66f0548d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- appendResults -->
-        <test-method status="PASS" signature="tearDown1(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33@71e9ddb4]" name="tearDown1" is-config="true" duration-ms="55" started-at="2020-03-04T10:02:12 IST" finished-at="2020-03-04T10:02:12 IST">
+        <test-method status="PASS" signature="tearDown1(org.testng.ITestContext)[pri:0, instance:ocean.test.condition.accounts.OCEAN_Accounts_TC_14@58a9760d]" name="tearDown1" is-config="true" duration-ms="42" started-at="2020-03-04T12:17:30 IST" finished-at="2020-03-04T12:17:30 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@21c815e4]]>
+                <![CDATA[org.testng.TestRunner@66f0548d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown1 -->
-      </class> <!-- ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_21To23_25To33 -->
+      </class> <!-- ocean.test.condition.accounts.OCEAN_Accounts_TC_14 -->
     </test> <!-- Cancellation -->
   </suite> <!-- Ocean -->
 </testng-results>

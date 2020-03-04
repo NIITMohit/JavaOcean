@@ -544,17 +544,17 @@ public class Keywords extends Variables {
 		List<WebElement> we = null;
 		for (int i = 0; i < 4; i++) {
 			try {
-				waitForSomeTime(5);
 				//// Wait till web element is located
 				WebDriverWait wait = new WebDriverWait(windowsDriver, mediumWait);
-				wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectRepo.fetchOR(locator)));
+				wait.until(ExpectedConditions.presenceOfElementLocated(ObjectRepo.fetchOR(locator)));
 				we = windowsDriver.findElements(ObjectRepo.fetchOR(locator));
 				if (we.size() < 1) {
 					if (i < 3)
 						continue;
 					else
 						break;
-				}
+				} else
+					break;
 			} catch (Exception e) {
 				if (i < 3)
 					continue;

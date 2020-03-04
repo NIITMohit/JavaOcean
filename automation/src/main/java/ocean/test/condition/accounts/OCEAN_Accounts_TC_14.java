@@ -28,10 +28,10 @@ public class OCEAN_Accounts_TC_14 extends AccountsModulePages {
 		dataforquery.put("ROLETYPE", "1");
 		//// Get Required Data from DB
 		HashMap<String, String> dataForValidation = setAllDataForPriceSheetVisibility(dataforquery);
-		dataForValidation.put("primaryAccountId", dataForValidation.get("DEALERID"));
-		dataForValidation.put("primaryAccountType", "Dealer");
+		dataForValidation.put("DEALERID", dataForValidation.get("DEALERID"));
+		dataForValidation.put("PrimaryAccount", "Dealer");
 		///// modify sale date
-		dataForValidation.put("SaleDate", convertDate(dataForValidation.get("PRICESHEETMAINEFFECTIVEDATE"), 10));
+		dataForValidation.put("SaleDate", convertDate(dataForValidation.get("PRICESHEETMAINEFFECTIVEDATE"), 1));
 		HashMap<Integer, HashMap<String, String>> contractFromRemittance = pricing_underwriting_getPendingContractwithRemittance();
 		if (contractFromRemittance.size() > 0) {
 			String remittName = contractFromRemittance.get(1).get("RemittanceName");
