@@ -97,6 +97,20 @@ public class CommonFunctions extends Suite {
 	}
 
 	/**
+	 * This function is used to select check
+	 * 
+	 */
+	public void contractScrollToTop() throws Exception {
+		for (int i = 0; i < 2; i++) {
+			try {
+				click("scrollContractsListUp");
+			} catch (Exception e) {
+			}
+
+		}
+	}
+
+	/**
 	 * This function is used to receive hashmap which have column and data mapping
 	 * and return data and column mapping which have only valid data, will remove *
 	 * and Blanks columns and values
