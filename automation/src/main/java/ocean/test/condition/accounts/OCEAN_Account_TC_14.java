@@ -16,7 +16,7 @@ import ocean.modules.pages.AccountsModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Accounts_TC_14 extends AccountsModulePages {
+public class OCEAN_Account_TC_14 extends AccountsModulePages {
 	/**
 	 * This function automates all test cases for test condition 14 ; Test Case
 	 * description : Validate only Dealer Level Price Sheet is visible while

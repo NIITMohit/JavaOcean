@@ -16,7 +16,7 @@ import ocean.modules.pages.AccountsModulePages;
  * 
  * @author Nainsi Jain
  */
-public class OCEAN_Accounts_TC_13 extends AccountsModulePages {
+public class OCEAN_Account_TC_13 extends AccountsModulePages {
 	@Test(priority = 3, groups = "regression", dataProvider = "fetchDataForTC013", dataProviderClass = AccountsDataProvider.class, description = "Validate a unique price sheet name is generated, when a price sheet is generated")
 	public void validateUniqueNameOfPS(String[] inputArray) throws Exception {
 		//// create data to fill required values in search window

@@ -16,7 +16,7 @@ import ocean.modules.pages.AccountsModulePages;
  * 
  * @author Mohit Goel
  */
-public class OCEAN_Accounts_TC_15 extends AccountsModulePages {
+public class OCEAN_Account_TC_15 extends AccountsModulePages {
 	/**
 	 * This function automates all test cases for test condition 15 ; Test Case
 	 * description : Validate only Lender Level Price Sheet is visible while
