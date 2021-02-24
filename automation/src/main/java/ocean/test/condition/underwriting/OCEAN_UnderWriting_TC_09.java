@@ -3,8 +3,10 @@ package ocean.test.condition.underwriting;
 import static org.testng.Assert.assertEquals;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import ocean.modules.pages.UnderwritingModulePages;
@@ -22,6 +24,13 @@ import ocean.modules.pages.UnderwritingModulePages;
  * conditions
  * 
  * @author Mohit Goel
+ * 
+ * @reviewer : Poonam Kalra
+ * 
+ *           to save time marking this test case out from regresssion as these
+ *           are covred internally hence no need to execute seprately
+ * 
+ * 
  */
 public class OCEAN_UnderWriting_TC_09 extends UnderwritingModulePages {
 	/**
@@ -30,9 +39,8 @@ public class OCEAN_UnderWriting_TC_09 extends UnderwritingModulePages {
 	 * remittance list: 1. Lock and Unlock
 	 * 
 	 */
-	// @Test(priority = 6, groups = "regression", description = "Validate user
-	// ability to perform following on remittances from remittance list: 1. Lock and
-	// Unlock.")
+	@Test(priority = 1, groups = { "regression", "extendSmoke",
+			"fullSuite" }, description = "Validate user ability to perform following on remittances from remittance list: 1. Lock and Unlock.")
 	public void lockAndUnlockRemittance() throws Exception {
 		try {
 			goToUnderWritingTab();
@@ -53,13 +61,13 @@ public class OCEAN_UnderWriting_TC_09 extends UnderwritingModulePages {
 	 * remittance list: 2. Save remittances
 	 * 
 	 */
-	// @Test(priority = 6, groups = "regression", description = "Validate user
-	// ability to perform following on remittances from remittance list: 2. Save
-	// remittances")
+	@Test(priority = 2, groups = { "regression", "extendSmoke",
+			"fullSuite" }, description = "Validate user ability to	perform following on remittances from remittance list:2. Save remittances")
 	public void saveRemittane() throws Exception {
 		String oldValue = getValue("remitName");
 		goToUnderWritingTab();
 		goToRemittanceList();
+		refreshRemittance();
 		click("remittanceSaveButton");
 		try {
 			click("lockContractYesButton");
@@ -76,12 +84,12 @@ public class OCEAN_UnderWriting_TC_09 extends UnderwritingModulePages {
 	 * description : Validate user ability to perform following on remittances from
 	 * remittance list: 3. Load remittances *
 	 */
-	// @Test(priority = 6, groups = "regression", description = "Validate user
-	// ability to perform following on remittances from remittance list: 3. Load
-	// remittances")
+	@Test(priority = 3, groups = { "regression", "extendSmoke",
+			"fullSuite" }, description = "Validate user ability to perform following on remittances from remittance list: 3. Load remittances")
 	public void loadRemittane() throws Exception {
 		goToUnderWritingTab();
 		goToRemittanceList();
+		refreshRemittance();
 		String oldName = getValue("remitNumber");
 		click("loadRemittance");
 		try {
@@ -100,13 +108,24 @@ public class OCEAN_UnderWriting_TC_09 extends UnderwritingModulePages {
 	 * remittance list: 4. View thumb nails of uploaded PDF.
 	 * 
 	 */
-	// @Test(priority = 6, groups = "regression", description = "Validate user
-	// ability to perform following on remittances from remittance list: 3. Load
-	// remittances")
+	@Test(priority = 4, groups = { "regression", "extendSmoke",
+			"fullSuite" }, description = "Validate user ability to 	perform following on remittances from remittance list:3. Load remittances")
 	public void thumbNailOfUploadedPDF() throws Exception {
 		goToUnderWritingTab();
 		goToRemittanceList();
-		click("expandRemittance");
+		refreshRemittance();
+		waitForSomeTime(5);
+		// click("expandRemittance");
+		List<WebElement> contractNumber = listOfElements("expandRemittance");
+		for (WebElement webElement : contractNumber) {
+			try {
+				webElement.click();
+				break;
+
+			} catch (Exception e) {
+				continue;
+			}
+		}
 		try {
 			click("lockContractYesButton");
 		} catch (Exception e) {
@@ -122,12 +141,16 @@ public class OCEAN_UnderWriting_TC_09 extends UnderwritingModulePages {
 	 * etc.
 	 * 
 	 */
-	@Test(priority = 6, groups = "regression", description = "Validate user ability to perform following on remittances from remittance list: 3. Apply Filters")
+	@Test(priority = 5, groups = { "regression", "extendSmoke",
+			"fullSuite" }, description = "Validate user ability to perform following on remittances from remittance list: 3. Apply Filters")
 	public void applyFiltersOnAllFields() throws Exception {
 		HashMap<String, String> filtersData = getRemitDataForFilters();
+		System.out.print(filtersData);
 		boolean flag = false;
 		goToUnderWritingTab();
 		goToRemittanceList();
+		refreshRemittance();
+		waitForSomeTime(5);
 		for (Map.Entry<String, String> entry : filtersData.entrySet()) {
 			try {
 				flag = false;
@@ -137,6 +160,11 @@ public class OCEAN_UnderWriting_TC_09 extends UnderwritingModulePages {
 			} catch (Exception e) {
 				continue;
 			}
+		}
+		try {
+			click("swipeLeft", 3);
+		} catch (Exception e) {
+			// do nothing
 		}
 		assertEquals(flag, true);
 	}

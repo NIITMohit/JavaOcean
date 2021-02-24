@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 import org.testng.annotations.Test;
 
@@ -16,6 +17,8 @@ import ocean.modules.pages.AccountsModulePages;
  * Validate Account search on the basis of search parameter given.
  * 
  * @author Mohit Goel
+ * 
+ * @reviewer : Poonam Kalra
  */
 public class OCEAN_Account_TC_01_02_03 extends AccountsModulePages {
 	/**
@@ -24,14 +27,9 @@ public class OCEAN_Account_TC_01_02_03 extends AccountsModulePages {
 	 * given and verify its values
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", dataProvider = "fetchDataForTC01_02_03", dataProviderClass = AccountsDataProvider.class, description = "Validate Account search on the basis of search parameter given.")
-	public void TC_04_AccountSeacrhByAddress(String[] inputArray) throws Exception {
-		if(inputArray[8].equals("1")) {
-			
-		}
-		else{
-			//// dp
-		}
+	@Test(priority = 1, groups = { "regression", "extendSmoke", "smoke1",
+			"fullSuite" }, dataProvider = "fetchDataForTC01_02_03", dataProviderClass = AccountsDataProvider.class, description = "Validate Account search on the basis of search parameter given.")
+	public void AccountSearch(String[] inputArray) throws Exception {
 		//// create data to fill required values in search window
 		HashMap<String, String> uiSearchData = null;
 		//// Navigate to mail service tab
@@ -49,17 +47,34 @@ public class OCEAN_Account_TC_01_02_03 extends AccountsModulePages {
 		//// run code for search
 		searchContractGivenInputParamaters(uiSearchData);
 		///// get db count to have actual iterations
-		int dbCount = Integer.parseInt(account_getSearchDataCountOnAccountsScreen(uiSearchData).get("count"));
-		int iterationsCount = 10;
+		HashMap<Integer, HashMap<String, String>> dbCO = account_getSearchDataCountOnAccountsScreen2(uiSearchData);
+		int dbCount = dbCO.size();
+		int iterationsCount = 1;
 		if (dbCount < 11)
 			iterationsCount = dbCount;
 		boolean firstCutDataFlag = false;
-		boolean secondCutDataFlag = false;
+		boolean fla = false;
 		for (int i = 0; i < iterationsCount; i++) {
 			String roleId = getRoleId(i);
+			String role_Type = getValue("listOfRoleType", i).trim();
+			//// save STATUS
+			String Status = getValue("listOfStatus", i).trim();
+			for (Entry<Integer, HashMap<String, String>> letterEntry : dbCO.entrySet()) {
+				HashMap<String, String> sss = letterEntry.getValue();
+				fla = sss.containsValue(roleId);
+				if (fla == true)
+					break;
+			}
+			if (fla == false)
+				throw new Exception("Data not matched");
 			// account_getAccountMouduleSearchData
-			HashMap<String, String> myDBData = account_getAccountMouduleSearchData(roleId);
+			HashMap<String, String> myDBData = account_getAccountMouduleSearchData(roleId, role_Type, Status);
 			HashMap<String, String> gridData = returnSearchResultGridData(i);
+			gridData.put("Role_Type", role_Type);
+			//// save Role_Id
+			gridData.put("Role_Id", roleId);
+			//// save STATUS
+			gridData.put("STATUS", Status);
 			if (myDBData.equals(gridData))
 				firstCutDataFlag = true;
 			else {
@@ -67,29 +82,6 @@ public class OCEAN_Account_TC_01_02_03 extends AccountsModulePages {
 				break;
 			}
 		}
-		if (dbCount > 10) {
-			//// click sort on role id
-			String roleId1 = getRoleId(0);
-			click("clickSortRoleId");
-			String roleId2 = getRoleId(0);
-			if (roleId1.equals(roleId2))
-				click("clickSortRoleId");
-			//// navigate to top
-			scrollUp();
-			//// get top role id
-			String roleId = getRoleId(0);
-			HashMap<String, String> myDBData = account_getAccountMouduleSearchData(roleId);
-			HashMap<String, String> gridData = returnSearchResultGridData(0);
-			//// compare final cut
-			if (myDBData.equals(gridData))
-				secondCutDataFlag = true;
-			else
-				secondCutDataFlag = false;
-		}
-		if (firstCutDataFlag == secondCutDataFlag && firstCutDataFlag == true)
-			assertEquals(true, true);
-		else
-			assertEquals(true, false);
-
+		assertEquals(firstCutDataFlag, true);
 	}
 }

@@ -24,11 +24,13 @@ public class OCEAN_Cancel_TC_18 extends CancellationModulePages {
 	 * cancellation request.
 	 * 
 	 */
-	@Test(priority = 2, groups = "regression", dataProvider = "fetchPriceSheet", dataProviderClass = CancellationDataProvider.class, description = "Validation that OCEAN auto assign payee as per compliance rules on a contract after calculation.")
-	public void validateAuthorizeContractForAnyPriceSheet(String pricesheet) throws Exception {
+	@Test(priority = 2, groups = { "regression", "smoke",
+			"fullSuite" }, dataProvider = "fetchPriceSheet", dataProviderClass = CancellationDataProvider.class, description = "Validation that OCEAN auto assign payee as per compliance rules on a contract after calculation.")
+	public void validateAuthorizeContractForAnyPriceSheet(String[] s) throws Exception {
+		String pricesheet = s[0];
 		HashMap<String, String> contractList = new HashMap<String, String>();
 		//// get contract id based for processed contract only with current year
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", pricesheet);
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", pricesheet);
 		String contractId = contractList.get("CERT");
 		if (contractId.length() > 0) {
 			//// Navigate to Mail service tab
@@ -42,12 +44,26 @@ public class OCEAN_Cancel_TC_18 extends CancellationModulePages {
 			//// navigate to new cancel tab
 			clickCancelButtonAndNavigateToNewCancellationTab();
 			enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Repossession", "", "", "");
-			click("clickOK");
+			click("okClick");
+			//// Change Payee Details
+			changePayeeDetails("Jack Ryan", "43 Stephenville St", "Massena", "NY", "13662");
+			//// take screenshot of new values
+			takeScreenshot();
 			//// Authorize cancellation request
 			selectCancellationTaskStatus("Authorize");
 			///// validation of successful authorization
-			boolean cancelStatusActual = checkCancellationTaskStatus("Authorize");
-			assertEquals(cancelStatusActual, true);
+			boolean cancelStatusActual = checkCancellationTaskStatus("Authorize",contractId);
+			HashMap<String, String> myData = new HashMap<String, String>();
+			myData.put("PAYEE_NAME", "Jack Ryan");
+			myData.put("PAYEE_ADDRESS", "43 Stephenville St");
+			myData.put("PAYEE_CITY", "Massena");
+			myData.put("PAYEE_STATE", "NY");
+			myData.put("PAYEE_ZIP_CODE", "13662");
+			HashMap<String, String> dbData = cancellation_getPayeeDetails(contractId);
+			if (cancelStatusActual)
+				assertEquals(dbData, myData);
+			else
+				assertEquals(true, false);
 		} else {
 			new SkipException("no contract exist in db");
 		}

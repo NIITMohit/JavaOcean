@@ -20,7 +20,8 @@ public class OCEAN_Pricing_TC_03 extends PricingModulePages {
 	 * given price sheet under Display Price sheet tab inside Price section.
 	 * 
 	 */
-	@Test(priority = 1, groups = "sanity", description = "Post import of Price sheet, Content should be matched from the given price sheet under Display Price sheet tab inside Price section.")
+	@Test(priority = 1, groups = {
+			"blocked" }, description = "Post import of Price sheet, Content should be matched from the given price sheet under Display Price sheet tab inside Price section.")
 	public void ImportPriceSheet() throws Exception {
 		//// Upload a price sheet
 		// Click Pricing Tab

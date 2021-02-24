@@ -16,6 +16,8 @@ import ocean.modules.pages.CancellationModulePages;
  * to assign and reassign cancel method on the basis of cancellation details.
  * 
  * @author Mohit Goel
+ * 
+ * @reviewer : Atul Awasthi
  */
 public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 	/**
@@ -24,12 +26,13 @@ public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 	 * basis of contract status.
 	 * 
 	 */
-	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC06", dataProviderClass = CancellationDataProvider.class, description = "Validate that OCEAN assign cancel method as Flat (F), if cancel date is within flat cancel period.")
+	@Test(priority = 2, groups = { "regression", "smoke",
+			"fullSuite" }, dataProvider = "fetchDataForTC06", dataProviderClass = CancellationDataProvider.class, description = "Validate that OCEAN assign cancel method as Flat (F), if cancel date is within flat cancel period.")
 	public void verifyFlatCancelRuleWithInCancelPeriod(String[] inputData) throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
-		if (contractList.get("CERT").length() > 0) {
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", inputData[0]);
+		if (contractList.size() > 0 && contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
 			goToMailServiceTab();
@@ -50,9 +53,7 @@ public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 			enterValuesOnNewCancellationTabAndClickCalculate(initiatedBy, cancelReason, "",
 					convertDate(contractList.get("SALE_DATE"), 1), "");
 			//// click ok for cancellation completed successfully
-			click("clickOk");
-			//// click ok for cancellation completed successfully
-			click("clickOk");
+			removeErrorMessages();
 			//// get cancel method applied as flat or outside flat
 			String cancelMethodType = returnCancelMethodValue();
 			//// assert flat or not flat
@@ -62,12 +63,13 @@ public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 		}
 	}
 
-	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC06", dataProviderClass = CancellationDataProvider.class, description = "Validate that OCEAN reassign cancel method on a contract, if cancel date is modified by user as outside flat cancel period.")
+	@Test(priority = 2, groups = { "regression", "smoke1",
+			"fullSuite" }, dataProvider = "fetchDataForTC06", dataProviderClass = CancellationDataProvider.class, description = "Validate that OCEAN reassign cancel method on a contract, if cancel date is modified by user as outside flat cancel period.")
 	public void verifyOutsideFlatCancelRuleWithInCancelPeriod(String[] inputData) throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
-		if (contractList.get("CERT").length() > 0) {
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", inputData[0]);
+		if (contractList.size() > 0 && contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
 			goToMailServiceTab();
@@ -86,12 +88,9 @@ public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 			if (inputData[2].length() > 0)
 				cancelReason = inputData[2];
 			enterValuesOnNewCancellationTabAndClickCalculate(initiatedBy, cancelReason, "",
-					convertDate(contractList.get("SALE_DATE"), 1), "");
+					convertDate(contractList.get("SALE_DATE"), 130), "");
 			//// click ok for cancellation completed successfully
-			click("clickOk");
-			//// click ok for cancellation completed successfully
-			click("clickOk");
-			//// get cancel method applied as flat or outside flat
+			removeErrorMessages();
 			String cancelMethodType = returnCancelMethodValue();
 			//// assert flat or not flat
 			assertEquals(cancelMethodType.toLowerCase(), "t");
@@ -100,12 +99,13 @@ public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 		}
 	}
 
-	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC06", dataProviderClass = CancellationDataProvider.class, description = "Validate that OCEAN reassign cancel method on a contract, if cancel date is modified by user as outside flat cancel period.")
+	@Test(priority = 2, groups = { "regression", "smoke1",
+			"fullSuite" }, dataProvider = "fetchDataForTC06", dataProviderClass = CancellationDataProvider.class, description = "Validate that OCEAN reassign cancel method on a contract, if cancel date is modified by user as outside flat cancel period.")
 	public void verifyBoundryValueFlatCancelPeriod(String[] inputData) throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
-		if (contractList.get("CERT").length() > 0) {
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", inputData[0]);
+		if (contractList.size() > 0 && contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
 			goToMailServiceTab();
@@ -126,9 +126,9 @@ public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 			enterValuesOnNewCancellationTabAndClickCalculate(initiatedBy, cancelReason, "",
 					convertDate(contractList.get("SALE_DATE"), 1), "");
 			//// click ok for cancellation completed successfully
-			click("clickOk");
+			removeErrorMessages();
 			//// click ok for cancellation completed successfully
-			click("clickOk");
+			// click("okClick");
 			//// get cancel method applied as flat or outside flat
 			String cancelMethodType = returnCancelMethodValue();
 			//// assert flat or not flat
@@ -138,12 +138,13 @@ public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 		}
 	}
 
-	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC06", dataProviderClass = CancellationDataProvider.class, description = "Validate that OCEAN reassign cancel method on a contract, if cancel date is modified by user as outside flat cancel period.")
+	@Test(priority = 2, groups = { "regression", "smoke1", "smoke1",
+			"fullSuite" }, dataProvider = "fetchDataForTC06", dataProviderClass = CancellationDataProvider.class, description = "Validate that OCEAN reassign cancel method on a contract, if cancel date is modified by user as outside flat cancel period.")
 	public void verifyBoundryValueFlatOutSideCancelPeriod(String[] inputData) throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", inputData[0]);
-		if (contractList.get("CERT").length() > 0) {
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", inputData[0]);
+		if (contractList.size() > 0 && contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
 			goToMailServiceTab();
@@ -164,9 +165,9 @@ public class OCEAN_Cancel_TC_06 extends CancellationModulePages {
 			enterValuesOnNewCancellationTabAndClickCalculate(initiatedBy, cancelReason, "",
 					convertDate(contractList.get("SALE_DATE"), 1), "");
 			//// click ok for cancellation completed successfully
-			click("clickOk");
+			removeErrorMessages();
 			//// click ok for cancellation completed successfully
-			click("clickOk");
+			// click("okClick");
 			//// get cancel method applied as flat or outside flat
 			String cancelMethodType = returnCancelMethodValue();
 			//// assert flat or not flat

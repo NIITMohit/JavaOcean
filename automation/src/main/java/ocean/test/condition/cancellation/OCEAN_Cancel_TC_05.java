@@ -2,6 +2,8 @@ package ocean.test.condition.cancellation;
 
 import static org.testng.Assert.assertEquals;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import org.testng.annotations.Test;
@@ -14,6 +16,8 @@ import ocean.modules.pages.CancellationModulePages;
  * to input and modify cancellation details.
  * 
  * @author Mohit Goel
+ * 
+ * @reviewer : Atul Awasthi
  */
 public class OCEAN_Cancel_TC_05 extends CancellationModulePages {
 	/**
@@ -23,12 +27,12 @@ public class OCEAN_Cancel_TC_05 extends CancellationModulePages {
 	 * 
 	 * @throws Exception
 	 */
-
-	@Test(priority = 5, groups = "regression", description = "Validate user ability to input and modify cancellation details.")
+	@Test(priority = 5, groups = { "regression", "smoke",
+			"fullSuite" }, description = "Validate user ability to input and modify cancellation details.")
 	public void VerifyCancellationDetailsUsingContractID() throws Exception {
 		// Search Contract from db where status is processed
-		String contractId = cancellation_getContractIdBasedOnStatus("Processed");
-		if (contractId.length() > 0) {
+		String contractId = cancellation_getContractIdBasedOnStatus("Active");
+		if (contractId != null) {
 			HashMap<String, String> contractData = new HashMap<String, String>();
 			contractData.put("CERT", contractId);
 			goToCancellationTab();
@@ -41,12 +45,12 @@ public class OCEAN_Cancel_TC_05 extends CancellationModulePages {
 			if (!flag)
 				assertEquals(flag, true);
 			else {
-				enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Repossession", "12345", "10/10/2019",
-						"10/10/2019");
-				click("clickOK");
-				// click("clickOK");
-				boolean newflag = validateInputFieldsValues("Dealer", "Repossession", "12345", "10/10/2019",
-						"10/10/2019");
+				SimpleDateFormat formatter = new SimpleDateFormat("M/d/yyyy");
+				Date yesterday = new Date(System.currentTimeMillis() - 1000L * 60L * 60L * 24L);
+				String datek = formatter.format(yesterday);
+				enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Repossession", "9999999", datek, datek);
+				removeErrorMessages();
+				boolean newflag = validateInputFieldsValues("Dealer", "Repossession", "9999999", datek, datek);
 				assertEquals(newflag, true);
 			}
 		}

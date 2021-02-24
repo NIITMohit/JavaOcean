@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Ocean">
-	<test name="Cancellation">
+<suite name="Smoke">
+	<groups>
+		<run>
+			<include name="smoke" />
+		</run>
+	</groups>
+	<test name="Underwriting">
 		<classes>
 			<class
-				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_11" />
+				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_01_02_03_04_10_12" />
+			<class
+				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_05" />
+			<class
+				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_06" />
+			<class
+				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_07" />
+			<class
+				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_08" />
+			<class
+				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_09" />
+			<class
+				name="ocean.test.condition.underwriting.OCEAN_UnderWriting_TC_10" />
 		</classes>
 	</test>
-</suite> 
+</suite>

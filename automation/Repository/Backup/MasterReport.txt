@@ -1,0 +1,117 @@
+<html><head><title>Test Report</title><head>
+<style>
+table, th, td {
+  border: 1px solid black;  
+  justify-content: space-between;
+}
+th, td {
+  padding: 10px;
+  text-align: center;
+    justify-content: space-between;
+}
+#t01 tr:nth-child(even) {
+  background-color: #white;
+}
+#t01 tr:nth-child(odd) {
+  background-color: #C7F3F9;
+}
+#t01 th {
+  color: white;
+  background-color: #1B3F69	;
+}
+#container {
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    width:100%;
+}
+#container>div {
+    width: 300px;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+#wrapper {
+width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+</style><body>
+<h1><Center>TEST EXECUTION SUMMARY</Center></h1>
+<h3><Center>Suite_Detail</Center></h3>
+</br>
+ <div id="wrapper">
+    <div style="display: none;">Start Time: Start_Time</div>
+    <div style="display: none;">End Time: End_Time</div>
+    <div style="display: none;">Total Execution Time: Total_Time</div>
+    <div>Execution Date : Execution_Date</div>
+</div>
+</br>
+</br>
+<div id="wrapper">
+<table id="t01" width="100%">
+<tr>
+<th width="10%">S.No</th>
+<th width="20%">Module Name</th>
+<th width="10%">Total Test Case</th>
+<th width="10%">Test Case Passed</th>
+<th width="10%">Test Case Failed</th>
+<th width="10%">Test Case Skipped</th>
+</tr>
+<tr id = "Account" style="display: none;">
+<td>Account_S.No</td>
+    <td><a href="Account/Account.html" target="_blank">Account</a></td>
+    <td id = Account_Total>0</td>
+	<td id = Account_Pass>0</td>
+	<td id = Account_Fail>0</td>
+	<td id = Account_Skip>0</td>
+  </tr>
+  <tr id = "Cancellation" style="display: none;">
+  <td>Cancellation_S.No</td>
+    <td><a href="Cancellation/Cancellation.html" target="_blank">Cancellation</a></td>
+    <td id = Cancellation_Total>0</td>
+	<td id = Cancellation_Pass>0</td>
+	<td id = Cancellation_Fail>0</td>
+	<td id = Cancellation_Skip>0</td>
+  </tr>
+  <tr id = "Compliance" style="display: none;">
+  <td>Compliance_S.No</td>
+    <td><a href="Compliance/Compliance.html" target="_blank">Compliance</a></td>
+    <td id = Compliance_Total>0</td>
+	<td id = Compliance_Pass>0</td>
+	<td id = Compliance_Fail>0</td>
+	<td id = Compliance_Skip>0</td>
+  </tr>
+  <tr id = "Pricing" style="display: none;"> 
+  <td>Pricing_S.No</td>
+    <td><a href="Pricing/Pricing.html" target="_blank">Pricing</a></td>
+    <td id = Pricing_Total>0</td>
+	<td id = Pricing_Pass>0</td>
+	<td id = Pricing_Fail>0</td>
+	<td id = Pricing_Skip>0</td>
+  </tr>
+   <tr id = "Search" style="display: none;">
+   <td>Search_S.No</td>
+    <td><a href="Search/Search.html" target="_blank">Search</a></td>
+   <td id = Search_Total>0</td>
+	<td id = Search_Pass>0</td>
+	<td id = Search_Fail>0</td>
+	<td id = Search_Skip>0</td>
+  </tr>
+  <tr id = "Underwriting" style="display: none;">
+ <td>Underwriting_S.No</td>
+    <td><a href="Underwriting/Underwriting.html" target="_blank">Underwriting</a></td>
+    <td id = Underwriting_Total>0</td>
+	<td id = Underwriting_Pass>0</td>
+	<td id = Underwriting_Fail>0</td>
+	<td id = Underwriting_Skip>0</td>
+  </tr>
+</table>
+</div>
+<footer><Center>
+  <p>Author: Mohit Goel<br>
+  <a href="mailto:mohit.goel@coforgetech.com">For Queries</a></p>
+</footer><Center>
+</body>
+<html>

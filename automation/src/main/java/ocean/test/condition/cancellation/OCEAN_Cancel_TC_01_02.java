@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.testng.annotations.Test;
 
@@ -25,7 +26,9 @@ public class OCEAN_Cancel_TC_01_02 extends CancellationModulePages {
 	 * contract number, VIN, First Name, Last Name
 	 * 
 	 */
-	@Test(priority = 1, groups = "regression", dataProvider = "fetchDataForTC01_02", dataProviderClass = CancellationDataProvider.class, description = "Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result")
+	@Test(priority = 1, groups = { "regression", "extendSmoke", "smoke", "smoke1",
+			"fullSuite" }, dataProvider = "fetchDataForTC01_02", dataProviderClass = CancellationDataProvider.class, description = "Validate contract search for cancellation on the basis of contract number, VIN, First Name, Last Name and verify result")
+
 	public void searchForContractOnCancelScreen(String[] inputArray) throws Exception {
 		Boolean countFlag = false;
 		Boolean dataFlag = false;
@@ -55,9 +58,7 @@ public class OCEAN_Cancel_TC_01_02 extends CancellationModulePages {
 		if (oceanCount == dbCount)
 			countFlag = true;
 		//// scroll up to get row 1
-		scrollUp();
 		//// Compare DB data and match data from database
-
 		//// verify data for a max of 4 or search result count which is less
 		for (int i = 0; i < oceanCount; i++) {
 			//// Get contract id at row i
@@ -68,6 +69,18 @@ public class OCEAN_Cancel_TC_01_02 extends CancellationModulePages {
 			//// save data from UI searched result
 			HashMap<String, String> gridData = returnSearchResultGridData(i);
 			//// verify both data, must match
+			for (Map.Entry<String, String> entry : gridData.entrySet()) {
+				String key = entry.getKey();
+				String val = entry.getValue();
+				if (val == null)
+					gridData.put(key, "");
+			}
+			for (Map.Entry<String, String> entry : myDBData.entrySet()) {
+				String key = entry.getKey();
+				String val = entry.getValue();
+				if (val == null)
+					myDBData.put(key, "");
+			}
 			if (myDBData.equals(gridData))
 				dataFlag = true;
 			else {

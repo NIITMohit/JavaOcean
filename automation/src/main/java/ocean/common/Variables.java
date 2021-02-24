@@ -2,6 +2,8 @@ package ocean.common;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -29,28 +31,50 @@ public class Variables extends Database_Connectivity {
 	@SuppressWarnings("rawtypes")
 	public static WindowsDriver windowsDriver;
 
+	public static HashMap<String, Integer> pricingExecution;
+
+	public static HashMap<String, Integer> accountExecution;
+	/**
+	 * logger object
+	 */
+	public static Logger logger = Logger.getLogger("ExecutionLog");
+
+	/**
+	 * FileHandler object
+	 */
+	public static FileHandler fh;
+
 	/**
 	 * Static variable screenShota - list of all screenshots associated with single
 	 * test
 	 */
 	public static List<String> screenShots;
+
 	/**
-	 * Static variable executionResult - append all results for all test data in a
-	 * single test case
+	 * Static variable startTime - start time of execution test
 	 */
-	public static HashMap<String, List<HashMap<String, List<String>>>> executionResult;
+	public static String startTime;
 
 	/** Static variable mapTest - list of all test parent node */
 	public static HashMap<String, ExtentTest> mapTest;
 
-	/** Static variable mapTest - list of all test parent node */
-	public static HashMap<String, ExtentTest> resultData;
+	/** Static variable auto - numbering of test modules */
+	public static int auto = 0;
 
-	/** Static variable nodeTest - list of all test child node */
-	public static HashMap<String, ExtentTest> nodeTest;
+	/** Static variable pass - pass count */
+	public static int pass;
+
+	/** Static variable fail - fail count */
+	public static int fail;
+
+	/** Static variable auto - skip count */
+	public static int skip;
+
+	/** Static variable to decide run mode */
+	public static String[] runMode;
 
 	/** Static variable statusSheet */
-	public static HashMap<Integer, String> statusSheet;
+	public static ExtentTest parentNode;
 
 	/** Static variable reportPath - report location */
 	public static String reportPath = "";
@@ -73,6 +97,16 @@ public class Variables extends Database_Connectivity {
 	/** Static variable hugeDelay - 60 sec delay */
 	public static Integer hugeDelay = 60;
 
+	/** Static variable hugeDelay - 60 sec delay */
+	public static String[] somke = null;
+
+	/** Static variable hugeDelay - 60 sec delay */
+	public static Integer autoIncrement = 1;
+	public static ExtentTest node;
 	/** Static variable currentDir - current running directory of code */
 	public static String currentDir = System.getProperty("user.dir");
+
+	public static enum CarDetails {
+		F150
+	}
 }

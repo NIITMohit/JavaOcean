@@ -3,6 +3,7 @@ package ocean.test.condition.cancellation;
 import static org.testng.Assert.assertEquals;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.testng.SkipException;
 import org.testng.annotations.Test;
@@ -26,14 +27,17 @@ public class OCEAN_Cancel_TC_16 extends CancellationModulePages {
 	 * 2. Refund% 3. Gross Refund 4. Cancel Fee
 	 * 
 	 */
-	@Test(priority = 2, groups = "regression", dataProvider = "fetchPriceSheet", dataProviderClass = CancellationDataProvider.class, description = "Validation that user is able to edit override customer premium refund calculation by OCEAN  via editing of following fields: 1. Cancel Method 2. Refund%"
-			+ "3. Gross Refund 4. Cancel Fee")
-	public void validateOverRidePremiumRefundForAnyPriceSheet(String pricesheet) throws Exception {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Test(priority = 2, groups = { "regression", "fullSuite", "smSSoke",
+			"smoke" }, dataProvider = "fetchPriceSheet", dataProviderClass = CancellationDataProvider.class, description = "Validation that user is able to edit override customer premium refund calculation by OCEAN  via editing of following fields: 1. Cancel Method 2. Refund%"
+					+ "3. Gross Refund 4. Cancel Fee")
+	public void validateOverRidePremiumRefundForAnyPriceSheet(String[] pricesheet1) throws Exception {
+		String pricesheet = pricesheet1[0];
 		HashMap<String, String> contractList = new HashMap<String, String>();
 		//// get contract id based for processed contract only with current year
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", pricesheet);
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", pricesheet);
 		String contractId = contractList.get("CERT");
-		if (contractId.length() > 0) {
+		if (contractList.size() > 0 && contractId.length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
 			goToMailServiceTab();
@@ -45,8 +49,8 @@ public class OCEAN_Cancel_TC_16 extends CancellationModulePages {
 			//// navigate to new cancel tab
 			clickCancelButtonAndNavigateToNewCancellationTab();
 			enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Repossession", "", "", "");
-			click("clickOK");
-			click("clickOK");
+			click("okClick");
+			// click("clickOK");
 			//// override cancellation values
 			overRideCancellationValuesAndClickCalculate("10", "10");
 			HashMap<String, String> myData = new HashMap<String, String>();
@@ -57,9 +61,14 @@ public class OCEAN_Cancel_TC_16 extends CancellationModulePages {
 			selectCancellationTaskStatus("Authorize");
 			//// verify db for all data and check refund fee and cancel fee
 			HashMap<String, String> dbData = cancellation_getRefundPercentAndCancelFee(contractId);
+			for (Map.Entry mapElement : dbData.entrySet()) {
+				String value = (String) mapElement.getValue();
+				if (value.contains(".0"))
+					mapElement.setValue(value.substring(0, value.indexOf(".")));
+			}
 			assertEquals(dbData, myData);
 		} else {
-			new SkipException("no contract exist in db");
+			throw new SkipException("no contract exist in db");
 		}
 	}
 }

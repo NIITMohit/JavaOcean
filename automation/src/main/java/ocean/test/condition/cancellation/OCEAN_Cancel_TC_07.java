@@ -18,6 +18,8 @@ import ocean.modules.pages.CancellationModulePages;
  * check for cancel date with contract coverage dates.
  * 
  * @author Mohit Goel
+ * 
+ * @reviewer : Atul Awasthi
  */
 public class OCEAN_Cancel_TC_07 extends CancellationModulePages {
 	/**
@@ -26,12 +28,12 @@ public class OCEAN_Cancel_TC_07 extends CancellationModulePages {
 	 * when user provide cancel date before sale date.
 	 * 
 	 */
-	@Test(priority = 5, groups = "sanity", description = "Validate that Ocean block user to authorize a cancellation, when user provide cancel date before sale date.")
+	@Test(priority = 5, groups = "smoke", description = "Validate that Ocean block user to authorize a cancellation, when user provide cancel date before sale date.")
 	public void validateMessageWhenCancelDateIsBeforeSaleDate() throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", "SNE");
-		if (contractList.get("CERT").length() > 0) {
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", "SNE");
+		if (contractList.size() > 0 && contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
 			goToMailServiceTab();
@@ -43,13 +45,13 @@ public class OCEAN_Cancel_TC_07 extends CancellationModulePages {
 			//// navigate to new cancel tab
 			clickCancelButtonAndNavigateToNewCancellationTab();
 			//// enter valid values on new cancellation tab screen and click calculate
-			enterValuesOnNewCancellationTabAndClickCalculate("Dealer", "Customer Request", "",
+			enterValuesOnNewCancellationTabAndClickCalculateSPL("Dealer", "Customer Request", "",
 					convertDate(contractList.get("SALE_DATE"), -10), "");
 			//// validate validation message for cancel date
 			String message = getValidationForCancelDateLessSaleDate();
 			takeScreenshot();
-			click("clickOK");
-			String actualMessage = "Error: Time or mileage less than zero";
+			removeErrorMessages();
+			String actualMessage = "Cancel Date cannot be prior to Sale Date";
 			assertEquals(message.toLowerCase(), actualMessage.toLowerCase());
 		} else {
 			new SkipException("no value exist in db");
@@ -62,12 +64,12 @@ public class OCEAN_Cancel_TC_07 extends CancellationModulePages {
 	 * when user provide cancel date greater than today's date.
 	 * 
 	 */
-	@Test(priority = 5, groups = "sanity", description = "Validate that Ocean block user to authorize a cancellation, when user provide cancel date greater than today's date.")
+	@Test(priority = 5, groups = "smoke", description = "Validate that Ocean block user to authorize a cancellation, when user provide cancel date greater than today's date.")
 	public void validateMessageWhenCancelDateIsFutureDate() throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", "SNE");
-		if (contractList.get("CERT").length() > 0) {
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", "SNE");
+		if (contractList.size() > 0 && contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
 			goToMailServiceTab();
@@ -91,6 +93,7 @@ public class OCEAN_Cancel_TC_07 extends CancellationModulePages {
 			String message = getValidationForCancelFutureDate();
 			takeScreenshot();
 			click("clickCancelButton");
+			removeErrorMessages();
 			String actualMessage = "Cancel date is future date, do you want to continue?.";
 			assertEquals(message.toLowerCase(), actualMessage.toLowerCase());
 		} else {
@@ -104,12 +107,12 @@ public class OCEAN_Cancel_TC_07 extends CancellationModulePages {
 	 * user provide cancel miles less than sale mileage.
 	 * 
 	 */
-	@Test(priority = 5, groups = "sanity", description = "Validate that Ocean block user to authorize a cancellation, when user provide cancel miles less than sale mileage. ")
+	@Test(priority = 5, groups = "smoke", description = "Validate that Ocean block user to authorize a cancellation, when user provide cancel miles less than sale mileage. ")
 	public void validateMessageWhenCancelMilesLessThanSalesMiles() throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", "SNE");
-		if (contractList.get("CERT").length() > 0) {
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", "SNE");
+		if (contractList.size() > 0 && contractList.size() > 0 && contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
 			goToMailServiceTab();
@@ -130,7 +133,7 @@ public class OCEAN_Cancel_TC_07 extends CancellationModulePages {
 			//// validate validation message for cancel date
 			String message = getValidationForCancelDateLessSaleDate();
 			takeScreenshot();
-			click("clickOK");
+			removeErrorMessages();
 			String actualMessage = "Error: Time or mileage less than zero";
 			assertEquals(message.toLowerCase(), actualMessage.toLowerCase());
 		} else {
@@ -144,12 +147,12 @@ public class OCEAN_Cancel_TC_07 extends CancellationModulePages {
 	 * when user provide date received greater than today's date.
 	 * 
 	 */
-	@Test(priority = 5, groups = "sanity", description = "Validate that Ocean block user to authorize a cancellation, when user provide date received greater than today's date.")
+	@Test(priority = 5, groups = "smoke", description = "Validate that Ocean block user to authorize a cancellation, when user provide date received greater than today's date.")
 	public void validateMessageWhenReceivedDateIsFutureDate() throws Exception {
 		//// Search Contract from db where status is processed and price sheet is SNE
 		HashMap<String, String> contractList = new HashMap<String, String>();
-		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("processed", "SNE");
-		if (contractList.get("CERT").length() > 0) {
+		contractList = cancellation_getContractIdBasedOnStatusAndPriceSheet("active", "SNE");
+		if (contractList.size() > 0 && contractList.get("CERT").length() > 0) {
 			//// Navigate to Mail service tab
 			goToCancellationTab();
 			goToMailServiceTab();
@@ -173,6 +176,7 @@ public class OCEAN_Cancel_TC_07 extends CancellationModulePages {
 			String message = getValidationForReceivedFutureDate();
 			takeScreenshot();
 			click("clickCancelButton");
+			removeErrorMessages();
 			String actualMessage = "Received date is future date, do you want to continue?.";
 			assertEquals(message.toLowerCase(), actualMessage.toLowerCase());
 		} else {

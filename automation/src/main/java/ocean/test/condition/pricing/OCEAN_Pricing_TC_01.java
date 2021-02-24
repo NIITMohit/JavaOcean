@@ -11,6 +11,8 @@ import ocean.modules.pages.PricingModulePages;
  * content after their import into OCEAN
  * 
  * @author Mohit Goel
+ * 
+ * @reviewer : Shalu Chauhan
  */
 public class OCEAN_Pricing_TC_01 extends PricingModulePages {
 
@@ -20,10 +22,11 @@ public class OCEAN_Pricing_TC_01 extends PricingModulePages {
 	 * given price sheet under Display Price sheet tab inside Price section.
 	 * 
 	 */
-	@Test(priority = 1, groups = "sanity", description = "Post import of Price sheet, Content should be matched from the given price sheet under Display Price sheet tab inside Price section.")
+	@Test(priority = 1, groups = { "smoke", "regression",
+			"fullSuite" }, description = "Post import of Price sheet, Content should be matched from the given price sheet under Display Price sheet tab inside Price section.")
 	public void ImportPriceSheetAndVerifyForSuccessfulImport() throws Exception {
 		//// Upload a price sheet
-		String newProgramCode = "SNZ";
+		String newProgramCode = "SNX";
 		// Click Pricing Tab and navigate to pricing tab
 		goToPricingTab();
 		visitPriceSheetListTab();
@@ -34,6 +37,7 @@ public class OCEAN_Pricing_TC_01 extends PricingModulePages {
 		// Click Pricing Tab and navigate to pricing tab
 		goToPricingTab();
 		visitPriceSheetListTab();
+		// type("typeProgramCode", "");
 		//// Import A price sheet
 		importPriceSheet(newProgramCode);
 		//// validate price sheet is successfully imported

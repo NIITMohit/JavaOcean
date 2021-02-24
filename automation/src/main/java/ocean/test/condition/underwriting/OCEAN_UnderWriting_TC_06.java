@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.util.Arrays;
 import java.util.List;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import ocean.modules.pages.UnderwritingModulePages;
@@ -15,6 +16,8 @@ import ocean.modules.pages.UnderwritingModulePages;
  * creation of remittance in OCEAN with editing/reset of details given earlier.
  * 
  * @author Mohit Goel
+ * 
+ * @reviewer : Mohit Goel
  */
 public class OCEAN_UnderWriting_TC_06 extends UnderwritingModulePages {
 	/**
@@ -22,7 +25,8 @@ public class OCEAN_UnderWriting_TC_06 extends UnderwritingModulePages {
 	 * Test Case description : Validate the creation of remittance in ocean
 	 * 
 	 */
-	@Test(priority = 5, groups = "regression", description = "Validate creation of remittance in OCEAN with editing/reset of details given earlier.")
+	@Test(priority = 5, groups = { "regression", "extendSmoke", "smoke1",
+			"fullSuite" }, description = "Validate creation of remittance in OCEAN with editing/reset of details given earlier.")
 	public void editAndResetRemittanceValues() throws Exception {
 		//// go to underwriting tab
 		goToUnderWritingTab();
@@ -31,6 +35,7 @@ public class OCEAN_UnderWriting_TC_06 extends UnderwritingModulePages {
 		remittanceExpander();
 		String[] inputArray = { "random", "1", "1", "Paper", "Standard", "Paper Remit", "Dealer Suspense", "Automation",
 				"", "" };
+		click("clickRemittanceReset");
 		enterRemittanceValueswithoutSave(inputArray);
 		String[] inputArray2 = getRemittanceValueswithoutSave();
 		String[] inputArray3 = { "random1", "11", "11", "Web", "Lender", "No Remit", "Dealer AGs", "Automation 11", "",
@@ -44,13 +49,17 @@ public class OCEAN_UnderWriting_TC_06 extends UnderwritingModulePages {
 		List<String> inputList5 = Arrays.asList(inputArray5);
 		if (inputList1.containsAll(inputList2) && inputList3.containsAll(inputList5))
 			editFlag = true;
-		boolean resetFlag = false;
 		click("clickRemittanceReset");
 		String[] inputArray4 = getRemittanceValueswithoutSave();
 		for (String string : inputArray4) {
-			if (string.length() > 1)
+			if (string.length() > 2)
 				break;
 		}
-		assertEquals(editFlag == resetFlag, true);
+		assertEquals(editFlag == true, true);
+	}
+
+	@AfterTest
+	public void remittanceExpand() throws Exception {
+		click("remittanceExpander");
 	}
 }

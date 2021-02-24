@@ -1,5 +1,6 @@
 package ocean.common;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -16,8 +17,8 @@ import java.util.HashMap;
  */
 public class Database_Connectivity {
 
-	public Connection conn;
-	public Statement stmt;
+	public static Connection conn;
+	public static Statement stmt;
 
 	/**
 	 * used to create db connectivity
@@ -25,12 +26,12 @@ public class Database_Connectivity {
 	 * @throws Exception
 	 * 
 	 */
-	public void aulDBConnect() throws Exception {
+	public static void aulDBConnect() throws Exception {
 		try {
 			//// class to access jdbc sql driver
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			//// connection string to connect to aul db
-			String url = "jdbc:sqlserver://AUL-DEVDB-01\\DEVDB01;databaseName=OCEAN";
+			String url = "jdbc:sqlserver://AUL-DEVDB-01;databaseName=OCEAN";
 			//// create connection
 			conn = DriverManager.getConnection(url, "niit.mohit", "MGNthre3");
 			//// attached session
@@ -46,7 +47,7 @@ public class Database_Connectivity {
 	 * @throws Exception
 	 * 
 	 */
-	public void closeConnection() throws SQLException {
+	public static void closeConnection() throws SQLException {
 		try {
 			//// check if connection is open, close the same
 			if (conn != null)
@@ -65,7 +66,7 @@ public class Database_Connectivity {
 	 * @throws Exception
 	 * 
 	 */
-	public HashMap<String, String> returnData(ResultSet rs1) throws Exception {
+	public static HashMap<String, String> returnData(ResultSet rs1) throws Exception {
 		//// Hash map to store columns and value
 		HashMap<String, String> dbMap = new HashMap<String, String>();
 		try {
@@ -84,7 +85,7 @@ public class Database_Connectivity {
 					//// convert all column type to string and apened to hashmap
 					String data = convertData(columnReturnType, rs, i);
 					if (data == null)
-						dbMap.put(col_name.trim(), null);
+						dbMap.put(col_name.trim(), "");
 					else
 						dbMap.put(col_name.trim(), data.trim());
 
@@ -94,6 +95,7 @@ public class Database_Connectivity {
 
 		} catch (Exception e) {
 			//// exception
+			System.out.println(e.toString());
 			throw e;
 		} finally {
 			closeConnection();
@@ -110,7 +112,7 @@ public class Database_Connectivity {
 	 * @throws Exception
 	 * 
 	 */
-	public HashMap<Integer, HashMap<String, String>> returnAllData(ResultSet rs1) throws Exception {
+	public static HashMap<Integer, HashMap<String, String>> returnAllData(ResultSet rs1) throws Exception {
 		//// Hash map to store columns and value
 		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
 		try {
@@ -131,7 +133,7 @@ public class Database_Connectivity {
 					//// convert all column type to string and apened to hashmap
 					String data = convertData(columnReturnType, rs, i);
 					if (data == null)
-						mapp.put(col_name.trim(), null);
+						mapp.put(col_name.trim(), "");
 					else
 						mapp.put(col_name.trim(), data.trim());
 				}
@@ -154,7 +156,7 @@ public class Database_Connectivity {
 	 * This function is used to convert db data like int, date etc to string
 	 * 
 	 */
-	public String convertData(String columnReturnType, ResultSet rs, int i) throws SQLException {
+	public static String convertData(String columnReturnType, ResultSet rs, int i) throws SQLException {
 		switch (columnReturnType) {
 		case "int":
 			return Integer.toString(rs.getInt(i));
@@ -167,6 +169,9 @@ public class Database_Connectivity {
 		case "bigint":
 			return rs.getString(i);
 		case "decimal":
+			BigDecimal decimalValue = rs.getBigDecimal(i);
+			if (decimalValue == null)
+				return null;
 			return rs.getBigDecimal(i).toString();
 		// return df.format(rs.get(i));
 		default:
@@ -186,8 +191,11 @@ public class Database_Connectivity {
 			aulDBConnect();
 			///// execute query
 			ResultSet rs = stmt.executeQuery(
-					"select top 1 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
-							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r.IsDeleted = 0 order by d.CreateByDate desc;");
+					"select * from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
+							+ "d.status_id = 4 and DOCUMENTTYPEID = 1 and r.IsDeleted = 0 "
+							+ "and r.RemittanceID in (select r.RemittanceID from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID "
+							+ "join  [dbo].[UW_BUSINESS_PROCESSOR_CHECK] ccc on r.RemittanceNumber = ccc.REMITTANCE_NUMBER "
+							+ " where DOCUMENTTYPEID = 2) " + "order by d.CreateByDate desc");
 			//// save data in map
 			dbMap = returnAllData(rs);
 
@@ -197,9 +205,119 @@ public class Database_Connectivity {
 			//// close connection
 			closeConnection();
 		}
-
 		return dbMap;
 
 	}
 
+	/**
+	 * This gets PendingContractwithRemittance
+	 * 
+	 */
+	public HashMap<String, String> getUnderWContractForBListLender() throws Exception {
+		HashMap<String, String> dbMap = new HashMap<String, String>();
+		try {
+			//// connect to aul db
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(
+					"select r.RemittanceName,asd.CERT,asd.SECONDARY_ACCOUNT_ID from ALLSALES_DETAILS asd join REMITTANCE r on asd.REMITTANCE_ID = r.RemittanceID "
+							+ " where r.REMITTANCE_STATUS_ID = 1 " + "and asd.CONTRACT_STATUS_ID = 1 "
+							+ "and asd.SECONDARY_ACCOUNT_ID in (select ac.id from [dbo].[ACCOUNT_PROPERTY] p join [dbo].[ACCOUNT_PROPERTY_VALUE] v on p.id = v.account_property_id "
+							+ "join [dbo].[ACCOUNT_PROPERTY_GROUP] g on g.property_value_id = v.id "
+							+ "join  [dbo].[ACCOUNT] ac on ac.id = g.account_id " + "where STRING_VALUE in ('B-List')) "
+							+ " order by 1 desc;");
+			//// save data in map
+			dbMap = returnData(rs);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return dbMap;
+
+	}
+
+	/**
+	 * This gets PendingContractwithRemittance
+	 * 
+	 */
+	public String roleIdentfier(String roldid) throws Exception {
+		HashMap<String, String> dbMap = new HashMap<String, String>();
+		try {
+			//// connect to aul db
+			aulDBConnect();
+			///// execute query
+			ResultSet rs = stmt.executeQuery(
+					"select  ac.ROLE_IDENTIFIER from [dbo].[ACCOUNT_PROPERTY] p join [dbo].[ACCOUNT_PROPERTY_VALUE] v on p.id = v.account_property_id "
+							+ "join [dbo].[ACCOUNT_PROPERTY_GROUP] g on g.property_value_id = v.id "
+							+ "join  [dbo].[ACCOUNT] ac on ac.id = g.account_id "
+							+ "where STRING_VALUE in ('B-List') and ac.id not in ('" + roldid
+							+ "') order by ROLE_IDENTIFIER;");
+			//// save data in map
+			dbMap = returnData(rs);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return dbMap.get("ROLE_IDENTIFIER");
+
+	}
+
+	/**
+	 * This gets OnHoldContractwithRemittance
+	 * 
+	 */
+	public HashMap<Integer, HashMap<String, String>> pricing_underwriting_getOnHoldContractwithRemittance()
+			throws Exception {
+		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+		try {
+			//// connect to aul db
+			aulDBConnect();
+			///// execute query
+
+			ResultSet rs = stmt.executeQuery(
+					"select top 1 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME  from [dbo].[REMITTANCE] r join [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID where "
+							+ " d.status_id in(2) and remittance_status_id not in(3,2) and DOCUMENTTYPEID = 1 and r.IsDeleted = 0 order by d.CreateByDate desc;");
+			//// save
+			//// data //// in
+			//// map
+			dbMap = returnAllData(rs);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return dbMap;
+
+	}
+
+	public HashMap<Integer, HashMap<String, String>> pricing_underwriting_getOnHoldContract(String cert)
+			throws Exception {
+		HashMap<Integer, HashMap<String, String>> dbMap = new HashMap<Integer, HashMap<String, String>>();
+		try {
+			//// connect to aul db
+			aulDBConnect();
+			///// execute query
+
+			ResultSet rs = stmt.executeQuery(
+					"select top 1 r.RemittanceNumber,r.RemittanceName,d.FILE_NAME ,s.cert,d.ORIGINALFILENAME from [dbo].[REMITTANCE] r join"
+							+ " [dbo].[UW_DOCUMENT] d on r.REMITTANCEID = d.REMITTANCEID "
+							+ " join [ALLSALES_DETAILS] s  on s.id = d.[ALLSALES_DETAILS_ID] where "
+							+ " d.status_id in(2) and remittance_status_id not in(3) and DOCUMENTTYPEID = 1 "
+							+ " and r.IsDeleted = 0 and s.cert = '" + cert + "' order by d.CreateByDate desc;");
+			//// save data in map
+			dbMap = returnAllData(rs);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			//// close connection
+			closeConnection();
+		}
+		return dbMap;
+	}
 }

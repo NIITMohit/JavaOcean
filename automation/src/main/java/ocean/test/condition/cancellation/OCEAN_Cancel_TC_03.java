@@ -16,6 +16,9 @@ import ocean.modules.pages.CancellationModulePages;
  * blocking of cancellation request on the basis of contract status.
  * 
  * @author Mohit Goel
+ * 
+ * @reviewer : Atul Awasthi
+ * 
  */
 public class OCEAN_Cancel_TC_03 extends CancellationModulePages {
 	/**
@@ -24,11 +27,12 @@ public class OCEAN_Cancel_TC_03 extends CancellationModulePages {
 	 * basis of contract status.
 	 * 
 	 */
-	@Test(priority = 2, groups = "regression", dataProvider = "fetchDataForTC03", dataProviderClass = CancellationDataProvider.class, description = "Validate creation and blocking of cancellation request on the basis of contract status. ")
-	public void verifyCancelButtonStatusBasesOnCancellationStatus(String status) throws Exception {
+	@Test(priority = 2, groups = { "regression", "extendSmoke", "smoke",
+			"fullSuite" }, dataProvider = "fetchDataForTC03", dataProviderClass = CancellationDataProvider.class, description = "Validate creation and blocking of cancellation request on the basis of contract status. ")
+	public void verifyCancelButtonStatusBasesOnCancellationStatus(String[] status) throws Exception {
 		///// get contract id from db bases on status of contract
-		String contractId = cancellation_getContractIdBasedOnStatus(status);
-		if (contractId.length() > 0) {
+		String contractId = cancellation_getContractIdBasedOnStatus(status[0]);
+		if (contractId != null) {
 			HashMap<String, String> uiSearchData = new HashMap<String, String>();
 			uiSearchData.put("CERT", contractId);
 			//// Navigate to mail service tab
@@ -37,11 +41,17 @@ public class OCEAN_Cancel_TC_03 extends CancellationModulePages {
 			//// Search Data based on contract Id
 			searchContractGivenInputParamaters(uiSearchData);
 			//// verify status and contractId
-			boolean myStatus = verifyContractAndStatus(contractId, status);
+			boolean myStatus = verifyContractAndStatus(contractId, status[0]);
 			//// verify search result data
 			assertEquals(myStatus, true);
+			if (status[0].equalsIgnoreCase("active")) {
+				clickCancelButtonAndNavigateToNewCancellationTab();
+				//// validate active status
+				String stat = getValue("getContractStatusOnNewCancellation");
+				assertEquals(stat.equalsIgnoreCase("active"), true);
+			}
 		} else {
-			new SkipException("no value exist in db for status = " + status);
+			throw new SkipException("no value exist in db for status = " + status);
 		}
 	}
 

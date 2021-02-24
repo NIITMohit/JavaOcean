@@ -12,6 +12,8 @@ import ocean.modules.pages.PricingModulePages;
  * price sheet for their unique program code.
  * 
  * @author Mohit Goel
+ * 
+ *         * @reviewer : Shalu Chauhan
  */
 public class OCEAN_Pricing_TC_02 extends PricingModulePages {
 
@@ -21,7 +23,8 @@ public class OCEAN_Pricing_TC_02 extends PricingModulePages {
 	 * program code by Ocean.
 	 * 
 	 */
-	@Test(priority = 1, groups = "sanity", description = "Validate that uploaded price sheet should have their unique program code by Ocean.")
+	@Test(priority = 1, groups = { "regression", "extendSmoke", "smoke",
+			"fullSuite" }, description = "Validate that uploaded price sheet should have their unique program code by Ocean.")
 	public void validateOnlyUniquePriceSheetToBeUploaded() throws Exception {
 		//// Upload a price sheet
 		// Click Pricing Tab and navigate to pricing tab
@@ -29,7 +32,7 @@ public class OCEAN_Pricing_TC_02 extends PricingModulePages {
 		visitPriceSheetListTab();
 		// Click Import
 		//// Import A price sheet
-		importPriceSheet("SNE");
+		importPriceSheet("ABF");
 		// check for validation message
 		String validationMessage = getValue("validationOfDuplicatePriceSheet");
 		// take screenshot of validation message
